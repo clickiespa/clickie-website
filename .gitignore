@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Gemini / AI
+.gemini/
+
+# Node modules (if any future use)
+node_modules/
+
+# Temp files
+/tmp/
+*.log
+*.pdf

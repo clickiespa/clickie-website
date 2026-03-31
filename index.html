@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clickie — Gestión de Energía Inteligente | Ahorra hasta un 20%</title>
+  <meta name="description" content="Clickie ayuda a empresas en Chile y Latinoamérica a optimizar su consumo energético, logrando ahorros de hasta un 20%. Monitorea energía, agua, temperatura y gas en tiempo real." />
+  <meta property="og:title" content="Clickie — Energía Consciente" />
+  <meta property="og:description" content="Simplifica la gestión de tu energía. Ahorra hasta un 20% del consumo con monitoreo inteligente en tiempo real." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://clickie.io" />
+  <link rel="icon" type="image/png" href="assets/favicon_navbar.png" sizes="256x256" />
+  <link rel="apple-touch-icon" href="assets/favicon_navbar.png" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     MOBILE MENU OVERLAY
+════════════════════════════════════════ -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+  <button class="mobile-menu-close" id="mobileClose" aria-label="Cerrar menú">✕</button>
+  <button class="mobile-servicios-toggle">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-servicios-sub">
+    <a href="servicios/ubm.html"><span class="mobile-sub-icon">📄</span> UBM — Gestión de Suministros</a>
+    <a href="servicios/ems.html"><span class="mobile-sub-icon">📊</span> EMS — Monitoreo y Optimización</a>
+    <a href="servicios/bms.html"><span class="mobile-sub-icon">🖥️</span> BMS — Control Inteligente</a>
+    <a href="servicios/remarcacion.html"><span class="mobile-sub-icon">⚡</span> Remarcación y Submetering</a>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);margin:8px 16px;"></div>
+    <span style="padding:4px 16px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);">Por Rubro</span>
+    <a href="servicios/gestion-retail.html"><span class="mobile-sub-icon">🏪</span> Retail</a>
+    <a href="servicios/eficiencia-energetica.html"><span class="mobile-sub-icon">🏭</span> Industria</a>
+  </div>
+  <a href="#como-funciona" class="nav-link">Cómo funciona</a>
+  <button class="mobile-historias-toggle">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-historias-sub">
+    <a href="historias/oxxo.html"><span class="mobile-sub-icon">🏪</span> OXXO</a>
+    <a href="historias/starbucks.html"><span class="mobile-sub-icon">☕</span> Starbucks</a>
+    <a href="historias/copec.html"><span class="mobile-sub-icon">⛽</span> COPEC</a>
+    <a href="historias/lipigas.html"><span class="mobile-sub-icon">🔥</span> LIPIGAS</a>
+    <a href="historias/tattersall.html"><span class="mobile-sub-icon">🏢</span> Tattersall</a>
+    <a href="historias/renova.html"><span class="mobile-sub-icon">🌿</span> RENOVA</a>
+    <a href="historias/preunic.html"><span class="mobile-sub-icon">🛍️</span> Preunic</a>
+    <a href="historias/la-araucana-co2.html"><span class="mobile-sub-icon">🌱</span> La Araucana</a>
+  </div>
+  <button class="mobile-recursos-toggle">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-recursos-sub">
+    <a href="recursos/guias.html"><span class="mobile-sub-icon">📘</span> Guías de Ahorro Energético</a>
+    <a href="#recursos" onclick="setTimeout(()=>openLeadModal('caso-oxxo','Caso de Éxito OXXO'),300)"><span class="mobile-sub-icon">📊</span> Caso de Éxito OXXO</a>
+    <a href="recursos/calculadora.html"><span class="mobile-sub-icon">🧮</span> Calculadora de Ahorro</a>
+    <a href="recursos/encuesta-madurez.html"><span class="mobile-sub-icon">📋</span> Encuesta de Madurez Energética</a>
+  </div>
+  <button class="mobile-nosotros-toggle">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-nosotros-sub">
+    <a href="nosotros.html"><span class="mobile-sub-icon">💛</span> Nuestros Valores</a>
+    <a href="nosotros/prensa.html"><span class="mobile-sub-icon">📰</span> Clickie en la Prensa</a>
+  </div>
+  <a href="cotiza.html" class="nav-link">Cotiza aquí</a>
+  <a href="https://app.clickie.io/" class="btn btn-primary" target="_blank" rel="noopener">Iniciar sesión</a>
+</div>
+
+<!-- ════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════ -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="container">
+    <div class="navbar-inner">
+
+      <a href="#hero" class="navbar-logo" aria-label="Clickie inicio">
+        <img class="logo-badge" src="assets/favicon_navbar.png" alt="Clickie Logo" width="38" height="38" style="border-radius:10px; vertical-align:bottom;" />
+        Clickie
+      </a>
+
+      <div class="navbar-nav">
+        <div class="nav-dropdown" id="navDropdownServicios">
+          <a href="#servicios" class="nav-link nav-link-dropdown">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownServicios">
+            <div class="mega-dropdown-inner" style="display:flex;gap:0;">
+              <!-- POR SOLUCIÓN -->
+              <div style="flex:3;">
+                <div class="mega-dropdown-header">
+                  <span class="mega-dropdown-title">Por Solución ›</span>
+                  <p class="mega-dropdown-subtitle">Nuestras plataformas de gestión energética.</p>
+                </div>
+                <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
+                  <a href="servicios/ubm.html" class="mega-item">
+                    <div class="mega-item-icon yellow">📄</div>
+                    <div class="mega-item-content"><strong>UBM</strong><span>Gestión de Suministros Eléctricos.</span></div>
+                  </a>
+                  <a href="servicios/ems.html" class="mega-item">
+                    <div class="mega-item-icon green">📊</div>
+                    <div class="mega-item-content"><strong>EMS</strong><span>Monitoreo, Gestión y Optimización Energética en Tiempo Real.</span></div>
+                  </a>
+                  <a href="servicios/bms.html" class="mega-item">
+                    <div class="mega-item-icon violet">🖥️</div>
+                    <div class="mega-item-content"><strong>BMS</strong><span>Control Inteligente.</span></div>
+                  </a>
+                  <a href="servicios/remarcacion.html" class="mega-item">
+                    <div class="mega-item-icon yellow">⚡</div>
+                    <div class="mega-item-content"><strong>Remarcación y Submetering</strong><span>Distribución interna justa de energía.</span></div>
+                  </a>
+                </div>
+              </div>
+              <!-- SEPARADOR -->
+              <div style="width:1px;background:var(--gray-200);margin:0 24px;"></div>
+              <!-- POR RUBRO -->
+              <div style="flex:1.5;">
+                <div class="mega-dropdown-header">
+                  <span class="mega-dropdown-title">Por Rubro ›</span>
+                  <p class="mega-dropdown-subtitle">Soluciones por industria.</p>
+                </div>
+                <div class="mega-dropdown-grid" style="grid-template-columns:1fr;">
+                  <a href="servicios/gestion-retail.html" class="mega-item">
+                    <div class="mega-item-icon green">🏪</div>
+                    <div class="mega-item-content"><strong>Retail</strong><span>Eficiencia energética en tiendas y cadenas comerciales.</span></div>
+                  </a>
+                  <a href="servicios/eficiencia-energetica.html" class="mega-item">
+                    <div class="mega-item-icon violet">🏭</div>
+                    <div class="mega-item-content"><strong>Industria</strong><span>Optimización energética en plantas e instalaciones industriales.</span></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#como-funciona" class="nav-link">Cómo funciona</a>
+        <div class="nav-dropdown" id="navDropdownHistorias">
+          <a href="#historias" class="nav-link nav-link-dropdown">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownHistorias">
+            <div class="mega-dropdown-inner">
+              <div class="mega-dropdown-header">
+                <span class="mega-dropdown-title">Historias de Éxito ›</span>
+                <p class="mega-dropdown-subtitle">Conoce cómo empresas líderes optimizaron su energía con Clickie.</p>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(4,1fr);">
+                <a href="historias/oxxo.html" class="mega-item">
+                  <div class="mega-item-icon yellow">🏪</div>
+                  <div class="mega-item-content">
+                    <strong>OXXO</strong>
+                    <span>20% de ahorro en 230+ tiendas.</span>
+                  </div>
+                </a>
+                <a href="historias/starbucks.html" class="mega-item">
+                  <div class="mega-item-icon green">☕</div>
+                  <div class="mega-item-content">
+                    <strong>Starbucks</strong>
+                    <span>Eficiencia energética en cafeterías.</span>
+                  </div>
+                </a>
+                <a href="historias/copec.html" class="mega-item">
+                  <div class="mega-item-icon violet">⛽</div>
+                  <div class="mega-item-content">
+                    <strong>COPEC</strong>
+                    <span>Monitoreo de red renovable completa.</span>
+                  </div>
+                </a>
+                <a href="historias/lipigas.html" class="mega-item">
+                  <div class="mega-item-icon yellow">🔥</div>
+                  <div class="mega-item-content">
+                    <strong>LIPIGAS</strong>
+                    <span>8% ahorro en plantas productivas.</span>
+                  </div>
+                </a>
+                <a href="historias/tattersall.html" class="mega-item">
+                  <div class="mega-item-icon violet">🏢</div>
+                  <div class="mega-item-content">
+                    <strong>Tattersall</strong>
+                    <span>Gestión energética industrial.</span>
+                  </div>
+                </a>
+                <a href="historias/renova.html" class="mega-item">
+                  <div class="mega-item-icon green">🌿</div>
+                  <div class="mega-item-content">
+                    <strong>RENOVA</strong>
+                    <span>+20% rendimiento en activos renovables.</span>
+                  </div>
+                </a>
+                <a href="historias/preunic.html" class="mega-item">
+                  <div class="mega-item-icon green">🛍️</div>
+                  <div class="mega-item-content">
+                    <strong>Preunic</strong>
+                    <span>20% de reducción en costos energéticos.</span>
+                  </div>
+                </a>
+                <a href="historias/la-araucana-co2.html" class="mega-item">
+                  <div class="mega-item-icon yellow">🌱</div>
+                  <div class="mega-item-content">
+                    <strong>La Araucana</strong>
+                    <span>Reducción de huella de carbono.</span>
+                  </div>
+                </a>
+                <a href="recursos/casos-de-exito.html" class="mega-item">
+                  <div class="mega-item-icon violet">📊</div>
+                  <div class="mega-item-content">
+                    <strong>Ver todos</strong>
+                    <span>Todos los casos de éxito.</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown" id="navDropdownRecursos">
+          <a href="#recursos" class="nav-link nav-link-dropdown">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdown">
+            <div class="mega-dropdown-inner">
+              <div class="mega-dropdown-header">
+                <span class="mega-dropdown-title">Recursos Clickie ›</span>
+                <p class="mega-dropdown-subtitle">Guías, casos de éxito y herramientas prácticas para optimizar tu gestión energética.</p>
+              </div>
+              <div class="mega-dropdown-grid">
+                <a href="recursos/guias.html" class="mega-item">
+                  <div class="mega-item-icon yellow">📘</div>
+                  <div class="mega-item-content">
+                    <strong>Guías de Ahorro Energético</strong>
+                    <span>Descarga guías prácticas de eficiencia energética para tu rubro.</span>
+                  </div>
+                </a>
+                <a href="recursos/casos-de-exito.html" class="mega-item">
+                  <div class="mega-item-icon violet">📊</div>
+                  <div class="mega-item-content">
+                    <strong>Casos de Éxito</strong>
+                    <span>OXXO, Starbucks, COPEC, LIPIGAS y más empresas que optimizaron su energía.</span>
+                  </div>
+                </a>
+                <a href="recursos/calculadora.html" class="mega-item">
+                  <div class="mega-item-icon green">🧮</div>
+                  <div class="mega-item-content">
+                    <strong>Calculadora de Ahorro</strong>
+                    <span>Ingresa tus datos de consumo y descubre cuánto podrías ahorrar.</span>
+                  </div>
+                </a>
+                <a href="recursos/blog.html" class="mega-item">
+                  <div class="mega-item-icon yellow">📝</div>
+                  <div class="mega-item-content">
+                    <strong>Blog</strong>
+                    <span>Artículos sobre eficiencia energética, casos de éxito y tendencias.</span>
+                  </div>
+                </a>
+                <a href="recursos/encuesta-madurez.html" class="mega-item">
+                  <div class="mega-item-icon green">📋</div>
+                  <div class="mega-item-content">
+                    <strong>Encuesta de Madurez Energética</strong>
+                    <span>Descubre tu nivel de madurez y recibe un plan de acción personalizado.</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown" id="navDropdownNosotros">
+          <a href="nosotros.html" class="nav-link nav-link-dropdown">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownNosotros">
+            <div class="mega-dropdown-inner">
+              <div class="mega-dropdown-header">
+                <span class="mega-dropdown-title">Nosotros ›</span>
+                <p class="mega-dropdown-subtitle">Conoce quiénes somos y qué nos mueve.</p>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
+                <a href="nosotros.html" class="mega-item">
+                  <div class="mega-item-icon yellow">💛</div>
+                  <div class="mega-item-content"><strong>Nuestros Valores</strong><span>Propósito, misión y los valores que guían cada decisión en Clickie.</span></div>
+                </a>
+                <a href="nosotros/prensa.html" class="mega-item">
+                  <div class="mega-item-icon violet">📰</div>
+                  <div class="mega-item-content"><strong>Clickie en la Prensa</strong><span>Noticias, artículos y apariciones de Clickie en medios de comunicación.</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-actions">
+        <a href="https://app.clickie.io/" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="cotiza.html" class="btn btn-primary btn-sm">Cotiza aquí</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú móvil">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg-shapes">
+    <div class="hero-shape hero-shape-1"></div>
+    <div class="hero-shape hero-shape-2"></div>
+    <div class="hero-shape hero-shape-3"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Energía Consciente · 5 países
+        </div>
+
+        <h1 class="hero-title">
+          Simplifica tu gestión de energía.<br>
+          Ahorra hasta un <span class="accent-yellow">20%.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Nuestra plataforma centraliza la gestión de tus facturas eléctricas, el monitoreo y el control de tu consumo — y además tienes un equipo que trabaja codo a codo contigo para definir tu plan de acción y conseguir resultados reales.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-primary btn-lg">Comenzar ahora →</a>
+          <a href="#como-funciona" class="btn btn-outline-dark btn-lg">Ver cómo funciona</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-value">5.000+</span>
+            <span class="hero-stat-label">Localizaciones gestionadas</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">400+ GWh</span>
+            <span class="hero-stat-label">Energía gestionada</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">5</span>
+            <span class="hero-stat-label">Países</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-value">7.000+</span>
+            <span class="hero-stat-label">Dispositivos integrados</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/dashboard-hero.png" alt="Dashboard de gestión energética Clickie" width="600" height="600" />
+
+        <div class="hero-image-badge badge-1">
+          <div class="badge-icon yellow">⚡</div>
+          <div>
+            <strong>20% Ahorro</strong>
+            <span class="badge-text-small">Consumo energético</span>
+          </div>
+        </div>
+
+        <div class="hero-image-badge badge-2">
+          <div class="badge-icon green">🌱</div>
+          <div>
+            <strong>1,000 ton CO₂</strong>
+            <span class="badge-text-small">Reducidos anualmente</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     CLIENTS STRIP
+════════════════════════════════════════ -->
+<section class="clients" aria-label="Clientes de Clickie">
+  <div class="container">
+    <p class="clients-label">Más de 60 empresas ya confían en Clickie</p>
+  </div>
+  <!-- Row 1: scrolls left -->
+  <div class="clients-track-wrapper">
+    <div class="clients-track" id="clientsTrack">
+      <span class="client-logo"><img src="assets/logos/Salcobrand.png" alt="Salcobrand" style="height:40px;max-height:none;"></span>
+      <span class="client-logo"><img src="assets/logos/La Araucana.png" alt="La Araucana" style="max-height:36px;max-width:120px;"></span>
+      <span class="client-logo"><img src="assets/logos/Cruz Verde.svg" alt="Cruz Verde" style="height:40px;max-height:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Lipigas.png" alt="Lipigas" style="height:40px;max-height:none;"></span>
+      <span class="client-logo"><img src="assets/logos/OXXO.png" alt="OXXO" style="max-height:32px;max-width:90px;"></span>
+      <span class="client-logo"><img src="assets/logos/Starbucks.png" alt="Starbucks" style="height:40px;max-height:none;"></span>
+      <span class="client-logo"><img src="assets/logos/CCU.png" alt="CCU" style="max-height:26px;max-width:70px;"></span>
+      <span class="client-logo"><img src="assets/logos/Preunic.png" alt="Preunic" style="max-height:34px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/Burger King.png" alt="Burger King" style="height:40px;max-height:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Smartfit.png" alt="SmartFit" style="max-height:26px;max-width:80px;"></span>
+      <span class="client-logo"><img src="assets/logos/Itaú.png" alt="Itaú" style="height:40px;max-height:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Aramco.png" alt="Aramco" style="max-height:36px;max-width:100px;"></span>
+      <span class="client-logo"><img src="assets/logos/Enel X.png" alt="Enel X" style="max-height:32px;max-width:90px;"></span>
+      <span class="client-logo">ENAP</span>
+      <span class="client-logo"><img src="assets/logos/Astara.png" alt="Astara" style="max-height:34px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/Jumbo.png" alt="Jumbo" style="height:40px;max-height:none;max-width:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Easy.png" alt="Easy" style="height:40px;max-height:none;max-width:none;"></span>
+      <!-- duplicate for seamless loop -->
+      <span class="client-logo"><img src="assets/logos/Salcobrand.png" alt="Salcobrand" style="height:40px;max-height:none;"></span>
+      <span class="client-logo"><img src="assets/logos/La Araucana.png" alt="La Araucana" style="max-height:36px;max-width:120px;"></span>
+      <span class="client-logo"><img src="assets/logos/Cruz Verde.svg" alt="Cruz Verde" style="height:40px;max-height:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Lipigas.png" alt="Lipigas" style="height:40px;max-height:none;"></span>
+      <span class="client-logo"><img src="assets/logos/OXXO.png" alt="OXXO" style="max-height:32px;max-width:90px;"></span>
+      <span class="client-logo"><img src="assets/logos/Starbucks.png" alt="Starbucks" style="height:40px;max-height:none;"></span>
+      <span class="client-logo"><img src="assets/logos/CCU.png" alt="CCU" style="max-height:26px;max-width:70px;"></span>
+      <span class="client-logo"><img src="assets/logos/Preunic.png" alt="Preunic" style="max-height:34px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/Burger King.png" alt="Burger King" style="height:40px;max-height:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Smartfit.png" alt="SmartFit" style="max-height:26px;max-width:80px;"></span>
+      <span class="client-logo"><img src="assets/logos/Itaú.png" alt="Itaú" style="height:40px;max-height:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Aramco.png" alt="Aramco" style="max-height:36px;max-width:100px;"></span>
+      <span class="client-logo"><img src="assets/logos/Enel X.png" alt="Enel X" style="height:40px;max-height:none;"></span>
+      <span class="client-logo">ENAP</span>
+      <span class="client-logo"><img src="assets/logos/Astara.png" alt="Astara" style="max-height:34px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/Jumbo.png" alt="Jumbo" style="height:40px;max-height:none;max-width:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Easy.png" alt="Easy" style="height:40px;max-height:none;max-width:none;"></span>
+    </div>
+  </div>
+  <!-- Row 2: scrolls right (reverse) -->
+  <div class="clients-track-wrapper">
+    <div class="clients-track reverse" id="clientsTrack2">
+      <span class="client-logo"><img src="assets/logos/Paris.png" alt="Paris" style="height:40px;max-height:none;max-width:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Santa Isabel.svg" alt="Santa Isabel" style="height:40px;max-height:none;max-width:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Unimarc.svg" alt="Unimarc" style="height:40px;max-height:none;max-width:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Ecer.png" alt="Ecer" style="max-height:34px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/Enex.png" alt="Enex" style="max-height:34px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/Ideal.png" alt="Ideal" style="height:70px;max-height:none;max-width:none;mix-blend-mode:normal;"></span>
+      <span class="client-logo"><img src="assets/logos/Imelsa Energía.png" alt="Imelsa Energía" style="height:40px;max-height:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Farmacias Ahumada.png" alt="Farmacias Ahumada" style="max-height:30px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/Doctor Simi.png" alt="Doctor Simi" style="height:40px;max-height:none;max-width:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Tattersall.png" alt="Tattersall" style="max-height:22px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/Vulco Weir.png" alt="Vulco" style="max-height:34px;max-width:100px;"></span>
+      <span class="client-logo">Monnet</span>
+      <span class="client-logo"><img src="assets/logos/Sportlife.png" alt="Sportlife" style="max-height:34px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/Ecolab.webp" alt="Ecolab" style="max-height:34px;max-width:110px;"></span>
+      <span class="client-logo">V360</span>
+      <span class="client-logo"><img src="assets/logos/Papa Johns.svg" alt="Papa Johns" style="max-height:36px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/AVO.png" alt="AVO" style="max-height:34px;max-width:100px;"></span>
+      <!-- duplicate for seamless loop -->
+      <span class="client-logo"><img src="assets/logos/Paris.png" alt="Paris" style="height:40px;max-height:none;max-width:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Santa Isabel.svg" alt="Santa Isabel" style="height:40px;max-height:none;max-width:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Unimarc.svg" alt="Unimarc" style="height:40px;max-height:none;max-width:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Ecer.png" alt="Ecer" style="max-height:34px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/Enex.png" alt="Enex" style="max-height:34px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/Ideal.png" alt="Ideal" style="height:70px;max-height:none;max-width:none;mix-blend-mode:normal;"></span>
+      <span class="client-logo"><img src="assets/logos/Imelsa Energía.png" alt="Imelsa Energía" style="height:40px;max-height:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Farmacias Ahumada.png" alt="Farmacias Ahumada" style="max-height:30px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/Doctor Simi.png" alt="Doctor Simi" style="height:40px;max-height:none;max-width:none;"></span>
+      <span class="client-logo"><img src="assets/logos/Tattersall.png" alt="Tattersall" style="max-height:22px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/Vulco Weir.png" alt="Vulco" style="max-height:34px;max-width:100px;"></span>
+      <span class="client-logo">Monnet</span>
+      <span class="client-logo"><img src="assets/logos/Sportlife.png" alt="Sportlife" style="max-height:34px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/Ecolab.webp" alt="Ecolab" style="max-height:34px;max-width:110px;"></span>
+      <span class="client-logo">V360</span>
+      <span class="client-logo"><img src="assets/logos/Papa Johns.svg" alt="Papa Johns" style="max-height:36px;max-width:110px;"></span>
+      <span class="client-logo"><img src="assets/logos/AVO.png" alt="AVO" style="max-height:34px;max-width:100px;"></span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     SUCCESS STORIES
+════════════════════════════════════════ -->
+<section class="section stories" id="historias">
+  <div class="container">
+
+    <div class="stories-header">
+      <span class="section-label">Historias de éxito</span>
+      <h2 class="section-title">Empresas que ya <span class="highlight">transformaron</span> su energía</h2>
+      <p class="section-subtitle">Casos reales de cómo Clickie generó ahorros significativos y operaciones más eficientes.</p>
+    </div>
+
+    <div class="stories-video-wrapper fade-in" style="max-width:900px;margin:0 auto;">
+      <div id="storiesVideoContainer" class="stories-video-container" onclick="playStoriesVideo()" style="position:relative;width:100%;padding-bottom:56.25%;border-radius:16px;overflow:hidden;cursor:pointer;box-shadow:0 8px 32px rgba(0,0,0,0.18);">
+        <img src="https://img.youtube.com/vi/NUNo2LWLtlQ/maxresdefault.jpg?v=20260326" alt="Video testimonios clientes Clickie" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;" />
+        <div style="position:absolute;inset:0;background:rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;transition:background 0.3s;" onmouseover="this.style.background='rgba(0,0,0,0.15)'" onmouseout="this.style.background='rgba(0,0,0,0.25)'">
+          <div style="width:72px;height:72px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(255,198,0,0.5);transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <svg width="28" height="32" viewBox="0 0 28 32" fill="none"><path d="M26 14.268a2 2 0 010 3.464L4 28.785a2 2 0 01-3-1.732V4.947a2 2 0 013-1.732L26 14.268z" fill="var(--dark)"/></svg>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:28px;">
+        <img src="assets/logos/Starbucks.png" alt="Starbucks" style="height:40px;opacity:0.7;transition:opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'" />
+        <img src="assets/logos/OXXO.png" alt="OXXO" style="height:28px;opacity:0.7;transition:opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'" />
+        <img src="assets/logos/La Araucana.png" alt="La Araucana" style="height:34px;opacity:0.7;transition:opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'" />
+        <img src="assets/logos/Preunic.png" alt="Preunic" style="height:30px;opacity:0.7;transition:opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'" />
+        <img src="assets/logos/Tattersall.png" alt="Tattersall" style="height:22px;opacity:0.7;transition:opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'" />
+      </div>
+    </div>
+
+    <script>
+    function playStoriesVideo(){
+      var c=document.getElementById('storiesVideoContainer');
+      c.innerHTML='<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" src="https://www.youtube.com/embed/NUNo2LWLtlQ?autoplay=1&rel=0" allow="autoplay;encrypted-media" allowfullscreen></iframe>';
+      c.style.cursor='default';
+      c.onclick=null;
+    }
+    </script>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     SERVICES
+════════════════════════════════════════ -->
+<section class="section services" id="servicios">
+  <div class="container">
+
+    <div class="services-header">
+      <span class="section-label">Nuestros servicios</span>
+      <h2 class="section-title">
+        La solución de energía <span class="highlight">exacta</span><br>para tu negocio
+      </h2>
+      <p class="section-subtitle">
+        Diseñamos soluciones a medida para ayudarte a conocer, controlar y optimizar cada recurso de tu empresa.
+      </p>
+    </div>
+
+    <!-- POR SOLUCIÓN -->
+    <div style="margin-bottom:48px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+        <span style="font-size:0.78rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--secondary);opacity:0.55;">Por Solución</span>
+        <div style="flex:1;height:1px;background:var(--gray-200);"></div>
+      </div>
+      <div class="services-grid" style="grid-template-columns:repeat(4,1fr);">
+
+        <div class="service-card fade-in">
+          <span class="service-saving">Ahorra 15%</span>
+          <div class="service-icon orange">📄</div>
+          <h3>UBM – Utility Bill Management</h3>
+          <p>Ahorra hasta un 15% en tu gasto de energía con gestión inteligente de facturas. Te representamos frente a las distribuidoras eléctricas.</p>
+          <a href="servicios/ubm.html" class="service-link">Conoce más →</a>
+        </div>
+
+        <div class="service-card fade-in" style="transition-delay:0.08s">
+          <div class="service-icon lime">📊</div>
+          <h3>EMS – Energy Management System</h3>
+          <p>Optimiza tu consumo energético con un diagnóstico rápido y en línea. Dashboards inteligentes con recomendaciones accionables en tiempo real.</p>
+          <a href="servicios/ems.html" class="service-link">Conoce más →</a>
+        </div>
+
+        <div class="service-card fade-in" style="transition-delay:0.16s">
+          <div class="service-icon violet">🖥️</div>
+          <h3>BMS – Control Inteligente</h3>
+          <p>Gestiona y controla de forma centralizada todos los equipos energéticos de tus instalaciones con horarios inteligentes y automatización.</p>
+          <a href="servicios/bms.html" class="service-link">Conoce más →</a>
+        </div>
+
+        <div class="service-card fade-in" style="transition-delay:0.24s">
+          <span class="service-saving">Ahorra 4x</span>
+          <div class="service-icon yellow">⚡</div>
+          <h3>Remarcación y Submetering</h3>
+          <p>Descubre cuánto deberían pagar realmente tus locales por energía y ahorra hasta 4 veces lo que pagas hoy en distribución interna.</p>
+          <a href="servicios/remarcacion.html" class="service-link">Conoce más →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- POR RUBRO -->
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+        <span style="font-size:0.78rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--secondary);opacity:0.55;">Por Rubro</span>
+        <div style="flex:1;height:1px;background:var(--gray-200);"></div>
+      </div>
+      <div class="services-grid" style="grid-template-columns:repeat(2,1fr);">
+
+        <div class="service-card fade-in">
+          <span class="service-saving">Ahorra hasta un 20%</span>
+          <div class="service-icon yellow">🏪</div>
+          <h3>Gestión de Energía en Retail</h3>
+          <p>Ahorra hasta un 20% optimizando el consumo energético en tus locales comerciales con monitoreo en tiempo real y alertas automáticas.</p>
+          <a href="servicios/gestion-retail.html" class="service-link">Conoce más →</a>
+        </div>
+
+        <div class="service-card fade-in" style="transition-delay:0.08s">
+          <span class="service-saving">+8% eficiencia</span>
+          <div class="service-icon violet">🏭</div>
+          <h3>Eficiencia Energética Industrial</h3>
+          <p>Optimiza tus procesos productivos, mejora la eficiencia operativa e impulsa la sostenibilidad en tus plantas y activos clave.</p>
+          <a href="servicios/eficiencia-energetica.html" class="service-link">Conoce más →</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:40px">
+      <a href="#contacto" class="btn btn-outline-dark btn-lg">¿Tienes un desafío distinto? Cuéntanos →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════════════ -->
+<section class="section how" id="como-funciona">
+  <div class="container">
+
+    <div class="how-header">
+      <span class="section-label">¿Cómo lo hacemos?</span>
+      <h2 class="section-title">Cuatro pasos hacia la <span class="highlight">energía inteligente</span></h2>
+      <p class="section-subtitle">Un proceso guiado de principio a fin para que puedas tomar decisiones con datos reales.</p>
+    </div>
+
+    <div class="how-steps">
+
+      <div class="how-step">
+        <div class="step-number">1</div>
+        <h3>Solución personalizada</h3>
+        <p>Cuéntanos tus necesidades y diseñamos la mejor solución adaptada a tu industria, escala y objetivos.</p>
+      </div>
+
+      <div class="how-step">
+        <div class="step-number">2</div>
+        <h3>Implementación</h3>
+        <p>Instalamos la solución adaptada a tus necesidades. Nuestro equipo te acompaña durante todo el proceso de onboarding para asegurarnos de que alcances tus objetivos desde el primer día.</p>
+      </div>
+
+      <div class="how-step">
+        <div class="step-number">3</div>
+        <h3>Información y diagnóstico</h3>
+        <p>Analítica con inteligencia artificial para diagnosticar tu consumo, detectar ahorros y anticipar desviaciones.</p>
+      </div>
+
+      <div class="how-step">
+        <div class="step-number">4</div>
+        <h3>Acompañamiento continuo</h3>
+        <p>Diseñamos un plan de acción personalizado y nuestro equipo de expertos te guía para tomar decisiones que maximicen el ahorro a lo largo del tiempo.</p>
+      </div>
+
+    </div>
+
+    <div class="text-center" style="margin-top:48px">
+      <a href="https://clickie.io/como-monitorear-energia-chile" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Ver en detalle →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     METRICS / IMPACT
+════════════════════════════════════════ -->
+<section class="section metrics" id="impacto">
+  <div class="container">
+    <div class="metrics-inner">
+      <span class="section-label" style="color:rgba(255,255,255,0.4)">Impacto real</span>
+      <h2 class="metrics-title">Resultados que <span style="color:var(--primary)">hablan solos</span></h2>
+      <p class="metrics-subtitle">Números reales de nuestros clientes en Chile y Latinoamérica.</p>
+
+      <div class="metrics-grid">
+
+        <div class="metric-card">
+          <span class="metric-icon">📍</span>
+          <span class="metric-value" data-count="5000" data-suffix="+" id="counter1">0</span>
+          <span class="metric-label">Localizaciones gestionadas</span>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-icon">⚡</span>
+          <span class="metric-value" data-count="400" data-suffix="+ GWh" id="counter2">0</span>
+          <span class="metric-label">Energía gestionada</span>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-icon">🌎</span>
+          <span class="metric-value" data-count="5" id="counter3">0</span>
+          <span class="metric-label">Países donde opera Clickie</span>
+        </div>
+
+        <div class="metric-card">
+          <span class="metric-icon">🔌</span>
+          <span class="metric-value" data-count="7000" data-suffix="+" id="counter4">0</span>
+          <span class="metric-label">Dispositivos integrados</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════ -->
+<section class="section testimonials">
+  <div class="container">
+
+    <div class="testimonials-header">
+      <span class="section-label">Lo que dicen nuestros clientes</span>
+      <h2 class="section-title">La voz de quienes ya <span class="highlight">confían</span> en nosotros</h2>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Clickie nos permitió tener visibilidad total del consumo en nuestras tiendas. Los dashboards son claros, las alertas funcionan perfecto y el ahorro del 20% es real y medible."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,var(--secondary),#4547c9)">MC</div>
+          <div>
+            <span class="author-name">Michelle Colin</span>
+            <span class="author-role">Líder de Sostenibilidad · OXXO</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" style="transition-delay:0.1s">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Gracias al mantenimiento predictivo de Clickie, aumentamos la vida útil de nuestros equipos y redujimos drásticamente los tiempos de respuesta del equipo de mantenimiento."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,var(--lime),var(--green))">JR</div>
+          <div>
+            <span class="author-name">Jefe de Operaciones</span>
+            <span class="author-role">Energías Renovables · RENOVA</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card" style="transition-delay:0.2s">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"La implementación fue rápida y el equipo de Clickie estuvo siempre disponible. Ahora tenemos control total de nuestra red energética con información en tiempo real."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,var(--orange),#e8942e)">GP</div>
+          <div>
+            <span class="author-name">Gerente de Planta</span>
+            <span class="author-role">Industria Gasífera · LIPIGAS</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     RESOURCES
+════════════════════════════════════════ -->
+<section class="section resources" id="recursos">
+  <div class="container">
+
+    <div class="resources-header">
+      <span class="section-label">Recursos gratuitos</span>
+      <h2 class="section-title">Herramientas para tu <span class="highlight">gestión energética</span></h2>
+      <p class="section-subtitle">Descarga guías, casos de éxito y accede a herramientas prácticas para optimizar el consumo energético de tu empresa.</p>
+    </div>
+
+    <div class="resources-grid">
+
+      <!-- Guide / eBook -->
+      <div class="resource-card fade-in">
+        <div class="resource-preview yellow">📘</div>
+        <div class="resource-body">
+          <span class="resource-tag guide">Guía práctica</span>
+          <h3>Guía de Ahorro Energético para Empresas</h3>
+          <p>Descubre las 10 estrategias más efectivas para reducir el consumo energético hasta un 20% en tu empresa con monitoreo IoT.</p>
+          <button class="resource-btn" onclick="openLeadModal('guia-ahorro-energetico', 'Guía de Ahorro Energético')">Descargar gratis →</button>
+        </div>
+      </div>
+
+      <!-- Case Study -->
+      <div class="resource-card fade-in" style="transition-delay:0.1s">
+        <div class="resource-preview violet">📊</div>
+        <div class="resource-body">
+          <span class="resource-tag case">Caso de éxito</span>
+          <h3>Cómo OXXO ahorró 20% de energía en 230+ tiendas</h3>
+          <p>Conoce en detalle la estrategia, implementación y resultados que logró OXXO con la plataforma de gestión energética de Clickie.</p>
+          <button class="resource-btn" onclick="openLeadModal('caso-oxxo', 'Caso de Éxito OXXO')">Descargar gratis →</button>
+        </div>
+      </div>
+
+      <!-- Calculator -->
+      <div class="resource-card fade-in" style="transition-delay:0.2s">
+        <div class="resource-preview green">🧮</div>
+        <div class="resource-body">
+          <span class="resource-tag tool">Herramienta</span>
+          <h3>Calculadora de Ahorro Energético</h3>
+          <p>Ingresa los datos de consumo de tu empresa y descubre cuánto podrías ahorrar con una solución de gestión energética inteligente.</p>
+          <a href="recursos/calculadora.html" class="resource-btn outline">Calcular ahorro →</a>
+        </div>
+      </div>
+
+      <!-- Survey -->
+      <div class="resource-card fade-in" style="transition-delay:0.3s">
+        <div class="resource-preview yellow">📋</div>
+        <div class="resource-body">
+          <span class="resource-tag tool">Encuesta</span>
+          <h3>¿Cuál es tu Nivel de Madurez Energética?</h3>
+          <p>Responde 3 preguntas rápidas y descubre tu nivel de madurez energética con un plan de acción personalizado.</p>
+          <a href="recursos/encuesta-madurez.html" class="resource-btn outline">Hacer encuesta →</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     ABOUT / WHAT IS CLICKIE
+════════════════════════════════════════ -->
+<section class="section about" id="nosotros">
+  <div class="container">
+    <div class="about-inner">
+
+      <div class="about-content fade-in-left">
+        <span class="section-label">¿Qué es Clickie?</span>
+        <h2 class="section-title">Líderes en gestión de <span class="highlight">energía consciente</span></h2>
+        <p>Clickie ayuda a empresas en Chile y Latinoamérica a optimizar su consumo energético, logrando ahorros de hasta un 20%. Somos más que una plataforma de monitoreo: somos el socio estratégico que te acompaña en cada decisión energética.</p>
+        <p>Combinamos tecnología IoT avanzada con el acompañamiento permanente de expertos para que tomes decisiones efectivas y reduzcas tu huella de carbono.</p>
+
+        <div class="about-pillars">
+          <div class="about-pillar">
+            <span class="pillar-icon">🔌</span>
+            <div class="pillar-title">Monitoreo IoT</div>
+            <div class="pillar-desc">+200 tipos de variables monitoreadas en tiempo real</div>
+          </div>
+          <div class="about-pillar">
+            <span class="pillar-icon">📊</span>
+            <div class="pillar-title">Analítica avanzada</div>
+            <div class="pillar-desc">1.100 millones de datos procesados por mes</div>
+          </div>
+          <div class="about-pillar">
+            <span class="pillar-icon">🤝</span>
+            <div class="pillar-title">Expertos dedicados</div>
+            <div class="pillar-desc">Acompañamiento continuo de especialistas energéticos</div>
+          </div>
+          <div class="about-pillar">
+            <span class="pillar-icon">🌱</span>
+            <div class="pillar-title">Impacto ambiental</div>
+            <div class="pillar-desc">Reducción medible de CO₂ y huella de carbono</div>
+          </div>
+        </div>
+
+        <div style="margin-top:32px">
+          <a href="#contacto" class="btn btn-primary btn-lg">Conocer más →</a>
+        </div>
+      </div>
+
+      <div class="about-visual fade-in-right">
+        <div class="about-map">
+          <p class="about-map-title">🌍 Presencia en Latinoamérica</p>
+          <div class="countries-grid">
+            <div class="country-chip"><span class="country-flag">🇨🇱</span>Chile</div>
+            <div class="country-chip"><span class="country-flag">🇦🇷</span>Argentina</div>
+            <div class="country-chip"><span class="country-flag">🇧🇴</span>Bolivia</div>
+            <div class="country-chip"><span class="country-flag">🇵🇪</span>Perú</div>
+            <div class="country-chip"><span class="country-flag">🇲🇽</span>México</div>
+          </div>
+          <div class="about-total">
+            <div>
+              <div class="total-label">Localizaciones gestionadas</div>
+              <div class="total-value">5.000+</div>
+            </div>
+            <div style="text-align:right">
+              <div class="total-label">Dispositivos integrados</div>
+              <div class="total-value">7.000+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     CTA BANNER
+════════════════════════════════════════ -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-inner">
+      <span class="section-label" style="color:rgba(32,33,127,0.6)">Únete a más de 2.500 localizaciones</span>
+      <h2>¿Listo para ahorrar energía <br>y reducir costos?</h2>
+      <p>Contáctanos hoy y diseñamos juntos la solución perfecta para tu empresa.</p>
+      <div class="cta-actions">
+        <a href="cotiza.html" class="btn btn-outline-dark btn-lg">Hablar con un experto</a>
+        <a href="https://app.clickie.io/" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Probar plataforma →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════ -->
+<section class="section contact" id="contacto">
+  <div class="container">
+    <div class="contact-inner">
+
+      <div class="contact-info fade-in-left">
+        <span class="section-label" style="color:rgba(255,255,255,0.4)">Contáctanos</span>
+        <h2 style="color:var(--white)">Cuéntanos tu <span style="color:var(--primary)">desafío energético</span></h2>
+        <p>Nuestro equipo de especialistas está listo para diseñar la solución perfecta para tu empresa.</p>
+
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-text">
+              <strong>Oficinas</strong>
+              Nuncio Monseñor Sotero Sanz 161, Oficina 703<br>Providencia, Santiago de Chile
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">✉️</div>
+            <div class="contact-detail-text">
+              <strong>Email</strong>
+              hola@clickie.io
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">🌐</div>
+            <div class="contact-detail-text">
+              <strong>Plataforma</strong>
+              app.clickie.io
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">🌎</div>
+            <div class="contact-detail-text">
+              <strong>Cobertura</strong>
+              Chile, Argentina, Bolivia, Perú y México
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form fade-in-right">
+        <p class="form-title">Solicita una demo gratuita</p>
+        <form id="contactForm" novalidate>
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label class="form-label" for="name">Nombre completo *</label>
+              <input class="form-input" id="name" name="name" type="text" placeholder="María González" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="company">Empresa *</label>
+              <input class="form-input" id="company" name="company" type="text" placeholder="Empresa S.A." required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email corporativo *</label>
+              <input class="form-input" id="email" name="email" type="email" placeholder="maria@empresa.cl" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="phone">Teléfono</label>
+              <input class="form-input" id="phone" name="phone" type="tel" placeholder="+56 9 8765 4321" />
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label" for="sector">Sector / Industria</label>
+              <select class="form-select" id="sector" name="sector">
+                <option value="">Selecciona tu industria</option>
+                <option value="retail">Retail y Comercio</option>
+                <option value="industria">Industria y Manufactura</option>
+                <option value="energia">Generación de Energía</option>
+                <option value="hidrico">Gestión Hídrica</option>
+                <option value="petroleo">Petróleo y Gas</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label" for="message">¿Cuál es tu desafío energético?</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Cuéntanos sobre tu empresa, cuántos locales o plantas tienes, y qué tipo de ahorro esperas lograr..."></textarea>
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg form-submit" id="submitBtn">
+            Solicitar demo gratuita →
+          </button>
+
+          <div class="form-success" id="formSuccess">
+            ✅ ¡Mensaje enviado! Te contactaremos dentro de las próximas 24 horas.
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+
+    <div class="footer-main">
+
+      <div class="footer-brand">
+        <a href="#hero" class="navbar-logo" style="color:var(--white)">
+          <img class="logo-badge" src="assets/favicon_navbar.png" alt="Clickie Logo" width="38" height="38" style="border-radius:10px; vertical-align:bottom;" />
+          Clickie
+        </a>
+        <p>Ayudamos a empresas en Chile y Latinoamérica a optimizar su consumo energético, logrando ahorros reales y operaciones más sostenibles.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/company/clickie" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="https://www.youtube.com/@clickie" class="social-link" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
+          <a href="https://blog.clickie.io/" class="social-link" target="_blank" rel="noopener" aria-label="Blog">✍</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <div class="footer-links">
+          <a href="servicios/remarcacion.html" class="footer-link">Remarcación y Submetering</a>
+          <a href="servicios/eficiencia-energetica.html" class="footer-link">Eficiencia Energética</a>
+          <a href="servicios/gestion-retail.html" class="footer-link">Gestión Retail</a>
+          <a href="servicios/gestion-hidrica.html" class="footer-link">Gestión Hídrica</a>
+          <a href="servicios/ubm.html" class="footer-link">UBM</a>
+          <a href="servicios/ems.html" class="footer-link">Energy Management System</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Historias de éxito</h4>
+        <div class="footer-links">
+          <a href="historias/oxxo.html" class="footer-link">OXXO — Tiendas inteligentes</a>
+          <a href="historias/renova.html" class="footer-link">RENOVA — Energías renovables</a>
+          <a href="historias/copec.html" class="footer-link">COPEC — Estaciones de servicio</a>
+          <a href="historias/lipigas.html" class="footer-link">LIPIGAS — Industria gasífera</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Acceso rápido</h4>
+        <div class="footer-links">
+          <a href="https://app.clickie.io/" class="footer-link" target="_blank">Ingresar a la plataforma</a>
+          <a href="https://blog.clickie.io/" class="footer-link" target="_blank">Blog</a>
+          <a href="https://clickie.io/como-monitorear-energia-chile" class="footer-link" target="_blank">Monitoreo IoT</a>
+          <a href="https://clickie.io/monitoreo_de_energia" class="footer-link" target="_blank">Monitoreo de Energía</a>
+          <a href="mailto:hola@clickie.io" class="footer-link">hola@clickie.io</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2017–2026 Desarrollos y Proyectos Clickie SpA. Todos los derechos reservados.</span>
+      <div class="footer-legal">
+        <a href="https://es.clickie.io/tos" target="_blank" rel="noopener">Términos y condiciones</a>
+        <a href="https://es.clickie.io/privacy" target="_blank" rel="noopener">Política de privacidad</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════
+     LEAD CAPTURE MODAL
+════════════════════════════════════════ -->
+<div class="modal-overlay" id="leadModal">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+
+    <div id="modalFormSection">
+      <h3 class="modal-title">Descarga tu recurso gratuito</h3>
+      <p class="modal-subtitle" id="modalResourceName">Completa tus datos para acceder al recurso.</p>
+
+      <form class="modal-form" id="leadForm" novalidate>
+        <input type="hidden" id="leadResourceId" value="" />
+        <div class="form-group">
+          <label class="form-label" for="leadName">Nombre completo *</label>
+          <input class="form-input" id="leadName" name="name" type="text" placeholder="María González" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="leadEmail">Email corporativo *</label>
+          <input class="form-input" id="leadEmail" name="email" type="email" placeholder="maria@empresa.cl" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="leadCompany">Empresa *</label>
+          <input class="form-input" id="leadCompany" name="company" type="text" placeholder="Empresa S.A." required />
+        </div>
+        <button type="submit" class="btn btn-primary">Descargar ahora →</button>
+      </form>
+    </div>
+
+    <div class="modal-success" id="modalSuccess">
+      <span class="success-icon">🎉</span>
+      <p class="success-title">¡Listo! Tu descarga comenzará pronto.</p>
+      <p class="success-text">Revisa tu email para más recursos y novedades de Clickie.</p>
+    </div>
+  </div>
+</div>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>
+

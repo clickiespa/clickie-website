@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosotros — Clickie | Energía Consciente</title>
+  <meta name="description" content="Conoce el propósito, la misión y los valores que guían a Clickie. Simplificamos la forma en que las personas se relacionan con el uso de la energía." />
+  <link rel="icon" type="image/png" href="assets/favicon_navbar.png" sizes="256x256" />
+  <link rel="apple-touch-icon" href="assets/favicon_navbar.png" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    /* ── NOSOTROS PAGE STYLES ── */
+    .nosotros-intro {
+      text-align: center; max-width: 780px; margin: 0 auto 64px;
+    }
+    .nosotros-intro p {
+      font-size: 1.12rem; line-height: 1.8; color: var(--text-secondary);
+    }
+
+    /* ── PURPOSE & MISSION CARDS ── */
+    .purpose-mission-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+      margin-bottom: 80px;
+    }
+    .pm-card {
+      border-radius: 24px; padding: 48px 40px; position: relative;
+      overflow: hidden; min-height: 320px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .pm-card-label {
+      font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.15em; margin-bottom: 20px; display: block;
+    }
+    .pm-card-text {
+      font-size: 1.55rem; font-weight: 700; line-height: 1.45;
+    }
+    .pm-card-text .highlight-word {
+      padding: 2px 8px; border-radius: 4px;
+    }
+
+    .pm-card.purpose {
+      background: linear-gradient(135deg, #fdc400 0%, #f5a623 100%);
+    }
+    .pm-card.purpose .pm-card-label { color: rgba(32,33,127,0.6); }
+    .pm-card.purpose .pm-card-text { color: var(--secondary); }
+    .pm-card.purpose .highlight-word {
+      background: rgba(255,255,255,0.35); color: var(--secondary);
+    }
+    .pm-card.purpose::after {
+      content: ''; position: absolute; right: -30px; bottom: -30px;
+      width: 200px; height: 200px; border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .pm-card.mission {
+      background: var(--gray-50); border: 1.5px solid var(--gray-200);
+    }
+    .pm-card.mission .pm-card-label { color: var(--secondary); opacity: 0.5; }
+    .pm-card.mission .pm-card-text { color: var(--secondary); }
+    .pm-card.mission .highlight-word {
+      background: rgba(253,196,0,0.25); color: var(--secondary);
+    }
+    .pm-card.mission::after {
+      content: ''; position: absolute; right: -20px; top: -20px;
+      width: 150px; height: 150px; border-radius: 50%;
+      background: rgba(32,33,127,0.03);
+    }
+
+    /* ── VALUES SECTION ── */
+    .values-header {
+      text-align: center; margin-bottom: 48px;
+    }
+    .values-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+      margin-bottom: 48px;
+    }
+    .value-card {
+      background: white; border-radius: 20px; padding: 36px 32px;
+      border: 1.5px solid var(--gray-200);
+      transition: all 0.3s ease; position: relative; overflow: hidden;
+    }
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    .value-card-header {
+      border-radius: 14px; padding: 20px 24px;
+      margin-bottom: 24px;
+    }
+    .value-card:nth-child(1) .value-card-header {
+      background: linear-gradient(135deg, #fdc400, #f5b800);
+    }
+    .value-card:nth-child(2) .value-card-header {
+      background: linear-gradient(135deg, #8cb133, #749a1c);
+    }
+    .value-card:nth-child(3) .value-card-header {
+      background: linear-gradient(135deg, #b8b6e8, #9997d6);
+    }
+    .value-card-header h3 {
+      color: white; font-size: 1.3rem; font-weight: 700;
+      margin: 0; line-height: 1.3;
+    }
+    .value-card:nth-child(1) .value-card-header h3 { color: var(--secondary); }
+
+    .value-card-desc {
+      font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .value-card-list {
+      list-style: none; padding: 0; margin: 0;
+    }
+    .value-card-list li {
+      font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;
+      padding: 6px 0; padding-left: 20px; position: relative;
+    }
+    .value-card-list li::before {
+      content: '•'; position: absolute; left: 0; font-weight: 700;
+    }
+    .value-card:nth-child(1) .value-card-list li::before { color: #fdc400; }
+    .value-card:nth-child(2) .value-card-list li::before { color: #8cb133; }
+    .value-card:nth-child(3) .value-card-list li::before { color: #9997d6; }
+
+    @media (max-width: 768px) {
+      .purpose-mission-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+      .pm-card { padding: 36px 28px; min-height: auto; }
+      .pm-card-text { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+  <button class="mobile-menu-close" id="mobileClose" aria-label="Cerrar menú">✕</button>
+  <button class="mobile-servicios-toggle">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-servicios-sub">
+    <a href="servicios/ubm.html"><span class="mobile-sub-icon">📄</span> UBM — Gestión de Suministros</a>
+    <a href="servicios/ems.html"><span class="mobile-sub-icon">📊</span> EMS — Monitoreo y Optimización</a>
+    <a href="servicios/bms.html"><span class="mobile-sub-icon">🖥️</span> BMS — Control Inteligente</a>
+    <a href="servicios/remarcacion.html"><span class="mobile-sub-icon">⚡</span> Remarcación y Submetering</a>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);margin:8px 16px;"></div>
+    <span style="padding:4px 16px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);">Por Rubro</span>
+    <a href="servicios/gestion-retail.html"><span class="mobile-sub-icon">🏪</span> Retail</a>
+    <a href="servicios/eficiencia-energetica.html"><span class="mobile-sub-icon">🏭</span> Industria</a>
+  </div>
+  <a href="index.html#como-funciona" class="nav-link">Cómo funciona</a>
+  <button class="mobile-historias-toggle">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-historias-sub">
+    <a href="historias/oxxo.html"><span class="mobile-sub-icon">🏪</span> OXXO</a>
+    <a href="historias/starbucks.html"><span class="mobile-sub-icon">☕</span> Starbucks</a>
+    <a href="historias/copec.html"><span class="mobile-sub-icon">⛽</span> COPEC</a>
+    <a href="historias/lipigas.html"><span class="mobile-sub-icon">🔥</span> LIPIGAS</a>
+    <a href="historias/tattersall.html"><span class="mobile-sub-icon">🏢</span> Tattersall</a>
+    <a href="historias/renova.html"><span class="mobile-sub-icon">🌿</span> RENOVA</a>
+    <a href="historias/preunic.html"><span class="mobile-sub-icon">🛍️</span> Preunic</a>
+    <a href="historias/la-araucana-co2.html"><span class="mobile-sub-icon">🌱</span> La Araucana</a>
+  </div>
+  <button class="mobile-recursos-toggle">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-recursos-sub">
+    <a href="recursos/guias.html"><span class="mobile-sub-icon">📘</span> Guías de Ahorro Energético</a>
+    <a href="recursos/casos-de-exito.html"><span class="mobile-sub-icon">📊</span> Casos de Éxito</a>
+    <a href="recursos/calculadora.html"><span class="mobile-sub-icon">🧮</span> Calculadora de Ahorro</a>
+    <a href="recursos/encuesta-madurez.html"><span class="mobile-sub-icon">📋</span> Encuesta de Madurez Energética</a>
+    <a href="recursos/blog.html"><span class="mobile-sub-icon">📝</span> Blog</a>
+  </div>
+  <button class="mobile-nosotros-toggle">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-nosotros-sub">
+    <a href="nosotros.html"><span class="mobile-sub-icon">💛</span> Nuestros Valores</a>
+    <a href="nosotros/prensa.html"><span class="mobile-sub-icon">📰</span> Clickie en la Prensa</a>
+  </div>
+  <a href="https://app.clickie.io/" class="btn btn-primary" target="_blank" rel="noopener">Iniciar sesión</a>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="container">
+    <div class="navbar-inner">
+
+      <a href="index.html" class="navbar-logo" aria-label="Clickie inicio">
+        <img class="logo-badge" src="assets/favicon_navbar.png" alt="Clickie Logo" width="38" height="38" style="border-radius:10px; vertical-align:bottom;" />
+        Clickie
+      </a>
+
+      <div class="navbar-nav">
+        <div class="nav-dropdown" id="navDropdownServicios">
+          <a href="index.html#servicios" class="nav-link nav-link-dropdown">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownServicios">
+            <div class="mega-dropdown-inner" style="display:flex;gap:0;">
+              <div style="flex:3;">
+                <div class="mega-dropdown-header">
+                  <span class="mega-dropdown-title">Por Solución ›</span>
+                  <p class="mega-dropdown-subtitle">Nuestras plataformas de gestión energética.</p>
+                </div>
+                <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
+                  <a href="servicios/ubm.html" class="mega-item">
+                    <div class="mega-item-icon yellow">📄</div>
+                    <div class="mega-item-content"><strong>UBM</strong><span>Gestión de Suministros Eléctricos.</span></div>
+                  </a>
+                  <a href="servicios/ems.html" class="mega-item">
+                    <div class="mega-item-icon green">📊</div>
+                    <div class="mega-item-content"><strong>EMS</strong><span>Monitoreo, Gestión y Optimización Energética en Tiempo Real.</span></div>
+                  </a>
+                  <a href="servicios/bms.html" class="mega-item">
+                    <div class="mega-item-icon violet">🖥️</div>
+                    <div class="mega-item-content"><strong>BMS</strong><span>Control Inteligente.</span></div>
+                  </a>
+                  <a href="servicios/remarcacion.html" class="mega-item">
+                    <div class="mega-item-icon yellow">⚡</div>
+                    <div class="mega-item-content"><strong>Remarcación y Submetering</strong><span>Distribución interna justa de energía.</span></div>
+                  </a>
+                </div>
+              </div>
+              <div style="width:1px;background:var(--gray-200);margin:0 24px;"></div>
+              <div style="flex:1.5;">
+                <div class="mega-dropdown-header">
+                  <span class="mega-dropdown-title">Por Rubro ›</span>
+                  <p class="mega-dropdown-subtitle">Soluciones por industria.</p>
+                </div>
+                <div class="mega-dropdown-grid" style="grid-template-columns:1fr;">
+                  <a href="servicios/gestion-retail.html" class="mega-item">
+                    <div class="mega-item-icon green">🏪</div>
+                    <div class="mega-item-content"><strong>Retail</strong><span>Eficiencia energética en tiendas y cadenas comerciales.</span></div>
+                  </a>
+                  <a href="servicios/eficiencia-energetica.html" class="mega-item">
+                    <div class="mega-item-icon violet">🏭</div>
+                    <div class="mega-item-content"><strong>Industria</strong><span>Optimización energética en plantas e instalaciones industriales.</span></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="index.html#como-funciona" class="nav-link">Cómo funciona</a>
+        <div class="nav-dropdown" id="navDropdownHistorias">
+          <a href="index.html#historias" class="nav-link nav-link-dropdown">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownHistorias">
+            <div class="mega-dropdown-inner">
+              <div class="mega-dropdown-header">
+                <span class="mega-dropdown-title">Historias de Éxito ›</span>
+                <p class="mega-dropdown-subtitle">Conoce cómo empresas líderes optimizaron su energía con Clickie.</p>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(4,1fr);">
+                <a href="historias/oxxo.html" class="mega-item">
+                  <div class="mega-item-icon yellow">🏪</div>
+                  <div class="mega-item-content"><strong>OXXO</strong><span>20% de ahorro en 230+ tiendas.</span></div>
+                </a>
+                <a href="historias/starbucks.html" class="mega-item">
+                  <div class="mega-item-icon green">☕</div>
+                  <div class="mega-item-content"><strong>Starbucks</strong><span>Eficiencia energética en cafeterías.</span></div>
+                </a>
+                <a href="historias/copec.html" class="mega-item">
+                  <div class="mega-item-icon violet">⛽</div>
+                  <div class="mega-item-content"><strong>COPEC</strong><span>Monitoreo de red renovable completa.</span></div>
+                </a>
+                <a href="historias/lipigas.html" class="mega-item">
+                  <div class="mega-item-icon yellow">🔥</div>
+                  <div class="mega-item-content"><strong>LIPIGAS</strong><span>8% ahorro en plantas productivas.</span></div>
+                </a>
+                <a href="historias/tattersall.html" class="mega-item">
+                  <div class="mega-item-icon violet">🏢</div>
+                  <div class="mega-item-content"><strong>Tattersall</strong><span>Gestión energética industrial.</span></div>
+                </a>
+                <a href="historias/renova.html" class="mega-item">
+                  <div class="mega-item-icon green">🌿</div>
+                  <div class="mega-item-content"><strong>RENOVA</strong><span>+20% rendimiento en activos renovables.</span></div>
+                </a>
+                <a href="historias/preunic.html" class="mega-item">
+                  <div class="mega-item-icon green">🛍️</div>
+                  <div class="mega-item-content"><strong>Preunic</strong><span>20% de reducción en costos energéticos.</span></div>
+                </a>
+                <a href="historias/la-araucana-co2.html" class="mega-item">
+                  <div class="mega-item-icon yellow">🌱</div>
+                  <div class="mega-item-content"><strong>La Araucana</strong><span>Reducción de huella de carbono.</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown" id="navDropdownRecursos">
+          <a href="index.html#recursos" class="nav-link nav-link-dropdown">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownRecursos">
+            <div class="mega-dropdown-inner">
+              <div class="mega-dropdown-header">
+                <span class="mega-dropdown-title">Recursos Clickie ›</span>
+                <p class="mega-dropdown-subtitle">Guías, casos de éxito y herramientas prácticas para optimizar tu gestión energética.</p>
+              </div>
+              <div class="mega-dropdown-grid">
+                <a href="recursos/guias.html" class="mega-item">
+                  <div class="mega-item-icon yellow">📘</div>
+                  <div class="mega-item-content"><strong>Guías de Ahorro Energético</strong><span>Descarga guías prácticas de eficiencia energética para tu rubro.</span></div>
+                </a>
+                <a href="recursos/casos-de-exito.html" class="mega-item">
+                  <div class="mega-item-icon violet">📊</div>
+                  <div class="mega-item-content"><strong>Casos de Éxito</strong><span>OXXO, Starbucks, COPEC, LIPIGAS y más empresas que optimizaron su energía.</span></div>
+                </a>
+                <a href="recursos/calculadora.html" class="mega-item">
+                  <div class="mega-item-icon green">🧮</div>
+                  <div class="mega-item-content"><strong>Calculadora de Ahorro</strong><span>Ingresa tus datos de consumo y descubre cuánto podrías ahorrar.</span></div>
+                </a>
+                <a href="recursos/blog.html" class="mega-item">
+                  <div class="mega-item-icon yellow">📝</div>
+                  <div class="mega-item-content"><strong>Blog</strong><span>Artículos sobre eficiencia energética, casos de éxito y tendencias.</span></div>
+                </a>
+                <a href="recursos/encuesta-madurez.html" class="mega-item">
+                  <div class="mega-item-icon green">📋</div>
+                  <div class="mega-item-content"><strong>Encuesta de Madurez Energética</strong><span>Descubre tu nivel de madurez y recibe un plan de acción personalizado.</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown" id="navDropdownNosotros">
+          <a href="nosotros.html" class="nav-link nav-link-dropdown">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownNosotros">
+            <div class="mega-dropdown-inner">
+              <div class="mega-dropdown-header">
+                <span class="mega-dropdown-title">Nosotros ›</span>
+                <p class="mega-dropdown-subtitle">Conoce quiénes somos y qué nos mueve.</p>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
+                <a href="nosotros.html" class="mega-item">
+                  <div class="mega-item-icon yellow">💛</div>
+                  <div class="mega-item-content"><strong>Nuestros Valores</strong><span>Propósito, misión y los valores que guían cada decisión en Clickie.</span></div>
+                </a>
+                <a href="nosotros/prensa.html" class="mega-item">
+                  <div class="mega-item-icon violet">📰</div>
+                  <div class="mega-item-content"><strong>Clickie en la Prensa</strong><span>Noticias, artículos y apariciones de Clickie en medios de comunicación.</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-actions">
+        <a href="https://app.clickie.io/" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="cotiza.html" class="btn btn-primary btn-sm">Cotiza aquí</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú móvil">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="subpage-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Inicio</a> / Nosotros</div>
+    <span class="guia-hero-tag">Nuestro propósito y valores</span>
+    <h1>Tecnología al servicio de las <span class="accent">personas</span></h1>
+    <p class="hero-desc">En Clickie creemos que la tecnología solo tiene sentido cuando está al servicio de las personas. Por eso construimos una empresa con valores que guían cada decisión, cada conversación y cada solución que entregamos.</p>
+  </div>
+</section>
+
+<!-- PURPOSE & MISSION -->
+<section class="section" style="background:var(--white);">
+  <div class="container">
+
+    <div class="purpose-mission-grid">
+
+      <!-- PROPÓSITO -->
+      <div class="pm-card purpose fade-in">
+        <span class="pm-card-label">Propósito</span>
+        <p class="pm-card-text">
+          <span class="highlight-word">Simplificamos</span> la forma en que las personas se relacionan con el uso de la energía, disminuyendo el desperdicio y <span class="highlight-word">promoviendo el uso consciente.</span>
+        </p>
+      </div>
+
+      <!-- MISIÓN -->
+      <div class="pm-card mission fade-in" style="transition-delay:0.1s">
+        <span class="pm-card-label">Misión</span>
+        <p class="pm-card-text">
+          Creamos <span class="highlight-word">valor recurrente</span> a nuestros clientes, transformando <span class="highlight-word">datos en impacto.</span>
+        </p>
+      </div>
+
+    </div>
+
+    <!-- VALUES -->
+    <div class="values-header">
+      <span class="section-label">Lo que nos mueve</span>
+      <h2 class="section-title">Valores <span class="highlight">Clickie</span></h2>
+    </div>
+
+    <div class="values-grid">
+
+      <!-- VALUE 1 -->
+      <div class="value-card fade-in">
+        <div class="value-card-header">
+          <h3>Somos<br>simples</h3>
+        </div>
+        <p class="value-card-desc">No nos enamoramos de nuestras soluciones, nos enamoramos del problema. Transformamos lo complejo en simple, con flexibilidad pero siempre con un propósito claro.</p>
+        <ul class="value-card-list">
+          <li>Flexibles, pero con un propósito claro.</li>
+          <li>Nos importa el ¿Para qué?: Nos enamoramos del problema, no de nuestras soluciones.</li>
+          <li>Transformamos lo complejo en simple.</li>
+        </ul>
+      </div>
+
+      <!-- VALUE 2 -->
+      <div class="value-card fade-in" style="transition-delay:0.1s">
+        <div class="value-card-header">
+          <h3>Comprometidos<br>con las personas</h3>
+        </div>
+        <p class="value-card-desc">Nos tomamos el tiempo de entender el dolor real de quienes trabajan con nosotros. Construimos relaciones de largo plazo, creamos valor desde la diversidad y creemos que las personas deben seguir un propósito, no solo instrucciones.</p>
+        <ul class="value-card-list">
+          <li>Nos adaptamos, buscamos entender el dolor y las preocupaciones de las personas.</li>
+          <li>Construimos relaciones a largo plazo y creamos desde el cliente.</li>
+          <li>Creamos valor a partir de la diversidad.</li>
+          <li>Queremos que nuestros colaboradores sigan un propósito, no solo instrucciones.</li>
+        </ul>
+      </div>
+
+      <!-- VALUE 3 -->
+      <div class="value-card fade-in" style="transition-delay:0.2s">
+        <div class="value-card-header">
+          <h3>Nos gusta<br>aprender y crear</h3>
+        </div>
+        <p class="value-card-desc">La curiosidad es parte de nuestro ADN. Fomentamos la proactividad, premiamos a quienes hacen que las cosas sucedan y nos adaptamos constantemente a los cambios del mercado y la tecnología.</p>
+        <ul class="value-card-list">
+          <li>Fomentamos la curiosidad, proactividad y adaptabilidad.</li>
+          <li>Premiamos a quienes hacen que las cosas sucedan.</li>
+          <li>Nos adaptamos a los cambios tecnológicos y del mercado.</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container"><div class="cta-inner">
+    <h2>¿Quieres ser parte del cambio<br>hacia la energía consciente?</h2>
+    <p>Conversemos sobre cómo Clickie puede ayudar a tu empresa a optimizar su consumo energético.</p>
+    <div class="cta-actions">
+      <a href="cotiza.html" class="btn btn-primary btn-lg">Cotiza aquí →</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="container"><div class="footer-bottom">
+  <span class="footer-copy">© 2017–2026 Desarrollos y Proyectos Clickie SpA. Todos los derechos reservados.</span>
+  <div class="footer-legal"><a href="https://es.clickie.io/tos" target="_blank">Términos y condiciones</a><a href="https://es.clickie.io/privacy" target="_blank">Política de privacidad</a></div>
+</div></div></footer>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>

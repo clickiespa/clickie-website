@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encuesta de Madurez Energética — Clickie</title>
+  <meta name="description" content="Descubre en qué nivel de madurez energética se encuentra tu empresa y recibe un plan de acción personalizado para optimizar tu gestión de energía." />
+  <link rel="icon" type="image/png" href="../assets/favicon_navbar.png" sizes="256x256" />
+  <link rel="stylesheet" href="../styles/main.css" />
+  <style>
+    /* ── SURVEY STYLES ── */
+    .survey-container { max-width: 800px; margin: 0 auto; }
+
+    .survey-progress {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 48px; position: relative;
+    }
+    .survey-progress-step {
+      display: flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--gray-100); color: var(--text-secondary);
+      font-weight: 700; font-size: 0.95rem;
+      transition: all 0.4s ease; flex-shrink: 0;
+    }
+    .survey-progress-step.active {
+      background: var(--primary); color: var(--dark);
+      box-shadow: 0 0 0 6px rgba(253,196,0,0.18);
+    }
+    .survey-progress-step.completed {
+      background: var(--secondary); color: white;
+    }
+    .survey-progress-line {
+      flex: 1; height: 3px; background: var(--gray-200);
+      border-radius: 4px; position: relative; overflow: hidden;
+    }
+    .survey-progress-line .fill {
+      position: absolute; left: 0; top: 0; height: 100%;
+      background: var(--secondary); border-radius: 4px;
+      transition: width 0.5s ease; width: 0;
+    }
+
+    .survey-question-card {
+      background: white; border-radius: 20px;
+      padding: 40px; box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      border: 1px solid var(--gray-100);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .survey-question-card.hidden { display: none; }
+
+    .survey-question-label {
+      font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--secondary); opacity: 0.6;
+      margin-bottom: 8px;
+    }
+    .survey-question-title {
+      font-size: 1.35rem; font-weight: 700; color: var(--text-primary);
+      margin-bottom: 8px; line-height: 1.4;
+    }
+    .survey-question-desc {
+      color: var(--text-secondary); font-size: 0.92rem;
+      margin-bottom: 28px; line-height: 1.6;
+    }
+
+    .survey-option {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 16px 20px; border-radius: 14px;
+      border: 2px solid var(--gray-100); margin-bottom: 12px;
+      cursor: pointer; transition: all 0.25s ease;
+      background: white;
+    }
+    .survey-option:hover {
+      border-color: var(--gray-300); background: var(--gray-50);
+    }
+    .survey-option.selected {
+      border-color: var(--secondary); background: rgba(32,33,127,0.03);
+    }
+    .survey-option-radio {
+      width: 22px; height: 22px; border-radius: 50%;
+      border: 2px solid var(--gray-300); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.25s ease; margin-top: 2px;
+    }
+    .survey-option.selected .survey-option-radio {
+      border-color: var(--secondary); background: var(--secondary);
+    }
+    .survey-option.selected .survey-option-radio::after {
+      content: '✓'; color: white; font-size: 12px; font-weight: 700;
+    }
+    .survey-option-text {
+      font-size: 0.92rem; color: var(--text-primary);
+      line-height: 1.55;
+    }
+
+    .survey-actions {
+      display: flex; justify-content: space-between;
+      align-items: center; margin-top: 32px;
+    }
+    .survey-btn-back {
+      background: none; border: none; color: var(--text-secondary);
+      font-size: 0.9rem; cursor: pointer; padding: 10px 16px;
+      border-radius: 10px; transition: all 0.2s;
+    }
+    .survey-btn-back:hover { background: var(--gray-50); color: var(--text-primary); }
+    .survey-btn-back:disabled { opacity: 0; pointer-events: none; }
+    .survey-btn-next {
+      background: var(--secondary); color: white; border: none;
+      padding: 14px 32px; border-radius: 12px; font-size: 0.95rem;
+      font-weight: 600; cursor: pointer; transition: all 0.25s;
+    }
+    .survey-btn-next:hover { background: #181966; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(32,33,127,0.3); }
+    .survey-btn-next:disabled { opacity: 0.4; pointer-events: none; transform: none; box-shadow: none; }
+
+    /* ── RESULTS ── */
+    .survey-results { display: none; }
+    .survey-results.show { display: block; animation: fadeInUp 0.6s ease; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .result-level-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 10px 24px; border-radius: 50px;
+      font-weight: 700; font-size: 1.1rem; margin-bottom: 20px;
+    }
+    .result-level-badge .level-dot {
+      width: 14px; height: 14px; border-radius: 50%;
+    }
+
+    .result-card {
+      background: white; border-radius: 20px; padding: 40px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      border: 1px solid var(--gray-100); margin-bottom: 24px;
+    }
+    .result-section { margin-bottom: 24px; }
+    .result-section:last-child { margin-bottom: 0; }
+    .result-section-icon {
+      font-size: 1.3rem; margin-right: 8px;
+    }
+    .result-section h4 {
+      font-size: 1.05rem; font-weight: 700; color: var(--text-primary);
+      margin-bottom: 8px; display: flex; align-items: center;
+    }
+    .result-section p {
+      color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7;
+    }
+
+    .result-savings-highlight {
+      display: flex; align-items: center; gap: 16px;
+      background: linear-gradient(135deg, rgba(253,196,0,0.08), rgba(253,196,0,0.02));
+      border: 1px solid rgba(253,196,0,0.2);
+      border-radius: 14px; padding: 20px 24px; margin: 20px 0;
+    }
+    .result-savings-value {
+      font-size: 2rem; font-weight: 800; color: var(--secondary);
+      line-height: 1;
+    }
+    .result-savings-label {
+      font-size: 0.88rem; color: var(--text-secondary);
+    }
+
+    .result-gauge {
+      display: flex; gap: 4px; margin: 24px 0 8px;
+    }
+    .result-gauge-bar {
+      flex: 1; height: 8px; border-radius: 4px; background: var(--gray-100);
+      transition: background 0.5s ease;
+    }
+
+    .survey-score-display {
+      text-align: center; margin-bottom: 32px;
+    }
+    .survey-score-number {
+      font-size: 3.5rem; font-weight: 800; color: var(--secondary);
+      line-height: 1;
+    }
+    .survey-score-total {
+      font-size: 1.2rem; color: var(--text-secondary); font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+  <button class="mobile-menu-close" id="mobileClose" aria-label="Cerrar menú">✕</button>
+  <button class="mobile-servicios-toggle">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-servicios-sub">
+    <a href="../servicios/ubm.html"><span class="mobile-sub-icon">📄</span> UBM — Gestión de Suministros</a>
+    <a href="../servicios/ems.html"><span class="mobile-sub-icon">📊</span> EMS — Monitoreo y Optimización</a>
+    <a href="../servicios/bms.html"><span class="mobile-sub-icon">🖥️</span> BMS — Control Inteligente</a>
+    <a href="../servicios/remarcacion.html"><span class="mobile-sub-icon">⚡</span> Remarcación y Submetering</a>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);margin:8px 16px;"></div>
+    <span style="padding:4px 16px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);">Por Rubro</span>
+    <a href="../servicios/gestion-retail.html"><span class="mobile-sub-icon">🏪</span> Retail</a>
+    <a href="../servicios/eficiencia-energetica.html"><span class="mobile-sub-icon">🏭</span> Industria</a>
+  </div>
+  <a href="../index.html#como-funciona" class="nav-link">Cómo funciona</a>
+  <button class="mobile-historias-toggle">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-historias-sub">
+    <a href="../historias/oxxo.html"><span class="mobile-sub-icon">🏪</span> OXXO</a>
+    <a href="../historias/starbucks.html"><span class="mobile-sub-icon">☕</span> Starbucks</a>
+    <a href="../historias/copec.html"><span class="mobile-sub-icon">⛽</span> COPEC</a>
+    <a href="../historias/lipigas.html"><span class="mobile-sub-icon">🔥</span> LIPIGAS</a>
+    <a href="../historias/tattersall.html"><span class="mobile-sub-icon">🏢</span> Tattersall</a>
+    <a href="../historias/renova.html"><span class="mobile-sub-icon">🌿</span> RENOVA</a>
+    <a href="../historias/preunic.html"><span class="mobile-sub-icon">🛍️</span> Preunic</a>
+    <a href="../historias/la-araucana-co2.html"><span class="mobile-sub-icon">🌱</span> La Araucana</a>
+  </div>
+
+          <button class="mobile-recursos-toggle">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-recursos-sub">
+    <a href="../recursos/guias.html"><span class="mobile-sub-icon">📘</span> Guías de Ahorro Energético</a>
+    <a href="../recursos/casos-de-exito.html"><span class="mobile-sub-icon">📊</span> Casos de Éxito</a>
+    <a href="../recursos/calculadora.html"><span class="mobile-sub-icon">🧮</span> Calculadora de Ahorro</a>
+    <a href="../recursos/encuesta-madurez.html"><span class="mobile-sub-icon">📋</span> Encuesta de Madurez Energética</a>
+    <a href="../recursos/blog.html"><span class="mobile-sub-icon">📝</span> Blog</a>
+  </div>
+  <button class="mobile-nosotros-toggle">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-nosotros-sub">
+    <a href="../nosotros.html"><span class="mobile-sub-icon">💛</span> Nuestros Valores</a>
+    <a href="../nosotros/prensa.html"><span class="mobile-sub-icon">📰</span> Clickie en la Prensa</a>
+  </div>
+  <a href="https://app.clickie.io/" class="btn btn-primary" target="_blank" rel="noopener">Iniciar sesión</a>
+</div>
+
+<nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="container">
+    <div class="navbar-inner">
+
+      <a href="../index.html" class="navbar-logo" aria-label="Clickie inicio">
+        <img class="logo-badge" src="../assets/favicon_navbar.png" alt="Clickie Logo" width="38" height="38" style="border-radius:10px; vertical-align:bottom;" />
+        Clickie
+      </a>
+
+      <div class="navbar-nav">
+        <div class="nav-dropdown" id="navDropdownServicios">
+          <a href="../index.html#servicios" class="nav-link nav-link-dropdown">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownServicios">
+            <div class="mega-dropdown-inner" style="display:flex;gap:0;">
+              <div style="flex:3;">
+                <div class="mega-dropdown-header">
+                  <span class="mega-dropdown-title">Por Solución ›</span>
+                  <p class="mega-dropdown-subtitle">Nuestras plataformas de gestión energética.</p>
+                </div>
+                <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
+                  <a href="../servicios/ubm.html" class="mega-item">
+                    <div class="mega-item-icon yellow">📄</div>
+                    <div class="mega-item-content"><strong>UBM</strong><span>Gestión de Suministros Eléctricos.</span></div>
+                  </a>
+                  <a href="../servicios/ems.html" class="mega-item">
+                    <div class="mega-item-icon green">📊</div>
+                    <div class="mega-item-content"><strong>EMS</strong><span>Monitoreo, Gestión y Optimización Energética en Tiempo Real.</span></div>
+                  </a>
+                  <a href="../servicios/bms.html" class="mega-item">
+                    <div class="mega-item-icon violet">🖥️</div>
+                    <div class="mega-item-content"><strong>BMS</strong><span>Control Inteligente.</span></div>
+                  </a>
+                  <a href="../servicios/remarcacion.html" class="mega-item">
+                    <div class="mega-item-icon yellow">⚡</div>
+                    <div class="mega-item-content"><strong>Remarcación y Submetering</strong><span>Distribución interna justa de energía.</span></div>
+                  </a>
+                </div>
+              </div>
+              <div style="width:1px;background:var(--gray-200);margin:0 24px;"></div>
+              <div style="flex:1.5;">
+                <div class="mega-dropdown-header">
+                  <span class="mega-dropdown-title">Por Rubro ›</span>
+                  <p class="mega-dropdown-subtitle">Soluciones por industria.</p>
+                </div>
+                <div class="mega-dropdown-grid" style="grid-template-columns:1fr;">
+                  <a href="../servicios/gestion-retail.html" class="mega-item">
+                    <div class="mega-item-icon green">🏪</div>
+                    <div class="mega-item-content"><strong>Retail</strong><span>Eficiencia energética en tiendas y cadenas comerciales.</span></div>
+                  </a>
+                  <a href="../servicios/eficiencia-energetica.html" class="mega-item">
+                    <div class="mega-item-icon violet">🏭</div>
+                    <div class="mega-item-content"><strong>Industria</strong><span>Optimización energética en plantas e instalaciones industriales.</span></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="../index.html#como-funciona" class="nav-link">Cómo funciona</a>
+        <div class="nav-dropdown" id="navDropdownHistorias">
+          <a href="../index.html#historias" class="nav-link nav-link-dropdown">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownHistorias">
+            <div class="mega-dropdown-inner">
+              <div class="mega-dropdown-header">
+                <span class="mega-dropdown-title">Historias de Éxito ›</span>
+                <p class="mega-dropdown-subtitle">Conoce cómo empresas líderes optimizaron su energía con Clickie.</p>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(4,1fr);">
+                <a href="../historias/oxxo.html" class="mega-item">
+                  <div class="mega-item-icon yellow">🏪</div>
+                  <div class="mega-item-content"><strong>OXXO</strong><span>20% de ahorro en 230+ tiendas.</span></div>
+                </a>
+                <a href="../historias/starbucks.html" class="mega-item">
+                  <div class="mega-item-icon green">☕</div>
+                  <div class="mega-item-content"><strong>Starbucks</strong><span>Eficiencia energética en cafeterías.</span></div>
+                </a>
+                <a href="../historias/copec.html" class="mega-item">
+                  <div class="mega-item-icon violet">⛽</div>
+                  <div class="mega-item-content"><strong>COPEC</strong><span>Monitoreo de red renovable completa.</span></div>
+                </a>
+                <a href="../historias/lipigas.html" class="mega-item">
+                  <div class="mega-item-icon yellow">🔥</div>
+                  <div class="mega-item-content"><strong>LIPIGAS</strong><span>8% ahorro en plantas productivas.</span></div>
+                </a>
+                <a href="../historias/tattersall.html" class="mega-item">
+                  <div class="mega-item-icon violet">🏢</div>
+                  <div class="mega-item-content"><strong>Tattersall</strong><span>Gestión energética industrial.</span></div>
+                </a>
+                <a href="../historias/renova.html" class="mega-item">
+                  <div class="mega-item-icon green">🌿</div>
+                  <div class="mega-item-content"><strong>RENOVA</strong><span>+20% rendimiento en activos renovables.</span></div>
+                </a>
+                <a href="../historias/preunic.html" class="mega-item">
+                  <div class="mega-item-icon green">🛍️</div>
+                  <div class="mega-item-content"><strong>Preunic</strong><span>20% de reducción en costos energéticos.</span></div>
+                </a>
+                <a href="../historias/la-araucana-co2.html" class="mega-item">
+                  <div class="mega-item-icon yellow">🌱</div>
+                  <div class="mega-item-content"><strong>La Araucana</strong><span>Reducción de huella de carbono.</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+                <div class="nav-dropdown" id="navDropdownRecursos">
+          <a href="../index.html#recursos" class="nav-link nav-link-dropdown">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownRecursos">
+            <div class="mega-dropdown-inner">
+              <div class="mega-dropdown-header">
+                <span class="mega-dropdown-title">Recursos Clickie ›</span>
+                <p class="mega-dropdown-subtitle">Guías, casos de éxito y herramientas prácticas para optimizar tu gestión energética.</p>
+              </div>
+              <div class="mega-dropdown-grid">
+                <a href="../recursos/guias.html" class="mega-item">
+                  <div class="mega-item-icon yellow">📘</div>
+                  <div class="mega-item-content"><strong>Guías de Ahorro Energético</strong><span>Descarga guías prácticas de eficiencia energética para tu rubro.</span></div>
+                </a>
+                <a href="../recursos/casos-de-exito.html" class="mega-item">
+                  <div class="mega-item-icon violet">📊</div>
+                  <div class="mega-item-content"><strong>Casos de Éxito</strong><span>OXXO, Starbucks, COPEC, LIPIGAS y más empresas que optimizaron su energía.</span></div>
+                </a>
+                <a href="../recursos/calculadora.html" class="mega-item">
+                  <div class="mega-item-icon green">🧮</div>
+                  <div class="mega-item-content"><strong>Calculadora de Ahorro</strong><span>Ingresa tus datos de consumo y descubre cuánto podrías ahorrar.</span></div>
+                </a>
+                <a href="../recursos/blog.html" class="mega-item">
+                  <div class="mega-item-icon yellow">📝</div>
+                  <div class="mega-item-content"><strong>Blog</strong><span>Artículos sobre eficiencia energética, casos de éxito y tendencias.</span></div>
+                </a>
+                <a href="../recursos/encuesta-madurez.html" class="mega-item">
+                  <div class="mega-item-icon green">📋</div>
+                  <div class="mega-item-content"><strong>Encuesta de Madurez Energética</strong><span>Descubre tu nivel de madurez y recibe un plan de acción personalizado.</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown" id="navDropdownNosotros">
+          <a href="../nosotros.html" class="nav-link nav-link-dropdown">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownNosotros">
+            <div class="mega-dropdown-inner">
+              <div class="mega-dropdown-header">
+                <span class="mega-dropdown-title">Nosotros ›</span>
+                <p class="mega-dropdown-subtitle">Conoce quiénes somos y qué nos mueve.</p>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
+                <a href="../nosotros.html" class="mega-item">
+                  <div class="mega-item-icon yellow">💛</div>
+                  <div class="mega-item-content"><strong>Nuestros Valores</strong><span>Propósito, misión y los valores que guían cada decisión en Clickie.</span></div>
+                </a>
+                <a href="../nosotros/prensa.html" class="mega-item">
+                  <div class="mega-item-icon violet">📰</div>
+                  <div class="mega-item-content"><strong>Clickie en la Prensa</strong><span>Noticias, artículos y apariciones de Clickie en medios de comunicación.</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-actions">
+        <a href="https://app.clickie.io/" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="../cotiza.html" class="btn btn-primary btn-sm">Cotiza aquí</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú móvil">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="subpage-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="../index.html#recursos">Recursos</a> / Encuesta de Madurez Energética</div>
+    <span class="guia-hero-tag">Evaluación Gratuita</span>
+    <h1>Descubre tu nivel de <span class="accent">Madurez Energética</span></h1>
+    <p class="hero-desc">Responde 3 preguntas rápidas y obtén un diagnóstico personalizado con tu potencial de ahorro y un plan de acción para avanzar al siguiente nivel.</p>
+  </div>
+</section>
+
+<!-- SURVEY -->
+<section class="section" style="background:var(--white)">
+  <div class="container">
+    <div class="survey-container">
+
+      <!-- Progress bar -->
+      <div class="survey-progress">
+        <div class="survey-progress-step active" id="progStep1">1</div>
+        <div class="survey-progress-line"><div class="fill" id="progLine1"></div></div>
+        <div class="survey-progress-step" id="progStep2">2</div>
+        <div class="survey-progress-line"><div class="fill" id="progLine2"></div></div>
+        <div class="survey-progress-step" id="progStep3">3</div>
+      </div>
+
+      <!-- Question 1 -->
+      <div class="survey-question-card" id="question1">
+        <div class="survey-question-label">Pregunta 1 de 3</div>
+        <h3 class="survey-question-title">Datos y Visibilidad</h3>
+        <p class="survey-question-desc">¿Qué tanta información tienen sobre su consumo energético?</p>
+
+        <div class="survey-option" data-q="1" data-v="1" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">No tenemos datos. Asumimos la cuenta de energía como un "impuesto más" e inevitable.</div>
+        </div>
+        <div class="survey-option" data-q="1" data-v="2" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">Tenemos niveles mínimos de información. Generalmente reaccionamos solo cuando hay un problema o la cuenta llega muy alta.</div>
+        </div>
+        <div class="survey-option" data-q="1" data-v="3" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">Tenemos visibilidad clara. Sabemos exactamente dónde, cómo y cuánta energía consumimos.</div>
+        </div>
+        <div class="survey-option" data-q="1" data-v="4" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">Monitoreamos constantemente nuestros datos y proyectamos nuestro consumo a medio y largo plazo.</div>
+        </div>
+        <div class="survey-option" data-q="1" data-v="5" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">Realizamos benchmarking (nos comparamos continuamente con la industria) y nuestros estándares son los mejores del sector.</div>
+        </div>
+
+        <div class="survey-actions">
+          <button class="survey-btn-back" disabled>← Atrás</button>
+          <button class="survey-btn-next" id="btnNext1" disabled onclick="goToQuestion(2)">Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="survey-question-card hidden" id="question2">
+        <div class="survey-question-label">Pregunta 2 de 3</div>
+        <h3 class="survey-question-title">Estrategia y Responsabilidad</h3>
+        <p class="survey-question-desc">¿Cómo se gestiona el tema energético a nivel corporativo?</p>
+
+        <div class="survey-option" data-q="2" data-v="1" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">No existe una aproximación formal ni se gestiona el gasto a nivel directivo.</div>
+        </div>
+        <div class="survey-option" data-q="2" data-v="2" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">Un área específica de la empresa es la que "tiene el dolor" de los costos y es la única que se preocupa por el tema.</div>
+        </div>
+        <div class="survey-option" data-q="2" data-v="3" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">Contamos con una Política Energética y el gasto de energía ya es parte de las metas formales de la empresa.</div>
+        </div>
+        <div class="survey-option" data-q="2" data-v="4" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">Contamos con un sistema robusto de metas corporativas enfocadas en la mejora continua.</div>
+        </div>
+        <div class="survey-option" data-q="2" data-v="5" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">Ser eficientes y alcanzar la meta de ser "Carbono Neutral" es un pilar estratégico de nuestra organización.</div>
+        </div>
+
+        <div class="survey-actions">
+          <button class="survey-btn-back" onclick="goToQuestion(1)">← Atrás</button>
+          <button class="survey-btn-next" id="btnNext2" disabled onclick="goToQuestion(3)">Siguiente →</button>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="survey-question-card hidden" id="question3">
+        <div class="survey-question-label">Pregunta 3 de 3</div>
+        <h3 class="survey-question-title">Acciones y Operación</h3>
+        <p class="survey-question-desc">¿Qué medidas técnicas aplican en el día a día?</p>
+
+        <div class="survey-option" data-q="3" data-v="1" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">Ninguna, simplemente consumimos la energía necesaria para operar.</div>
+        </div>
+        <div class="survey-option" data-q="3" data-v="2" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">Solo tomamos las "primeras acciones" básicas y correctivas (somos reactivos).</div>
+        </div>
+        <div class="survey-option" data-q="3" data-v="3" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">Llevamos una gestión formal y estable de nuestros equipos e instalaciones para no salirnos de presupuesto.</div>
+        </div>
+        <div class="survey-option" data-q="3" data-v="4" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">Aplicamos mantenimiento predictivo en nuestros equipos y estamos incorporando nuevas fuentes de energía.</div>
+        </div>
+        <div class="survey-option" data-q="3" data-v="5" onclick="selectOption(this)">
+          <div class="survey-option-radio"></div>
+          <div class="survey-option-text">Incorporamos a nuestros proveedores de servicios y equipos en nuestra gestión, e incluso ayudamos a nuestros clientes a ser más eficientes.</div>
+        </div>
+
+        <div class="survey-actions">
+          <button class="survey-btn-back" onclick="goToQuestion(2)">← Atrás</button>
+          <button class="survey-btn-next" id="btnNext3" disabled onclick="showResults()">Ver mi resultado →</button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="survey-results" id="surveyResults">
+        <div class="survey-score-display">
+          <div class="survey-score-number" id="totalScore">0</div>
+          <div class="survey-score-total">de 15 puntos</div>
+        </div>
+
+        <div id="resultLevelBadge" class="result-level-badge" style="display:inline-flex;"></div>
+
+        <!-- Gauge bar -->
+        <div class="result-gauge" id="resultGauge">
+          <div class="result-gauge-bar" id="g1"></div>
+          <div class="result-gauge-bar" id="g2"></div>
+          <div class="result-gauge-bar" id="g3"></div>
+          <div class="result-gauge-bar" id="g4"></div>
+          <div class="result-gauge-bar" id="g5"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--text-secondary);margin-bottom:32px;opacity:0.7;">
+          <span>Ausencia Total</span>
+          <span>Sobresaliente</span>
+        </div>
+
+        <div class="result-card" id="resultCard">
+          <div class="result-section">
+            <h4><span class="result-section-icon">📍</span> Dónde estás actualmente</h4>
+            <p id="resultWhere"></p>
+          </div>
+
+          <div class="result-savings-highlight">
+            <div>
+              <div class="result-savings-value" id="resultSavings"></div>
+              <div class="result-savings-label">potencial de ahorro</div>
+            </div>
+          </div>
+
+          <div class="result-section">
+            <h4><span class="result-section-icon">🚀</span> Tu siguiente paso</h4>
+            <p id="resultNextStep"></p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:16px;justify-content:center;margin-top:36px;flex-wrap:wrap;">
+          <a href="../cotiza.html" class="btn btn-primary btn-lg">Quiero mejorar mi nivel → Cotiza aquí</a>
+          <button class="btn btn-outline-dark btn-lg" onclick="resetSurvey()">Repetir encuesta</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container"><div class="cta-inner">
+    <h2>¿Quieres subir tu nivel de<br>madurez energética?</h2>
+    <p>Nuestros expertos diseñan el plan perfecto para llevar tu empresa al siguiente nivel de eficiencia.</p>
+    <div class="cta-actions">
+      <a href="../index.html#contacto" class="btn btn-outline-dark btn-lg">Hablar con un experto</a>
+      <a href="calculadora.html" class="btn btn-primary btn-lg">Calcula tu ahorro →</a>
+    </div>
+  </div></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="container"><div class="footer-bottom">
+  <span class="footer-copy">© 2017–2026 Desarrollos y Proyectos Clickie SpA. Todos los derechos reservados.</span>
+  <div class="footer-legal"><a href="https://es.clickie.io/tos" target="_blank">Términos y condiciones</a><a href="https://es.clickie.io/privacy" target="_blank">Política de privacidad</a></div>
+</div></div></footer>
+
+<script>
+// ── SURVEY LOGIC ──
+var answers = { 1: 0, 2: 0, 3: 0 };
+var currentQ = 1;
+
+function selectOption(el) {
+  var q = parseInt(el.dataset.q);
+  var v = parseInt(el.dataset.v);
+  answers[q] = v;
+
+  // Clear other selections for this question
+  var siblings = document.querySelectorAll('.survey-option[data-q="' + q + '"]');
+  siblings.forEach(function(s) { s.classList.remove('selected'); });
+  el.classList.add('selected');
+
+  // Enable next button
+  document.getElementById('btnNext' + q).disabled = false;
+}
+
+function goToQuestion(n) {
+  // Hide current
+  document.getElementById('question' + currentQ).classList.add('hidden');
+  // Show target
+  document.getElementById('question' + n).classList.remove('hidden');
+
+  // Update progress
+  for (var i = 1; i <= 3; i++) {
+    var step = document.getElementById('progStep' + i);
+    step.classList.remove('active', 'completed');
+    if (i < n) step.classList.add('completed');
+    else if (i === n) step.classList.add('active');
+  }
+
+  // Update progress lines
+  document.getElementById('progLine1').style.width = n > 1 ? '100%' : '0';
+  document.getElementById('progLine2').style.width = n > 2 ? '100%' : '0';
+
+  currentQ = n;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showResults() {
+  var total = answers[1] + answers[2] + answers[3];
+
+  // Hide question card
+  document.getElementById('question3').classList.add('hidden');
+
+  // Update score
+  document.getElementById('totalScore').textContent = total;
+
+  // Determine level
+  var level = getLevel(total);
+
+  // Update badge
+  var badge = document.getElementById('resultLevelBadge');
+  badge.innerHTML = '<div class="level-dot" style="background:' + level.color + '"></div> NIVEL ' + level.num + ' — ' + level.name;
+  badge.style.background = level.bgColor;
+  badge.style.color = level.textColor;
+
+  // Update gauge
+  var gaugeColors = ['#ef4444', '#f97316', '#eab308', '#22c55e', '#3b82f6'];
+  for (var i = 1; i <= 5; i++) {
+    var bar = document.getElementById('g' + i);
+    bar.style.background = i <= level.num ? gaugeColors[i - 1] : 'var(--gray-100)';
+  }
+
+  // Update content
+  document.getElementById('resultWhere').textContent = level.where;
+  document.getElementById('resultSavings').textContent = level.savings;
+  document.getElementById('resultNextStep').textContent = level.nextStep;
+
+  // Update progress to completed
+  for (var j = 1; j <= 3; j++) {
+    document.getElementById('progStep' + j).classList.remove('active');
+    document.getElementById('progStep' + j).classList.add('completed');
+  }
+  document.getElementById('progLine1').style.width = '100%';
+  document.getElementById('progLine2').style.width = '100%';
+
+  // Show results
+  document.getElementById('surveyResults').classList.add('show');
+  setTimeout(function() {
+    document.getElementById('surveyResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+function getLevel(total) {
+  if (total <= 4) return {
+    num: 1, name: 'Ausencia Total', color: '#ef4444',
+    bgColor: 'rgba(239,68,68,0.08)', textColor: '#dc2626',
+    savings: '30% – 40%',
+    where: 'Tienes una situación sin aproximación formal. Al no gestionar el gasto y no tener datos, estás pagando la energía a ciegas, como si fuera un impuesto más.',
+    nextStep: 'Tienes que transitar hacia una "gestión reactiva". Tu misión inmediata es empezar a levantar niveles mínimos de información, identificar qué área de tu empresa es la que genera el mayor gasto (encontrar "el dolor") y ejecutar tus primeras acciones de control para detener la fuga de dinero.'
+  };
+  if (total <= 7) return {
+    num: 2, name: 'Práctica Elemental', color: '#f97316',
+    bgColor: 'rgba(249,115,22,0.08)', textColor: '#ea580c',
+    savings: '20% – 30%',
+    where: 'Tienes una gestión reactiva. Cuentas con niveles mínimos de información; un área de tu empresa ya siente el "dolor" del costo y han logrado tomar las primeras acciones, pero siguen actuando sobre la marcha.',
+    nextStep: 'Debes avanzar hacia una "gestión formal y estable". El paso clave ahora es implementar sistemas de medición que te permitan saber exactamente dónde, cómo y cuánto consumes. Además, debes crear una Política Energética oficial para que el control del gasto pase a ser una meta de toda la empresa, y no solo la preocupación de un área aislada.'
+  };
+  if (total <= 10) return {
+    num: 3, name: 'Adecuado', color: '#eab308',
+    bgColor: 'rgba(234,179,8,0.08)', textColor: '#ca8a04',
+    savings: '10% – 20%',
+    where: '¡Buen trabajo! Tienes una gestión formal y estable. Sabes dónde, cómo y cuánto gastas. Tienes una política energética operando y el gasto ya es parte de las metas de tu compañía.',
+    nextStep: 'Ya controlas el presente, ahora debes enfocarte en la mejora continua. Tu siguiente paso es estructurar un sistema de proyectos y metas a medio y largo plazo. Operativamente, debes comenzar a usar tus datos para hacer mantenimiento predictivo (anticiparte a fallas de equipos) y evaluar la incorporación de nuevas fuentes de energía.'
+  };
+  if (total <= 13) return {
+    num: 4, name: 'En Proceso', color: '#22c55e',
+    bgColor: 'rgba(34,197,94,0.08)', textColor: '#16a34a',
+    savings: '5% – 10%',
+    where: 'Estás en una etapa de mejora continua. Cuentas con un sistema de metas a largo plazo, realizas mantenimiento predictivo y ya estás sumando nuevas fuentes de energía a tu matriz.',
+    nextStep: 'Internamente eres muy eficiente. Para llegar a ser "sobresaliente", tu siguiente paso es mirar hacia afuera. Tienes que empezar a incorporar a tus proveedores de servicios y equipos a tu gestión energética, hacer Benchmarking (compararte con los líderes del mercado), y trazar una ruta definitiva para ser una empresa Carbono Neutral.'
+  };
+  return {
+    num: 5, name: 'Sobresaliente', color: '#3b82f6',
+    bgColor: 'rgba(59,130,246,0.08)', textColor: '#2563eb',
+    savings: '~5%',
+    where: 'Eres el "Mejor en tu clase". Exiges eficiencia a tus proveedores, haces benchmarking, eres (o vas en camino a ser) carbono neutral, e incluso ayudas a tus propios clientes a ser más eficientes.',
+    nextStep: 'Mantener el liderazgo. A este nivel, el objetivo es la innovación tecnológica constante y utilizar tu alta eficiencia y certificaciones de sostenibilidad como una poderosa ventaja competitiva en tu industria.'
+  };
+}
+
+function resetSurvey() {
+  answers = { 1: 0, 2: 0, 3: 0 };
+  currentQ = 1;
+
+  // Reset UI
+  document.querySelectorAll('.survey-option').forEach(function(o) { o.classList.remove('selected'); });
+  document.querySelectorAll('.survey-btn-next').forEach(function(b) { b.disabled = true; });
+  document.getElementById('surveyResults').classList.remove('show');
+
+  // Show question 1
+  document.getElementById('question1').classList.remove('hidden');
+  document.getElementById('question2').classList.add('hidden');
+  document.getElementById('question3').classList.add('hidden');
+
+  // Reset progress
+  document.getElementById('progStep1').className = 'survey-progress-step active';
+  document.getElementById('progStep2').className = 'survey-progress-step';
+  document.getElementById('progStep3').className = 'survey-progress-step';
+  document.getElementById('progLine1').style.width = '0';
+  document.getElementById('progLine2').style.width = '0';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+<script src="../scripts/main.js"></script>
+</body>
+</html>

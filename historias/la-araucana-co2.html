@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caso de éxito La Araucana — Clickie</title>
+  <meta name="description" content="Descubre cómo La Araucana transformó su gestión energética junto a Clickie, reduciendo su huella de carbono en un 14%." />
+  <link rel="icon" type="image/png" href="../assets/favicon_navbar.png" sizes="256x256" />
+  <link rel="stylesheet" href="../styles/main.css" />
+  <style>
+    /* ─── HERO ─── */
+    .story-hero {
+      background: linear-gradient(135deg, #1a1e6c 0%, #2a3a8c 40%, #f5a623 100%);
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(245,166,35,0.25) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .story-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: 20%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(26,30,108,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .story-hero .container { position: relative; z-index: 1; }
+    .story-hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .story-hero-content { color: var(--white); }
+    .story-hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.9);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .story-hero h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: var(--white);
+    }
+    .story-hero h1 span {
+      background: linear-gradient(135deg, #f7c948, #f5a623);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .story-hero-desc {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 28px;
+    }
+    .story-hero-metrics {
+      display: flex;
+      gap: 20px;
+    }
+    .story-hero-metric {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 18px 24px;
+    }
+    .story-hero-metric-value {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+    .story-hero-metric-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.4;
+    }
+    .story-hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ─── ZIGZAG SECTIONS ─── */
+    .zigzag-section {
+      padding: 80px 0;
+    }
+    .zigzag-section.bg-white { background: var(--white); }
+    .zigzag-section.bg-light { background: var(--bg-base); }
+    .zigzag-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .zigzag-reverse { direction: rtl; }
+    .zigzag-reverse > * { direction: ltr; }
+    .zigzag-content h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--secondary);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .zigzag-content > p {
+      color: var(--text-body);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    /* Feature list */
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .feature-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .feature-check {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      background: linear-gradient(135deg, #f5a623, #f7c948);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .feature-item-content h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 4px;
+    }
+    .feature-item-content p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Zigzag visual */
+    .zigzag-visual {
+      background: linear-gradient(135deg, rgba(26,30,108,0.04), rgba(245,166,35,0.08));
+      border-radius: 20px;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+      border: 1px solid rgba(26,30,108,0.06);
+    }
+    .zigzag-visual-icon {
+      font-size: 5rem;
+      opacity: 0.5;
+    }
+
+    /* ─── VIDEO SECTION ─── */
+    .video-section {
+      background: var(--secondary);
+      padding: 80px 0;
+    }
+    .video-section h2 {
+      text-align: center;
+      color: var(--white);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .video-section .section-subtitle {
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 40px;
+    }
+    .video-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      aspect-ratio: 16 / 9;
+    }
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ─── MID CTA ─── */
+    .mid-cta {
+      background: linear-gradient(135deg, #f5a623, #f7c948);
+      padding: 48px 0;
+      text-align: center;
+    }
+    .mid-cta h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--secondary);
+      margin-bottom: 16px;
+    }
+    .mid-cta .btn {
+      background: var(--secondary);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .mid-cta .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26,30,108,0.3);
+    }
+
+    /* ─── FEATURES GRID ─── */
+    .features-grid-section {
+      background: var(--secondary);
+      padding: 80px 0;
+    }
+    .features-grid-section h2 {
+      text-align: center;
+      color: var(--white);
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .features-grid-section .section-subtitle {
+      text-align: center;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 48px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .feature-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,0.1);
+    }
+    .feature-card-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, #f5a623, #f7c948);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 16px;
+    }
+    .feature-card h4 {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    /* ─── STEPS ─── */
+    .steps-section {
+      background: var(--white);
+      padding: 80px 0;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .step-card {
+      text-align: center;
+      padding: 32px 24px;
+      border-radius: 20px;
+      background: var(--bg-base);
+      border: 1px solid rgba(26,30,108,0.06);
+      transition: transform 0.3s;
+    }
+    .step-card:hover { transform: translateY(-4px); }
+    .step-number {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--secondary), #2d31a6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin: 0 auto 16px;
+    }
+    .step-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 8px;
+    }
+    .step-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .story-hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .story-hero h1 { font-size: 2rem; }
+      .story-hero-metrics { flex-direction: column; }
+      .story-hero-metric-value { font-size: 1.8rem; }
+      .zigzag-grid { grid-template-columns: 1fr; gap: 32px; }
+      .zigzag-reverse { direction: ltr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+  <button class="mobile-menu-close" id="mobileClose" aria-label="Cerrar menú">✕</button>
+  <button class="mobile-servicios-toggle">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-servicios-sub">
+    <a href="../servicios/ubm.html"><span class="mobile-sub-icon">📄</span> UBM — Gestión de Suministros</a>
+    <a href="../servicios/ems.html"><span class="mobile-sub-icon">📊</span> EMS — Monitoreo y Optimización</a>
+    <a href="../servicios/bms.html"><span class="mobile-sub-icon">🖥️</span> BMS — Control Inteligente</a>
+    <a href="../servicios/remarcacion.html"><span class="mobile-sub-icon">⚡</span> Remarcación y Submetering</a>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);margin:8px 16px;"></div>
+    <span style="padding:4px 16px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);">Por Rubro</span>
+    <a href="../servicios/gestion-retail.html"><span class="mobile-sub-icon">🏪</span> Retail</a>
+    <a href="../servicios/eficiencia-energetica.html"><span class="mobile-sub-icon">🏭</span> Industria</a>
+  </div>
+  <a href="../index.html#como-funciona" class="nav-link">Cómo funciona</a>
+  <button class="mobile-historias-toggle">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-historias-sub">
+    <a href="../historias/oxxo.html"><span class="mobile-sub-icon">🏪</span> OXXO</a>
+    <a href="../historias/starbucks.html"><span class="mobile-sub-icon">☕</span> Starbucks</a>
+    <a href="../historias/copec.html"><span class="mobile-sub-icon">⛽</span> COPEC</a>
+    <a href="../historias/lipigas.html"><span class="mobile-sub-icon">🔥</span> LIPIGAS</a>
+    <a href="../historias/tattersall.html"><span class="mobile-sub-icon">🏢</span> Tattersall</a>
+    <a href="../historias/renova.html"><span class="mobile-sub-icon">🌿</span> RENOVA</a>
+    <a href="../historias/preunic.html"><span class="mobile-sub-icon">🛍️</span> Preunic</a>
+    <a href="../historias/la-araucana-co2.html"><span class="mobile-sub-icon">🌱</span> La Araucana</a>
+  </div>
+
+          <button class="mobile-recursos-toggle">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-recursos-sub">
+    <a href="../recursos/guias.html"><span class="mobile-sub-icon">📘</span> Guías de Ahorro Energético</a>
+    <a href="../recursos/casos-de-exito.html"><span class="mobile-sub-icon">📊</span> Casos de Éxito</a>
+    <a href="../recursos/calculadora.html"><span class="mobile-sub-icon">🧮</span> Calculadora de Ahorro</a>
+    <a href="../recursos/encuesta-madurez.html"><span class="mobile-sub-icon">📋</span> Encuesta de Madurez Energética</a>
+    <a href="../recursos/blog.html"><span class="mobile-sub-icon">📝</span> Blog</a>
+  </div>
+  <button class="mobile-nosotros-toggle">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="mobile-nosotros-sub">
+    <a href="../nosotros.html"><span class="mobile-sub-icon">💛</span> Nuestros Valores</a>
+    <a href="../nosotros/prensa.html"><span class="mobile-sub-icon">📰</span> Clickie en la Prensa</a>
+  </div>
+  <a href="https://app.clickie.io/" class="btn btn-primary" target="_blank" rel="noopener">Iniciar sesión</a>
+</div>
+
+<nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="container">
+    <div class="navbar-inner">
+
+      <a href="../index.html" class="navbar-logo" aria-label="Clickie inicio">
+        <img class="logo-badge" src="../assets/favicon_navbar.png" alt="Clickie Logo" width="38" height="38" style="border-radius:10px; vertical-align:bottom;" />
+        Clickie
+      </a>
+
+      <div class="navbar-nav">
+        <div class="nav-dropdown" id="navDropdownServicios">
+          <a href="../index.html#servicios" class="nav-link nav-link-dropdown">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownServicios">
+            <div class="mega-dropdown-inner" style="display:flex;gap:0;">
+              <!-- POR SOLUCIÓN -->
+              <div style="flex:3;">
+                <div class="mega-dropdown-header">
+                  <span class="mega-dropdown-title">Por Solución ›</span>
+                  <p class="mega-dropdown-subtitle">Nuestras plataformas de gestión energética.</p>
+                </div>
+                <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
+                  <a href="../servicios/ubm.html" class="mega-item">
+                    <div class="mega-item-icon yellow">📄</div>
+                    <div class="mega-item-content"><strong>UBM</strong><span>Gestión de Suministros Eléctricos.</span></div>
+                  </a>
+                  <a href="../servicios/ems.html" class="mega-item">
+                    <div class="mega-item-icon green">📊</div>
+                    <div class="mega-item-content"><strong>EMS</strong><span>Monitoreo, Gestión y Optimización Energética en Tiempo Real.</span></div>
+                  </a>
+                  <a href="../servicios/bms.html" class="mega-item">
+                    <div class="mega-item-icon violet">🖥️</div>
+                    <div class="mega-item-content"><strong>BMS</strong><span>Control Inteligente.</span></div>
+                  </a>
+                  <a href="../servicios/remarcacion.html" class="mega-item">
+                    <div class="mega-item-icon yellow">⚡</div>
+                    <div class="mega-item-content"><strong>Remarcación y Submetering</strong><span>Distribución interna justa de energía.</span></div>
+                  </a>
+                </div>
+              </div>
+              <!-- SEPARADOR -->
+              <div style="width:1px;background:var(--gray-200);margin:0 24px;"></div>
+              <!-- POR RUBRO -->
+              <div style="flex:1.5;">
+                <div class="mega-dropdown-header">
+                  <span class="mega-dropdown-title">Por Rubro ›</span>
+                  <p class="mega-dropdown-subtitle">Soluciones por industria.</p>
+                </div>
+                <div class="mega-dropdown-grid" style="grid-template-columns:1fr;">
+                  <a href="../servicios/gestion-retail.html" class="mega-item">
+                    <div class="mega-item-icon green">🏪</div>
+                    <div class="mega-item-content"><strong>Retail</strong><span>Eficiencia energética en tiendas y cadenas comerciales.</span></div>
+                  </a>
+                  <a href="../servicios/eficiencia-energetica.html" class="mega-item">
+                    <div class="mega-item-icon violet">🏭</div>
+                    <div class="mega-item-content"><strong>Industria</strong><span>Optimización energética en plantas e instalaciones industriales.</span></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="../index.html#como-funciona" class="nav-link">Cómo funciona</a>
+        <div class="nav-dropdown" id="navDropdownHistorias">
+          <a href="../index.html#historias" class="nav-link nav-link-dropdown">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownHistorias">
+            <div class="mega-dropdown-inner">
+              <div class="mega-dropdown-header">
+                <span class="mega-dropdown-title">Historias de Éxito ›</span>
+                <p class="mega-dropdown-subtitle">Conoce cómo empresas líderes optimizaron su energía con Clickie.</p>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(4,1fr);">
+                <a href="../historias/oxxo.html" class="mega-item">
+                  <div class="mega-item-icon yellow">🏪</div>
+                  <div class="mega-item-content"><strong>OXXO</strong><span>20% de ahorro en 230+ tiendas.</span></div>
+                </a>
+                <a href="../historias/starbucks.html" class="mega-item">
+                  <div class="mega-item-icon green">☕</div>
+                  <div class="mega-item-content"><strong>Starbucks</strong><span>Eficiencia energética en cafeterías.</span></div>
+                </a>
+                <a href="../historias/copec.html" class="mega-item">
+                  <div class="mega-item-icon violet">⛽</div>
+                  <div class="mega-item-content"><strong>COPEC</strong><span>Monitoreo de red renovable completa.</span></div>
+                </a>
+                <a href="../historias/lipigas.html" class="mega-item">
+                  <div class="mega-item-icon yellow">🔥</div>
+                  <div class="mega-item-content"><strong>LIPIGAS</strong><span>8% ahorro en plantas productivas.</span></div>
+                </a>
+                <a href="../historias/tattersall.html" class="mega-item">
+                  <div class="mega-item-icon violet">🏢</div>
+                  <div class="mega-item-content"><strong>Tattersall</strong><span>Gestión energética industrial.</span></div>
+                </a>
+                <a href="../historias/renova.html" class="mega-item">
+                  <div class="mega-item-icon green">🌿</div>
+                  <div class="mega-item-content"><strong>RENOVA</strong><span>+20% rendimiento en activos renovables.</span></div>
+                </a>
+                <a href="../historias/preunic.html" class="mega-item">
+                  <div class="mega-item-icon green">🛍️</div>
+                  <div class="mega-item-content"><strong>Preunic</strong><span>20% de reducción en costos energéticos.</span></div>
+                </a>
+                <a href="../historias/la-araucana-co2.html" class="mega-item">
+                  <div class="mega-item-icon yellow">🌱</div>
+                  <div class="mega-item-content"><strong>La Araucana</strong><span>Reducción de huella de carbono.</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+                <div class="nav-dropdown" id="navDropdownRecursos">
+          <a href="../index.html#recursos" class="nav-link nav-link-dropdown">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownRecursos">
+            <div class="mega-dropdown-inner">
+              <div class="mega-dropdown-header">
+                <span class="mega-dropdown-title">Recursos Clickie ›</span>
+                <p class="mega-dropdown-subtitle">Guías, casos de éxito y herramientas prácticas para optimizar tu gestión energética.</p>
+              </div>
+              <div class="mega-dropdown-grid">
+                <a href="../recursos/guias.html" class="mega-item">
+                  <div class="mega-item-icon yellow">📘</div>
+                  <div class="mega-item-content"><strong>Guías de Ahorro Energético</strong><span>Descarga guías prácticas de eficiencia energética para tu rubro.</span></div>
+                </a>
+                <a href="../recursos/casos-de-exito.html" class="mega-item">
+                  <div class="mega-item-icon violet">📊</div>
+                  <div class="mega-item-content"><strong>Casos de Éxito</strong><span>OXXO, Starbucks, COPEC, LIPIGAS y más empresas que optimizaron su energía.</span></div>
+                </a>
+                <a href="../recursos/calculadora.html" class="mega-item">
+                  <div class="mega-item-icon green">🧮</div>
+                  <div class="mega-item-content"><strong>Calculadora de Ahorro</strong><span>Ingresa tus datos de consumo y descubre cuánto podrías ahorrar.</span></div>
+                </a>
+                <a href="../recursos/blog.html" class="mega-item">
+                  <div class="mega-item-icon yellow">📝</div>
+                  <div class="mega-item-content"><strong>Blog</strong><span>Artículos sobre eficiencia energética, casos de éxito y tendencias.</span></div>
+                </a>
+                <a href="../recursos/encuesta-madurez.html" class="mega-item">
+                  <div class="mega-item-icon green">📋</div>
+                  <div class="mega-item-content"><strong>Encuesta de Madurez Energética</strong><span>Descubre tu nivel de madurez y recibe un plan de acción personalizado.</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown" id="navDropdownNosotros">
+          <a href="../nosotros.html" class="nav-link nav-link-dropdown">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="mega-dropdown" id="megaDropdownNosotros">
+            <div class="mega-dropdown-inner">
+              <div class="mega-dropdown-header">
+                <span class="mega-dropdown-title">Nosotros ›</span>
+                <p class="mega-dropdown-subtitle">Conoce quiénes somos y qué nos mueve.</p>
+              </div>
+              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
+                <a href="../nosotros.html" class="mega-item">
+                  <div class="mega-item-icon yellow">💛</div>
+                  <div class="mega-item-content"><strong>Nuestros Valores</strong><span>Propósito, misión y los valores que guían cada decisión en Clickie.</span></div>
+                </a>
+                <a href="../nosotros/prensa.html" class="mega-item">
+                  <div class="mega-item-icon violet">📰</div>
+                  <div class="mega-item-content"><strong>Clickie en la Prensa</strong><span>Noticias, artículos y apariciones de Clickie en medios de comunicación.</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-actions">
+        <a href="https://app.clickie.io/" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Iniciar sesión</a>
+        <a href="../cotiza.html" class="btn btn-primary btn-sm">Cotiza aquí</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú móvil">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="story-hero">
+  <div class="container">
+    <div class="story-hero-inner">
+      <div class="story-hero-content">
+        <div class="breadcrumb" style="margin-bottom:16px;"><a href="../index.html" style="color:rgba(255,255,255,0.6)">Inicio</a> / <a href="../recursos/casos-de-exito.html" style="color:rgba(255,255,255,0.6)">Casos de Éxito</a> / <span style="color:rgba(255,255,255,0.8)">La Araucana</span></div>
+        <span class="story-hero-label">🏢 Servicios Financieros · 67 sucursales</span>
+        <h1>Cómo La Araucana redujo su huella de carbono un <span>14%</span> con Clickie</h1>
+        <p class="story-hero-desc">Con el apoyo de Clickie, La Araucana implementó un sistema flexible de monitoreo que permitió reducir su huella de carbono y optimizar recursos en 67 sucursales y su casa matriz.</p>
+        <div class="story-hero-metrics">
+          <div class="story-hero-metric">
+            <span class="story-hero-metric-value">14%</span>
+            <span class="story-hero-metric-label">reducción<br>huella de carbono</span>
+          </div>
+          <div class="story-hero-metric">
+            <span class="story-hero-metric-value">67</span>
+            <span class="story-hero-metric-label">sucursales<br>monitoreadas</span>
+          </div>
+        </div>
+      </div>
+      <div class="story-hero-visual">
+        <div style="background:rgba(255,255,255,0.08);border-radius:20px;padding:32px;border:1px solid rgba(255,255,255,0.12);text-align:center;">
+          <div style="font-size:4rem;margin-bottom:16px">🏢🌱</div>
+          <div style="color:rgba(255,255,255,0.9);font-weight:700;font-size:1.2rem;">La Araucana × Clickie</div>
+          <div style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-top:8px;">Sostenibilidad y gestión energética</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EL DESAFÍO -->
+<section class="zigzag-section bg-white">
+  <div class="container">
+    <div class="zigzag-grid">
+      <div class="zigzag-content">
+        <span class="section-label">El desafío</span>
+        <h2>Sin cultura de medición de huella de carbono</h2>
+        <p>Nikolaj Gregorcic, Gerente de Impacto Social y Sostenibilidad de La Araucana, nos cuenta que antes de comenzar a trabajar con Clickie, la empresa <strong>no contaba con una cultura arraigada sobre la importancia de medir la huella de carbono</strong>.</p>
+        <p>El impacto ambiental quedaba reducido a un simple registro contable de gastos energéticos, sin lograr dimensionar realmente sus consecuencias en emisiones o consumo de recursos.</p>
+        <p>La necesidad era clara: contar con herramientas que permitieran monitorear en detalle <strong>67 sucursales y la casa matriz</strong>, visualizar cómo cada unidad impactaba en la huella ambiental y traducir los consumos de electricidad y gas en toneladas de CO₂.</p>
+      </div>
+      <div class="zigzag-visual">
+        <span class="zigzag-visual-icon">📊🏢</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ¿POR QUÉ CLICKIE? -->
+<section class="zigzag-section bg-light">
+  <div class="container">
+    <div class="zigzag-grid zigzag-reverse">
+      <div class="zigzag-content">
+        <span class="section-label">¿Por qué Clickie?</span>
+        <h2>Un partner estratégico, no un paquete cerrado</h2>
+        <p>La Araucana buscaba más que un proveedor tecnológico: se trataba de encontrar un <strong>partner estratégico</strong> capaz de acompañar un aprendizaje continuo.</p>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <div class="feature-check">✓</div>
+            <div class="feature-item-content">
+              <h4>Capacidad de adaptarse</h4>
+              <p>Lo que inclinó la balanza hacia Clickie fue la capacidad de adaptarse. No se trataba de "encajar" en un paquete cerrado, sino de evolucionar juntos.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-check">✓</div>
+            <div class="feature-item-content">
+              <h4>Implementación sencilla y rápida</h4>
+              <p>La implementación fue sencilla, rápida y sin costos elevados, lo que permitió empezar a trabajar casi de inmediato.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-check">✓</div>
+            <div class="feature-item-content">
+              <h4>Gestión hídrica integrada</h4>
+              <p>Se incorporó la gestión de la huella hídrica, con alertas que ayudan a detectar posibles fugas de agua para resolverlas de inmediato y evitar pérdidas económicas y ambientales.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="zigzag-visual">
+        <span class="zigzag-visual-icon">🤝💡</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOS RESULTADOS -->
+<section class="zigzag-section bg-white">
+  <div class="container">
+    <div class="zigzag-grid">
+      <div class="zigzag-content">
+        <span class="section-label">Los resultados</span>
+        <h2>Del 10% planificado al 14% logrado</h2>
+        <p>El desafío planteado era ambicioso: disminuir un <strong>10% en el primer año</strong> la huella de carbono. Gracias al trabajo conjunto con Clickie, la sinergia entre equipos y la flexibilidad de la plataforma, no solo se alcanzó el objetivo, sino que <strong>se superó con creces</strong>.</p>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <div class="feature-check">✓</div>
+            <div class="feature-item-content">
+              <h4>14% de reducción en huella de carbono</h4>
+              <p>Superando la meta inicial del 10%, La Araucana se posicionó como la empresa con mayor progreso en sostenibilidad dentro de su sector.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-check">✓</div>
+            <div class="feature-item-content">
+              <h4>Traducción de consumos a CO₂</h4>
+              <p>Los consumos de electricidad y gas se tradujeron en toneladas de CO₂, dando visibilidad real al impacto ambiental.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-check">✓</div>
+            <div class="feature-item-content">
+              <h4>Gestión efectiva con presupuesto acotado</h4>
+              <p>Este logro demuestra que la gestión energética y ambiental puede ser efectiva aun con presupuestos acotados, siempre que exista claridad estratégica y un socio tecnológico confiable.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="zigzag-visual">
+        <span class="zigzag-visual-icon">🌱📉</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA INTERMEDIO -->
+<section class="mid-cta">
+  <h3>¿Quieres reducir tu huella de carbono?</h3>
+  <a href="../index.html#contacto" class="btn">Hablar con un experto →</a>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="container">
+    <h2>Conoce la historia de La Araucana</h2>
+    <p class="section-subtitle">Nikolaj Gregorcic, Gerente de Impacto Social y Sostenibilidad, nos cuenta cómo lograron transformar su gestión energética.</p>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/7p4_q-MCZ8E" title="Cómo La Araucana redujo su huella de carbono un 14% con Clickie" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- LOS PRÓXIMOS PASOS -->
+<section class="zigzag-section bg-light">
+  <div class="container">
+    <div class="zigzag-grid zigzag-reverse">
+      <div class="zigzag-content">
+        <span class="section-label">Los próximos pasos</span>
+        <h2>Hacia la automatización inteligente</h2>
+        <p>El futuro plantea un horizonte aún más desafiante para La Araucana. La visión incluye:</p>
+        <ul class="feature-list">
+          <li class="feature-item">
+            <div class="feature-check">✓</div>
+            <div class="feature-item-content">
+              <h4>Monitoreo en tiempo real total</h4>
+              <p>La meta es monitorear en tiempo real todos los consumos e invertir en tecnología que permita actuar de inmediato sobre los equipos con mayor impacto en la huella.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-check">✓</div>
+            <div class="feature-item-content">
+              <h4>Automatización con inteligencia artificial</h4>
+              <p>Avanzar hacia un sistema de automatización inteligente donde los equipos de climatización se gestionen de manera autónoma mediante IA.</p>
+            </div>
+          </li>
+          <li class="feature-item">
+            <div class="feature-check">✓</div>
+            <div class="feature-item-content">
+              <h4>Integración de datos meteorológicos</h4>
+              <p>Integrar datos meteorológicos y de temperatura para que los sistemas se adapten dinámicamente al contexto, reduciendo al máximo el uso innecesario de energía.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="zigzag-visual">
+        <span class="zigzag-visual-icon">🤖🌡️</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNCIONALIDADES IMPLEMENTADAS -->
+<section class="features-grid-section">
+  <div class="container">
+    <span class="section-label" style="display:block;text-align:center;color:var(--primary);margin-bottom:12px;">Clickie para La Araucana</span>
+    <h2>Funcionalidades clave implementadas</h2>
+    <p class="section-subtitle">Herramientas que hicieron posible la transformación sostenible de La Araucana.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-card-icon">🌍</div>
+        <h4>Huella de carbono</h4>
+        <p>Traducción automática de consumos de electricidad y gas en toneladas de CO₂.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon">💧</div>
+        <h4>Huella hídrica</h4>
+        <p>Monitoreo del consumo de agua con alertas para detectar fugas de manera inmediata.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon">📊</div>
+        <h4>Monitoreo multi-sucursal</h4>
+        <p>Visibilidad del impacto ambiental de cada una de las 67 sucursales y casa matriz.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon">🔔</div>
+        <h4>Alertas inteligentes</h4>
+        <p>Notificaciones automáticas para detectar anomalías en consumo y posibles fugas.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon">📈</div>
+        <h4>Reportes de sostenibilidad</h4>
+        <p>Dashboards y reportes que facilitan la toma de decisiones ambientales estratégicas.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon">🤝</div>
+        <h4>Acompañamiento continuo</h4>
+        <p>Partner estratégico que evoluciona junto al cliente, no un simple proveedor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS DESTACADOS -->
+<section class="section" style="background:var(--white)">
+  <div class="container">
+    <div class="text-center" style="margin-bottom:16px">
+      <span class="section-label">Impacto medible</span>
+    </div>
+    <div class="results-showcase">
+      <div class="result-box">
+        <span class="result-number">14%</span>
+        <span class="result-desc">Reducción de huella de carbono</span>
+      </div>
+      <div class="result-box">
+        <span class="result-number">67</span>
+        <span class="result-desc">Sucursales monitoreadas</span>
+      </div>
+      <div class="result-box">
+        <span class="result-number">CO₂</span>
+        <span class="result-desc">Conversión de consumo a toneladas</span>
+      </div>
+      <div class="result-box">
+        <span class="result-number">#1</span>
+        <span class="result-desc">Mayor progreso ambiental en su sector</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section" style="background:linear-gradient(135deg, var(--secondary), #181966)">
+  <div class="container">
+    <div style="max-width:700px;margin:0 auto;text-align:center;color:var(--white)">
+      <div style="font-size:2.5rem;margin-bottom:20px">💬</div>
+      <p style="font-size:1.15rem;line-height:1.8;font-style:italic;color:rgba(255,255,255,0.85);margin-bottom:24px">"La empresa no solo busca mantener sus resultados, sino elevar la vara cada año en eficiencia, sostenibilidad y responsabilidad ambiental. Clickie fue clave en este camino."</p>
+      <p style="font-weight:700;color:var(--primary);font-size:1rem">Nikolaj Gregorcic</p>
+      <p style="font-size:0.85rem;color:rgba(255,255,255,0.6)">Gerente de Impacto Social y Sostenibilidad, La Araucana</p>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS: ¿Y ahora? -->
+<section class="steps-section">
+  <div class="container">
+    <div style="text-align:center">
+      <span class="section-label">¿Y ahora?</span>
+      <h2 style="font-size:2rem;font-weight:800;color:var(--secondary);margin-bottom:8px;">¿Quieres reducir la huella de carbono de tu organización?</h2>
+      <p style="color:var(--text-muted);font-size:1.05rem;">Si tienes un desafío similar, te ayudamos a encontrar la solución perfecta.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h4>Contáctanos</h4>
+        <p>Escríbenos a <strong>hola@clickie.io</strong>. Cuéntanos sobre tu organización y los desafíos ambientales que enfrentas.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h4>Coordinaremos una reunión</h4>
+        <p>Propondremos una solución que se ajuste a tus metas de sostenibilidad y resolveremos tus dudas.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h4>Te acompañamos en todo</h4>
+        <p>Te guiaremos paso a paso para que logres tus metas ambientales. Queremos que seas nuestra próxima historia de éxito.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-banner">
+  <div class="container"><div class="cta-inner">
+    <h2>¿Quieres resultados similares<br>en tu organización?</h2>
+    <p>Descubre cómo Clickie puede ayudarte a reducir tu huella de carbono.</p>
+    <div class="cta-actions">
+      <a href="../index.html#contacto" class="btn btn-outline-dark btn-lg">Hablar con un experto</a>
+      <a href="https://app.clickie.io/" class="btn btn-primary btn-lg" target="_blank">Probar plataforma →</a>
+    </div>
+  </div></div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer-bottom">
+  <span class="footer-copy">© 2017–2026 Desarrollos y Proyectos Clickie SpA. Todos los derechos reservados.</span>
+  <div class="footer-legal"><a href="https://es.clickie.io/tos" target="_blank">Términos y condiciones</a><a href="https://es.clickie.io/privacy" target="_blank">Política de privacidad</a></div>
+</div></div></footer>
+
+<script src="../scripts/main.js"></script>
+</body>
+</html>
