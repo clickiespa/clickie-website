@@ -3,71 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clickie en la Prensa — Noticias y Apariciones en Medios</title>
-  <meta name="description" content="Descubre cómo la prensa y los medios de comunicación hablan de Clickie. Artículos, entrevistas y noticias sobre nuestra plataforma de gestión energética." />
+  <title>Energía, datos y futuro: Clickie visitó la Expo Osaka 2025 — Clickie</title>
+  <meta name="description" content="Clickie visitó la Expo Osaka 2025 y recorrió los pabellones más relevantes en gestión energética, tecnologías limpias y sostenibilidad." />
   <link rel="icon" type="image/png" href="../assets/favicon_navbar.png" sizes="256x256" />
-  <link rel="apple-touch-icon" href="../assets/favicon_navbar.png" />
   <link rel="stylesheet" href="../styles/main.css" />
   <style>
-    .press-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 28px;
+    .photo-gallery {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px; margin: 32px 0;
     }
-    .press-card {
-      background: white; border-radius: 20px; overflow: hidden;
-      border: 1.5px solid var(--gray-200); text-decoration: none;
-      transition: all 0.3s ease; display: flex; flex-direction: column;
+    .photo-gallery figure {
+      margin: 0; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     }
-    .press-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-    }
-    .press-card-img {
-      width: 100%; height: 220px; overflow: hidden;
-      background: var(--gray-50);
-    }
-    .press-card-img img {
-      width: 100%; height: 100%; object-fit: cover;
+    .photo-gallery img {
+      width: 100%; height: 260px; object-fit: cover;
       transition: transform 0.4s ease;
     }
-    .press-card:hover .press-card-img img { transform: scale(1.04); }
-    .press-card-body {
-      padding: 28px 28px 32px; flex: 1;
-      display: flex; flex-direction: column;
+    .photo-gallery figure:hover img { transform: scale(1.04); }
+    .photo-gallery figcaption {
+      padding: 12px 16px; font-size: 0.82rem; color: var(--text-secondary);
+      background: var(--gray-50); font-style: italic;
     }
-    .press-card-source {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.1em; color: var(--secondary); opacity: 0.5;
-      margin-bottom: 12px;
+    .expo-hero-img {
+      width: 100%; max-height: 420px; object-fit: cover;
+      border-radius: 16px; margin-bottom: 40px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     }
-    .press-card-source span { font-size: 1rem; }
-    .press-card-body h3 {
-      font-size: 1.15rem; font-weight: 700; color: var(--secondary);
-      line-height: 1.4; margin-bottom: 12px;
-    }
-    .press-card-body p {
-      font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65;
-      margin-bottom: 20px; flex: 1;
-    }
-    .press-card-footer {
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .press-card-date {
-      font-size: 0.78rem; color: var(--text-secondary); opacity: 0.6;
-    }
-    .press-card-link {
-      font-size: 0.85rem; font-weight: 600; color: var(--secondary);
-      display: inline-flex; align-items: center; gap: 4px;
-    }
-    @media (max-width: 768px) {
-      .press-grid { grid-template-columns: 1fr; }
-    }
+    .pavilion-flag { font-size: 1.6rem; margin-right: 8px; }
   </style>
 </head>
 <body>
-
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
   <button class="mobile-menu-close" id="mobileClose" aria-label="Cerrar menú">✕</button>
   <button class="mobile-servicios-toggle">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -110,16 +76,13 @@
   <a href="https://app.clickie.io/" class="btn btn-primary" target="_blank" rel="noopener">Iniciar sesión</a>
 </div>
 
-<!-- NAVBAR -->
 <nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Navegación principal">
   <div class="container">
     <div class="navbar-inner">
-
       <a href="../index.html" class="navbar-logo" aria-label="Clickie inicio">
         <img class="logo-badge" src="../assets/favicon_navbar.png" alt="Clickie Logo" width="38" height="38" style="border-radius:10px; vertical-align:bottom;" />
         Clickie
       </a>
-
       <div class="navbar-nav">
         <div class="nav-dropdown" id="navDropdownServicios">
           <a href="../index.html#servicios" class="nav-link nav-link-dropdown">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -205,7 +168,7 @@
                   <div class="mega-item-icon yellow">💛</div>
                   <div class="mega-item-content"><strong>Nuestros Valores</strong><span>Propósito, misión y los valores que guían cada decisión en Clickie.</span></div>
                 </a>
-                <a href="../nosotros/prensa.html" class="mega-item">
+                <a href="prensa.html" class="mega-item">
                   <div class="mega-item-icon violet">📰</div>
                   <div class="mega-item-content"><strong>Clickie en la Prensa</strong><span>Noticias, artículos y apariciones de Clickie en medios de comunicación.</span></div>
                 </a>
@@ -223,145 +186,126 @@
       <button class="hamburger" id="hamburger" aria-label="Abrir menú móvil">
         <span></span><span></span><span></span>
       </button>
-
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="subpage-hero">
-  <div class="container">
-    <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="../nosotros.html">Nosotros</a> / Prensa</div>
-    <span class="guia-hero-tag">Prensa y medios</span>
-    <h1>Clickie en la <span class="accent">prensa</span></h1>
-    <p class="hero-desc">Así hablan de nosotros en los medios de comunicación. Conoce las noticias, artículos y entrevistas sobre Clickie.</p>
+<section class="subpage-hero" style="padding-bottom:0">
+  <div class="container article-hero">
+    <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="../nosotros.html">Nosotros</a> / <a href="prensa.html">Prensa</a> / Artículo</div>
+    <div class="article-meta">
+      <span class="tag">Expo Mundial</span>
+      <span>📅 2025</span>
+      <span>·</span>
+      <span>6 min de lectura</span>
+    </div>
+    <h1>Energía, datos y futuro: Clickie visitó la Expo Osaka 2025</h1>
   </div>
 </section>
 
-<!-- PRESS ARTICLES -->
-<section class="section" style="background:var(--white);">
+<section class="section" style="background:var(--white)">
   <div class="container">
 
-    <div class="press-grid">
+    <img src="../assets/blog-expo-osaka.png" alt="Expo Osaka 2025" class="expo-hero-img" />
 
-      <!-- El Mercurio -->
-      <a href="../recursos/blog/clickie-el-mercurio.html" class="press-card fade-in">
-        <div class="press-card-img">
-          <img src="../assets/blog-el-mercurio.png" alt="Clickie en El Mercurio" />
-        </div>
-        <div class="press-card-body">
-          <div class="press-card-source"><span>📰</span> El Mercurio</div>
-          <h3>Startup crea plataforma que permite a empresas ahorrar hasta 20% en cuenta de la luz</h3>
-          <p>"Queremos ser la plataforma de gestión energética más popular", afirma su cofundador, Nicolás Llévenes.</p>
-          <div class="press-card-footer">
-            <span class="press-card-date">Septiembre 2025</span>
-            <span class="press-card-link">Leer artículo →</span>
-          </div>
-        </div>
-      </a>
+    <div class="article-content">
+      <p>La <strong>Exposición Universal</strong> es un gran evento internacional que se realiza cada cinco años y reúne a países de todo el mundo para mostrar sus logros, ideas y avances en áreas como la ciencia, la tecnología, el arte, la cultura, la innovación y el desarrollo sostenible. Este año se realiza en <strong>Osaka, Japón</strong> bajo la consigna: <em>Diseñando la Sociedad del Futuro</em>.</p>
 
-      <!-- Entrevista Marcelo Llévenes -->
-      <a href="entrevista-marcelo.html" class="press-card fade-in">
-        <div class="press-card-img">
-          <img src="../assets/blog-entrevista-marcelo.png" alt="Entrevista a Marcelo Llévenes, CEO de Clickie" />
-        </div>
-        <div class="press-card-body">
-          <div class="press-card-source"><span>🎙️</span> Entrevista</div>
-          <h3>Las empresas consumidoras de energía están cambiando las reglas del juego en el sector energético</h3>
-          <p>Entrevista a Marcelo Llévenes, CEO de Clickie, sobre cómo las empresas están transformando su relación con la energía.</p>
-          <div class="press-card-footer">
-            <span class="press-card-date">Enero 2025</span>
-            <span class="press-card-link">Leer entrevista →</span>
-          </div>
-        </div>
-      </a>
+      <p>Es un espacio donde los países del mundo muestran su visión sobre cómo enfrentaremos los desafíos más urgentes del siglo XXI. Y entre ellos, la energía y la sostenibilidad están en el centro de la escena.</p>
 
-      <!-- Feria Vulco -->
-      <a href="../nosotros/feria-vulco.html" class="press-card fade-in">
-        <div class="press-card-img">
-          <img src="../assets/blog-feria-vulco.jpg" alt="Clickie en la Feria del Medio Ambiente de Vulco" />
-        </div>
-        <div class="press-card-body">
-          <div class="press-card-source"><span>🏭</span> Evento</div>
-          <h3>Clickie en la Feria del Medio Ambiente de Vulco: tecnología, sostenibilidad y trabajo conjunto</h3>
-          <p>Presentamos nuestra plataforma de gestión energética en la feria interna de Vulco dedicada al cambio sostenible.</p>
-          <div class="press-card-footer">
-            <span class="press-card-date">Junio 2025</span>
-            <span class="press-card-link">Ver más →</span>
-          </div>
-        </div>
-      </a>
+      <p>Desde Clickie, visitamos los pabellones más relevantes en temas de <strong>gestión energética, tecnologías limpias, automatización y cambio climático</strong> y por supuesto pasamos por el stand de Chile. A continuación, compartimos los pabellones que más nos inspiraron.</p>
 
-      <!-- Expo Osaka 2025 -->
-      <a href="expo-osaka.html" class="press-card fade-in">
-        <div class="press-card-img">
-          <img src="../assets/blog-expo-osaka.png" alt="Clickie en la Expo Osaka 2025" />
-        </div>
-        <div class="press-card-body">
-          <div class="press-card-source"><span>🌏</span> Expo Mundial</div>
-          <h3>Energía, datos y futuro: Clickie visitó la Expo Osaka 2025</h3>
-          <p>Recorrimos los pabellones de China, Arabia Saudita y más, explorando el futuro de la gestión energética y la IA.</p>
-          <div class="press-card-footer">
-            <span class="press-card-date">2025</span>
-            <span class="press-card-link">Ver más →</span>
-          </div>
-        </div>
-      </a>
+      <hr style="margin:40px 0;border:none;border-top:2px solid var(--gray-100);">
 
-      <!-- M2MDataGlobal Sales Kick-Off 2026 -->
-      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7435020424087781376" class="press-card fade-in" target="_blank" rel="noopener">
-        <div class="press-card-img">
-          <img src="../assets/blog-kickoff-m2m.png" alt="Marcelo Llévenes en Sales Kick-Off 2026 de M2MDataGlobal" />
-        </div>
-        <div class="press-card-body">
-          <div class="press-card-source"><span>🎤</span> Panel</div>
-          <h3>Nuestro CEO como panelista en el Sales Kick-Off 2026 de M2MDataGlobal</h3>
-          <p>Marcelo Llévenes participó como panelista invitado debatiendo sobre IoT, telemática y conectividad en Chile y LATAM.</p>
-          <div class="press-card-footer">
-            <span class="press-card-date">Marzo 2026</span>
-            <span class="press-card-link">Ver en LinkedIn →</span>
-          </div>
-        </div>
-      </a>
+      <h2><span class="pavilion-flag">🇨🇳</span> China: Gestión energética inteligente y energía eólica</h2>
 
-      <!-- OXXO ExpoEnergía Sostenible -->
-      <a href="https://www.linkedin.com/posts/oxxo-chile_en-el-marco-de-expoenerg%C3%ADa-sostenible-encuentro-activity-7437147956182646784-xKS1" class="press-card fade-in" target="_blank" rel="noopener">
-        <div class="press-card-img">
-          <img src="../assets/blog-oxxo-expoenergia.png" alt="Clickie y OXXO en ExpoEnergía Sostenible" />
-        </div>
-        <div class="press-card-body">
-          <div class="press-card-source"><span>⚡</span> Evento</div>
-          <h3>Clickie y OXXO en ExpoEnergía Sostenible: ¿Cómo OXXO alcanzó un 20% de ahorro en energía?</h3>
-          <p>Presentación en ExpoEnergía Sostenible sobre eficiencia energética en retail con un ahorro acumulado de 5.777.617 kWh.</p>
-          <div class="press-card-footer">
-            <span class="press-card-date">Marzo 2026</span>
-            <span class="press-card-link">Ver en LinkedIn →</span>
-          </div>
-        </div>
-      </a>
+      <p>El pabellón chino sorprendió por su propuesta de <strong>eficiencia energética basada en datos, automatización y gestión inteligente</strong>. Mostraron cómo el país está utilizando inteligencia artificial y análisis predictivo para balancear su red eléctrica, integrando energías renovables como la eólica y la solar en tiempo real.</p>
 
+      <p>Una parte del recorrido simula una ciudad con consumo energético optimizado gracias al uso de plataformas de monitoreo similares a las que implementamos en Clickie. La visión es clara: <strong>control y eficiencia para una matriz energética compleja</strong>.</p>
+
+      <!-- Foto: China HVAC -->
+      <figure style="margin:28px 0;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,0.08);">
+        <img src="../assets/expo-osaka-china.jpg" alt="Pabellón de China — Integrated Energy-Saving HVAC System" style="width:100%;height:auto;" />
+        <figcaption style="padding:12px 16px;font-size:0.82rem;color:var(--text-secondary);background:var(--gray-50);font-style:italic;">Pabellón de China — Sistema integrado de HVAC con ahorro energético</figcaption>
+      </figure>
+
+      <hr style="margin:40px 0;border:none;border-top:2px solid var(--gray-100);">
+
+      <h2><span class="pavilion-flag">🇸🇦</span> Arabia Saudita: Inteligencia Artificial + Energía</h2>
+
+      <p>El pabellón de Arabia Saudita se enfoca en el rol de la <strong>IA aplicada a grandes infraestructuras energéticas</strong>. Presentaron desarrollos en los que modelos predictivos anticipan fallos en la red, ajustan en tiempo real la distribución eléctrica y maximizan el uso de fuentes limpias.</p>
+
+      <p>Presentan innovaciones que están impulsando la revolución energética en el país, como por ejemplo, <strong>robots autónomos de limpieza</strong> trabajan a diario para evitar que el polvo se adhiera a los paneles solares durante la noche. Estas flotas de robots son monitoreadas y gestionadas de forma remota. Los robots de limpieza son solo una de las muchas tecnologías en las que Arabia Saudita está invirtiendo para aprovechar todo el potencial de las energías renovables y alcanzar una <strong>matriz energética compuesta en un 50% por fuentes limpias hacia 2030</strong>.</p>
+
+      <!-- Fotos: Arabia Saudita -->
+      <div class="photo-gallery" style="grid-template-columns:repeat(2,1fr);">
+        <figure>
+          <img src="../assets/expo-osaka-saudi1.jpg" alt="Pabellón Arabia Saudita — AI Power" />
+          <figcaption>Ministry of Energy — AI Power: IA para predecir generación renovable</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/expo-osaka-saudi2.jpg" alt="Pabellón Arabia Saudita — Energy AI" />
+          <figcaption>Pabellón de Arabia Saudita — Energía e Inteligencia Artificial</figcaption>
+        </figure>
+      </div>
+
+      <p><strong>El poder de la Inteligencia Artificial:</strong> El uso de inteligencia artificial para predecir la generación de energía renovable está permitiendo una mejor planificación y toma de decisiones. Arabia Saudita está adoptando la IA para abordar la variabilidad de las fuentes renovables y facilitando su integración en la red eléctrica nacional.</p>
+
+      <p>Con una <strong>precisión del 93%</strong>, la IA predice la generación de energía renovable, permitiendo a las plantas optimizar la asignación de energía, planificando estratégicamente cuándo almacenar o liberar energía durante los períodos de alta o baja producción.</p>
+
+      <p>Hogar de algunas de las mayores plantas solares del mundo, Arabia Saudita también está explorando nuevas tecnologías que concentran la luz solar y utilizan recursos naturales como la arena para generar energía durante la noche, apoyando así su ambicioso objetivo de alcanzar la <strong>neutralidad de carbono para el año 2060</strong>.</p>
+
+      <p>Ante esta expansión de la capacidad renovable, se ha lanzado un proyecto nacional de estudios geográficos para instalar <strong>1.200 estaciones de medición</strong>, con el fin de aprovechar al máximo el potencial único del país en recursos solares y eólicos.</p>
+
+      <p>Lo interesante es cómo cruzan el análisis energético con decisiones de negocio, una línea de pensamiento que compartimos desde Clickie: <strong>los datos deben transformarse en acciones, no solo en gráficos</strong>.</p>
+
+      <hr style="margin:40px 0;border:none;border-top:2px solid var(--gray-100);">
+
+      <h2>Galería de fotos de la Expo</h2>
+
+      <div class="photo-gallery">
+        <figure>
+          <img src="../assets/expo-osaka-co2.jpg" alt="Reloj CO2 — Pabellón de Japón" />
+          <figcaption>Reloj CO2: Las algas pueden absorber 14 veces más CO₂ que un cedro</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/expo-osaka-japan.jpg" alt="Bosque de algas — Pabellón de Japón" />
+          <figcaption>Bosque de algas, Pabellón de Japón</figcaption>
+        </figure>
+      </div>
+
+    </div>
+
+    <div class="article-footer">
+      <div class="article-tags">
+        <a href="#">#ExpoOsaka2025</a>
+        <a href="#">#GestiónEnergética</a>
+        <a href="#">#InteligenciaArtificial</a>
+        <a href="#">#Sostenibilidad</a>
+        <a href="#">#Clickie</a>
+        <a href="#">#EnergíaRenovable</a>
+        <a href="#">#Innovación</a>
+      </div>
     </div>
 
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-banner">
   <div class="container"><div class="cta-inner">
-    <h2>¿Quieres conocer más<br>sobre Clickie?</h2>
-    <p>Conversemos sobre cómo podemos ayudar a tu empresa a optimizar su consumo energético.</p>
+    <h2>¿Quieres transformar la gestión<br>energética de tu empresa?</h2>
+    <p>Descubre cómo llevamos la tecnología de vanguardia a la práctica empresarial.</p>
     <div class="cta-actions">
       <a href="../cotiza.html" class="btn btn-primary btn-lg">Cotiza aquí →</a>
+      <a href="prensa.html" class="btn btn-outline-dark btn-lg">Ver más noticias →</a>
     </div>
   </div></div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer"><div class="container"><div class="footer-bottom">
   <span class="footer-copy">© 2017–2026 Desarrollos y Proyectos Clickie SpA. Todos los derechos reservados.</span>
   <div class="footer-legal"><a href="https://es.clickie.io/tos" target="_blank">Términos y condiciones</a><a href="https://es.clickie.io/privacy" target="_blank">Política de privacidad</a></div>
 </div></div></footer>
-
 <script src="../scripts/main.js"></script>
 </body>
 </html>

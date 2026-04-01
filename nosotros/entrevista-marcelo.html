@@ -3,71 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clickie en la Prensa — Noticias y Apariciones en Medios</title>
-  <meta name="description" content="Descubre cómo la prensa y los medios de comunicación hablan de Clickie. Artículos, entrevistas y noticias sobre nuestra plataforma de gestión energética." />
+  <title>Entrevista a Marcelo Llévenes, CEO de Clickie — Clickie</title>
+  <meta name="description" content="Las empresas consumidoras de energía están cambiando las reglas del juego en el sector energético. Entrevista a Marcelo Llévenes, CEO y cofundador de Clickie." />
   <link rel="icon" type="image/png" href="../assets/favicon_navbar.png" sizes="256x256" />
-  <link rel="apple-touch-icon" href="../assets/favicon_navbar.png" />
   <link rel="stylesheet" href="../styles/main.css" />
   <style>
-    .press-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 28px;
+    .interview-point { display:flex; gap:20px; margin:32px 0; }
+    .interview-point .point-number {
+      flex-shrink:0; width:48px; height:48px; border-radius:50%;
+      background:linear-gradient(135deg, var(--primary), var(--secondary));
+      color:white; display:flex; align-items:center; justify-content:center;
+      font-size:1.2rem; font-weight:800; margin-top:4px;
     }
-    .press-card {
-      background: white; border-radius: 20px; overflow: hidden;
-      border: 1.5px solid var(--gray-200); text-decoration: none;
-      transition: all 0.3s ease; display: flex; flex-direction: column;
+    .interview-point .point-content h3 { margin:0 0 8px; color:var(--text-primary); font-size:1.15rem; }
+    .interview-point .point-content p { margin:0; }
+    blockquote.interview-quote {
+      border-left:4px solid var(--primary); padding:16px 24px; margin:28px 0;
+      background:var(--gray-50); border-radius:0 12px 12px 0;
+      font-style:italic; font-size:1.05rem; color:var(--text-secondary);
     }
-    .press-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-    }
-    .press-card-img {
-      width: 100%; height: 220px; overflow: hidden;
-      background: var(--gray-50);
-    }
-    .press-card-img img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-    .press-card:hover .press-card-img img { transform: scale(1.04); }
-    .press-card-body {
-      padding: 28px 28px 32px; flex: 1;
-      display: flex; flex-direction: column;
-    }
-    .press-card-source {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.1em; color: var(--secondary); opacity: 0.5;
-      margin-bottom: 12px;
-    }
-    .press-card-source span { font-size: 1rem; }
-    .press-card-body h3 {
-      font-size: 1.15rem; font-weight: 700; color: var(--secondary);
-      line-height: 1.4; margin-bottom: 12px;
-    }
-    .press-card-body p {
-      font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65;
-      margin-bottom: 20px; flex: 1;
-    }
-    .press-card-footer {
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .press-card-date {
-      font-size: 0.78rem; color: var(--text-secondary); opacity: 0.6;
-    }
-    .press-card-link {
-      font-size: 0.85rem; font-weight: 600; color: var(--secondary);
-      display: inline-flex; align-items: center; gap: 4px;
-    }
-    @media (max-width: 768px) {
-      .press-grid { grid-template-columns: 1fr; }
+    @media(max-width:600px) {
+      .interview-point { flex-direction:column; gap:12px; }
     }
   </style>
 </head>
 <body>
-
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
   <button class="mobile-menu-close" id="mobileClose" aria-label="Cerrar menú">✕</button>
   <button class="mobile-servicios-toggle">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -100,26 +60,23 @@
     <!-- Calculadora oculta temporalmente -->
     <a href="../recursos/encuesta-madurez.html"><span class="mobile-sub-icon">📋</span> Encuesta de Madurez Energética</a>
     <a href="https://www.youtube.com/@clickie4338" target="_blank" rel="noopener"><span class="mobile-sub-icon">🎬</span> Canal de YouTube</a>
-    <a href="https://blog.clickie.io" target="_blank" rel="noopener"><span class="mobile-sub-icon">📝</span> Blog</a>
+    <a href="../recursos/blog.html"><span class="mobile-sub-icon">📝</span> Blog</a>
   </div>
   <button class="mobile-nosotros-toggle">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
   <div class="mobile-nosotros-sub">
     <a href="../nosotros.html"><span class="mobile-sub-icon">💛</span> Nuestros Valores</a>
-    <a href="../nosotros/prensa.html"><span class="mobile-sub-icon">📰</span> Clickie en la Prensa</a>
+    <a href="prensa.html"><span class="mobile-sub-icon">📰</span> Clickie en la Prensa</a>
   </div>
   <a href="https://app.clickie.io/" class="btn btn-primary" target="_blank" rel="noopener">Iniciar sesión</a>
 </div>
 
-<!-- NAVBAR -->
 <nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Navegación principal">
   <div class="container">
     <div class="navbar-inner">
-
       <a href="../index.html" class="navbar-logo" aria-label="Clickie inicio">
         <img class="logo-badge" src="../assets/favicon_navbar.png" alt="Clickie Logo" width="38" height="38" style="border-radius:10px; vertical-align:bottom;" />
         Clickie
       </a>
-
       <div class="navbar-nav">
         <div class="nav-dropdown" id="navDropdownServicios">
           <a href="../index.html#servicios" class="nav-link nav-link-dropdown">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -205,7 +162,7 @@
                   <div class="mega-item-icon yellow">💛</div>
                   <div class="mega-item-content"><strong>Nuestros Valores</strong><span>Propósito, misión y los valores que guían cada decisión en Clickie.</span></div>
                 </a>
-                <a href="../nosotros/prensa.html" class="mega-item">
+                <a href="prensa.html" class="mega-item">
                   <div class="mega-item-icon violet">📰</div>
                   <div class="mega-item-content"><strong>Clickie en la Prensa</strong><span>Noticias, artículos y apariciones de Clickie en medios de comunicación.</span></div>
                 </a>
@@ -223,145 +180,124 @@
       <button class="hamburger" id="hamburger" aria-label="Abrir menú móvil">
         <span></span><span></span><span></span>
       </button>
-
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="subpage-hero">
-  <div class="container">
-    <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="../nosotros.html">Nosotros</a> / Prensa</div>
-    <span class="guia-hero-tag">Prensa y medios</span>
-    <h1>Clickie en la <span class="accent">prensa</span></h1>
-    <p class="hero-desc">Así hablan de nosotros en los medios de comunicación. Conoce las noticias, artículos y entrevistas sobre Clickie.</p>
+<section class="subpage-hero" style="padding-bottom:0">
+  <div class="container article-hero">
+    <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="../nosotros.html">Nosotros</a> / <a href="prensa.html">Prensa</a> / Entrevista</div>
+    <div class="article-meta">
+      <span class="tag">Entrevista</span>
+      <span>📅 Enero 2025</span>
+      <span>·</span>
+      <span>7 min de lectura</span>
+    </div>
+    <h1>Entrevista a Marcelo Llévenes, CEO de Clickie</h1>
+    <p style="font-size:1.15rem;color:var(--text-secondary);margin-top:8px;">Equipo Clickie</p>
   </div>
 </section>
 
-<!-- PRESS ARTICLES -->
-<section class="section" style="background:var(--white);">
+<section class="section" style="background:var(--white)">
   <div class="container">
 
-    <div class="press-grid">
+    <!-- VIDEO EMBED -->
+    <div style="position:relative;width:100%;padding-bottom:56.25%;margin-bottom:40px;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.1);">
+      <iframe src="https://www.youtube.com/embed/fhPptAo_KiY" title="Entrevista a Marcelo Llévenes, CEO de Clickie" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+    </div>
 
-      <!-- El Mercurio -->
-      <a href="../recursos/blog/clickie-el-mercurio.html" class="press-card fade-in">
-        <div class="press-card-img">
-          <img src="../assets/blog-el-mercurio.png" alt="Clickie en El Mercurio" />
-        </div>
-        <div class="press-card-body">
-          <div class="press-card-source"><span>📰</span> El Mercurio</div>
-          <h3>Startup crea plataforma que permite a empresas ahorrar hasta 20% en cuenta de la luz</h3>
-          <p>"Queremos ser la plataforma de gestión energética más popular", afirma su cofundador, Nicolás Llévenes.</p>
-          <div class="press-card-footer">
-            <span class="press-card-date">Septiembre 2025</span>
-            <span class="press-card-link">Leer artículo →</span>
-          </div>
-        </div>
-      </a>
+    <div class="article-content">
 
-      <!-- Entrevista Marcelo Llévenes -->
-      <a href="entrevista-marcelo.html" class="press-card fade-in">
-        <div class="press-card-img">
-          <img src="../assets/blog-entrevista-marcelo.png" alt="Entrevista a Marcelo Llévenes, CEO de Clickie" />
-        </div>
-        <div class="press-card-body">
-          <div class="press-card-source"><span>🎙️</span> Entrevista</div>
-          <h3>Las empresas consumidoras de energía están cambiando las reglas del juego en el sector energético</h3>
-          <p>Entrevista a Marcelo Llévenes, CEO de Clickie, sobre cómo las empresas están transformando su relación con la energía.</p>
-          <div class="press-card-footer">
-            <span class="press-card-date">Enero 2025</span>
-            <span class="press-card-link">Leer entrevista →</span>
-          </div>
-        </div>
-      </a>
+      <h2 style="font-size:1.5rem;line-height:1.3;">Las Empresas Consumidoras de Energía Están Cambiando las Reglas del Juego en el Sector Energético</h2>
 
-      <!-- Feria Vulco -->
-      <a href="../nosotros/feria-vulco.html" class="press-card fade-in">
-        <div class="press-card-img">
-          <img src="../assets/blog-feria-vulco.jpg" alt="Clickie en la Feria del Medio Ambiente de Vulco" />
-        </div>
-        <div class="press-card-body">
-          <div class="press-card-source"><span>🏭</span> Evento</div>
-          <h3>Clickie en la Feria del Medio Ambiente de Vulco: tecnología, sostenibilidad y trabajo conjunto</h3>
-          <p>Presentamos nuestra plataforma de gestión energética en la feria interna de Vulco dedicada al cambio sostenible.</p>
-          <div class="press-card-footer">
-            <span class="press-card-date">Junio 2025</span>
-            <span class="press-card-link">Ver más →</span>
-          </div>
-        </div>
-      </a>
+      <p>En una reciente conversación con <strong>Aurelio Bustilho de Oliveira</strong>, CEO de Enel Américas, nuestro CEO y cofundador de Clickie, <strong>Marcelo Llévenes</strong>, compartió su visión sobre el futuro de la energía y cómo las nuevas tecnologías están poniendo el poder en manos de los clientes. A continuación, exploramos algunos de los temas más relevantes de esta entrevista y cómo impactan a la industria y a los consumidores:</p>
 
-      <!-- Expo Osaka 2025 -->
-      <a href="expo-osaka.html" class="press-card fade-in">
-        <div class="press-card-img">
-          <img src="../assets/blog-expo-osaka.png" alt="Clickie en la Expo Osaka 2025" />
-        </div>
-        <div class="press-card-body">
-          <div class="press-card-source"><span>🌏</span> Expo Mundial</div>
-          <h3>Energía, datos y futuro: Clickie visitó la Expo Osaka 2025</h3>
-          <p>Recorrimos los pabellones de China, Arabia Saudita y más, explorando el futuro de la gestión energética y la IA.</p>
-          <div class="press-card-footer">
-            <span class="press-card-date">2025</span>
-            <span class="press-card-link">Ver más →</span>
-          </div>
-        </div>
-      </a>
+      <blockquote class="interview-quote">Las nuevas tecnologías, el cambio climático y el poder de decisión que ahora tienen los consumidores crean un ecosistema lleno de oportunidades.</blockquote>
 
-      <!-- M2MDataGlobal Sales Kick-Off 2026 -->
-      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7435020424087781376" class="press-card fade-in" target="_blank" rel="noopener">
-        <div class="press-card-img">
-          <img src="../assets/blog-kickoff-m2m.png" alt="Marcelo Llévenes en Sales Kick-Off 2026 de M2MDataGlobal" />
+      <!-- Punto 1 -->
+      <div class="interview-point">
+        <div class="point-number">1</div>
+        <div class="point-content">
+          <h3>Nuevas Tecnologías y Oportunidades de Cambio</h3>
+          <p>Marcelo destacó el rol crucial de las tecnologías emergentes en la transformación energética. Gracias a las nuevas tecnologías de generación y almacenamiento de energía, la llegada de las baterías y la electrificación de los procesos productivos —impulsada por el cambio climático— estamos ante una combinación que generará grandes oportunidades de cambio y transformación.</p>
+          <p style="margin-top:12px;">Estos avances no solo permiten reducir costos, sino que también habilitan a las empresas a producir, almacenar y gestionar su propia energía. <strong>Antes, el poder estaba en manos de quienes generaban la energía eléctrica, los monopolios. Ahora, los clientes tienen la capacidad de decidir cómo, dónde y con quién consumir su energía.</strong> En Clickie, nuestro compromiso es ayudar a nuestros clientes a aprovechar este nuevo escenario.</p>
         </div>
-        <div class="press-card-body">
-          <div class="press-card-source"><span>🎤</span> Panel</div>
-          <h3>Nuestro CEO como panelista en el Sales Kick-Off 2026 de M2MDataGlobal</h3>
-          <p>Marcelo Llévenes participó como panelista invitado debatiendo sobre IoT, telemática y conectividad en Chile y LATAM.</p>
-          <div class="press-card-footer">
-            <span class="press-card-date">Marzo 2026</span>
-            <span class="press-card-link">Ver en LinkedIn →</span>
-          </div>
-        </div>
-      </a>
+      </div>
 
-      <!-- OXXO ExpoEnergía Sostenible -->
-      <a href="https://www.linkedin.com/posts/oxxo-chile_en-el-marco-de-expoenerg%C3%ADa-sostenible-encuentro-activity-7437147956182646784-xKS1" class="press-card fade-in" target="_blank" rel="noopener">
-        <div class="press-card-img">
-          <img src="../assets/blog-oxxo-expoenergia.png" alt="Clickie y OXXO en ExpoEnergía Sostenible" />
+      <!-- Punto 2 -->
+      <div class="interview-point">
+        <div class="point-number">2</div>
+        <div class="point-content">
+          <h3>Ante el cambio climático ¿Cómo enfrentamos una crisis?</h3>
+          <p>Todas las empresas enfrentan el desafío del cambio climático, y Marcelo enfatizó la importancia de que las empresas estén preparadas para este tipo de crisis. <strong>Estar preparados no es solo una cuestión de tecnología, sino de anticipar las necesidades y responder de manera eficaz a las exigencias medioambientales.</strong> Marcelo destaca la importancia de crear vínculos sólidos con sus clientes, brindándoles herramientas que les permitan adaptarse a los cambios climáticos y mejorar su eficiencia energética.</p>
         </div>
-        <div class="press-card-body">
-          <div class="press-card-source"><span>⚡</span> Evento</div>
-          <h3>Clickie y OXXO en ExpoEnergía Sostenible: ¿Cómo OXXO alcanzó un 20% de ahorro en energía?</h3>
-          <p>Presentación en ExpoEnergía Sostenible sobre eficiencia energética en retail con un ahorro acumulado de 5.777.617 kWh.</p>
-          <div class="press-card-footer">
-            <span class="press-card-date">Marzo 2026</span>
-            <span class="press-card-link">Ver en LinkedIn →</span>
-          </div>
-        </div>
-      </a>
+      </div>
 
+      <!-- Punto 3 -->
+      <div class="interview-point">
+        <div class="point-number">3</div>
+        <div class="point-content">
+          <h3>Modernización de la Regulación</h3>
+          <p>En la entrevista, se abordó la importancia de actualizar la regulación para adaptarse a la nueva realidad energética. El rol de las empresas de energía ya no es solo el de proveedor de electrones; hoy en día, son proveedores de un servicio esencial. <strong>Clickie entiende esta transformación y está comprometida en ofrecer a sus clientes una experiencia integral, donde la eficiencia, el ahorro y la sostenibilidad sean protagonistas.</strong></p>
+        </div>
+      </div>
+
+      <!-- Punto 4 -->
+      <div class="interview-point">
+        <div class="point-number">4</div>
+        <div class="point-content">
+          <h3>Las Personas: El Verdadero Motor de Cambio, y de Clickie</h3>
+          <p>Aunque la tecnología es esencial, Marcelo hizo hincapié en que las personas son la clave para el éxito de cualquier transformación y las que hacen la diferencia. En Clickie, aprendimos que no basta con monitorear el consumo de energía; también es necesario analizar los datos, interpretarlos correctamente y presentarlos de manera sencilla. De esta forma, los clientes pueden tomar decisiones informadas y eficientes.</p>
+          <blockquote class="interview-quote">La curiosidad es el motor que impulsa a nuestro equipo a entender cómo cada cliente usa la energía, y eso nos permite ofrecer soluciones personalizadas.</blockquote>
+        </div>
+      </div>
+
+      <!-- Punto 5 -->
+      <div class="interview-point">
+        <div class="point-number">5</div>
+        <div class="point-content">
+          <h3>Escuchar y Aprender del Cliente</h3>
+          <p>En Clickie, creemos que la mejor manera de innovar es escuchar a nuestros clientes. Nuestro enfoque va más allá de simplemente ofrecer datos; buscamos interactuar con ellos, entender sus necesidades y aprender de cada caso. La curiosidad y el aprendizaje constante nos permiten mejorar nuestra tecnología y adaptarla a las exigencias del cliente, ofreciendo una experiencia que realmente añade valor.</p>
+        </div>
+      </div>
+
+      <hr style="margin:40px 0;border:none;border-top:2px solid var(--gray-100);">
+
+      <p>Queremos agradecer a <strong>Aurelio Bustilho de Oliveira</strong>, CEO de Enel Américas, por la oportunidad de compartir esta conversación tan enriquecedora. Su liderazgo y visión sobre el futuro de la energía aportan una perspectiva valiosa que nos inspira a continuar innovando y mejorando la experiencia de nuestros clientes.</p>
+
+      <p>¡Gracias, Aurelio, por este intercambio y por ser parte de esta transformación hacia un futuro energético más sostenible!</p>
+
+    </div>
+
+    <div class="article-footer">
+      <div class="article-tags">
+        <a href="#">#Entrevista</a>
+        <a href="#">#GestiónEnergética</a>
+        <a href="#">#Clickie</a>
+        <a href="#">#TransformaciónEnergética</a>
+        <a href="#">#EficienciaEnergética</a>
+        <a href="#">#Sostenibilidad</a>
+      </div>
     </div>
 
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-banner">
   <div class="container"><div class="cta-inner">
-    <h2>¿Quieres conocer más<br>sobre Clickie?</h2>
-    <p>Conversemos sobre cómo podemos ayudar a tu empresa a optimizar su consumo energético.</p>
+    <h2>¿Quieres transformar la gestión<br>energética de tu empresa?</h2>
+    <p>Conversemos sobre cómo podemos ayudarte a tomar el control de tu consumo energético.</p>
     <div class="cta-actions">
       <a href="../cotiza.html" class="btn btn-primary btn-lg">Cotiza aquí →</a>
+      <a href="prensa.html" class="btn btn-outline-dark btn-lg">Ver más noticias →</a>
     </div>
   </div></div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer"><div class="container"><div class="footer-bottom">
   <span class="footer-copy">© 2017–2026 Desarrollos y Proyectos Clickie SpA. Todos los derechos reservados.</span>
   <div class="footer-legal"><a href="https://es.clickie.io/tos" target="_blank">Términos y condiciones</a><a href="https://es.clickie.io/privacy" target="_blank">Política de privacidad</a></div>
 </div></div></footer>
-
 <script src="../scripts/main.js"></script>
 </body>
 </html>

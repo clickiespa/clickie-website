@@ -1,0 +1,67 @@
+# ==============================================================================
+# MISSION OBJECTIVE (MO) MANIFEST & SYSTEM BLUEPRINT
+# ==============================================================================
+# PROJECT: Clickie B2B Corporate Website & Resource Hub
+# VERSION: 1.0.0
+# FORMAT: Markdown (MacDown Compatible)
+# TARGET_ENVIRONMENT: AI Coding Agents / Web Development IDE
+# ROLE: Principal Web Architect & Lead UI/UX Engineer
+# ==============================================================================
+
+## 1. 🌍 CONTEXTO DE NEGOCIO Y VISIÓN GLOBAL
+**Clickie Web B2B** es la cara pública, el motor de generación de leads y el centro de recursos para la plataforma SaaS de gestión energética.
+- **Objetivo Principal:** Reemplazar el sitio legacy por una web de diseño *clean*, ultrarrápida, que transmita confianza corporativa y sea 100% autogestionable por el equipo de marketing/operaciones.
+- **Mercado Objetivo:** Enfoque regional Latam B2B (Chile, México y Perú). Se requiere personalización de copys y casos de éxito según la terminología de cada país.
+- **Core Features:** Motor de blogs, gestor de descargas de Ebooks (Lead Magnets) para capturar emails, y un portal de documentación técnica/comercial bien estructurado.
+
+---
+
+## 2. 🏗️ ARQUITECTURA TÉCNICA (TECH STACK)
+Para resolver el problema de "no puedo gestionarla fácilmente", la arquitectura separa el diseño del contenido (Headless CMS).
+- **Frontend:** Next.js (React) con TypeScript. Ideal para SEO, carga rápida y diseño modular.
+- **Estilos y UI:** Tailwind CSS. Permite un diseño *clean* y minimalista. Componentes base de shadcn/ui.
+- **Gestor de Contenidos (CMS):** Sanity.io o Strapi. Esta será la "oficina" donde tu equipo subirá Ebooks, creará artículos y editará textos sin tocar una sola línea de código.
+- **Alojamiento (Hosting):** Vercel o Google Cloud (Firebase Hosting) para despliegue automático.
+- **Base de Datos (Leads):** Integración vía API con tu CRM actual (HubSpot, Salesforce, o directo a Google Sheets/BigQuery) al completar formularios.
+
+---
+
+## 3. 🎨 DISEÑO E IDENTIDAD VISUAL (UI/UX)
+El diseño *clean* se basará en amplios espacios en blanco (White space), tipografías sans-serif legibles (ej. Inter o Roboto) y el uso estratégico de tu paleta para guiar la conversión:
+
+* **Fondo y Texto:** Blancos, grises muy claros y texto en gris oscuro/grafito (nunca negro puro) para reducir la fatiga visual.
+* **Acentos Visuales (Paleta Clickie):**
+    * **Verde (#7a8c1f):** Uso en botones secundarios, íconos de características e indicadores de éxito.
+    * **Rojo/Naranja (#db6a00):** Uso exclusivo para *Call to Actions* (CTAs) principales ("Agenda una Demo", "Descargar Ebook"). El contraste generará alta conversión.
+    * **Verde Claro (#98b518):** Uso en fondos sutiles, hover de botones, o elementos gráficos de soporte e ilustraciones.
+
+---
+
+## 4. 🗂️ ESTRUCTURA DE CONTENIDOS (CMS SCHEMA)
+El esquema de datos para que el equipo gestione la web sin programar:
+
+* **`Páginas_Landing`**: Título, Hero Copy, País Objetivo (Chile/Perú/México), Bloques de Beneficios, Testimonios.
+* **`Recursos_Ebooks`**: 
+    * Portada (Imagen).
+    * Título y Descripción.
+    * Archivo PDF (Subida directa al CMS).
+    * Formulario asociado.
+* **`Documentación`**: Categoría (API, Manual de Usuario, Glosario Energético), Título del Artículo, Contenido (Rich Text/Markdown).
+* **`Casos_de_Exito`**: Cliente, País, Ahorro Generado (Métricas), Historia completa.
+
+---
+
+## 5. 🚀 FLUJOS DE CONVERSIÓN Y RECURSOS B2B
+1. **Flujo de Captación (Ebooks):** El usuario navega a "Recursos" -> Clica en un Ebook -> Se abre un modal o landing page simple -> Ingresa su Nombre, Empresa y Email B2B -> El sistema le muestra el enlace de descarga y envía los datos por API a tu CRM.
+2. **Flujo de Documentación:** Un subdominio (ej. `docs.clickie.com`) o sección con barra de búsqueda rápida (tipo Algolia) donde los usuarios pueden leer sobre cómo conectar sus suministros eléctricos.
+3. **Localización Latam:** Selector de país en el *nav bar* que adapta dinámicamente casos de éxito y terminología (ej. hablar de "Empalmes" en Chile vs "RPU" en México).
+
+---
+
+## 6. 🗺️ ROADMAP DE EJECUCIÓN (INSTRUCCIONES PARA EL AI AGENT)
+> **Agente IA:** Eres el Desarrollador Web Principal. Ejecuta este proyecto creando componentes limpios y reutilizables. Prioriza la accesibilidad y el performance (Lighthouse score > 90).
+
+- [ ] **Fase 1: Setup Frontend.** Inicializar proyecto en Next.js. Configurar Tailwind CSS inyectando los colores corporativos (`#7a8c1f`, `#db6a00`, `#98b518`).
+- [ ] **Fase 2: Setup Headless CMS.** Configurar el CMS (Sanity/Strapi) y crear los esquemas para "Ebooks", "Documentación" y "Casos de Éxito".
+- [ ] **Fase 3: Desarrollo UI Core.** Construir Layout base (Navbar, Footer B2B), Hero Section y Grid de características.
+-
