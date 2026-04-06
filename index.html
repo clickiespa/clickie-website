@@ -878,58 +878,17 @@
       </div>
 
       <div class="contact-form fade-in-right">
-        <p class="form-title">Solicita una demo gratuita</p>
-        <form id="contactForm" novalidate>
-          <div class="form-grid">
-
-            <div class="form-group">
-              <label class="form-label" for="name">Nombre completo *</label>
-              <input class="form-input" id="name" name="name" type="text" placeholder="María González" required />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="company">Empresa *</label>
-              <input class="form-input" id="company" name="company" type="text" placeholder="Empresa S.A." required />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="email">Email corporativo *</label>
-              <input class="form-input" id="email" name="email" type="email" placeholder="maria@empresa.cl" required />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="phone">Teléfono</label>
-              <input class="form-input" id="phone" name="phone" type="tel" placeholder="+56 9 8765 4321" />
-            </div>
-
-            <div class="form-group full-width">
-              <label class="form-label" for="sector">Sector / Industria</label>
-              <select class="form-select" id="sector" name="sector">
-                <option value="">Selecciona tu industria</option>
-                <option value="retail">Retail y Comercio</option>
-                <option value="industria">Industria y Manufactura</option>
-                <option value="energia">Generación de Energía</option>
-                <option value="hidrico">Gestión Hídrica</option>
-                <option value="petroleo">Petróleo y Gas</option>
-                <option value="otro">Otro</option>
-              </select>
-            </div>
-
-            <div class="form-group full-width">
-              <label class="form-label" for="message">¿Cuál es tu desafío energético?</label>
-              <textarea class="form-textarea" id="message" name="message" placeholder="Cuéntanos sobre tu empresa, cuántos locales o plantas tienes, y qué tipo de ahorro esperas lograr..."></textarea>
-            </div>
-
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-lg form-submit" id="submitBtn">
-            Solicitar demo gratuita →
-          </button>
-
-          <div class="form-success" id="formSuccess">
-            ✅ ¡Mensaje enviado! Te contactaremos dentro de las próximas 24 horas.
-          </div>
-        </form>
+        <p class="form-title">Contáctanos</p>
+        <div id="hubspotFormContainer"></div>
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+        <script>
+          hbspt.forms.create({
+            portalId: "46669151",
+            formId: "1a7881fc-e0cd-4c7f-bf28-c048a563cc81",
+            region: "na1",
+            target: "#hubspotFormContainer"
+          });
+        </script>
       </div>
 
     </div>
