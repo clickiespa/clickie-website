@@ -899,6 +899,12 @@ p  { font-size: 1rem; line-height: 1.75; color: var(--text-secondary); font-weig
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
+.services-grid--4col {
+  grid-template-columns: repeat(4, 1fr);
+}
+.services-grid--2col {
+  grid-template-columns: repeat(2, 1fr);
+}
 .service-card {
   background: var(--white);
   border: 1.5px solid var(--gray-200);
@@ -2067,7 +2073,9 @@ p  { font-size: 1rem; line-height: 1.75; color: var(--text-secondary); font-weig
    RESPONSIVE
 ════════════════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid,
+  .services-grid--4col,
+  .services-grid--2col { grid-template-columns: repeat(2, 1fr); }
   .metrics-grid  { grid-template-columns: repeat(2, 1fr); }
   .how-steps     { grid-template-columns: repeat(2, 1fr); }
   .how-steps::before { display: none; }
@@ -2089,6 +2097,10 @@ p  { font-size: 1rem; line-height: 1.75; color: var(--text-secondary); font-weig
   .hero-stats { flex-wrap: wrap; gap: 20px; }
   .hero-stat { border-right: none; margin-right: 0; min-width: 40%; }
   .hero-actions { justify-content: center; }
+  .services-grid--4col { grid-template-columns: 1fr; }
+  .services-grid--2col { grid-template-columns: 1fr; }
+  .service-card { padding: 28px 24px; }
+  .services-header { margin-bottom: 40px; }
   .stories-grid { grid-template-columns: 1fr; }
   .story-card.featured { grid-row: span 1; }
   .contact-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -2108,7 +2120,10 @@ p  { font-size: 1rem; line-height: 1.75; color: var(--text-secondary); font-weig
 }
 
 @media (max-width: 480px) {
-  .services-grid { grid-template-columns: 1fr; }
+  .services-grid,
+  .services-grid--4col,
+  .services-grid--2col { grid-template-columns: 1fr; }
+  .service-card { padding: 24px 20px; }
   .metrics-grid  { grid-template-columns: 1fr 1fr; }
   .how-steps     { grid-template-columns: 1fr; }
   .about-pillars { grid-template-columns: 1fr; }
