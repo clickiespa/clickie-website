@@ -2101,6 +2101,12 @@ p  { font-size: 1rem; line-height: 1.75; color: var(--text-secondary); font-weig
   .services-grid--2col { grid-template-columns: 1fr; }
   .service-card { padding: 28px 24px; }
   .services-header { margin-bottom: 40px; }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .metric-card { padding: 24px 16px; }
+  .metric-value { font-size: 2rem; }
+  .metric-icon { font-size: 1.6rem; margin-bottom: 12px; }
+  .metric-label { font-size: 0.78rem; }
+  .metrics-subtitle { margin-bottom: 40px; }
   .stories-grid { grid-template-columns: 1fr; }
   .story-card.featured { grid-row: span 1; }
   .contact-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -2124,7 +2130,11 @@ p  { font-size: 1rem; line-height: 1.75; color: var(--text-secondary); font-weig
   .services-grid--4col,
   .services-grid--2col { grid-template-columns: 1fr; }
   .service-card { padding: 24px 20px; }
-  .metrics-grid  { grid-template-columns: 1fr 1fr; }
+  .metrics-grid  { grid-template-columns: 1fr; gap: 12px; }
+  .metric-card { padding: 20px 16px; }
+  .metric-value { font-size: 1.8rem; }
+  .metric-icon { font-size: 1.4rem; margin-bottom: 8px; }
+  .metric-label { font-size: 0.75rem; }
   .how-steps     { grid-template-columns: 1fr; }
   .about-pillars { grid-template-columns: 1fr; }
   .results-showcase { grid-template-columns: 1fr; }
