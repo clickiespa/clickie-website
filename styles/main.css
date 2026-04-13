@@ -2062,6 +2062,8 @@ p  { font-size: 1rem; line-height: 1.75; color: var(--text-secondary); font-weig
   .calc-inputs { grid-template-columns: 1fr; }
   .calc-results-grid { grid-template-columns: 1fr; }
   .modal-content { padding: 36px 24px; }
+  .btn { white-space: normal; text-align: center; }
+  .btn-lg { padding: 16px 24px; font-size: 0.95rem; }
 }
 
 @media (max-width: 480px) {
