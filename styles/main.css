@@ -454,79 +454,54 @@ p  { font-size: 1rem; line-height: 1.75; color: var(--text-secondary); font-weig
   pointer-events: auto;
 }
 
-/* ── Mobile submenu for Recursos ─── */
-.mobile-recursos-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 8px 16px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.85);
-  cursor: pointer;
-}
-.mobile-recursos-toggle .dropdown-chevron {
-  transition: transform var(--transition);
-}
-.mobile-recursos-toggle.open .dropdown-chevron {
-  transform: rotate(180deg);
-}
-.mobile-recursos-sub {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  padding: 8px 0 8px 24px;
-}
-.mobile-recursos-sub.open {
-  display: flex;
-}
-.mobile-recursos-sub a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.7);
-  transition: all var(--transition);
-}
-.mobile-recursos-sub a:hover {
-  color: var(--white);
-  background: rgba(255,255,255,0.08);
-}
-.mobile-recursos-sub .mobile-sub-icon {
-  font-size: 1.1rem;
-}
+/* ── Mobile submenus (all toggles consolidated below) ─── */
 
-/* ── Mobile submenu for Historias ─── */
-.mobile-historias-toggle {
+.mobile-servicios-toggle,
+.mobile-historias-toggle,
+.mobile-recursos-toggle,
+.mobile-nosotros-toggle {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 8px 16px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.85);
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
   cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
-.mobile-historias-toggle .dropdown-chevron {
+.mobile-servicios-toggle .dropdown-chevron,
+.mobile-historias-toggle .dropdown-chevron,
+.mobile-recursos-toggle .dropdown-chevron,
+.mobile-nosotros-toggle .dropdown-chevron {
   transition: transform var(--transition);
 }
-.mobile-historias-toggle.open .dropdown-chevron {
+.mobile-servicios-toggle.open .dropdown-chevron,
+.mobile-historias-toggle.open .dropdown-chevron,
+.mobile-recursos-toggle.open .dropdown-chevron,
+.mobile-nosotros-toggle.open .dropdown-chevron {
   transform: rotate(180deg);
 }
-.mobile-historias-sub {
+.mobile-servicios-sub,
+.mobile-historias-sub,
+.mobile-recursos-sub,
+.mobile-nosotros-sub {
   display: none;
   flex-direction: column;
-  gap: 4px;
-  padding: 8px 0 8px 24px;
+  gap: 2px;
+  padding: 8px 0 8px 16px;
 }
-.mobile-historias-sub.open {
+.mobile-servicios-sub.open,
+.mobile-historias-sub.open,
+.mobile-recursos-sub.open,
+.mobile-nosotros-sub.open {
   display: flex;
 }
-.mobile-historias-sub a {
+.mobile-servicios-sub a,
+.mobile-historias-sub a,
+.mobile-recursos-sub a,
+.mobile-nosotros-sub a {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -536,56 +511,17 @@ p  { font-size: 1rem; line-height: 1.75; color: var(--text-secondary); font-weig
   color: rgba(255,255,255,0.7);
   transition: all var(--transition);
 }
-.mobile-historias-sub a:hover {
+.mobile-servicios-sub a:hover,
+.mobile-historias-sub a:hover,
+.mobile-recursos-sub a:hover,
+.mobile-nosotros-sub a:hover {
   color: var(--white);
   background: rgba(255,255,255,0.08);
 }
-.mobile-historias-sub .mobile-sub-icon {
-  font-size: 1.1rem;
-}
-
-/* ── Mobile submenu for Servicios ─── */
-.mobile-servicios-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 8px 16px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.85);
-  cursor: pointer;
-}
-.mobile-servicios-toggle .dropdown-chevron {
-  transition: transform var(--transition);
-}
-.mobile-servicios-toggle.open .dropdown-chevron {
-  transform: rotate(180deg);
-}
-.mobile-servicios-sub {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  padding: 8px 0 8px 24px;
-}
-.mobile-servicios-sub.open {
-  display: flex;
-}
-.mobile-servicios-sub a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.7);
-  transition: all var(--transition);
-}
-.mobile-servicios-sub a:hover {
-  color: var(--white);
-  background: rgba(255,255,255,0.08);
-}
-.mobile-servicios-sub .mobile-sub-icon {
+.mobile-servicios-sub .mobile-sub-icon,
+.mobile-historias-sub .mobile-sub-icon,
+.mobile-recursos-sub .mobile-sub-icon,
+.mobile-nosotros-sub .mobile-sub-icon {
   font-size: 1.1rem;
 }
 
@@ -2041,9 +1977,12 @@ p  { font-size: 1rem; line-height: 1.75; color: var(--text-secondary); font-weig
   z-index: 999;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 80px 24px 32px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   transform: translateX(100%);
   transition: transform 0.4s ease;
 }
