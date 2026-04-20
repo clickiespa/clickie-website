@@ -1,251 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TYPPJZ22DC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-TYPPJZ22DC');
-  </script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UBM – Utility Bill Management — Clickie</title>
+  <title>UBM: Gestión de facturas — Clickie</title>
   <meta name="description" content="Ahorra hasta un 15% en tu gasto de energía con gestión inteligente de facturas. Te representamos frente a las distribuidoras eléctricas." />
   <link rel="icon" type="image/png" href="../assets/favicon_navbar.png" sizes="256x256" />
   <link rel="stylesheet" href="../styles/main.css" />
 </head>
-<body>
+<body class="service-page">
 
-<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
-  <button class="mobile-menu-close" id="mobileClose" aria-label="Cerrar menú">✕</button>
-  <button class="mobile-servicios-toggle">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-servicios-sub">
-    <a href="../servicios/ubm.html"><span class="mobile-sub-icon">📄</span> UBM — Gestión de Suministros</a>
-    <a href="../servicios/ems.html"><span class="mobile-sub-icon">📊</span> EMS — Monitoreo y Optimización</a>
-    <a href="../servicios/bms.html"><span class="mobile-sub-icon">🖥️</span> BMS — Control Inteligente</a>
-    <a href="../servicios/remarcacion.html"><span class="mobile-sub-icon">⚡</span> Remarcación y Submetering</a>
-    <div style="border-top:1px solid rgba(255,255,255,0.1);margin:8px 16px;"></div>
-    <span style="padding:4px 16px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);">Por Rubro</span>
-    <a href="../servicios/gestion-retail.html"><span class="mobile-sub-icon">🏪</span> Retail</a>
-    <a href="../servicios/eficiencia-energetica.html"><span class="mobile-sub-icon">🏭</span> Industria</a>
-  </div>
-  <button class="mobile-historias-toggle">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-historias-sub">
-    <a href="../historias/oxxo.html"><span class="mobile-sub-icon">🏪</span> OXXO</a>
-    <a href="../historias/starbucks.html"><span class="mobile-sub-icon">☕</span> Starbucks</a>
-    <a href="../historias/copec.html"><span class="mobile-sub-icon">⛽</span> COPEC</a>
-    <a href="../historias/lipigas.html"><span class="mobile-sub-icon">🔥</span> LIPIGAS</a>
-    <a href="../historias/tattersall.html"><span class="mobile-sub-icon">🏢</span> Tattersall</a>
-    <a href="../historias/renova.html"><span class="mobile-sub-icon">🌿</span> RENOVA</a>
-    <a href="../historias/preunic.html"><span class="mobile-sub-icon">🛍️</span> Preunic</a>
-    <a href="../historias/la-araucana-co2.html"><span class="mobile-sub-icon">🌱</span> La Araucana</a>
-  </div>
-
-          <button class="mobile-recursos-toggle">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-recursos-sub">
-    <a href="../recursos/guias.html"><span class="mobile-sub-icon">📘</span> Guías de Ahorro Energético</a>
-    <a href="../recursos/casos-de-exito.html"><span class="mobile-sub-icon">📊</span> Casos de Éxito</a>
-    <!-- Calculadora oculta temporalmente -->
-    <a href="../recursos/encuesta-madurez.html"><span class="mobile-sub-icon">📋</span> Encuesta de Madurez Energética</a>
-    <a href="https://www.youtube.com/@clickie4338" target="_blank" rel="noopener"><span class="mobile-sub-icon">🎬</span> Canal de YouTube</a>
-    <a href="https://blog.clickie.io" target="_blank" rel="noopener"><span class="mobile-sub-icon">📝</span> Blog</a>
-  </div>
-  <button class="mobile-nosotros-toggle">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-nosotros-sub">
-    <a href="../nosotros.html"><span class="mobile-sub-icon">💛</span> Nuestros Valores</a>
-    <a href="../nosotros/prensa.html"><span class="mobile-sub-icon">📰</span> Clickie en la Prensa</a>
-  </div>
-  <a href="https://app.clickie.io/" class="btn btn-primary" target="_blank" rel="noopener">Iniciar sesión</a>
-</div>
-
-<nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Navegación principal">
-  <div class="container">
-    <div class="navbar-inner">
-
-      <a href="../index.html" class="navbar-logo" aria-label="Clickie inicio">
-        <img class="logo-badge" src="../assets/favicon_navbar_blue.png" alt="Clickie Logo" width="36" height="36" style="vertical-align:bottom; position:relative; bottom:5px;" />
-        Clickie
-      </a>
-
-      <div class="navbar-nav">
-        <div class="nav-dropdown" id="navDropdownServicios">
-          <a href="../index.html#servicios" class="nav-link nav-link-dropdown">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownServicios">
-            <div class="mega-dropdown-inner" style="display:flex;gap:0;">
-              <!-- POR SOLUCIÓN -->
-              <div style="flex:3;">
-                <div class="mega-dropdown-header">
-                  <span class="mega-dropdown-title">Por Solución ›</span>
-                  <p class="mega-dropdown-subtitle">Nuestras plataformas de gestión energética.</p>
-                </div>
-                <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
-                  <a href="../servicios/ubm.html" class="mega-item">
-                    <div class="mega-item-icon yellow">📄</div>
-                    <div class="mega-item-content"><strong>UBM</strong><span>Gestión de Suministros Eléctricos.</span></div>
-                  </a>
-                  <a href="../servicios/ems.html" class="mega-item">
-                    <div class="mega-item-icon green">📊</div>
-                    <div class="mega-item-content"><strong>EMS</strong><span>Monitoreo, Gestión y Optimización Energética en Tiempo Real.</span></div>
-                  </a>
-                  <a href="../servicios/bms.html" class="mega-item">
-                    <div class="mega-item-icon violet">🖥️</div>
-                    <div class="mega-item-content"><strong>BMS</strong><span>Control Inteligente.</span></div>
-                  </a>
-                  <a href="../servicios/remarcacion.html" class="mega-item">
-                    <div class="mega-item-icon yellow">⚡</div>
-                    <div class="mega-item-content"><strong>Remarcación y Submetering</strong><span>Distribución interna justa de energía.</span></div>
-                  </a>
-                </div>
-              </div>
-              <!-- SEPARADOR -->
-              <div style="width:1px;background:var(--gray-200);margin:0 24px;"></div>
-              <!-- POR RUBRO -->
-              <div style="flex:1.5;">
-                <div class="mega-dropdown-header">
-                  <span class="mega-dropdown-title">Por Rubro ›</span>
-                  <p class="mega-dropdown-subtitle">Soluciones por industria.</p>
-                </div>
-                <div class="mega-dropdown-grid" style="grid-template-columns:1fr;">
-                  <a href="../servicios/gestion-retail.html" class="mega-item">
-                    <div class="mega-item-icon green">🏪</div>
-                    <div class="mega-item-content"><strong>Retail</strong><span>Eficiencia energética en tiendas y cadenas comerciales.</span></div>
-                  </a>
-                  <a href="../servicios/eficiencia-energetica.html" class="mega-item">
-                    <div class="mega-item-icon violet">🏭</div>
-                    <div class="mega-item-content"><strong>Industria</strong><span>Optimización energética en plantas e instalaciones industriales.</span></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-dropdown" id="navDropdownHistorias">
-          <a href="../index.html#historias" class="nav-link nav-link-dropdown">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownHistorias">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Historias de Éxito ›</span>
-                <p class="mega-dropdown-subtitle">Conoce cómo empresas líderes optimizaron su energía con Clickie.</p>
-              </div>
-              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(4,1fr);">
-                <a href="../historias/oxxo.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🏪</div>
-                  <div class="mega-item-content"><strong>OXXO</strong><span>20% de ahorro en 230+ tiendas.</span></div>
-                </a>
-                <a href="../historias/starbucks.html" class="mega-item">
-                  <div class="mega-item-icon green">☕</div>
-                  <div class="mega-item-content"><strong>Starbucks</strong><span>Eficiencia energética en cafeterías.</span></div>
-                </a>
-                <a href="../historias/copec.html" class="mega-item">
-                  <div class="mega-item-icon violet">⛽</div>
-                  <div class="mega-item-content"><strong>COPEC</strong><span>Monitoreo de red renovable completa.</span></div>
-                </a>
-                <a href="../historias/lipigas.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🔥</div>
-                  <div class="mega-item-content"><strong>LIPIGAS</strong><span>8% ahorro en plantas productivas.</span></div>
-                </a>
-                <a href="../historias/tattersall.html" class="mega-item">
-                  <div class="mega-item-icon violet">🏢</div>
-                  <div class="mega-item-content"><strong>Tattersall</strong><span>Gestión energética industrial.</span></div>
-                </a>
-                <a href="../historias/renova.html" class="mega-item">
-                  <div class="mega-item-icon green">🌿</div>
-                  <div class="mega-item-content"><strong>RENOVA</strong><span>+20% rendimiento en activos renovables.</span></div>
-                </a>
-                <a href="../historias/preunic.html" class="mega-item">
-                  <div class="mega-item-icon green">🛍️</div>
-                  <div class="mega-item-content"><strong>Preunic</strong><span>20% de reducción en costos energéticos.</span></div>
-                </a>
-                <a href="../historias/la-araucana-co2.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🌱</div>
-                  <div class="mega-item-content"><strong>La Araucana</strong><span>Reducción de huella de carbono.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-                <div class="nav-dropdown" id="navDropdownRecursos">
-          <a href="../index.html#recursos" class="nav-link nav-link-dropdown">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownRecursos">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Recursos Clickie ›</span>
-                <p class="mega-dropdown-subtitle">Guías, casos de éxito y herramientas prácticas para optimizar tu gestión energética.</p>
-              </div>
-              <div class="mega-dropdown-grid">
-                <a href="../recursos/guias.html" class="mega-item">
-                  <div class="mega-item-icon yellow">📘</div>
-                  <div class="mega-item-content"><strong>Guías de Ahorro Energético</strong><span>Descarga guías prácticas de eficiencia energética para tu rubro.</span></div>
-                </a>
-                <a href="../recursos/casos-de-exito.html" class="mega-item">
-                  <div class="mega-item-icon violet">📊</div>
-                  <div class="mega-item-content"><strong>Casos de Éxito</strong><span>OXXO, Starbucks, COPEC, LIPIGAS y más empresas que optimizaron su energía.</span></div>
-                </a>
-                <!-- Calculadora oculta temporalmente
-                <a href="../recursos/calculadora.html" class="mega-item">
-                  <div class="mega-item-icon green">🧮</div>
-                  <div class="mega-item-content"><strong>Calculadora de Ahorro</strong><span>Ingresa tus datos de consumo y descubre cuánto podrías ahorrar.</span></div>
-                </a>
-                -->
-                <a href="https://blog.clickie.io" target="_blank" rel="noopener" class="mega-item">
-                  <div class="mega-item-icon yellow">📝</div>
-                  <div class="mega-item-content"><strong>Blog</strong><span>Artículos sobre eficiencia energética, casos de éxito y tendencias.</span></div>
-                </a>
-                <a href="../recursos/encuesta-madurez.html" class="mega-item">
-                  <div class="mega-item-icon green">📋</div>
-                  <div class="mega-item-content"><strong>Encuesta de Madurez Energética</strong><span>Descubre tu nivel de madurez y recibe un plan de acción personalizado.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-dropdown" id="navDropdownNosotros">
-          <a href="../nosotros.html" class="nav-link nav-link-dropdown">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownNosotros">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Nosotros ›</span>
-                <p class="mega-dropdown-subtitle">Conoce quiénes somos y qué nos mueve.</p>
-              </div>
-              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
-                <a href="../nosotros.html" class="mega-item">
-                  <div class="mega-item-icon yellow">💛</div>
-                  <div class="mega-item-content"><strong>Nuestros Valores</strong><span>Propósito, misión y los valores que guían cada decisión en Clickie.</span></div>
-                </a>
-                <a href="../nosotros/prensa.html" class="mega-item">
-                  <div class="mega-item-icon violet">📰</div>
-                  <div class="mega-item-content"><strong>Clickie en la Prensa</strong><span>Noticias, artículos y apariciones de Clickie en medios de comunicación.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="https://blog.clickie.io" class="nav-link" target="_blank" rel="noopener">Blog</a>
-      </div>
-
-      <div class="navbar-actions">
-        <a href="https://app.clickie.io/" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Iniciar sesión</a>
-        <a href="../cotiza.html" class="btn btn-primary btn-sm">Cotiza aquí</a>
-      </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú móvil">
-        <span></span><span></span><span></span>
-      </button>
-
-    </div>
-  </div>
-</nav>
+<div data-site-shell="mobile-menu"></div>
+<div data-site-shell="navbar"></div>
 
 <section class="subpage-hero">
   <div class="container">
     <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="../index.html#servicios">Servicios</a> / UBM</div>
     <h1>UBM – Utility Bill <span class="accent">Management</span></h1>
     <p class="hero-desc">Ahorra hasta un 15% en tu gasto de energía con gestión inteligente de facturas. Te representamos frente a las distribuidoras eléctricas para optimizar tus contratos.</p>
-    <div class="hero-metric">
+    <div class="hero-metric hero-metric--kpi">
       <span class="hero-metric-value">15%</span>
       <span class="hero-metric-label">Ahorro en gasto energético</span>
     </div>
@@ -255,135 +28,147 @@
 <!-- ═══════ EL DESAFÍO + PLATAFORMA ═══════ -->
 <section class="subpage-content">
   <div class="container"><div class="content-grid">
-    <div class="content-text">
+    <div class="content-text text-left">
       <span class="section-label">El desafío</span>
       <h2>¿Estás pagando de más por tu energía?</h2>
-      <p>Las facturas de servicios eléctricos son complejas. Errores de facturación, tarifas mal aplicadas, cargos por demanda máxima y multas por factor de potencia son más comunes de lo que crees.</p>
-      <p>Sin un equipo especializado que audite y gestione tus facturas, podrías estar pagando entre un <strong>10% y 15% más</strong> de lo necesario.</p>
+      <p>Las facturas energéticas suelen esconder errores, tarifas mal aplicadas y cobros que pasan desapercibidos.</p>
+      <p>Demandas máximas, multas por factor de potencia y contratos mal ajustados pueden inflar tu gasto mes a mes.</p>
+      <p>Sin una auditoría especializada, podrías estar pagando entre un <strong>10% y 15% más</strong> de lo necesario.</p>
     </div>
-    <div class="content-text">
+    <div class="content-text text-left">
       <span class="section-label">La solución Clickie</span>
-      <h2>Gestión inteligente de facturas energéticas</h2>
-      <p>Nuestro equipo de expertos audita cada factura, identifica cobros indebidos, negocia con distribuidoras y optimiza tus contratos de suministro.</p>
-      <p>Digitalizamos todas tus facturas en una <strong>plataforma centralizada</strong> donde puedes ver el historial, tendencias y oportunidades de ahorro de toda tu operación.</p>
+      <h2>Optimiza tus facturas energéticas</h2>
+      <div class="summary-chip summary-chip--primary">
+        <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
+        Hasta 15% de ahorro en tu gasto energético
+      </div>
+      <p><strong>Auditamos</strong> cada factura para detectar errores, cobros indebidos y oportunidades de mejora.</p>
+      <p><strong>Optimizamos</strong> tus contratos y tarifas con el respaldo de un equipo que negocia y gestiona frente a las distribuidoras.</p>
+      <p><strong>Centralizamos</strong> toda la información en una plataforma clara para seguir historial, tendencias y ahorros de tu operación.</p>
+      <div class="checklist">
+        <div class="checklist-item">
+          <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+          <p>Detecta cobros indebidos</p>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+          <p>Optimiza tarifas y contratos</p>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+          <p>Centraliza la información</p>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+          <p>Reduce costos de forma continua</p>
+        </div>
+      </div>
     </div>
   </div></div>
 </section>
 
 <!-- ═══════ PLATAFORMA SCREENSHOT ═══════ -->
-<section class="section" style="background:var(--gray-50);padding:80px 0;">
+<section class="section section-surface-muted section-compact">
   <div class="container">
-    <div class="text-center" style="margin-bottom:48px;">
+    <div class="text-center section-intro">
       <span class="section-label">La Plataforma</span>
       <h2 class="section-title">Toda tu operación energética en <span class="highlight">un solo lugar</span></h2>
       <p class="section-subtitle">Visualiza costos, consumo, ahorros y eficiencia de todas tus sucursales en tiempo real.</p>
     </div>
-    <div style="max-width:960px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15);">
-      <img src="../assets/ubm-plataforma-laptop.jpg" alt="Plataforma UBM Clickie — Dashboard de gestión energética" style="width:100%;display:block;" />
+    <div class="media-frame media-frame--wide">
+      <img src="../assets/ubm-plataforma-laptop.jpg" alt="Plataforma UBM Clickie — Dashboard de gestión energética" />
     </div>
   </div>
 </section>
 
 <!-- ═══════ CÓMO FUNCIONA: 3 PASOS ═══════ -->
-<section class="section" style="background:var(--white);padding:80px 0;">
+<section class="section section-surface-white section-compact ubm-process">
   <div class="container">
-    <div class="text-center" style="margin-bottom:48px;">
+    <div class="text-center section-intro">
       <span class="section-label">Cómo funciona</span>
       <h2 class="section-title">UBM: Cómo Clickie convierte tus facturas en <span class="highlight">ahorro</span></h2>
       <p class="section-subtitle">Un Experto Clickie te acompaña en cada etapa, conoce tu operación y tus datos.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:900px;margin:0 auto;">
+    <div class="three-up-grid content-grid-centered ubm-process-grid">
       <!-- Paso 1 -->
-      <div style="text-align:center;">
-        <div style="width:72px;height:72px;margin:0 auto 16px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:1.8rem;">☁️</span>
+      <div class="step-card">
+        <span class="ubm-process-number">01</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
         </div>
-        <h3 style="font-size:1.15rem;color:var(--text-primary);margin-bottom:8px;">Digitalizamos</h3>
-        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">Automatizamos la digitalización de tus facturas de energía, agua y gas.</p>
+        <h3>Digitalizamos</h3>
+        <p>Automatizamos la digitalización de tus facturas de energía, agua y gas.</p>
       </div>
       <!-- Paso 2 -->
-      <div style="text-align:center;">
-        <div style="width:72px;height:72px;margin:0 auto 16px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:1.8rem;">🖥️</span>
+      <div class="step-card">
+        <span class="ubm-process-number">02</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
         </div>
-        <h3 style="font-size:1.15rem;color:var(--text-primary);margin-bottom:8px;">Diagnosticamos</h3>
-        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">Analizamos tu información e identificamos oportunidades de mejora en tu Plataforma Clickie.</p>
+        <h3>Diagnosticamos</h3>
+        <p>Analizamos tu información y detectamos oportunidades de mejora en tu operación.</p>
       </div>
       <!-- Paso 3 -->
-      <div style="text-align:center;">
-        <div style="width:72px;height:72px;margin:0 auto 16px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:1.8rem;">💰</span>
+      <div class="step-card">
+        <span class="ubm-process-number">03</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
         </div>
-        <h3 style="font-size:1.15rem;color:var(--text-primary);margin-bottom:8px;">Ahorramos</h3>
-        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">Construimos tu plan de acción en conjunto y realizamos acciones para ahorrar.</p>
+        <h3>Ahorramos</h3>
+        <p>Definimos un plan de acción y ejecutamos medidas concretas de ahorro.</p>
       </div>
     </div>
     <!-- Línea conectora -->
-    <div style="max-width:700px;margin:32px auto 0;position:relative;">
-      <div style="height:3px;background:linear-gradient(to right,var(--primary),var(--secondary));border-radius:2px;"></div>
-      <div style="display:flex;justify-content:space-between;position:relative;top:-8px;">
-        <div style="width:14px;height:14px;border-radius:50%;background:var(--primary);"></div>
-        <div style="width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));"></div>
-        <div style="width:14px;height:14px;border-radius:50%;background:var(--secondary);"></div>
+    <div class="step-track">
+      <div class="step-track-line step-track-line--brand"></div>
+      <div class="step-track-dots">
+        <div class="step-track-dot step-track-dot--brand"></div>
+        <div class="step-track-dot step-track-dot--brand"></div>
+        <div class="step-track-dot step-track-dot--brand"></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════ UBM GESTIÓN DE FACTURAS (checklist) ═══════ -->
-<section class="section" style="background:var(--gray-50);padding:80px 0;">
+<section class="section section-surface-muted section-compact">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-      <div>
+    <div class="content-grid-centered">
+      <div class="text-left content-text">
         <span class="section-label">UBM: Gestión de Facturas</span>
-        <h2 class="section-title" style="text-align:left;">Digitalización y visibilidad total de tus <span class="highlight">facturas</span></h2>
-        <div style="margin-top:24px;">
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:18px;">
-            <span style="color:var(--primary);font-size:1.3rem;flex-shrink:0;">✔</span>
-            <p style="margin:0;color:var(--text-secondary);"><strong>Digitalización y visibilidad total</strong> de tus facturas de energía, agua y gas.</p>
+        <h2 class="section-title text-left">Digitalización y visibilidad total de tus <span class="highlight">facturas</span></h2>
+        <div class="checklist">
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary">✔</span>
+            <p><strong>Control y visibilidad:</strong><br>Digitalización y visibilidad total de facturas de energía, agua y gas.</p>
           </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:18px;">
-            <span style="color:var(--primary);font-size:1.3rem;flex-shrink:0;">✔</span>
-            <p style="margin:0;color:var(--text-secondary);"><strong>Apoyo y acompañamiento</strong> ante las distribuidoras eléctricas.</p>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary">✔</span>
+            <p><strong>Optimización y ahorro:</strong><br>Detección de cobros indebidos, optimización de tarifas y reducción de multas e intereses.</p>
           </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:18px;">
-            <span style="color:var(--primary);font-size:1.3rem;flex-shrink:0;">✔</span>
-            <p style="margin:0;color:var(--text-secondary);"><strong>Detección de cobros indebidos</strong> y recuperación de montos pagados de más.</p>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:18px;">
-            <span style="color:var(--primary);font-size:1.3rem;flex-shrink:0;">✔</span>
-            <p style="margin:0;color:var(--text-secondary);"><strong>Definición y cambio a tarifa óptima</strong> según tu perfil de consumo.</p>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:18px;">
-            <span style="color:var(--primary);font-size:1.3rem;flex-shrink:0;">✔</span>
-            <p style="margin:0;color:var(--text-secondary);"><strong>Disminución en pago de intereses y multas</strong> por atrasos o factor de potencia.</p>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;">
-            <span style="color:var(--primary);font-size:1.3rem;flex-shrink:0;">✔</span>
-            <p style="margin:0;color:var(--text-secondary);"><strong>Reportes claros</strong> para gestión, finanzas y sostenibilidad.</p>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary">✔</span>
+            <p><strong>Gestión y soporte:</strong><br>Acompañamiento con distribuidoras y reportes claros para finanzas y operaciones.</p>
           </div>
         </div>
-      </div>
-      <div style="background:var(--white);border-radius:20px;padding:40px;box-shadow:0 8px 32px rgba(0,0,0,0.08);text-align:center;">
-        <div style="display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:white;padding:8px 20px;border-radius:8px;font-weight:700;font-size:0.85rem;letter-spacing:0.5px;margin-bottom:24px;">
-          📄 UBM: GESTIÓN DE FACTURAS
+        <div class="ubm-results text-center">
+        <div class="hero-stats hero-stats--ubm">
+          <div class="hero-stat">
+            <span class="hero-stat-heading" aria-hidden="true"><i class="fa-solid fa-file-invoice hero-stat-icon"></i></span>
+            <span class="hero-stat-value">100%</span>
+            <span class="hero-stat-label">Facturas digitalizadas</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-heading" aria-hidden="true"><i class="fa-solid fa-sack-dollar hero-stat-icon"></i></span>
+            <span class="hero-stat-value">15%</span>
+            <span class="hero-stat-label">Ahorro promedio</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-heading" aria-hidden="true"><i class="fa-solid fa-shield-halved hero-stat-icon"></i></span>
+            <span class="hero-stat-value">100%</span>
+            <span class="hero-stat-label">Control sobre cobros y multas</span>
+          </div>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;">
-          <div style="background:var(--gray-50);border-radius:12px;padding:20px 12px;text-align:center;">
-            <span style="font-size:2rem;display:block;margin-bottom:8px;">📊</span>
-            <span style="font-weight:700;color:var(--primary);font-size:1.4rem;">100%</span>
-            <span style="display:block;font-size:0.75rem;color:var(--text-secondary);margin-top:4px;">Facturas digitalizadas</span>
-          </div>
-          <div style="background:var(--gray-50);border-radius:12px;padding:20px 12px;text-align:center;">
-            <span style="font-size:2rem;display:block;margin-bottom:8px;">💰</span>
-            <span style="font-weight:700;color:var(--primary);font-size:1.4rem;">15%</span>
-            <span style="display:block;font-size:0.75rem;color:var(--text-secondary);margin-top:4px;">Ahorro promedio</span>
-          </div>
-          <div style="background:var(--gray-50);border-radius:12px;padding:20px 12px;text-align:center;">
-            <span style="font-size:2rem;display:block;margin-bottom:8px;">⚡</span>
-            <span style="font-weight:700;color:var(--primary);font-size:1.4rem;">0</span>
-            <span style="display:block;font-size:0.75rem;color:var(--text-secondary);margin-top:4px;">Multas evitadas</span>
-          </div>
         </div>
       </div>
     </div>
@@ -391,32 +176,34 @@
 </section>
 
 <!-- ═══════ SCORE DE EFICIENCIA ═══════ -->
-<section class="section" style="background:var(--white);padding:80px 0;">
+<section class="section section-surface-white section-compact">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-      <div style="text-align:center;">
-        <img src="../assets/ubm-score-eficiencia.png" alt="Score de Eficiencia — Plataforma UBM Clickie" style="width:100%;max-width:420px;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,0.1);" />
+    <div class="content-grid-equal">
+      <div class="text-center">
+        <div class="media-frame media-frame--score media-frame--shadow-soft">
+          <img src="../assets/ubm-score-eficiencia.png" alt="Score de Eficiencia — Plataforma UBM Clickie" />
+        </div>
       </div>
-      <div>
+      <div class="content-text">
         <span class="section-label">Score de Eficiencia</span>
-        <h2 class="section-title" style="text-align:left;">Identificamos las oportunidades de <span class="highlight">ahorro y eficiencia</span></h2>
-        <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:24px;">Creamos un <strong>Score de eficiencia</strong> para la empresa y para cada sucursal, identificando las oportunidades de ahorro y eficiencia.</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-          <div style="background:var(--gray-50);border-radius:12px;padding:16px;border-left:4px solid var(--primary);">
-            <h4 style="margin:0 0 6px;font-size:0.9rem;color:var(--text-primary);">📊 Benchmarking</h4>
-            <p style="margin:0;font-size:0.82rem;color:var(--text-secondary);">Comparativa entre sucursales para detectar desviaciones.</p>
+        <h2 class="section-title text-left">Identificamos las oportunidades de <span class="highlight">ahorro y eficiencia</span></h2>
+        <p>Creamos un <strong>Score de eficiencia</strong> para la empresa y para cada sucursal.</p>
+        <div class="service-score-grid">
+          <div class="service-score-card service-score-card--primary">
+            <h4><i class="fa-solid fa-chart-column" aria-hidden="true"></i>Benchmarking</h4>
+            <p>Comparativa entre sucursales para detectar desviaciones.</p>
           </div>
-          <div style="background:var(--gray-50);border-radius:12px;padding:16px;border-left:4px solid var(--secondary);">
-            <h4 style="margin:0 0 6px;font-size:0.9rem;color:var(--text-primary);">🚫 Eliminar multas</h4>
-            <p style="margin:0;font-size:0.82rem;color:var(--text-secondary);">Detección y prevención de multas por factor de potencia.</p>
+          <div class="service-score-card service-score-card--secondary">
+            <h4><i class="fa-solid fa-ban" aria-hidden="true"></i>Eliminar multas</h4>
+            <p>Detección y prevención de multas por factor de potencia.</p>
           </div>
-          <div style="background:var(--gray-50);border-radius:12px;padding:16px;border-left:4px solid var(--primary);">
-            <h4 style="margin:0 0 6px;font-size:0.9rem;color:var(--text-primary);">⚡ Optimizar tarifas</h4>
-            <p style="margin:0;font-size:0.82rem;color:var(--text-secondary);">Cambio a la tarifa más conveniente según tu perfil.</p>
+          <div class="service-score-card service-score-card--primary">
+            <h4><i class="fa-solid fa-bolt" aria-hidden="true"></i>Optimizar tarifas</h4>
+            <p>Cambio a la tarifa más conveniente según tu perfil.</p>
           </div>
-          <div style="background:var(--gray-50);border-radius:12px;padding:16px;border-left:4px solid var(--secondary);">
-            <h4 style="margin:0 0 6px;font-size:0.9rem;color:var(--text-primary);">🔍 Detectar anomalías</h4>
-            <p style="margin:0;font-size:0.82rem;color:var(--text-secondary);">Sucursales que operan sobre la norma con oportunidades de mejora.</p>
+          <div class="service-score-card service-score-card--secondary">
+            <h4><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i>Detectar anomalías</h4>
+            <p>Sucursales que operan sobre la norma con oportunidades de mejora.</p>
           </div>
         </div>
       </div>
@@ -432,12 +219,12 @@
       <h2 class="section-title">Gestión de facturas <span class="highlight">sin complicaciones</span></h2>
     </div>
     <div class="features-grid">
-      <div class="feature-card"><div class="feature-icon">📄</div><h4>Auditoría de facturas</h4><p>Revisión detallada de cada factura para identificar errores de cobro y oportunidades de ahorro.</p></div>
-      <div class="feature-card"><div class="feature-icon">📊</div><h4>Dashboard centralizado</h4><p>Todas tus facturas digitalizadas en un solo lugar con análisis de tendencias y comparativas.</p></div>
-      <div class="feature-card"><div class="feature-icon">🤝</div><h4>Representación ante distribuidoras</h4><p>Negociamos en tu nombre para optimizar contratos, tarifas y condiciones de suministro.</p></div>
-      <div class="feature-card"><div class="feature-icon">💰</div><h4>Recuperación de cobros</h4><p>Identificamos y gestionamos la devolución de cobros indebidos o mal aplicados.</p></div>
-      <div class="feature-card"><div class="feature-icon">📈</div><h4>Optimización tarifaria</h4><p>Analizamos tu perfil de consumo para recomendarte la tarifa más conveniente.</p></div>
-      <div class="feature-card"><div class="feature-icon">🔔</div><h4>Alertas de facturación</h4><p>Notificaciones cuando tus facturas muestran desvíos significativos respecto a meses anteriores.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i></div><h4>Auditoría de facturas</h4><p>Revisión detallada de cada factura para identificar errores de cobro y oportunidades de ahorro.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></div><h4>Dashboard centralizado</h4><p>Todas tus facturas digitalizadas en un solo lugar con análisis de tendencias y comparativas.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-handshake-angle" aria-hidden="true"></i></div><h4>Representación ante distribuidoras</h4><p>Negociamos en tu nombre para optimizar contratos, tarifas y condiciones de suministro.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i></div><h4>Recuperación de cobros</h4><p>Identificamos y gestionamos la devolución de cobros indebidos o mal aplicados.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i></div><h4>Optimización tarifaria</h4><p>Analizamos tu perfil de consumo para recomendarte la tarifa más conveniente.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-bell" aria-hidden="true"></i></div><h4>Alertas de facturación</h4><p>Notificaciones cuando tus facturas muestran desvíos significativos respecto a meses anteriores.</p></div>
     </div>
   </div>
 </section>
@@ -453,16 +240,9 @@
   </div></div>
 </section>
 
-<footer class="footer"><div class="container"><div class="footer-bottom">
-  <span class="footer-copy">© 2017–2026 Desarrollos y Proyectos Clickie SpA. Todos los derechos reservados.</span>
-  <div class="footer-legal"><a href="https://es.clickie.io/tos" target="_blank">Términos y condiciones</a><a href="https://es.clickie.io/privacy" target="_blank">Política de privacidad</a></div>
-</div></div></footer>
+<div data-site-shell="footer"></div>
 
+<script src="../scripts/shared-layout.js"></script>
 <script src="../scripts/main.js"></script>
-
-  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/46669151.js"></script>
-  <!-- End of HubSpot Embed Code -->
-
 </body>
 </html>

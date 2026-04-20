@@ -166,6 +166,39 @@ document.addEventListener('DOMContentLoaded', () => {
     el.style.transitionDelay = `${i * 0.1}s`;
   });
 
+  /* ── Hero image slider ───────────────────── */
+  const heroSlider = document.querySelector('[data-hero-slider]');
+  const heroSlides = heroSlider?.querySelectorAll('.hero-image-slide') || [];
+
+  if (heroSlides.length > 1) {
+    let currentSlide = 0;
+
+    const setActiveSlide = (nextIndex) => {
+      heroSlides[currentSlide]?.classList.remove('is-active');
+      heroSlides[nextIndex]?.classList.add('is-active');
+      currentSlide = nextIndex;
+    };
+
+    window.setInterval(() => {
+      const nextIndex = (currentSlide + 1) % heroSlides.length;
+      setActiveSlide(nextIndex);
+    }, 4500);
+  }
+
+  /* ── Story image rotators ────────────────── */
+  document.querySelectorAll('.story-image-rotator').forEach((rotator) => {
+    const images = rotator.querySelectorAll('img');
+    let index = 0;
+
+    if (images.length <= 1) return;
+
+    window.setInterval(() => {
+      images[index]?.classList.remove('is-active');
+      index = (index + 1) % images.length;
+      images[index]?.classList.add('is-active');
+    }, 4000);
+  });
+
   /* ── Counter animation ────────────────────── */
   const counters = document.querySelectorAll('[data-count]');
   const counterObserver = new IntersectionObserver((entries) => {
