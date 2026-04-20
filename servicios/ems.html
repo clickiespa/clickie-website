@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TYPPJZ22DC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-TYPPJZ22DC');
-  </script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Energy Management System (EMS) — Clickie</title>
@@ -18,227 +8,10 @@
   <link rel="icon" type="image/png" href="../assets/favicon_navbar.png" sizes="256x256" />
   <link rel="stylesheet" href="../styles/main.css" />
 </head>
-<body>
+<body class="service-page">
 
-<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
-  <button class="mobile-menu-close" id="mobileClose" aria-label="Cerrar menú">✕</button>
-  <button class="mobile-servicios-toggle">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-servicios-sub">
-    <a href="../servicios/ubm.html"><span class="mobile-sub-icon">📄</span> UBM — Gestión de Suministros</a>
-    <a href="../servicios/ems.html"><span class="mobile-sub-icon">📊</span> EMS — Monitoreo y Optimización</a>
-    <a href="../servicios/bms.html"><span class="mobile-sub-icon">🖥️</span> BMS — Control Inteligente</a>
-    <a href="../servicios/remarcacion.html"><span class="mobile-sub-icon">⚡</span> Remarcación y Submetering</a>
-    <div style="border-top:1px solid rgba(255,255,255,0.1);margin:8px 16px;"></div>
-    <span style="padding:4px 16px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);">Por Rubro</span>
-    <a href="../servicios/gestion-retail.html"><span class="mobile-sub-icon">🏪</span> Retail</a>
-    <a href="../servicios/eficiencia-energetica.html"><span class="mobile-sub-icon">🏭</span> Industria</a>
-  </div>
-  <button class="mobile-historias-toggle">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-historias-sub">
-    <a href="../historias/oxxo.html"><span class="mobile-sub-icon">🏪</span> OXXO</a>
-    <a href="../historias/starbucks.html"><span class="mobile-sub-icon">☕</span> Starbucks</a>
-    <a href="../historias/copec.html"><span class="mobile-sub-icon">⛽</span> COPEC</a>
-    <a href="../historias/lipigas.html"><span class="mobile-sub-icon">🔥</span> LIPIGAS</a>
-    <a href="../historias/tattersall.html"><span class="mobile-sub-icon">🏢</span> Tattersall</a>
-    <a href="../historias/renova.html"><span class="mobile-sub-icon">🌿</span> RENOVA</a>
-    <a href="../historias/preunic.html"><span class="mobile-sub-icon">🛍️</span> Preunic</a>
-    <a href="../historias/la-araucana-co2.html"><span class="mobile-sub-icon">🌱</span> La Araucana</a>
-  </div>
-
-          <button class="mobile-recursos-toggle">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-recursos-sub">
-    <a href="../recursos/guias.html"><span class="mobile-sub-icon">📘</span> Guías de Ahorro Energético</a>
-    <a href="../recursos/casos-de-exito.html"><span class="mobile-sub-icon">📊</span> Casos de Éxito</a>
-    <!-- Calculadora oculta temporalmente -->
-    <a href="../recursos/encuesta-madurez.html"><span class="mobile-sub-icon">📋</span> Encuesta de Madurez Energética</a>
-    <a href="https://www.youtube.com/@clickie4338" target="_blank" rel="noopener"><span class="mobile-sub-icon">🎬</span> Canal de YouTube</a>
-    <a href="https://blog.clickie.io" target="_blank" rel="noopener"><span class="mobile-sub-icon">📝</span> Blog</a>
-  </div>
-  <button class="mobile-nosotros-toggle">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-nosotros-sub">
-    <a href="../nosotros.html"><span class="mobile-sub-icon">💛</span> Nuestros Valores</a>
-    <a href="../nosotros/prensa.html"><span class="mobile-sub-icon">📰</span> Clickie en la Prensa</a>
-  </div>
-  <a href="https://app.clickie.io/" class="btn btn-primary" target="_blank" rel="noopener">Iniciar sesión</a>
-</div>
-
-<nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Navegación principal">
-  <div class="container">
-    <div class="navbar-inner">
-
-      <a href="../index.html" class="navbar-logo" aria-label="Clickie inicio">
-        <img class="logo-badge" src="../assets/favicon_navbar_blue.png" alt="Clickie Logo" width="36" height="36" style="vertical-align:bottom; position:relative; bottom:5px;" />
-        Clickie
-      </a>
-
-      <div class="navbar-nav">
-        <div class="nav-dropdown" id="navDropdownServicios">
-          <a href="../index.html#servicios" class="nav-link nav-link-dropdown">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownServicios">
-            <div class="mega-dropdown-inner" style="display:flex;gap:0;">
-              <!-- POR SOLUCIÓN -->
-              <div style="flex:3;">
-                <div class="mega-dropdown-header">
-                  <span class="mega-dropdown-title">Por Solución ›</span>
-                  <p class="mega-dropdown-subtitle">Nuestras plataformas de gestión energética.</p>
-                </div>
-                <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
-                  <a href="../servicios/ubm.html" class="mega-item">
-                    <div class="mega-item-icon yellow">📄</div>
-                    <div class="mega-item-content"><strong>UBM</strong><span>Gestión de Suministros Eléctricos.</span></div>
-                  </a>
-                  <a href="../servicios/ems.html" class="mega-item">
-                    <div class="mega-item-icon green">📊</div>
-                    <div class="mega-item-content"><strong>EMS</strong><span>Monitoreo, Gestión y Optimización Energética en Tiempo Real.</span></div>
-                  </a>
-                  <a href="../servicios/bms.html" class="mega-item">
-                    <div class="mega-item-icon violet">🖥️</div>
-                    <div class="mega-item-content"><strong>BMS</strong><span>Control Inteligente.</span></div>
-                  </a>
-                  <a href="../servicios/remarcacion.html" class="mega-item">
-                    <div class="mega-item-icon yellow">⚡</div>
-                    <div class="mega-item-content"><strong>Remarcación y Submetering</strong><span>Distribución interna justa de energía.</span></div>
-                  </a>
-                </div>
-              </div>
-              <!-- SEPARADOR -->
-              <div style="width:1px;background:var(--gray-200);margin:0 24px;"></div>
-              <!-- POR RUBRO -->
-              <div style="flex:1.5;">
-                <div class="mega-dropdown-header">
-                  <span class="mega-dropdown-title">Por Rubro ›</span>
-                  <p class="mega-dropdown-subtitle">Soluciones por industria.</p>
-                </div>
-                <div class="mega-dropdown-grid" style="grid-template-columns:1fr;">
-                  <a href="../servicios/gestion-retail.html" class="mega-item">
-                    <div class="mega-item-icon green">🏪</div>
-                    <div class="mega-item-content"><strong>Retail</strong><span>Eficiencia energética en tiendas y cadenas comerciales.</span></div>
-                  </a>
-                  <a href="../servicios/eficiencia-energetica.html" class="mega-item">
-                    <div class="mega-item-icon violet">🏭</div>
-                    <div class="mega-item-content"><strong>Industria</strong><span>Optimización energética en plantas e instalaciones industriales.</span></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-dropdown" id="navDropdownHistorias">
-          <a href="../index.html#historias" class="nav-link nav-link-dropdown">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownHistorias">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Historias de Éxito ›</span>
-                <p class="mega-dropdown-subtitle">Conoce cómo empresas líderes optimizaron su energía con Clickie.</p>
-              </div>
-              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(4,1fr);">
-                <a href="../historias/oxxo.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🏪</div>
-                  <div class="mega-item-content"><strong>OXXO</strong><span>20% de ahorro en 230+ tiendas.</span></div>
-                </a>
-                <a href="../historias/starbucks.html" class="mega-item">
-                  <div class="mega-item-icon green">☕</div>
-                  <div class="mega-item-content"><strong>Starbucks</strong><span>Eficiencia energética en cafeterías.</span></div>
-                </a>
-                <a href="../historias/copec.html" class="mega-item">
-                  <div class="mega-item-icon violet">⛽</div>
-                  <div class="mega-item-content"><strong>COPEC</strong><span>Monitoreo de red renovable completa.</span></div>
-                </a>
-                <a href="../historias/lipigas.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🔥</div>
-                  <div class="mega-item-content"><strong>LIPIGAS</strong><span>8% ahorro en plantas productivas.</span></div>
-                </a>
-                <a href="../historias/tattersall.html" class="mega-item">
-                  <div class="mega-item-icon violet">🏢</div>
-                  <div class="mega-item-content"><strong>Tattersall</strong><span>Gestión energética industrial.</span></div>
-                </a>
-                <a href="../historias/renova.html" class="mega-item">
-                  <div class="mega-item-icon green">🌿</div>
-                  <div class="mega-item-content"><strong>RENOVA</strong><span>+20% rendimiento en activos renovables.</span></div>
-                </a>
-                <a href="../historias/preunic.html" class="mega-item">
-                  <div class="mega-item-icon green">🛍️</div>
-                  <div class="mega-item-content"><strong>Preunic</strong><span>20% de reducción en costos energéticos.</span></div>
-                </a>
-                <a href="../historias/la-araucana-co2.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🌱</div>
-                  <div class="mega-item-content"><strong>La Araucana</strong><span>Reducción de huella de carbono.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-                <div class="nav-dropdown" id="navDropdownRecursos">
-          <a href="../index.html#recursos" class="nav-link nav-link-dropdown">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownRecursos">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Recursos Clickie ›</span>
-                <p class="mega-dropdown-subtitle">Guías, casos de éxito y herramientas prácticas para optimizar tu gestión energética.</p>
-              </div>
-              <div class="mega-dropdown-grid">
-                <a href="../recursos/guias.html" class="mega-item">
-                  <div class="mega-item-icon yellow">📘</div>
-                  <div class="mega-item-content"><strong>Guías de Ahorro Energético</strong><span>Descarga guías prácticas de eficiencia energética para tu rubro.</span></div>
-                </a>
-                <a href="../recursos/casos-de-exito.html" class="mega-item">
-                  <div class="mega-item-icon violet">📊</div>
-                  <div class="mega-item-content"><strong>Casos de Éxito</strong><span>OXXO, Starbucks, COPEC, LIPIGAS y más empresas que optimizaron su energía.</span></div>
-                </a>
-                <!-- Calculadora oculta temporalmente
-                <a href="../recursos/calculadora.html" class="mega-item">
-                  <div class="mega-item-icon green">🧮</div>
-                  <div class="mega-item-content"><strong>Calculadora de Ahorro</strong><span>Ingresa tus datos de consumo y descubre cuánto podrías ahorrar.</span></div>
-                </a>
-                -->
-                <a href="https://blog.clickie.io" target="_blank" rel="noopener" class="mega-item">
-                  <div class="mega-item-icon yellow">📝</div>
-                  <div class="mega-item-content"><strong>Blog</strong><span>Artículos sobre eficiencia energética, casos de éxito y tendencias.</span></div>
-                </a>
-                <a href="../recursos/encuesta-madurez.html" class="mega-item">
-                  <div class="mega-item-icon green">📋</div>
-                  <div class="mega-item-content"><strong>Encuesta de Madurez Energética</strong><span>Descubre tu nivel de madurez y recibe un plan de acción personalizado.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-dropdown" id="navDropdownNosotros">
-          <a href="../nosotros.html" class="nav-link nav-link-dropdown">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownNosotros">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Nosotros ›</span>
-                <p class="mega-dropdown-subtitle">Conoce quiénes somos y qué nos mueve.</p>
-              </div>
-              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
-                <a href="../nosotros.html" class="mega-item">
-                  <div class="mega-item-icon yellow">💛</div>
-                  <div class="mega-item-content"><strong>Nuestros Valores</strong><span>Propósito, misión y los valores que guían cada decisión en Clickie.</span></div>
-                </a>
-                <a href="../nosotros/prensa.html" class="mega-item">
-                  <div class="mega-item-icon violet">📰</div>
-                  <div class="mega-item-content"><strong>Clickie en la Prensa</strong><span>Noticias, artículos y apariciones de Clickie en medios de comunicación.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="https://blog.clickie.io" class="nav-link" target="_blank" rel="noopener">Blog</a>
-      </div>
-
-      <div class="navbar-actions">
-        <a href="https://app.clickie.io/" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Iniciar sesión</a>
-        <a href="../cotiza.html" class="btn btn-primary btn-sm">Cotiza aquí</a>
-      </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú móvil">
-        <span></span><span></span><span></span>
-      </button>
-
-    </div>
-  </div>
-</nav>
+<div data-site-shell="mobile-menu"></div>
+<div data-site-shell="navbar"></div>
 
 <section class="subpage-hero">
   <div class="container">
@@ -246,7 +19,7 @@
     <h1>Energy Management <span class="accent">System</span></h1>
     <p class="hero-desc">Optimiza tu consumo energético con un diagnóstico rápido y en línea. Dashboards inteligentes con recomendaciones accionables en tiempo real.</p>
     <div class="hero-metric">
-      <span class="hero-metric-value">📊</span>
+      <span class="hero-metric-value"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></span>
       <span class="hero-metric-label">Dashboards en tiempo real</span>
     </div>
   </div>
@@ -255,126 +28,150 @@
 <!-- ═══════ EL DESAFÍO + SOLUCIÓN ═══════ -->
 <section class="subpage-content">
   <div class="container"><div class="content-grid">
-    <div class="content-text">
+    <div class="content-text text-left">
       <span class="section-label">El desafío</span>
-      <h2>Datos sin acción no generan ahorro</h2>
-      <p>Muchas empresas tienen datos de consumo energético, pero carecen de las herramientas para convertirlos en <strong>acciones concretas de ahorro</strong>.</p>
-      <p>Sin un sistema de gestión energética integrado, las decisiones se toman con información parcial, retrasada o en formatos difíciles de interpretar. El resultado: <strong>sobreconsumos que pasan desapercibidos</strong> durante meses.</p>
+      <h2>¿Estás tomando decisiones energéticas sin datos claros?</h2>
+      <p>Sin visibilidad en tiempo real, es difícil entender dónde se está consumiendo más y qué equipos o sucursales se están desviando.</p>
+      <p>Cuando la información llega tarde o fragmentada, las decisiones se toman con supuestos y los consumos ocultos siguen creciendo sin que nadie los detecte a tiempo.</p>
+      <p>Sin un sistema de monitoreo continuo, podrías estar dejando pasar <strong>desviaciones y sobreconsumos que impactan directamente tus costos operativos</strong>.</p>
     </div>
-    <div class="content-text">
+    <div class="content-text text-left">
       <span class="section-label">La solución Clickie</span>
-      <h2>Monitoreo detallado de la energía</h2>
-      <p>Nuestro EMS centraliza toda la información energética de tu empresa en una <strong>plataforma intuitiva</strong> que convierte datos en decisiones accionables.</p>
-      <p>Monitoreamos energía, agua y gas <strong>en tiempo real</strong>, con diagnóstico continuo acompañado de todos los módulos de la Plataforma Clickie. Un <strong>Experto Clickie</strong> te acompaña en cada etapa.</p>
+      <h2>Optimiza tu consumo con visibilidad en tiempo real</h2>
+      <div class="summary-chip summary-chip--primary">
+        <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+        Monitoreo en tiempo real de tu consumo energético
+      </div>
+      <p><strong>Monitoreamos</strong> tu operación en tiempo real para darte visibilidad inmediata sobre consumos, equipos críticos y desvíos por sucursal.</p>
+      <p><strong>Analizamos</strong> patrones y anomalías en dashboards claros para que tu equipo pueda entender qué está ocurriendo y dónde actuar primero.</p>
+      <p><strong>Optimizamos</strong> tu operación con decisiones accionables que reducen consumo, corrigen ineficiencias y sostienen el ahorro en el tiempo.</p>
+      <div class="checklist">
+        <div class="checklist-item">
+          <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+          <p>Detecta desviaciones de consumo</p>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+          <p>Optimiza horarios de operación</p>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+          <p>Visualiza datos en dashboards claros</p>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+          <p>Reduce costos de forma continua</p>
+        </div>
+      </div>
     </div>
   </div></div>
 </section>
 
 <!-- ═══════ PLATAFORMA EMS ═══════ -->
-<section class="section" style="background:var(--gray-50);padding:80px 0;">
+<section class="section section-surface-muted section-compact">
   <div class="container">
-    <div class="text-center" style="margin-bottom:48px;">
+    <div class="text-center section-intro">
       <span class="section-label">La Plataforma</span>
       <h2 class="section-title">Monitoreo inteligente en <span class="highlight">cualquier dispositivo</span></h2>
       <p class="section-subtitle">Accede a tus dashboards desde cualquier lugar: escritorio, tablet o celular. Toda tu operación energética siempre disponible.</p>
     </div>
-    <div style="max-width:500px;margin:0 auto;text-align:center;">
-      <img src="../assets/Cel y tablet tienda inteligente.png" alt="Plataforma EMS Clickie — Dashboard en celular y tablet" style="width:100%;display:block;filter:drop-shadow(0 20px 40px rgba(0,0,0,0.15));" />
+    <div class="media-frame media-frame--narrow media-frame--device">
+      <img src="../assets/Cel y tablet tienda inteligente.png" alt="Plataforma EMS Clickie — Dashboard en celular y tablet" />
     </div>
   </div>
 </section>
 
 <!-- ═══════ CÓMO FUNCIONA: 3 PASOS ═══════ -->
-<section class="section" style="background:var(--white);padding:80px 0;">
+<section class="section section-surface-white section-compact ubm-process">
   <div class="container">
-    <div class="text-center" style="margin-bottom:48px;">
+    <div class="text-center section-intro">
       <span class="section-label">Cómo funciona</span>
       <h2 class="section-title">EMS: Cómo Clickie transforma tus datos en <span class="highlight">ahorro real</span></h2>
-      <p class="section-subtitle">Un Experto Clickie te acompaña en cada etapa, conoce tu operación y tus datos.</p>
+      <p class="section-subtitle">Tres pasos para convertir monitoreo continuo en decisiones concretas de ahorro.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:900px;margin:0 auto;">
-      <!-- Paso 1 -->
-      <div style="text-align:center;">
-        <div style="width:72px;height:72px;margin:0 auto 16px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:1.8rem;">📡</span>
+    <div class="three-up-grid content-grid-centered ubm-process-grid">
+      <div class="step-card">
+        <span class="ubm-process-number">01</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i>
         </div>
-        <h3 style="font-size:1.15rem;color:var(--text-primary);margin-bottom:8px;">Monitoreamos</h3>
-        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">Monitoreamos energía, agua y gas en tiempo real por sucursal y equipamiento.</p>
+        <h3>Monitoreamos</h3>
+        <p>Capturamos datos de energía, agua y gas en tiempo real por sucursal y equipamiento.</p>
       </div>
-      <!-- Paso 2 -->
-      <div style="text-align:center;">
-        <div style="width:72px;height:72px;margin:0 auto 16px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:1.8rem;">📊</span>
+      <div class="step-card">
+        <span class="ubm-process-number">02</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
         </div>
-        <h3 style="font-size:1.15rem;color:var(--text-primary);margin-bottom:8px;">Diagnóstico y Visualización</h3>
-        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">Diagnóstico y análisis continuo, acompañado de todos los módulos de la plataforma Clickie.</p>
+        <h3>Analizamos</h3>
+        <p>Identificamos patrones, desvíos y oportunidades de mejora en dashboards claros y accionables.</p>
       </div>
-      <!-- Paso 3 -->
-      <div style="text-align:center;">
-        <div style="width:72px;height:72px;margin:0 auto 16px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:1.8rem;">🎯</span>
+      <div class="step-card">
+        <span class="ubm-process-number">03</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
         </div>
-        <h3 style="font-size:1.15rem;color:var(--text-primary);margin-bottom:8px;">Tomamos acción</h3>
-        <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">Los datos se transforman en planes de acción concretos y medibles para ahorrar.</p>
+        <h3>Optimizamos</h3>
+        <p>Definimos acciones concretas para reducir consumo, mejorar desempeño y sostener el ahorro.</p>
       </div>
     </div>
-    <!-- Línea conectora -->
-    <div style="max-width:700px;margin:32px auto 0;position:relative;">
-      <div style="height:3px;background:linear-gradient(to right,var(--primary),var(--secondary));border-radius:2px;"></div>
-      <div style="display:flex;justify-content:space-between;position:relative;top:-8px;">
-        <div style="width:14px;height:14px;border-radius:50%;background:var(--primary);"></div>
-        <div style="width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));"></div>
-        <div style="width:14px;height:14px;border-radius:50%;background:var(--secondary);"></div>
+    <div class="step-track">
+      <div class="step-track-line step-track-line--brand"></div>
+      <div class="step-track-dots">
+        <div class="step-track-dot step-track-dot--brand"></div>
+        <div class="step-track-dot step-track-dot--brand"></div>
+        <div class="step-track-dot step-track-dot--brand"></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════ EMS CAPACIDADES (checklist) ═══════ -->
-<section class="section" style="background:var(--gray-50);padding:80px 0;">
+<section class="section section-surface-muted section-compact">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+    <div class="content-grid-equal">
       <div>
         <span class="section-label">EMS: Monitoreo Energético</span>
-        <h2 class="section-title" style="text-align:left;">Control total de tu <span class="highlight">operación energética</span></h2>
-        <div style="margin-top:24px;">
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:18px;">
-            <span style="color:var(--primary);font-size:1.3rem;flex-shrink:0;">✔</span>
-            <p style="margin:0;color:var(--text-secondary);"><strong>Visibilidad en tiempo real</strong> del consumo por sucursal y equipamientos.</p>
+        <h2 class="section-title text-left">Control total de tu <span class="highlight">operación energética</span></h2>
+        <div class="checklist">
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary">✔</span>
+            <p><strong>Visibilidad en tiempo real</strong> del consumo por sucursal y equipamientos.</p>
           </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:18px;">
-            <span style="color:var(--primary);font-size:1.3rem;flex-shrink:0;">✔</span>
-            <p style="margin:0;color:var(--text-secondary);"><strong>Diagnóstico energético de nivel 4</strong>, el más detallado de la industria.</p>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary">✔</span>
+            <p><strong>Diagnóstico energético de nivel 4</strong>, el más detallado de la industria.</p>
           </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:18px;">
-            <span style="color:var(--primary);font-size:1.3rem;flex-shrink:0;">✔</span>
-            <p style="margin:0;color:var(--text-secondary);"><strong>Identificación temprana</strong> de ineficiencias y sobreconsumos.</p>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary">✔</span>
+            <p><strong>Identificación temprana</strong> de ineficiencias y sobreconsumos.</p>
           </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;">
-            <span style="color:var(--primary);font-size:1.3rem;flex-shrink:0;">✔</span>
-            <p style="margin:0;color:var(--text-secondary);"><strong>Comparación entre locales</strong> para mejorar desempeño operativo.</p>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary">✔</span>
+            <p><strong>Comparación entre locales</strong> para mejorar desempeño operativo.</p>
           </div>
         </div>
       </div>
-      <div style="background:var(--white);border-radius:20px;padding:40px;box-shadow:0 8px 32px rgba(0,0,0,0.08);text-align:center;">
-        <div style="display:inline-flex;align-items:center;gap:8px;background:var(--secondary);color:white;padding:8px 20px;border-radius:8px;font-weight:700;font-size:0.85rem;letter-spacing:0.5px;margin-bottom:24px;">
-          📊 EMS: MONITOREO ENERGÉTICO
+      <div class="surface-card surface-card-centered">
+        <div class="summary-chip summary-chip--secondary">
+          <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
+          EMS: MONITOREO ENERGÉTICO
         </div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;">
-          <div style="background:var(--gray-50);border-radius:12px;padding:20px 12px;text-align:center;">
-            <span style="font-size:2rem;display:block;margin-bottom:8px;">📡</span>
-            <span style="font-weight:700;color:var(--secondary);font-size:1.4rem;">24/7</span>
-            <span style="display:block;font-size:0.75rem;color:var(--text-secondary);margin-top:4px;">Monitoreo continuo</span>
+        <div class="stats-grid-3">
+          <div class="stat-card">
+            <span class="stat-card-icon"><i class="fa-solid fa-tower-broadcast" aria-hidden="true"></i></span>
+            <span class="stat-card-value stat-card-value--secondary">24/7</span>
+            <span class="stat-card-label">Monitoreo continuo</span>
           </div>
-          <div style="background:var(--gray-50);border-radius:12px;padding:20px 12px;text-align:center;">
-            <span style="font-size:2rem;display:block;margin-bottom:8px;">⚡</span>
-            <span style="font-weight:700;color:var(--secondary);font-size:1.4rem;">Nivel 4</span>
-            <span style="display:block;font-size:0.75rem;color:var(--text-secondary);margin-top:4px;">Diagnóstico energético</span>
+          <div class="stat-card">
+            <span class="stat-card-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></span>
+            <span class="stat-card-value stat-card-value--secondary">Nivel 4</span>
+            <span class="stat-card-label">Diagnóstico energético</span>
           </div>
-          <div style="background:var(--gray-50);border-radius:12px;padding:20px 12px;text-align:center;">
-            <span style="font-size:2rem;display:block;margin-bottom:8px;">🎯</span>
-            <span style="font-weight:700;color:var(--secondary);font-size:1.4rem;">20%</span>
-            <span style="display:block;font-size:0.75rem;color:var(--text-secondary);margin-top:4px;">Ahorro promedio</span>
+          <div class="stat-card">
+            <span class="stat-card-icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></span>
+            <span class="stat-card-value stat-card-value--secondary">20%</span>
+            <span class="stat-card-label">Ahorro promedio</span>
           </div>
         </div>
       </div>
@@ -383,36 +180,35 @@
 </section>
 
 <!-- ═══════ CASO DE ÉXITO: STARBUCKS ═══════ -->
-<section class="section" style="background:var(--white);padding:80px 0;">
+<section class="section section-surface-white section-compact">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-      <div>
+    <div class="content-grid-equal">
+      <div class="content-text text-left">
         <span class="section-label">Caso de éxito validado</span>
-        <h2 class="section-title" style="text-align:left;">Starbucks logró <span class="highlight">11% de ahorro</span> gracias al EMS</h2>
-        <p style="color:var(--text-secondary);line-height:1.7;margin-bottom:24px;">Starbucks Chile implementó el EMS de Clickie en sus cafeterías, logrando un monitoreo detallado de cada equipo — desde hornos y vitrinas hasta sistemas de climatización — identificando ineficiencias que antes pasaban desapercibidas.</p>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:24px;">
-          <div style="text-align:center;background:var(--gray-50);border-radius:12px;padding:16px;">
-            <span style="font-weight:800;color:var(--secondary);font-size:1.6rem;display:block;">11%</span>
-            <span style="font-size:0.75rem;color:var(--text-secondary);">Ahorro energético</span>
+        <h2 class="section-title text-left">Starbucks logró <span class="highlight">11% de ahorro</span> gracias al EMS</h2>
+        <p>Starbucks Chile implementó el EMS de Clickie en sus cafeterías, logrando un monitoreo detallado de cada equipo — desde hornos y vitrinas hasta sistemas de climatización — identificando ineficiencias que antes pasaban desapercibidas.</p>
+        <div class="metric-pills">
+          <div class="metric-pill surface-card-soft">
+            <span class="metric-pill-value stat-card-value--secondary">11%</span>
+            <span class="metric-pill-label">Ahorro energético</span>
           </div>
-          <div style="text-align:center;background:var(--gray-50);border-radius:12px;padding:16px;">
-            <span style="font-weight:800;color:var(--secondary);font-size:1.6rem;display:block;">107</span>
-            <span style="font-size:0.75rem;color:var(--text-secondary);">Tiendas monitoreadas</span>
+          <div class="metric-pill surface-card-soft">
+            <span class="metric-pill-value stat-card-value--secondary">107</span>
+            <span class="metric-pill-label">Tiendas monitoreadas</span>
           </div>
-          <div style="text-align:center;background:var(--gray-50);border-radius:12px;padding:16px;">
-            <span style="font-weight:800;color:var(--secondary);font-size:1.6rem;display:block;">24/7</span>
-            <span style="font-size:0.75rem;color:var(--text-secondary);">Monitoreo y plataforma</span>
+          <div class="metric-pill surface-card-soft">
+            <span class="metric-pill-value stat-card-value--secondary">24/7</span>
+            <span class="metric-pill-label">Monitoreo y plataforma</span>
           </div>
         </div>
-        <a href="../historias/starbucks.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--secondary);font-weight:600;font-size:0.95rem;text-decoration:none;transition:gap 0.2s;">Ver caso completo <span style="font-size:1.2rem;">→</span></a>
+        <a href="../historias/starbucks.html" class="case-study-link">Ver caso completo <span>→</span></a>
       </div>
-      <div style="background:#00704A;border-radius:20px;padding:48px 40px;color:white;text-align:center;">
-        <div style="font-size:4rem;margin-bottom:16px;">☕</div>
-        <h3 style="font-size:1.4rem;margin-bottom:16px;color:white;">Starbucks Chile</h3>
-        <p style="font-size:0.92rem;color:rgba(255,255,255,0.95);line-height:1.7;">Gracias al EMS de Clickie, Starbucks transformó sus cafeterías en tiendas inteligentes con monitoreo a nivel de equipo, logrando ahorros significativos y visibilidad total de su operación.</p>
-        <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.4);">
-          <span style="font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.8);">Servicio utilizado</span>
-          <div style="font-weight:700;font-size:1.1rem;margin-top:4px;color:white;">EMS — Monitoreo Energético</div>
+      <div id="emsCaseVideoContainer" class="case-study-panel case-study-panel--video" onclick="playEmsCaseVideo()">
+        <img class="stories-video-thumb home-visual-filter" src="../Imagenes/Starbucks portada.jpeg" alt="Caso de éxito Starbucks EMS" />
+        <div class="stories-video-overlay">
+          <div class="stories-video-play">
+            <svg width="28" height="32" viewBox="0 0 28 32" fill="none"><path d="M26 14.268a2 2 0 010 3.464L4 28.785a2 2 0 01-3-1.732V4.947a2 2 0 013-1.732L26 14.268z" fill="var(--dark)"/></svg>
+          </div>
         </div>
       </div>
     </div>
@@ -427,12 +223,12 @@
       <h2 class="section-title">Plataforma de gestión <span class="highlight">energética</span></h2>
     </div>
     <div class="features-grid">
-      <div class="feature-card"><div class="feature-icon">📊</div><h4>Dashboards inteligentes</h4><p>Visualiza consumo, costos y tendencias en paneles claros y personalizables para cada rol en tu organización.</p></div>
-      <div class="feature-card"><div class="feature-icon">🤖</div><h4>Recomendaciones con IA</h4><p>Algoritmos que analizan tus patrones de consumo y generan sugerencias de ahorro accionables.</p></div>
-      <div class="feature-card"><div class="feature-icon">📧</div><h4>Reportes automáticos</h4><p>Informes diarios, semanales o mensuales enviados directamente al email de tu equipo.</p></div>
-      <div class="feature-card"><div class="feature-icon">🔌</div><h4>Integración multi-fuente</h4><p>Conecta datos de medidores, facturas, sensores y sistemas SCADA en una sola plataforma.</p></div>
-      <div class="feature-card"><div class="feature-icon">🎯</div><h4>Metas de ahorro</h4><p>Define objetivos de reducción y monitorea el progreso en tiempo real con indicadores claros.</p></div>
-      <div class="feature-card"><div class="feature-icon">🌱</div><h4>Huella de carbono</h4><p>Calcula automáticamente tu huella de carbono y genera reportes de sostenibilidad corporativa.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></div><h4>Dashboards inteligentes</h4><p>Visualiza consumo, costos y tendencias en paneles claros y personalizables para cada rol en tu organización.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></div><h4>Recomendaciones con IA</h4><p>Algoritmos que analizan tus patrones de consumo y generan sugerencias de ahorro accionables.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div><h4>Reportes automáticos</h4><p>Informes diarios, semanales o mensuales enviados directamente al email de tu equipo.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-plug" aria-hidden="true"></i></div><h4>Integración multi-fuente</h4><p>Conecta datos de medidores, facturas, sensores y sistemas SCADA en una sola plataforma.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></div><h4>Metas de ahorro</h4><p>Define objetivos de reducción y monitorea el progreso en tiempo real con indicadores claros.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div><h4>Huella de carbono</h4><p>Calcula automáticamente tu huella de carbono y genera reportes de sostenibilidad corporativa.</p></div>
     </div>
   </div>
 </section>
@@ -448,16 +244,17 @@
   </div></div>
 </section>
 
-<footer class="footer"><div class="container"><div class="footer-bottom">
-  <span class="footer-copy">© 2017–2026 Desarrollos y Proyectos Clickie SpA. Todos los derechos reservados.</span>
-  <div class="footer-legal"><a href="https://es.clickie.io/tos" target="_blank">Términos y condiciones</a><a href="https://es.clickie.io/privacy" target="_blank">Política de privacidad</a></div>
-</div></div></footer>
+<div data-site-shell="footer"></div>
 
+<script>
+function playEmsCaseVideo(){
+  var c=document.getElementById('emsCaseVideoContainer');
+  c.innerHTML='<iframe src="https://www.youtube.com/embed/Rxt0fJNXZMQ" title="Caso de éxito Starbucks EMS" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  c.classList.add('is-playing');
+  c.onclick=null;
+}
+</script>
+<script src="../scripts/shared-layout.js"></script>
 <script src="../scripts/main.js"></script>
-
-  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/46669151.js"></script>
-  <!-- End of HubSpot Embed Code -->
-
 </body>
 </html>

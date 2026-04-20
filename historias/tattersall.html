@@ -1,938 +1,353 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TYPPJZ22DC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-TYPPJZ22DC');
-  </script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caso de éxito Tattersall — Gestión de Facturas — Clickie</title>
-  <meta name="description" content="Clickie & Tattersall: Con la gestión de 45 puntos de monitoreo, lograron reducir un 6% su consumo energético en el primer año y optimizaron el uso de equipos." />
+  <title>Caso de éxito Tattersall — Clickie</title>
+  <meta name="description" content="Tattersall redujo un 6% su consumo energético en el primer año con 45 puntos de monitoreo, visibilidad operativa y mejor control sobre equipos y facturas." />
   <link rel="icon" type="image/png" href="../assets/favicon_navbar.png" sizes="256x256" />
   <link rel="stylesheet" href="../styles/main.css" />
-  <style>
-    /* ─── HERO ─── */
-    .story-hero {
-      background: linear-gradient(135deg, #1a1e6c 0%, #2a3580 40%, #f5a623 100%);
-      padding: 120px 0 80px;
-      position: relative;
-      overflow: hidden;
-    }
-    .story-hero::before {
-      content: '';
-      position: absolute;
-      top: -100px; right: -100px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(245,166,35,0.25) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-    .story-hero::after {
-      content: '';
-      position: absolute;
-      bottom: -60px; left: 20%;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(26,30,108,0.2) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-    .story-hero .container { position: relative; z-index: 1; }
-    .story-hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .story-hero-content { color: var(--white); }
-    .story-hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.9);
-      padding: 6px 16px;
-      border-radius: 100px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .story-hero h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 18px;
-      color: var(--white);
-    }
-    .story-hero h1 span {
-      background: linear-gradient(135deg, #f7c948, #f5a623);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .story-hero-desc {
-      font-size: 1.05rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 28px;
-    }
-    .story-hero-metrics {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .story-hero-metric {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      padding: 16px 22px;
-    }
-    .story-hero-metric-value {
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--primary);
-    }
-    .story-hero-metric-label {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.4;
-    }
-    .story-hero-visual {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* ─── ZIGZAG ─── */
-    .zigzag-section { padding: 80px 0; }
-    .zigzag-section.bg-white { background: var(--white); }
-    .zigzag-section.bg-light { background: var(--bg-base); }
-    .zigzag-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .zigzag-reverse { direction: rtl; }
-    .zigzag-reverse > * { direction: ltr; }
-    .zigzag-content h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--secondary);
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-    .zigzag-content > p {
-      color: var(--text-body);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 16px;
-    }
-    .feature-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .feature-item {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
-    .feature-check {
-      width: 28px;
-      height: 28px;
-      min-width: 28px;
-      background: linear-gradient(135deg, #f5a623, #f7c948);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-top: 2px;
-    }
-    .feature-item-content h4 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--secondary);
-      margin-bottom: 4px;
-    }
-    .feature-item-content p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-    .zigzag-visual {
-      background: linear-gradient(135deg, rgba(26,30,108,0.04), rgba(245,166,35,0.08));
-      border-radius: 20px;
-      padding: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 300px;
-      border: 1px solid rgba(26,30,108,0.06);
-    }
-    .zigzag-visual-icon { font-size: 5rem; opacity: 0.5; }
-
-    /* ─── VIDEO ─── */
-    .video-section {
-      background: var(--secondary);
-      padding: 80px 0;
-    }
-    .video-section h2 {
-      text-align: center;
-      color: var(--white);
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .video-section .section-subtitle {
-      text-align: center;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 40px;
-    }
-    .video-wrapper {
-      max-width: 800px;
-      margin: 0 auto;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      aspect-ratio: 16 / 9;
-    }
-    .video-wrapper iframe { width: 100%; height: 100%; border: none; }
-
-    /* ─── MID CTA ─── */
-    .mid-cta {
-      background: linear-gradient(135deg, #f5a623, #f7c948);
-      padding: 48px 0;
-      text-align: center;
-    }
-    .mid-cta h3 {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--secondary);
-      margin-bottom: 16px;
-    }
-    .mid-cta .btn {
-      background: var(--secondary);
-      color: var(--white);
-      padding: 14px 32px;
-      border-radius: 12px;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-block;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .mid-cta .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(26,30,108,0.3);
-    }
-
-    /* ─── FEATURES GRID ─── */
-    .features-grid-section {
-      background: var(--secondary);
-      padding: 80px 0;
-    }
-    .features-grid-section h2 {
-      text-align: center;
-      color: var(--white);
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-    .features-grid-section .section-subtitle {
-      text-align: center;
-      color: rgba(255,255,255,0.65);
-      margin-bottom: 48px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .feature-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 16px;
-      padding: 28px 24px;
-      text-align: center;
-      transition: transform 0.3s, background 0.3s;
-    }
-    .feature-card:hover {
-      transform: translateY(-4px);
-      background: rgba(255,255,255,0.1);
-    }
-    .feature-card-icon {
-      width: 52px; height: 52px;
-      background: linear-gradient(135deg, #f5a623, #f7c948);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin: 0 auto 16px;
-    }
-    .feature-card h4 {
-      color: var(--white);
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-    .feature-card p {
-      color: rgba(255,255,255,0.6);
-      font-size: 0.8rem;
-      line-height: 1.5;
-    }
-
-    /* ─── STEPS ─── */
-    .steps-section {
-      background: var(--white);
-      padding: 80px 0;
-    }
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 40px;
-    }
-    .step-card {
-      text-align: center;
-      padding: 32px 24px;
-      border-radius: 20px;
-      background: var(--bg-base);
-      border: 1px solid rgba(26,30,108,0.06);
-      transition: transform 0.3s;
-    }
-    .step-card:hover { transform: translateY(-4px); }
-    .step-number {
-      width: 48px; height: 48px;
-      background: linear-gradient(135deg, var(--secondary), #2d31a6);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-size: 1.2rem;
-      font-weight: 800;
-      margin: 0 auto 16px;
-    }
-    .step-card h4 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--secondary);
-      margin-bottom: 8px;
-    }
-    .step-card p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-      .story-hero-inner { grid-template-columns: 1fr; gap: 32px; }
-      .story-hero h1 { font-size: 2rem; }
-      .story-hero-metrics { flex-direction: column; }
-      .zigzag-grid { grid-template-columns: 1fr; gap: 32px; }
-      .zigzag-reverse { direction: ltr; }
-      .features-grid { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
-<body>
+<body class="story-page story-page--tattersall story-page--oxxo">
 
 <!-- NAVBAR -->
-<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
-  <button class="mobile-menu-close" id="mobileClose" aria-label="Cerrar menú">✕</button>
-  <button class="mobile-servicios-toggle">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-servicios-sub">
-    <a href="../servicios/ubm.html"><span class="mobile-sub-icon">📄</span> UBM — Gestión de Suministros</a>
-    <a href="../servicios/ems.html"><span class="mobile-sub-icon">📊</span> EMS — Monitoreo y Optimización</a>
-    <a href="../servicios/bms.html"><span class="mobile-sub-icon">🖥️</span> BMS — Control Inteligente</a>
-    <a href="../servicios/remarcacion.html"><span class="mobile-sub-icon">⚡</span> Remarcación y Submetering</a>
-    <div style="border-top:1px solid rgba(255,255,255,0.1);margin:8px 16px;"></div>
-    <span style="padding:4px 16px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);">Por Rubro</span>
-    <a href="../servicios/gestion-retail.html"><span class="mobile-sub-icon">🏪</span> Retail</a>
-    <a href="../servicios/eficiencia-energetica.html"><span class="mobile-sub-icon">🏭</span> Industria</a>
-  </div>
-  <button class="mobile-historias-toggle">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-historias-sub">
-    <a href="../historias/oxxo.html"><span class="mobile-sub-icon">🏪</span> OXXO</a>
-    <a href="../historias/starbucks.html"><span class="mobile-sub-icon">☕</span> Starbucks</a>
-    <a href="../historias/copec.html"><span class="mobile-sub-icon">⛽</span> COPEC</a>
-    <a href="../historias/lipigas.html"><span class="mobile-sub-icon">🔥</span> LIPIGAS</a>
-    <a href="../historias/tattersall.html"><span class="mobile-sub-icon">🏢</span> Tattersall</a>
-    <a href="../historias/renova.html"><span class="mobile-sub-icon">🌿</span> RENOVA</a>
-    <a href="../historias/preunic.html"><span class="mobile-sub-icon">🛍️</span> Preunic</a>
-    <a href="../historias/la-araucana-co2.html"><span class="mobile-sub-icon">🌱</span> La Araucana</a>
-  </div>
-
-          <button class="mobile-recursos-toggle">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-recursos-sub">
-    <a href="../recursos/guias.html"><span class="mobile-sub-icon">📘</span> Guías de Ahorro Energético</a>
-    <a href="../recursos/casos-de-exito.html"><span class="mobile-sub-icon">📊</span> Casos de Éxito</a>
-    <!-- Calculadora oculta temporalmente -->
-    <a href="../recursos/encuesta-madurez.html"><span class="mobile-sub-icon">📋</span> Encuesta de Madurez Energética</a>
-    <a href="https://www.youtube.com/@clickie4338" target="_blank" rel="noopener"><span class="mobile-sub-icon">🎬</span> Canal de YouTube</a>
-    <a href="https://blog.clickie.io" target="_blank" rel="noopener"><span class="mobile-sub-icon">📝</span> Blog</a>
-  </div>
-  <button class="mobile-nosotros-toggle">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-nosotros-sub">
-    <a href="../nosotros.html"><span class="mobile-sub-icon">💛</span> Nuestros Valores</a>
-    <a href="../nosotros/prensa.html"><span class="mobile-sub-icon">📰</span> Clickie en la Prensa</a>
-  </div>
-  <a href="https://app.clickie.io/" class="btn btn-primary" target="_blank" rel="noopener">Iniciar sesión</a>
-</div>
-
-<nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Navegación principal">
-  <div class="container">
-    <div class="navbar-inner">
-
-      <a href="../index.html" class="navbar-logo" aria-label="Clickie inicio">
-        <img class="logo-badge" src="../assets/favicon_navbar_blue.png" alt="Clickie Logo" width="36" height="36" style="vertical-align:bottom; position:relative; bottom:5px;" />
-        Clickie
-      </a>
-
-      <div class="navbar-nav">
-        <div class="nav-dropdown" id="navDropdownServicios">
-          <a href="../index.html#servicios" class="nav-link nav-link-dropdown">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownServicios">
-            <div class="mega-dropdown-inner" style="display:flex;gap:0;">
-              <!-- POR SOLUCIÓN -->
-              <div style="flex:3;">
-                <div class="mega-dropdown-header">
-                  <span class="mega-dropdown-title">Por Solución ›</span>
-                  <p class="mega-dropdown-subtitle">Nuestras plataformas de gestión energética.</p>
-                </div>
-                <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
-                  <a href="../servicios/ubm.html" class="mega-item">
-                    <div class="mega-item-icon yellow">📄</div>
-                    <div class="mega-item-content"><strong>UBM</strong><span>Gestión de Suministros Eléctricos.</span></div>
-                  </a>
-                  <a href="../servicios/ems.html" class="mega-item">
-                    <div class="mega-item-icon green">📊</div>
-                    <div class="mega-item-content"><strong>EMS</strong><span>Monitoreo, Gestión y Optimización Energética en Tiempo Real.</span></div>
-                  </a>
-                  <a href="../servicios/bms.html" class="mega-item">
-                    <div class="mega-item-icon violet">🖥️</div>
-                    <div class="mega-item-content"><strong>BMS</strong><span>Control Inteligente.</span></div>
-                  </a>
-                  <a href="../servicios/remarcacion.html" class="mega-item">
-                    <div class="mega-item-icon yellow">⚡</div>
-                    <div class="mega-item-content"><strong>Remarcación y Submetering</strong><span>Distribución interna justa de energía.</span></div>
-                  </a>
-                </div>
-              </div>
-              <!-- SEPARADOR -->
-              <div style="width:1px;background:var(--gray-200);margin:0 24px;"></div>
-              <!-- POR RUBRO -->
-              <div style="flex:1.5;">
-                <div class="mega-dropdown-header">
-                  <span class="mega-dropdown-title">Por Rubro ›</span>
-                  <p class="mega-dropdown-subtitle">Soluciones por industria.</p>
-                </div>
-                <div class="mega-dropdown-grid" style="grid-template-columns:1fr;">
-                  <a href="../servicios/gestion-retail.html" class="mega-item">
-                    <div class="mega-item-icon green">🏪</div>
-                    <div class="mega-item-content"><strong>Retail</strong><span>Eficiencia energética en tiendas y cadenas comerciales.</span></div>
-                  </a>
-                  <a href="../servicios/eficiencia-energetica.html" class="mega-item">
-                    <div class="mega-item-icon violet">🏭</div>
-                    <div class="mega-item-content"><strong>Industria</strong><span>Optimización energética en plantas e instalaciones industriales.</span></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-dropdown" id="navDropdownHistorias">
-          <a href="../index.html#historias" class="nav-link nav-link-dropdown">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownHistorias">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Historias de Éxito ›</span>
-                <p class="mega-dropdown-subtitle">Conoce cómo empresas líderes optimizaron su energía con Clickie.</p>
-              </div>
-              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(4,1fr);">
-                <a href="../historias/oxxo.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🏪</div>
-                  <div class="mega-item-content"><strong>OXXO</strong><span>20% de ahorro en 230+ tiendas.</span></div>
-                </a>
-                <a href="../historias/starbucks.html" class="mega-item">
-                  <div class="mega-item-icon green">☕</div>
-                  <div class="mega-item-content"><strong>Starbucks</strong><span>Eficiencia energética en cafeterías.</span></div>
-                </a>
-                <a href="../historias/copec.html" class="mega-item">
-                  <div class="mega-item-icon violet">⛽</div>
-                  <div class="mega-item-content"><strong>COPEC</strong><span>Monitoreo de red renovable completa.</span></div>
-                </a>
-                <a href="../historias/lipigas.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🔥</div>
-                  <div class="mega-item-content"><strong>LIPIGAS</strong><span>8% ahorro en plantas productivas.</span></div>
-                </a>
-                <a href="../historias/tattersall.html" class="mega-item">
-                  <div class="mega-item-icon violet">🏢</div>
-                  <div class="mega-item-content"><strong>Tattersall</strong><span>Gestión energética industrial.</span></div>
-                </a>
-                <a href="../historias/renova.html" class="mega-item">
-                  <div class="mega-item-icon green">🌿</div>
-                  <div class="mega-item-content"><strong>RENOVA</strong><span>+20% rendimiento en activos renovables.</span></div>
-                </a>
-                <a href="../historias/preunic.html" class="mega-item">
-                  <div class="mega-item-icon green">🛍️</div>
-                  <div class="mega-item-content"><strong>Preunic</strong><span>20% de reducción en costos energéticos.</span></div>
-                </a>
-                <a href="../historias/la-araucana-co2.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🌱</div>
-                  <div class="mega-item-content"><strong>La Araucana</strong><span>Reducción de huella de carbono.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-                <div class="nav-dropdown" id="navDropdownRecursos">
-          <a href="../index.html#recursos" class="nav-link nav-link-dropdown">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownRecursos">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Recursos Clickie ›</span>
-                <p class="mega-dropdown-subtitle">Guías, casos de éxito y herramientas prácticas para optimizar tu gestión energética.</p>
-              </div>
-              <div class="mega-dropdown-grid">
-                <a href="../recursos/guias.html" class="mega-item">
-                  <div class="mega-item-icon yellow">📘</div>
-                  <div class="mega-item-content"><strong>Guías de Ahorro Energético</strong><span>Descarga guías prácticas de eficiencia energética para tu rubro.</span></div>
-                </a>
-                <a href="../recursos/casos-de-exito.html" class="mega-item">
-                  <div class="mega-item-icon violet">📊</div>
-                  <div class="mega-item-content"><strong>Casos de Éxito</strong><span>OXXO, Starbucks, COPEC, LIPIGAS y más empresas que optimizaron su energía.</span></div>
-                </a>
-                <!-- Calculadora oculta temporalmente
-                <a href="../recursos/calculadora.html" class="mega-item">
-                  <div class="mega-item-icon green">🧮</div>
-                  <div class="mega-item-content"><strong>Calculadora de Ahorro</strong><span>Ingresa tus datos de consumo y descubre cuánto podrías ahorrar.</span></div>
-                </a>
-                -->
-                <a href="https://blog.clickie.io" target="_blank" rel="noopener" class="mega-item">
-                  <div class="mega-item-icon yellow">📝</div>
-                  <div class="mega-item-content"><strong>Blog</strong><span>Artículos sobre eficiencia energética, casos de éxito y tendencias.</span></div>
-                </a>
-                <a href="../recursos/encuesta-madurez.html" class="mega-item">
-                  <div class="mega-item-icon green">📋</div>
-                  <div class="mega-item-content"><strong>Encuesta de Madurez Energética</strong><span>Descubre tu nivel de madurez y recibe un plan de acción personalizado.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-dropdown" id="navDropdownNosotros">
-          <a href="../nosotros.html" class="nav-link nav-link-dropdown">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownNosotros">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Nosotros ›</span>
-                <p class="mega-dropdown-subtitle">Conoce quiénes somos y qué nos mueve.</p>
-              </div>
-              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
-                <a href="../nosotros.html" class="mega-item">
-                  <div class="mega-item-icon yellow">💛</div>
-                  <div class="mega-item-content"><strong>Nuestros Valores</strong><span>Propósito, misión y los valores que guían cada decisión en Clickie.</span></div>
-                </a>
-                <a href="../nosotros/prensa.html" class="mega-item">
-                  <div class="mega-item-icon violet">📰</div>
-                  <div class="mega-item-content"><strong>Clickie en la Prensa</strong><span>Noticias, artículos y apariciones de Clickie en medios de comunicación.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="https://blog.clickie.io" class="nav-link" target="_blank" rel="noopener">Blog</a>
-      </div>
-
-      <div class="navbar-actions">
-        <a href="https://app.clickie.io/" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Iniciar sesión</a>
-        <a href="../cotiza.html" class="btn btn-primary btn-sm">Cotiza aquí</a>
-      </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú móvil">
-        <span></span><span></span><span></span>
-      </button>
-
-    </div>
-  </div>
-</nav>
+<div data-site-shell="mobile-menu"></div>
+<div data-site-shell="navbar"></div>
 
 <!-- HERO -->
-<section class="story-hero">
+<section class="subpage-hero story-case-hero">
   <div class="container">
-    <div class="story-hero-inner">
-      <div class="story-hero-content">
-        <div class="breadcrumb" style="margin-bottom:16px;"><a href="../index.html" style="color:rgba(255,255,255,0.6)">Inicio</a> / <a href="../recursos/casos-de-exito.html" style="color:rgba(255,255,255,0.6)">Casos de Éxito</a> / <span style="color:rgba(255,255,255,0.8)">Tattersall</span></div>
-        <span class="story-hero-label">🏭 Multi-industria · 12 filiales</span>
-        <h1>Cómo Tattersall disminuyó su gasto energético: <span>6% de ahorro</span> en el primer año</h1>
-        <p class="story-hero-desc">Con la gestión de 45 puntos de monitoreo, lograron reducir su consumo energético en el primer año y optimizaron el uso de equipos como aires acondicionados, que representaban hasta el 40% del consumo en algunas sucursales.</p>
-        <div class="story-hero-metrics">
-          <div class="story-hero-metric">
-            <span class="story-hero-metric-value">6%</span>
-            <span class="story-hero-metric-label">ahorro<br>primer año</span>
-          </div>
-          <div class="story-hero-metric">
-            <span class="story-hero-metric-value">45</span>
-            <span class="story-hero-metric-label">puntos de<br>monitoreo</span>
-          </div>
-          <div class="story-hero-metric">
-            <span class="story-hero-metric-value">12</span>
-            <span class="story-hero-metric-label">filiales<br>en Chile</span>
+    <div class="content-grid-equal">
+      <div class="content-text text-left">
+        <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="../recursos/casos-de-exito.html">Casos de Éxito</a> / <span>Tattersall</span></div>
+        <span class="story-hero-label"><i class="fa-solid fa-industry" aria-hidden="true"></i> Multi-industria · 12 filiales</span>
+        <h1>Cómo Tattersall <span class="accent">optimizó su consumo energético</span></h1>
+        <p class="hero-desc">Tattersall necesitaba entender mejor el comportamiento energético de una operación diversa, distribuida y con múltiples filiales en Chile. Con Clickie, logró monitorear 45 puntos críticos, ordenar la gestión energética y reducir su consumo en el primer año.</p>
+        <div class="story-hero-meta">
+          <img src="../assets/logos/Tattersall.png" alt="Tattersall" class="story-hero-logo" />
+          <div class="hero-metric hero-metric--kpi">
+            <div class="hero-metric-main">
+              <span class="hero-metric-value">6%</span>
+            </div>
+            <div class="hero-metric-text">
+              <span>ahorro</span>
+              <span>primer año</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="story-hero-visual">
-        <div style="background:rgba(255,255,255,0.08);border-radius:20px;padding:32px;border:1px solid rgba(255,255,255,0.12);text-align:center;">
-          <div style="font-size:4rem;margin-bottom:16px">🏭⚡</div>
-          <div style="color:rgba(255,255,255,0.9);font-weight:700;font-size:1.2rem;">Tattersall × Clickie</div>
-          <div style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-top:8px;">Gestión de facturas y consumo energético</div>
+      <div class="text-center">
+        <div class="media-frame media-frame--shadow-soft story-hero-media">
+          <img src="../Imagenes/tattersall.png" alt="Tattersall gestionando energía con Clickie" />
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- UN GRUPO EMPRESARIAL DIVERSO -->
-<section class="zigzag-section bg-white">
+<!-- PROBLEMA -->
+<section class="section section-surface-white section-compact">
   <div class="container">
-    <div class="zigzag-grid">
-      <div class="zigzag-content">
-        <span class="section-label">El contexto</span>
-        <h2>Un grupo empresarial diverso</h2>
-        <p>Alexander Grasty, Gerente de Proyectos de Sostenibilidad del Grupo Tattersall, nos cuenta cómo la implementación de Clickie fue clave en su estrategia energética para un grupo empresarial diverso, con presencia en tres sectores de operación —<strong>agrícola, industrial y servicios</strong>— y 12 filiales operando en todo Chile.</p>
-        <p>Con <strong>104 puntos distribuidos a lo largo de Chile</strong>, Tattersall se enfrentaba a un problema común en empresas con múltiples operaciones: no tenían una visión clara ni en tiempo real del consumo energético de sus sucursales.</p>
-      </div>
-      <div class="zigzag-visual">
-        <span class="zigzag-visual-icon">🏭🌾🔧</span>
+    <div class="content-grid-centered">
+      <div class="content-text text-left">
+        <span class="section-label">Problema</span>
+        <h2 class="section-title text-left">Gestionar energía en operaciones complejas</h2>
+        <p>Tattersall opera en sectores agrícola, industrial y de servicios, con múltiples filiales y una red distribuida de instalaciones a lo largo de Chile.</p>
+        <p>Sin visibilidad centralizada del consumo, era difícil entender dónde estaban las mayores oportunidades de mejora y cómo intervenir sin perder eficiencia operativa.</p>
+        <div class="checklist">
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Múltiples instalaciones y consumos variables según tipo de operación.</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Falta de visibilidad en tiempo real sobre sucursales y equipos críticos.</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Necesidad de mejorar eficiencia operativa y control de facturas energéticas.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EL DESAFÍO -->
-<section class="zigzag-section bg-light">
+<!-- PUNTO DE QUIEBRE -->
+<section class="section section-surface-muted section-compact">
   <div class="container">
-    <div class="zigzag-grid zigzag-reverse">
-      <div class="zigzag-content">
-        <span class="section-label">El desafío</span>
-        <h2>Visibilidad y control sobre 104 puntos</h2>
-        <p>Tattersall necesitaba entender en detalle dónde se consumía energía en sus operaciones multiindustriales. Los principales desafíos eran:</p>
-        <ul class="feature-list">
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Sin visión en tiempo real</h4>
-              <p>No contaban con una herramienta que les permitiera visualizar el consumo energético de sus sucursales de manera centralizada y en tiempo real.</p>
-            </div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Equipos ineficientes</h4>
-              <p>Equipos como aires acondicionados representaban hasta el 40% del consumo en algunas sucursales y se gestionaban de forma ineficiente.</p>
-            </div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Control de facturas</h4>
-              <p>La gestión de facturas energéticas de múltiples filiales y puntos representaba un desafío logístico y financiero significativo.</p>
-            </div>
-          </li>
-        </ul>
+    <div class="content-grid-centered">
+      <div class="content-text text-left">
+        <span class="section-label">Punto de quiebre</span>
+        <h2 class="section-title text-left">El desafío fue entender dónde y cómo se consumía la energía en la operación</h2>
+        <p>Antes de optimizar, Tattersall necesitaba visibilidad real sobre sucursales, equipos y patrones de consumo para tomar decisiones con criterio operativo y financiero.</p>
       </div>
-      <div class="zigzag-visual">
-        <span class="zigzag-visual-icon">🔍📋</span>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUCIÓN -->
+<section class="subpage-content">
+  <div class="container"><div class="content-grid">
+    <div class="content-text text-left">
+      <span class="section-label">La solución</span>
+      <h2>Cómo Clickie transformó la operación</h2>
+      <div class="summary-chip summary-chip--primary">
+        <i class="fa-solid fa-industry" aria-hidden="true"></i>
+        Monitoreo continuo y gestión energética centralizada
+      </div>
+      <p><strong>Monitoreamos</strong> 45 puntos clave para construir una visión más clara del comportamiento energético de las filiales.</p>
+      <p><strong>Capturamos</strong> datos continuos para identificar desvíos, entender el peso de equipos como los aires acondicionados y mejorar la toma de decisiones.</p>
+      <p><strong>Ordenamos</strong> la operación con herramientas de gestión que ayudaron a controlar consumos y facturas de manera más eficiente.</p>
+    </div>
+    <div class="content-text text-left">
+      <span class="section-label">Implementación</span>
+      <h2>Visibilidad operativa para una red diversa</h2>
+      <p>La plataforma se adaptó al funcionamiento de Tattersall y permitió avanzar con una implementación cercana, personalizada y alineada con la realidad de cada filial.</p>
+      <p>Eso habilitó una gestión más simple sobre puntos críticos de consumo y una lectura más clara del gasto energético para acompañar decisiones operativas y financieras.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="section section-surface-white section-compact ubm-process">
+  <div class="container">
+    <div class="text-center section-intro">
+      <span class="section-label">Cómo funciona</span>
+      <h2 class="section-title">Cómo Clickie convirtió datos en <span class="highlight">eficiencia</span> para Tattersall</h2>
+      <p class="section-subtitle">Primero visibilidad, luego análisis y finalmente optimización sobre una operación compleja y distribuida.</p>
+    </div>
+    <div class="three-up-grid content-grid-centered ubm-process-grid">
+      <div class="step-card">
+        <span class="ubm-process-number">01</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+        </div>
+        <h3>Digitalizamos</h3>
+        <p>Implementamos monitoreo en puntos críticos para capturar información energética de manera continua.</p>
+      </div>
+      <div class="step-card">
+        <span class="ubm-process-number">02</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
+        </div>
+        <h3>Analizamos</h3>
+        <p>Identificamos tendencias, equipos de alto impacto y oportunidades reales de mejora en la operación.</p>
+      </div>
+      <div class="step-card">
+        <span class="ubm-process-number">03</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
+        </div>
+        <h3>Optimizamos</h3>
+        <p>Aplicamos gestión energética más precisa para reducir consumo, mejorar control y sostener el ahorro.</p>
+      </div>
+    </div>
+    <div class="step-track">
+      <div class="step-track-line step-track-line--brand"></div>
+      <div class="step-track-dots">
+        <div class="step-track-dot step-track-dot--brand"></div>
+        <div class="step-track-dot step-track-dot--brand"></div>
+        <div class="step-track-dot step-track-dot--brand"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACTO -->
+<section class="section section-surface-white section-compact">
+  <div class="container">
+    <div class="text-center section-intro">
+      <span class="section-label">Impacto</span>
+      <h2 class="section-title">Impacto real en la operación de <span class="highlight">Tattersall</span></h2>
+    </div>
+    <div class="hero-stats story-results-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-heading" aria-hidden="true"><i class="fa-solid fa-sack-dollar hero-stat-icon"></i></span>
+        <span class="hero-stat-value">6%</span>
+        <span class="hero-stat-label">Reducción de consumo en el primer año</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-heading" aria-hidden="true"><i class="fa-solid fa-chart-line hero-stat-icon"></i></span>
+        <span class="hero-stat-value">45</span>
+        <span class="hero-stat-label">Puntos de monitoreo gestionados</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-heading" aria-hidden="true"><i class="fa-solid fa-building hero-stat-icon"></i></span>
+        <span class="hero-stat-value">12</span>
+        <span class="hero-stat-label">Filiales en Chile con control centralizado</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-heading" aria-hidden="true"><i class="fa-solid fa-snowflake hero-stat-icon"></i></span>
+        <span class="hero-stat-value">40%</span>
+        <span class="hero-stat-label">Del consumo en algunas sucursales estaba en HVAC optimizable</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALIDACIÓN -->
+<section class="section section-surface-muted section-compact story-testimonial-section">
+  <div class="container">
+    <div class="content-grid-equal story-testimonial-layout">
+      <div class="text-center">
+        <a
+          href="https://www.youtube.com/watch?v=bQ65TU3WdHs"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="story-video-preview media-frame media-frame--shadow-soft story-testimonial-media"
+          aria-label="Ver video del caso Tattersall"
+        >
+          <img src="../Imagenes/tattersall.png" alt="Caso de éxito Tattersall junto a Clickie" />
+          <span class="story-video-play">
+            <i class="fa-solid fa-play" aria-hidden="true"></i>
+          </span>
+        </a>
+      </div>
+      <div class="story-quote-block story-quote-block--editorial text-left">
+        <div class="story-quote-icon"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+        <p class="story-quote-text">La elección de Clickie estuvo marcada por la confianza, el servicio personalizado y el involucramiento desde el primer día.</p>
+        <p class="story-quote-text">La plataforma se adaptó a nuestro funcionamiento y la experiencia ha sido de acompañamiento cercano y a medida.</p>
+        <p class="story-quote-author">Alexander Grasty</p>
+        <p class="story-quote-role">Gerente de Proyectos de Sostenibilidad, Grupo Tattersall</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EJECUCIÓN -->
+<section class="subpage-features story-execution-section">
+  <div class="container">
+    <div class="text-center section-intro">
+      <span class="section-label">Ejecución</span>
+      <h2 class="section-title">Cómo se aplicó la solución en la <span class="highlight">operación</span></h2>
+      <p class="section-subtitle">La implementación combinó control operativo, visibilidad sobre el gasto y una lógica de mejora continua para toda la red.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-sliders" aria-hidden="true"></i></div>
+        <h4>Control operativo</h4>
+        <p>Se intervinieron equipos y decisiones de alto impacto para mejorar el uso energético sin complejizar la operación.</p>
+        <div class="checklist">
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Optimización de aires acondicionados que representaban hasta el 40% del consumo en algunas sucursales.</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Gestión más precisa de puntos críticos para intervenir donde realmente había impacto.</p>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></div>
+        <h4>Visibilidad y análisis</h4>
+        <p>Tattersall ganó una lectura más clara del consumo energético y del comportamiento de sus filiales.</p>
+        <div class="checklist">
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>45 puntos de monitoreo para ordenar la información energética de la operación.</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Control más claro sobre facturas y gasto energético de múltiples filiales.</p>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i></div>
+        <h4>Optimización continua</h4>
+        <p>La implementación permitió sostener una lógica de mejora constante, con acompañamiento cercano y visión de largo plazo.</p>
+        <div class="checklist">
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Ahorros concretos incluso frente al alza de tarifas eléctricas.</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Meta futura de monitorear el 100% de sus puntos y seguir optimizando el consumo.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- VIDEO -->
-<section class="video-section">
+<section class="section section-surface-white section-compact">
   <div class="container">
-    <h2>Cómo Tattersall optimizó su consumo y tarifas con Clickie</h2>
-    <p class="section-subtitle">Alexander Grasty, Gerente de Proyectos de Sostenibilidad, nos cuenta la experiencia.</p>
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/bQ65TU3WdHs" title="Cómo Tattersall disminuyó su gasto energético con Clickie" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="text-center section-intro">
+      <span class="section-label">Video</span>
+      <h2 class="section-title">Tattersall: cómo optimizó su <span class="highlight">consumo y tarifas</span></h2>
+      <p class="section-subtitle">Alexander Grasty cuenta cómo la implementación ayudó a ordenar la gestión energética del grupo y generar resultados concretos.</p>
     </div>
-  </div>
-</section>
-
-<!-- SERVICIO PERSONALIZADO -->
-<section class="zigzag-section bg-white">
-  <div class="container">
-    <div class="zigzag-grid">
-      <div class="zigzag-content">
-        <span class="section-label">La experiencia</span>
-        <h2>Un servicio personalizado y de confianza</h2>
-        <p>Desde el área de sostenibilidad, destacan que la elección de Clickie estuvo marcada por la <strong>confianza, el servicio personalizado y el involucramiento desde el primer día</strong>.</p>
-        <ul class="feature-list">
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Plataforma adaptada</h4>
-              <p>La plataforma se adaptó al funcionamiento de Tattersall. Desde la implementación hasta la atención posterior, la experiencia ha sido de acompañamiento cercano y a medida.</p>
-            </div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Gestión con herramientas UBM</h4>
-              <p>Mejoraron el control sobre las facturas y gestión de los principales consumos a través de herramientas como UBM (Utility Bill Management).</p>
-            </div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Ahorros frente al alza de tarifas</h4>
-              <p>Gracias a Clickie, lograron generar ahorros importantes incluso frente al alza de tarifas eléctricas.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="zigzag-visual">
-        <span class="zigzag-visual-icon">🤝📊</span>
+    <div id="tattersallVideoContainer" class="stories-video-container media-frame media-frame--wide" onclick="playTattersallStoryVideo()">
+      <img class="stories-video-thumb home-visual-filter" src="../Imagenes/tattersall.png" alt="Portada video caso de éxito Tattersall" />
+      <div class="stories-video-overlay">
+        <div class="stories-video-play">
+          <svg width="28" height="32" viewBox="0 0 28 32" fill="none" aria-hidden="true"><path d="M26 14.268a2 2 0 010 3.464L4 28.785a2 2 0 01-3-1.732V4.947a2 2 0 013-1.732L26 14.268z" fill="var(--dark)"/></svg>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- RESULTADOS -->
-<section class="zigzag-section bg-light">
+<!-- STEPS -->
+<section class="section section-surface-white section-compact steps-section">
   <div class="container">
-    <div class="zigzag-grid zigzag-reverse">
-      <div class="zigzag-content">
-        <span class="section-label">Los resultados</span>
-        <h2>6% de ahorro en el primer año</h2>
-        <p>Hoy, gracias a la plataforma de gestión de energía de Clickie, Tattersall gestiona <strong>45 puntos de monitoreo</strong> y logró resultados concretos desde el primer año:</p>
-        <ul class="feature-list">
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Reducción del 6% en consumo energético</h4>
-              <p>Un ahorro real y medible en el primer año de implementación, con una tendencia a seguir mejorando.</p>
-            </div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Optimización de aires acondicionados</h4>
-              <p>Los equipos que representaban hasta el 40% del consumo fueron optimizados con control inteligente de horarios y temperatura.</p>
-            </div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Control centralizado de facturas</h4>
-              <p>Visibilidad completa del gasto energético en todas las filiales, facilitando la toma de decisiones financieras.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="zigzag-visual">
-        <span class="zigzag-visual-icon">📉💰</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA INTERMEDIO -->
-<section class="mid-cta">
-  <h3>¿Gestionas múltiples sucursales y quieres optimizar costos?</h3>
-  <a href="../index.html#contacto" class="btn">Hablar con un experto →</a>
-</section>
-
-<!-- FUNCIONALIDADES IMPLEMENTADAS -->
-<section class="features-grid-section">
-  <div class="container">
-    <span class="section-label" style="display:block;text-align:center;color:var(--primary);margin-bottom:12px;">Clickie para Tattersall</span>
-    <h2>Funcionalidades clave implementadas</h2>
-    <p class="section-subtitle">Herramientas que Tattersall utiliza para gestionar la energía en su grupo empresarial.</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-card-icon">📄</div>
-        <h4>Gestión de facturas (UBM)</h4>
-        <p>Utility Bill Management para centralizar y controlar las facturas energéticas de todas las filiales.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card-icon">📊</div>
-        <h4>Monitoreo multi-punto</h4>
-        <p>45 puntos de monitoreo distribuidos en las operaciones de todo Chile.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card-icon">❄️</div>
-        <h4>Optimización HVAC</h4>
-        <p>Control inteligente de aires acondicionados que representaban hasta el 40% del consumo.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card-icon">📈</div>
-        <h4>Análisis de tendencias</h4>
-        <p>Gráficos y reportes que identifican patrones de consumo y oportunidades de mejora.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card-icon">🔔</div>
-        <h4>Alertas de consumo</h4>
-        <p>Notificaciones automáticas cuando el consumo excede los parámetros esperados.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-card-icon">🤝</div>
-        <h4>Servicio personalizado</h4>
-        <p>Acompañamiento cercano y a medida, adaptándose al funcionamiento de cada filial.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESULTADOS DESTACADOS -->
-<section class="section" style="background:var(--white)">
-  <div class="container">
-    <div class="text-center" style="margin-bottom:16px">
-      <span class="section-label">Impacto medible</span>
-    </div>
-    <div class="results-showcase">
-      <div class="result-box">
-        <span class="result-number">6%</span>
-        <span class="result-desc">Reducción de consumo en el primer año</span>
-      </div>
-      <div class="result-box">
-        <span class="result-number">45</span>
-        <span class="result-desc">Puntos de monitoreo gestionados</span>
-      </div>
-      <div class="result-box">
-        <span class="result-number">40%</span>
-        <span class="result-desc">del consumo de AC optimizado</span>
-      </div>
-      <div class="result-box">
-        <span class="result-number">12</span>
-        <span class="result-desc">Filiales en todo Chile</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VISIÓN DE FUTURO -->
-<section class="zigzag-section bg-light">
-  <div class="container">
-    <div class="zigzag-grid">
-      <div class="zigzag-content">
-        <span class="section-label">Visión de futuro</span>
-        <h2>Hacia el monitoreo del 100% de sus puntos</h2>
-        <p>De cara al futuro, Tattersall se propone metas ambiciosas para seguir mejorando su eficiencia energética:</p>
-        <ul class="feature-list">
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Monitorear el 100% de sus puntos en Chile</h4>
-              <p>Expandir la cobertura de monitoreo a todos los 104 puntos distribuidos a lo largo de Chile.</p>
-            </div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Seguir optimizando el consumo</h4>
-              <p>Continuar identificando oportunidades de ahorro y mejorando la eficiencia de equipos en todas las filiales.</p>
-            </div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Concientizar a los colaboradores</h4>
-              <p>Generar conciencia entre los equipos de trabajo sobre la relevancia estratégica de la gestión de energía.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="zigzag-visual">
-        <span class="zigzag-visual-icon">🚀🌍</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section class="section" style="background:linear-gradient(135deg, var(--secondary), #181966)">
-  <div class="container">
-    <div style="max-width:700px;margin:0 auto;text-align:center;color:var(--white)">
-      <div style="font-size:2.5rem;margin-bottom:20px">💬</div>
-      <p style="font-size:1.15rem;line-height:1.8;font-style:italic;color:rgba(255,255,255,0.85);margin-bottom:24px">"La elección de Clickie estuvo marcada por la confianza, el servicio personalizado y el involucramiento desde el primer día. La plataforma se adaptó a nuestro funcionamiento y la experiencia ha sido de acompañamiento cercano y a medida."</p>
-      <p style="font-weight:700;color:var(--primary);font-size:1rem">Alexander Grasty</p>
-      <p style="font-size:0.85rem;color:rgba(255,255,255,0.6)">Gerente de Proyectos de Sostenibilidad, Grupo Tattersall</p>
-    </div>
-  </div>
-</section>
-
-<!-- STEPS: ¿Y ahora? -->
-<section class="steps-section">
-  <div class="container">
-    <div style="text-align:center">
+    <div class="story-cta-block">
       <span class="section-label">¿Y ahora?</span>
-      <h2 style="font-size:2rem;font-weight:800;color:var(--secondary);margin-bottom:8px;">¿Quieres optimizar el consumo de tu grupo empresarial?</h2>
-      <p style="color:var(--text-muted);font-size:1.05rem;">Si tienes un problema similar y te gustaría que adaptemos una solución a tu medida...</p>
+      <h2 class="story-cta-title">Lleva este mismo enfoque a tu operación</h2>
+      <p class="story-cta-copy">Te ayudamos a identificar oportunidades, optimizar tu consumo y generar ahorros medibles desde el primer mes.</p>
     </div>
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-number">1</div>
-        <h4>Contáctanos</h4>
-        <p>Escríbenos a <strong>hola@clickie.io</strong>. Coméntanos sobre tu empresa y el problema que tienes. Un representante de Clickie se pondrá en contacto contigo.</p>
+        <h4>Cuéntanos tu operación</h4>
+        <p>Detectamos oportunidades de mejora en tu consumo energético.</p>
       </div>
       <div class="step-card">
         <div class="step-number">2</div>
-        <h4>Coordinaremos una reunión</h4>
-        <p>Propondremos una solución que se ajuste a tus necesidades y resolveremos tus dudas.</p>
+        <h4>Analizamos tu consumo</h4>
+        <p>Analizamos tus datos y definimos un plan de optimización.</p>
       </div>
       <div class="step-card">
         <div class="step-number">3</div>
-        <h4>Te ayudamos en todo el proceso</h4>
-        <p>Te guiaremos para que saques el mejor provecho de las herramientas Clickie. Queremos que seas parte de nuestra próxima historia de éxito.</p>
+        <h4>Implementamos y medimos</h4>
+        <p>Te acompañamos en la ejecución para asegurar resultados.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA FINAL -->
-<section class="cta-banner">
-  <div class="container"><div class="cta-inner">
-    <h2>¿Quieres resultados similares<br>en tu empresa?</h2>
-    <p>Descubre cómo Clickie puede optimizar tus costos energéticos y la gestión de facturas.</p>
-    <div class="cta-actions">
-      <a href="../index.html#contacto" class="btn btn-outline-dark btn-lg">Hablar con un experto</a>
-      <a href="../cotiza.html" class="btn btn-primary btn-lg">Cotiza aquí →</a>
+<!-- CTA LIMPIO -->
+<section class="section section-surface-white section-compact story-cta-clean">
+  <div class="container">
+    <div class="story-cta-clean-inner">
+      <div class="story-cta-clean-actions">
+        <a href="../index.html#contacto" class="btn btn-outline btn-large">
+          Hablar con un experto
+        </a>
+        <a href="../index.html#contacto" class="btn btn-primary btn-large">
+          Cotiza aquí →
+        </a>
+      </div>
     </div>
-  </div></div>
+  </div>
 </section>
 
-<footer class="footer"><div class="container"><div class="footer-bottom">
-  <span class="footer-copy">© 2017–2026 Desarrollos y Proyectos Clickie SpA. Todos los derechos reservados.</span>
-  <div class="footer-legal"><a href="https://es.clickie.io/tos" target="_blank">Términos y condiciones</a><a href="https://es.clickie.io/privacy" target="_blank">Política de privacidad</a></div>
-</div></div></footer>
+<div data-site-shell="footer"></div>
 
+<script src="../scripts/shared-layout.js"></script>
 <script src="../scripts/main.js"></script>
-
-  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/46669151.js"></script>
-  <!-- End of HubSpot Embed Code -->
-
+<script>
+function playTattersallStoryVideo() {
+  var container = document.getElementById('tattersallVideoContainer');
+  if (!container) return;
+  container.innerHTML = '<iframe src="https://www.youtube.com/embed/bQ65TU3WdHs?autoplay=1&rel=0" title="Cómo Tattersall optimizó su consumo y tarifas con Clickie" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  container.classList.add('is-playing');
+  container.onclick = null;
+}
+</script>
 </body>
 </html>

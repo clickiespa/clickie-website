@@ -1,680 +1,352 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TYPPJZ22DC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-TYPPJZ22DC');
-  </script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caso de éxito Preunic — 20% de ahorro energético — Clickie</title>
-  <meta name="description" content="Cómo Preunic redujo un 20% sus costos energéticos con Clickie. Visibilidad, control automatizado y un socio estratégico para la eficiencia." />
+  <title>Caso de éxito Preunic — Clickie</title>
+  <meta name="description" content="Preunic redujo un 20% sus costos energéticos junto a Clickie con visibilidad centralizada, control automatizado y decisiones basadas en datos." />
   <link rel="icon" type="image/png" href="../assets/favicon_navbar.png" sizes="256x256" />
   <link rel="stylesheet" href="../styles/main.css" />
-  <style>
-    /* ─── HERO ─── */
-    .story-hero {
-      background: linear-gradient(135deg, #1a1e6c 0%, #181966 50%, #c44dff 100%);
-      padding: 120px 0 80px;
-      position: relative;
-      overflow: hidden;
-    }
-    .story-hero::before {
-      content: '';
-      position: absolute;
-      top: -100px; right: -100px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(196,77,255,0.3) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-    .story-hero::after {
-      content: '';
-      position: absolute;
-      bottom: -60px; left: 20%;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(253,196,0,0.15) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-    .story-hero .container { position: relative; z-index: 1; }
-    .story-hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .story-hero-content { color: var(--white); }
-    .story-hero-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.9);
-      padding: 6px 16px;
-      border-radius: 100px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .story-hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 18px;
-      background: linear-gradient(135deg, #fff 0%, rgba(253,196,0,1) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .story-hero-desc {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 28px;
-    }
-    .story-hero-metric {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 12px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      padding: 20px 28px;
-    }
-    .story-hero-metric-value {
-      font-size: 3rem;
-      font-weight: 900;
-      color: var(--primary);
-    }
-    .story-hero-metric-label {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.4;
-    }
-    .story-hero-visual {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* ─── ZIGZAG SECTIONS ─── */
-    .zigzag-section { padding: 80px 0; }
-    .zigzag-section:nth-child(even) { background: var(--bg-base, #f8f9fa); }
-    .zigzag-section:nth-child(odd) { background: var(--white); }
-    .zigzag-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .zigzag-section:nth-child(even) .zigzag-grid { direction: rtl; }
-    .zigzag-section:nth-child(even) .zigzag-grid > * { direction: ltr; }
-    .zigzag-content h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--secondary);
-      margin-bottom: 16px;
-      line-height: 1.2;
-    }
-    .zigzag-content > p {
-      color: var(--text-secondary);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 24px;
-    }
-
-    /* Feature list */
-    .feature-list {
-      list-style: none; padding: 0; margin: 0;
-      display: flex; flex-direction: column; gap: 20px;
-    }
-    .feature-item { display: flex; gap: 16px; align-items: flex-start; }
-    .feature-check {
-      width: 28px; height: 28px; min-width: 28px;
-      background: linear-gradient(135deg, var(--primary), #f7c948);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--secondary); font-size: 0.85rem; font-weight: 700; margin-top: 2px;
-    }
-    .feature-item-content h4 {
-      font-size: 1rem; font-weight: 700; color: var(--secondary); margin-bottom: 4px;
-    }
-    .feature-item-content p {
-      color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;
-    }
-
-    /* Zigzag visual */
-    .zigzag-visual {
-      background: linear-gradient(135deg, rgba(26,30,108,0.04), rgba(196,77,255,0.08));
-      border-radius: 20px; padding: 40px;
-      display: flex; align-items: center; justify-content: center;
-      min-height: 300px;
-      border: 1px solid rgba(26,30,108,0.06);
-    }
-    .zigzag-visual-icon { font-size: 5rem; opacity: 0.5; }
-
-    /* ─── VIDEO SECTION ─── */
-    .video-section {
-      background: var(--secondary); padding: 80px 0;
-    }
-    .video-section h2 {
-      text-align: center; color: var(--white);
-      font-size: 2rem; font-weight: 700; margin-bottom: 12px;
-    }
-    .video-section .section-subtitle {
-      text-align: center; color: rgba(255,255,255,0.7); margin-bottom: 40px;
-    }
-    .video-wrapper {
-      max-width: 800px; margin: 0 auto;
-      border-radius: 16px; overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      aspect-ratio: 16 / 9;
-    }
-    .video-wrapper iframe {
-      width: 100%; height: 100%; border: none;
-    }
-
-    /* ─── RESULTS ─── */
-    .results-showcase {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .result-box {
-      background: linear-gradient(135deg, var(--secondary), #2d31a6);
-      border: none;
-      border-radius: 16px;
-      padding: 28px 20px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
-    .result-box:hover { transform: translateY(-4px); }
-    .result-number {
-      display: block;
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--primary);
-      margin-bottom: 8px;
-    }
-    .result-desc {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.4;
-    }
-
-    /* ─── QUOTE ─── */
-    .quote-section {
-      background: linear-gradient(135deg, var(--secondary), #181966);
-      padding: 80px 0;
-    }
-
-    /* ─── STEPS ─── */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px; margin-top: 40px;
-    }
-    .step-card {
-      text-align: center; padding: 32px 24px;
-      border-radius: 20px; background: var(--gray-50);
-      border: 1px solid rgba(26,30,108,0.06);
-      transition: transform 0.3s;
-    }
-    .step-card:hover { transform: translateY(-4px); }
-    .step-number {
-      width: 48px; height: 48px;
-      background: linear-gradient(135deg, var(--secondary), #2d31a6);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--white); font-size: 1.2rem; font-weight: 800;
-      margin: 0 auto 16px;
-    }
-    .step-card h4 {
-      font-size: 1.05rem; font-weight: 700; color: var(--secondary); margin-bottom: 8px;
-    }
-    .step-card p {
-      color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-      .story-hero-inner { grid-template-columns: 1fr; gap: 32px; }
-      .story-hero h1 { font-size: 2.2rem; }
-      .story-hero-metric-value { font-size: 2.2rem; }
-      .zigzag-grid { grid-template-columns: 1fr; gap: 32px; }
-      .zigzag-section:nth-child(even) .zigzag-grid { direction: ltr; }
-      .results-showcase { grid-template-columns: repeat(2, 1fr); }
-      .steps-grid { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
-<body>
+<body class="story-page story-page--preunic story-page--oxxo">
 
 <!-- NAVBAR -->
-<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
-  <button class="mobile-menu-close" id="mobileClose" aria-label="Cerrar menú">✕</button>
-  <button class="mobile-servicios-toggle">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-servicios-sub">
-    <a href="../servicios/ubm.html"><span class="mobile-sub-icon">📄</span> UBM — Gestión de Suministros</a>
-    <a href="../servicios/ems.html"><span class="mobile-sub-icon">📊</span> EMS — Monitoreo y Optimización</a>
-    <a href="../servicios/bms.html"><span class="mobile-sub-icon">🖥️</span> BMS — Control Inteligente</a>
-    <a href="../servicios/remarcacion.html"><span class="mobile-sub-icon">⚡</span> Remarcación y Submetering</a>
-    <div style="border-top:1px solid rgba(255,255,255,0.1);margin:8px 16px;"></div>
-    <span style="padding:4px 16px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);">Por Rubro</span>
-    <a href="../servicios/gestion-retail.html"><span class="mobile-sub-icon">🏪</span> Retail</a>
-    <a href="../servicios/eficiencia-energetica.html"><span class="mobile-sub-icon">🏭</span> Industria</a>
-  </div>
-  <button class="mobile-historias-toggle">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-historias-sub">
-    <a href="../historias/oxxo.html"><span class="mobile-sub-icon">🏪</span> OXXO</a>
-    <a href="../historias/starbucks.html"><span class="mobile-sub-icon">☕</span> Starbucks</a>
-    <a href="../historias/copec.html"><span class="mobile-sub-icon">⛽</span> COPEC</a>
-    <a href="../historias/lipigas.html"><span class="mobile-sub-icon">🔥</span> LIPIGAS</a>
-    <a href="../historias/tattersall.html"><span class="mobile-sub-icon">🏢</span> Tattersall</a>
-    <a href="../historias/renova.html"><span class="mobile-sub-icon">🌿</span> RENOVA</a>
-    <a href="../historias/preunic.html"><span class="mobile-sub-icon">🛍️</span> Preunic</a>
-    <a href="../historias/la-araucana-co2.html"><span class="mobile-sub-icon">🌱</span> La Araucana</a>
-  </div>
-
-          <button class="mobile-recursos-toggle">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-recursos-sub">
-    <a href="../recursos/guias.html"><span class="mobile-sub-icon">📘</span> Guías de Ahorro Energético</a>
-    <a href="../recursos/casos-de-exito.html"><span class="mobile-sub-icon">📊</span> Casos de Éxito</a>
-    <!-- Calculadora oculta temporalmente -->
-    <a href="../recursos/encuesta-madurez.html"><span class="mobile-sub-icon">📋</span> Encuesta de Madurez Energética</a>
-    <a href="https://www.youtube.com/@clickie4338" target="_blank" rel="noopener"><span class="mobile-sub-icon">🎬</span> Canal de YouTube</a>
-    <a href="https://blog.clickie.io" target="_blank" rel="noopener"><span class="mobile-sub-icon">📝</span> Blog</a>
-  </div>
-  <button class="mobile-nosotros-toggle">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-nosotros-sub">
-    <a href="../nosotros.html"><span class="mobile-sub-icon">💛</span> Nuestros Valores</a>
-    <a href="../nosotros/prensa.html"><span class="mobile-sub-icon">📰</span> Clickie en la Prensa</a>
-  </div>
-  <a href="https://app.clickie.io/" class="btn btn-primary" target="_blank" rel="noopener">Iniciar sesión</a>
-</div>
-
-<nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Navegación principal">
-  <div class="container">
-    <div class="navbar-inner">
-
-      <a href="../index.html" class="navbar-logo" aria-label="Clickie inicio">
-        <img class="logo-badge" src="../assets/favicon_navbar_blue.png" alt="Clickie Logo" width="36" height="36" style="vertical-align:bottom; position:relative; bottom:5px;" />
-        Clickie
-      </a>
-
-      <div class="navbar-nav">
-        <div class="nav-dropdown" id="navDropdownServicios">
-          <a href="../index.html#servicios" class="nav-link nav-link-dropdown">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownServicios">
-            <div class="mega-dropdown-inner" style="display:flex;gap:0;">
-              <!-- POR SOLUCIÓN -->
-              <div style="flex:3;">
-                <div class="mega-dropdown-header">
-                  <span class="mega-dropdown-title">Por Solución ›</span>
-                  <p class="mega-dropdown-subtitle">Nuestras plataformas de gestión energética.</p>
-                </div>
-                <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
-                  <a href="../servicios/ubm.html" class="mega-item">
-                    <div class="mega-item-icon yellow">📄</div>
-                    <div class="mega-item-content"><strong>UBM</strong><span>Gestión de Suministros Eléctricos.</span></div>
-                  </a>
-                  <a href="../servicios/ems.html" class="mega-item">
-                    <div class="mega-item-icon green">📊</div>
-                    <div class="mega-item-content"><strong>EMS</strong><span>Monitoreo, Gestión y Optimización Energética en Tiempo Real.</span></div>
-                  </a>
-                  <a href="../servicios/bms.html" class="mega-item">
-                    <div class="mega-item-icon violet">🖥️</div>
-                    <div class="mega-item-content"><strong>BMS</strong><span>Control Inteligente.</span></div>
-                  </a>
-                  <a href="../servicios/remarcacion.html" class="mega-item">
-                    <div class="mega-item-icon yellow">⚡</div>
-                    <div class="mega-item-content"><strong>Remarcación y Submetering</strong><span>Distribución interna justa de energía.</span></div>
-                  </a>
-                </div>
-              </div>
-              <!-- SEPARADOR -->
-              <div style="width:1px;background:var(--gray-200);margin:0 24px;"></div>
-              <!-- POR RUBRO -->
-              <div style="flex:1.5;">
-                <div class="mega-dropdown-header">
-                  <span class="mega-dropdown-title">Por Rubro ›</span>
-                  <p class="mega-dropdown-subtitle">Soluciones por industria.</p>
-                </div>
-                <div class="mega-dropdown-grid" style="grid-template-columns:1fr;">
-                  <a href="../servicios/gestion-retail.html" class="mega-item">
-                    <div class="mega-item-icon green">🏪</div>
-                    <div class="mega-item-content"><strong>Retail</strong><span>Eficiencia energética en tiendas y cadenas comerciales.</span></div>
-                  </a>
-                  <a href="../servicios/eficiencia-energetica.html" class="mega-item">
-                    <div class="mega-item-icon violet">🏭</div>
-                    <div class="mega-item-content"><strong>Industria</strong><span>Optimización energética en plantas e instalaciones industriales.</span></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-dropdown" id="navDropdownHistorias">
-          <a href="../index.html#historias" class="nav-link nav-link-dropdown">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownHistorias">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Historias de Éxito ›</span>
-                <p class="mega-dropdown-subtitle">Conoce cómo empresas líderes optimizaron su energía con Clickie.</p>
-              </div>
-              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(4,1fr);">
-                <a href="../historias/oxxo.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🏪</div>
-                  <div class="mega-item-content"><strong>OXXO</strong><span>20% de ahorro en 230+ tiendas.</span></div>
-                </a>
-                <a href="../historias/starbucks.html" class="mega-item">
-                  <div class="mega-item-icon green">☕</div>
-                  <div class="mega-item-content"><strong>Starbucks</strong><span>Eficiencia energética en cafeterías.</span></div>
-                </a>
-                <a href="../historias/copec.html" class="mega-item">
-                  <div class="mega-item-icon violet">⛽</div>
-                  <div class="mega-item-content"><strong>COPEC</strong><span>Monitoreo de red renovable completa.</span></div>
-                </a>
-                <a href="../historias/lipigas.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🔥</div>
-                  <div class="mega-item-content"><strong>LIPIGAS</strong><span>8% ahorro en plantas productivas.</span></div>
-                </a>
-                <a href="../historias/tattersall.html" class="mega-item">
-                  <div class="mega-item-icon violet">🏢</div>
-                  <div class="mega-item-content"><strong>Tattersall</strong><span>Gestión energética industrial.</span></div>
-                </a>
-                <a href="../historias/renova.html" class="mega-item">
-                  <div class="mega-item-icon green">🌿</div>
-                  <div class="mega-item-content"><strong>RENOVA</strong><span>+20% rendimiento en activos renovables.</span></div>
-                </a>
-                <a href="../historias/preunic.html" class="mega-item">
-                  <div class="mega-item-icon green">🛍️</div>
-                  <div class="mega-item-content"><strong>Preunic</strong><span>20% de reducción en costos energéticos.</span></div>
-                </a>
-                <a href="../historias/la-araucana-co2.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🌱</div>
-                  <div class="mega-item-content"><strong>La Araucana</strong><span>Reducción de huella de carbono.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-                <div class="nav-dropdown" id="navDropdownRecursos">
-          <a href="../index.html#recursos" class="nav-link nav-link-dropdown">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownRecursos">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Recursos Clickie ›</span>
-                <p class="mega-dropdown-subtitle">Guías, casos de éxito y herramientas prácticas para optimizar tu gestión energética.</p>
-              </div>
-              <div class="mega-dropdown-grid">
-                <a href="../recursos/guias.html" class="mega-item">
-                  <div class="mega-item-icon yellow">📘</div>
-                  <div class="mega-item-content"><strong>Guías de Ahorro Energético</strong><span>Descarga guías prácticas de eficiencia energética para tu rubro.</span></div>
-                </a>
-                <a href="../recursos/casos-de-exito.html" class="mega-item">
-                  <div class="mega-item-icon violet">📊</div>
-                  <div class="mega-item-content"><strong>Casos de Éxito</strong><span>OXXO, Starbucks, COPEC, LIPIGAS y más empresas que optimizaron su energía.</span></div>
-                </a>
-                <!-- Calculadora oculta temporalmente
-                <a href="../recursos/calculadora.html" class="mega-item">
-                  <div class="mega-item-icon green">🧮</div>
-                  <div class="mega-item-content"><strong>Calculadora de Ahorro</strong><span>Ingresa tus datos de consumo y descubre cuánto podrías ahorrar.</span></div>
-                </a>
-                -->
-                <a href="https://blog.clickie.io" target="_blank" rel="noopener" class="mega-item">
-                  <div class="mega-item-icon yellow">📝</div>
-                  <div class="mega-item-content"><strong>Blog</strong><span>Artículos sobre eficiencia energética, casos de éxito y tendencias.</span></div>
-                </a>
-                <a href="../recursos/encuesta-madurez.html" class="mega-item">
-                  <div class="mega-item-icon green">📋</div>
-                  <div class="mega-item-content"><strong>Encuesta de Madurez Energética</strong><span>Descubre tu nivel de madurez y recibe un plan de acción personalizado.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-dropdown" id="navDropdownNosotros">
-          <a href="../nosotros.html" class="nav-link nav-link-dropdown">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownNosotros">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Nosotros ›</span>
-                <p class="mega-dropdown-subtitle">Conoce quiénes somos y qué nos mueve.</p>
-              </div>
-              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
-                <a href="../nosotros.html" class="mega-item">
-                  <div class="mega-item-icon yellow">💛</div>
-                  <div class="mega-item-content"><strong>Nuestros Valores</strong><span>Propósito, misión y los valores que guían cada decisión en Clickie.</span></div>
-                </a>
-                <a href="../nosotros/prensa.html" class="mega-item">
-                  <div class="mega-item-icon violet">📰</div>
-                  <div class="mega-item-content"><strong>Clickie en la Prensa</strong><span>Noticias, artículos y apariciones de Clickie en medios de comunicación.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="https://blog.clickie.io" class="nav-link" target="_blank" rel="noopener">Blog</a>
-      </div>
-
-      <div class="navbar-actions">
-        <a href="https://app.clickie.io/" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Iniciar sesión</a>
-        <a href="../cotiza.html" class="btn btn-primary btn-sm">Cotiza aquí</a>
-      </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú móvil">
-        <span></span><span></span><span></span>
-      </button>
-
-    </div>
-  </div>
-</nav>
+<div data-site-shell="mobile-menu"></div>
+<div data-site-shell="navbar"></div>
 
 <!-- HERO -->
-<section class="story-hero">
+<section class="subpage-hero story-case-hero">
   <div class="container">
-    <div class="story-hero-inner">
-      <div class="story-hero-content">
-        <div class="breadcrumb" style="margin-bottom:16px;"><a href="../index.html" style="color:rgba(255,255,255,0.6)">Inicio</a> / <a href="../recursos/casos-de-exito.html" style="color:rgba(255,255,255,0.6)">Casos de Éxito</a> / <span style="color:rgba(255,255,255,0.8)">Preunic</span></div>
-        <span class="story-hero-label">🛍️ Retail · Tiendas a nivel nacional</span>
-        <h1>20% menos costos energéticos</h1>
-        <p class="story-hero-desc">Cómo Preunic redujo un 20% sus costos energéticos con Clickie: visibilidad total, control automatizado y un socio estratégico que los acompaña en cada decisión.</p>
-        <div class="story-hero-metric">
-          <span class="story-hero-metric-value">20%</span>
-          <span class="story-hero-metric-label">de reducción real<br>en costos energéticos</span>
+    <div class="content-grid-equal">
+      <div class="content-text text-left">
+        <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="../recursos/casos-de-exito.html">Casos de Éxito</a> / <span>Preunic</span></div>
+        <span class="story-hero-label"><i class="fa-solid fa-store" aria-hidden="true"></i> Retail · Tiendas a nivel nacional</span>
+        <h1>Cómo Preunic <span class="accent">optimizó su consumo energético</span> en sus tiendas</h1>
+        <p class="hero-desc">Preunic necesitaba dejar de operar a ciegas sobre su consumo energético. Con Clickie, logró visibilidad total, control automatizado y una reducción real en sus costos energéticos sin perder foco en la operación de sus tiendas.</p>
+        <div class="story-hero-meta">
+          <img src="../assets/logos/Preunic.png" alt="Preunic" class="story-hero-logo" />
+          <div class="hero-metric hero-metric--kpi">
+            <div class="hero-metric-main">
+              <span class="hero-metric-value">20%</span>
+            </div>
+            <div class="hero-metric-text">
+              <span>reducción real</span>
+              <span>en costos energéticos</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="story-hero-visual">
-        <img src="../assets/preunic-store.png" alt="Tienda Preunic con gestión energética Clickie" style="max-width:100%;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,0.3);" />
+      <div class="text-center">
+        <div class="media-frame media-frame--shadow-soft story-hero-media">
+          <img src="../Imagenes/preunic1.jpeg" alt="Tienda Preunic con gestión energética Clickie" />
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- QUOTE -->
-<section class="quote-section">
+<!-- PROBLEMA -->
+<section class="section section-surface-white section-compact">
   <div class="container">
-    <div style="max-width:700px;margin:0 auto;text-align:center;color:var(--white)">
-      <div style="font-size:2.5rem;margin-bottom:20px">💬</div>
-      <p style="font-size:1.15rem;line-height:1.8;font-style:italic;color:rgba(255,255,255,0.8);margin-bottom:24px">"Clickie es un socio estratégico para nosotros, nos acompaña y nos muestra la data a través de su plataforma fácil y ágil."</p>
-      <p style="font-weight:700;color:var(--primary);font-size:1rem">Cecilia Salinas</p>
-      <p style="font-size:0.85rem;color:rgba(255,255,255,0.6)">Subgerente de Administración, Preunic</p>
+    <div class="content-grid-centered">
+      <div class="content-text text-left">
+        <span class="section-label">Problema</span>
+        <h2 class="section-title text-left">Gestionar el consumo energético en múltiples tiendas</h2>
+        <p>Preunic enfrentaba un problema que muchas cadenas conocen bien: gastar en energía sin saber exactamente en qué, cómo ni por qué en cada local.</p>
+        <p>La falta de trazabilidad sobre su consumo real impedía detectar ineficiencias a tiempo y dejaba pasar oportunidades concretas de ahorro.</p>
+        <div class="checklist">
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Múltiples locales con consumo distribuido y difícil de comparar.</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Poca visibilidad para detectar ineficiencias y actuar a tiempo.</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Necesidad de ganar eficiencia sin afectar la operación diaria de las tiendas.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- EL DESAFÍO -->
-<section class="zigzag-section">
+<!-- PUNTO DE QUIEBRE -->
+<section class="section section-surface-muted section-compact">
   <div class="container">
-    <div class="zigzag-grid">
-      <div class="zigzag-content">
-        <span class="section-label">El desafío</span>
-        <h2>Operar a ciegas</h2>
-        <p>Preunic enfrentaba un problema que muchas empresas conocen bien: gastar en energía sin saber exactamente en qué, cómo ni por qué.</p>
-        <p>La falta de trazabilidad sobre su consumo real y el desconocimiento de su propio nivel de madurez en eficiencia energética les impedía detectar ineficiencias a tiempo. El resultado era siempre el mismo: oportunidades de ahorro perdidas y costos operativos más altos de lo necesario.</p>
-      </div>
-      <div class="zigzag-visual">
-        <span class="zigzag-visual-icon">🔍❓</span>
+    <div class="content-grid-centered">
+      <div class="content-text text-left">
+        <span class="section-label">Punto de quiebre</span>
+        <h2 class="section-title text-left">El primer desafío fue entender cuándo y dónde se consumía la energía en cada tienda</h2>
+        <p>Antes de optimizar, Preunic necesitaba pasar de intuiciones generales a información clara y accionable para entender qué estaba elevando el gasto y dónde intervenir primero.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- LA SOLUCIÓN -->
-<section class="zigzag-section">
-  <div class="container">
-    <div class="zigzag-grid">
-      <div class="zigzag-content">
-        <span class="section-label">La solución</span>
-        <h2>Visibilidad, control y un socio de confianza</h2>
-        <p>Preunic encontró en Clickie una solución tecnológica inteligente, de bajo costo y rápida de implementar. A lo largo de más de dos años y medio de trabajo conjunto, la plataforma les ha permitido:</p>
-        <ul class="feature-list">
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Identificación precisa del gasto</h4>
-              <p>Detectar con exactitud los puntos de mayor gasto energético en cada tienda a lo largo de todo Chile.</p>
-            </div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Control automatizado</h4>
-              <p>Controlar de forma automatizada sus equipos de clima e iluminación en todas sus tiendas, sin intervención manual.</p>
-            </div>
-          </li>
-          <li class="feature-item">
-            <div class="feature-check">✓</div>
-            <div class="feature-item-content">
-              <h4>Datos claros y accionables</h4>
-              <p>Acceder a datos claros, ágiles y fáciles de interpretar para tomar decisiones informadas en cada momento.</p>
-            </div>
-          </li>
-        </ul>
+<!-- SOLUCIÓN -->
+<section class="subpage-content">
+  <div class="container"><div class="content-grid">
+    <div class="content-text text-left">
+      <span class="section-label">La solución</span>
+      <h2>Cómo Clickie transformó la operación</h2>
+      <div class="summary-chip summary-chip--primary">
+        <i class="fa-solid fa-store" aria-hidden="true"></i>
+        Visibilidad centralizada y control automatizado
       </div>
-      <div class="zigzag-visual">
-        <span class="zigzag-visual-icon">📊🎯</span>
+      <p><strong>Monitoreamos</strong> el consumo energético con información clara y fácil de interpretar para cada decisión operativa.</p>
+      <p><strong>Centralizamos</strong> la visibilidad sobre las tiendas para detectar con precisión los puntos de mayor gasto energético.</p>
+      <p><strong>Automatizamos</strong> el control de clima e iluminación para reducir costos sin depender de intervención manual en cada local.</p>
+    </div>
+    <div class="content-text text-left">
+      <span class="section-label">Implementación</span>
+      <h2>Datos ágiles y acompañamiento continuo</h2>
+      <p>Durante más de dos años y medio de trabajo conjunto, Clickie se consolidó como un socio estratégico para Preunic, entregando información útil y soporte cercano para transformar datos en decisiones.</p>
+      <p>Ese acompañamiento permitió avanzar desde la lectura del consumo hasta la acción en terreno, focalizando esfuerzos donde realmente había oportunidades de mejora.</p>
+    </div>
+  </div></div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="section section-surface-white section-compact ubm-process">
+  <div class="container">
+    <div class="text-center section-intro">
+      <span class="section-label">Cómo funciona</span>
+      <h2 class="section-title">Cómo Clickie convirtió datos en <span class="highlight">ahorro</span> para Preunic</h2>
+      <p class="section-subtitle">Primero visibilidad, luego análisis y finalmente decisiones operativas para reducir costos energéticos.</p>
+    </div>
+    <div class="three-up-grid content-grid-centered ubm-process-grid">
+      <div class="step-card">
+        <span class="ubm-process-number">01</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+        </div>
+        <h3>Digitalizamos</h3>
+        <p>Capturamos información energética para entender el comportamiento real del consumo en las tiendas.</p>
+      </div>
+      <div class="step-card">
+        <span class="ubm-process-number">02</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
+        </div>
+        <h3>Analizamos</h3>
+        <p>Identificamos puntos de mayor gasto y oportunidades concretas de mejora para priorizar acciones.</p>
+      </div>
+      <div class="step-card">
+        <span class="ubm-process-number">03</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
+        </div>
+        <h3>Optimizamos</h3>
+        <p>Aplicamos control automatizado y decisiones operativas más precisas para reducir costos de manera sostenida.</p>
+      </div>
+    </div>
+    <div class="step-track">
+      <div class="step-track-line step-track-line--brand"></div>
+      <div class="step-track-dots">
+        <div class="step-track-dot step-track-dot--brand"></div>
+        <div class="step-track-dot step-track-dot--brand"></div>
+        <div class="step-track-dot step-track-dot--brand"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACTO -->
+<section class="section section-surface-white section-compact">
+  <div class="container">
+    <div class="text-center section-intro">
+      <span class="section-label">Impacto</span>
+      <h2 class="section-title">Impacto real en la operación de <span class="highlight">Preunic</span></h2>
+    </div>
+    <div class="hero-stats story-results-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-heading" aria-hidden="true"><i class="fa-solid fa-sack-dollar hero-stat-icon"></i></span>
+        <span class="hero-stat-value">20%</span>
+        <span class="hero-stat-label">Reducción real en costos energéticos</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-heading" aria-hidden="true"><i class="fa-solid fa-map-location-dot hero-stat-icon"></i></span>
+        <span class="hero-stat-value">Chile</span>
+        <span class="hero-stat-label">Cobertura operativa en tiendas a nivel nacional</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-heading" aria-hidden="true"><i class="fa-solid fa-clock hero-stat-icon"></i></span>
+        <span class="hero-stat-value">2.5+</span>
+        <span class="hero-stat-label">Años de trabajo continuo junto a Clickie</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-heading" aria-hidden="true"><i class="fa-solid fa-chart-line hero-stat-icon"></i></span>
+        <span class="hero-stat-value">Datos</span>
+        <span class="hero-stat-label">Claridad para respaldar decisiones operativas y energéticas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALIDACIÓN -->
+<section class="section section-surface-muted section-compact story-testimonial-section">
+  <div class="container">
+    <div class="content-grid-equal story-testimonial-layout">
+      <div class="text-center">
+        <a
+          href="https://www.youtube.com/watch?v=oFySR-UcADw"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="story-video-preview media-frame media-frame--shadow-soft story-testimonial-media"
+          aria-label="Ver video del caso Preunic"
+        >
+          <img src="../Imagenes/preunic6.png" alt="Cecilia Salinas en caso de éxito Preunic junto a Clickie" />
+          <span class="story-video-play">
+            <i class="fa-solid fa-play" aria-hidden="true"></i>
+          </span>
+        </a>
+      </div>
+      <div class="story-quote-block story-quote-block--editorial text-left">
+        <div class="story-quote-icon"><i class="fa-solid fa-quote-left" aria-hidden="true"></i></div>
+        <p class="story-quote-text">Clickie es un socio estratégico para nosotros, nos acompaña y nos muestra la data a través de su plataforma fácil y ágil.</p>
+        <p class="story-quote-author">Cecilia Salinas</p>
+        <p class="story-quote-role">Subgerente de Administración, Preunic</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EJECUCIÓN -->
+<section class="subpage-features story-execution-section">
+  <div class="container">
+    <div class="text-center section-intro">
+      <span class="section-label">Ejecución</span>
+      <h2 class="section-title">Cómo se aplicó la solución en la <span class="highlight">operación</span></h2>
+      <p class="section-subtitle">La implementación combinó control operativo, lectura centralizada y optimización continua para actuar mejor en cada tienda.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-sliders" aria-hidden="true"></i></div>
+        <h4>Control operativo</h4>
+        <p>La operación ganó capacidad para actuar directamente sobre los consumos que más impactaban el costo energético.</p>
+        <div class="checklist">
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Control automatizado de equipos de clima e iluminación en las tiendas.</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Menor dependencia de intervención manual para ajustar la operación.</p>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></div>
+        <h4>Visibilidad y análisis</h4>
+        <p>Preunic dejó de operar a ciegas y comenzó a usar datos claros para decidir con mayor precisión.</p>
+        <div class="checklist">
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Identificación precisa de puntos de mayor gasto energético en cada tienda.</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Información ágil y fácil de interpretar para decisiones más rápidas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-bell" aria-hidden="true"></i></div>
+        <h4>Optimización continua</h4>
+        <p>Los datos se transformaron en acciones concretas en terreno, sosteniendo la mejora energética en el tiempo.</p>
+        <div class="checklist">
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Visitas focalizadas a lo largo de Chile para intervenir locales con mayor potencial de mejora.</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>La eficiencia energética pasó a convertirse en una cultura más transversal en la organización.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- VIDEO -->
-<section class="video-section">
+<section class="section section-surface-white section-compact">
   <div class="container">
-    <h2>Escucha la historia de Preunic</h2>
-    <p class="section-subtitle">Cecilia Salinas, Subgerente de Administración de Preunic, comparte cómo Clickie se convirtió en un socio estratégico para su gestión energética.</p>
-    <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/oFySR-UcADw" title="Preunic - Caso de éxito Clickie" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="text-center section-intro">
+      <span class="section-label">Video</span>
+      <h2 class="section-title">Preunic: cómo redujo sus <span class="highlight">costos energéticos</span></h2>
+      <p class="section-subtitle">Cecilia Salinas cuenta cómo Clickie se transformó en un socio estratégico para la gestión energética de Preunic.</p>
     </div>
-  </div>
-</section>
-
-<!-- ACCIÓN EN TERRENO -->
-<section class="zigzag-section">
-  <div class="container">
-    <div class="zigzag-grid">
-      <div class="zigzag-content">
-        <span class="section-label">De los datos a la realidad</span>
-        <h2>Acción en terreno</h2>
-        <p>Con la información que entrega la plataforma, el equipo de Preunic realiza visitas a terreno a lo largo de todo Chile, desde Arica hasta Punta Arenas, focalizándose en los locales con mayores oportunidades de mejora.</p>
-        <p>Este enfoque les ha permitido asegurar que el uso de la energía en cada tienda sea verdaderamente racional y eficiente.</p>
-        <p>Más allá de los resultados técnicos, este proceso ha tenido un impacto profundo al interior de la compañía: <strong>la eficiencia energética dejó de ser una tarea del área de administración para convertirse en una cultura transversal a toda la organización.</strong></p>
-      </div>
-      <div class="zigzag-visual">
-        <span class="zigzag-visual-icon">🇨🇱🏪</span>
+    <div id="preunicVideoContainer" class="stories-video-container media-frame media-frame--wide" onclick="playPreunicStoryVideo()">
+      <img class="stories-video-thumb home-visual-filter" src="../Imagenes/preunic2.jpeg" alt="Portada video caso de éxito Preunic" />
+      <div class="stories-video-overlay">
+        <div class="stories-video-play">
+          <svg width="28" height="32" viewBox="0 0 28 32" fill="none" aria-hidden="true"><path d="M26 14.268a2 2 0 010 3.464L4 28.785a2 2 0 01-3-1.732V4.947a2 2 0 013-1.732L26 14.268z" fill="var(--dark)"/></svg>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- RESULTS -->
-<section class="section" style="background:var(--white)">
+<!-- STEPS -->
+<section class="section section-surface-white section-compact steps-section">
   <div class="container">
-    <div class="text-center" style="margin-bottom:48px">
-      <span class="section-label">Resultados destacados</span>
-      <h2 class="section-title">Impacto <span class="highlight">real y medible</span></h2>
-    </div>
-    <div class="results-showcase">
-      <div class="result-box">
-        <span class="result-number">20%</span>
-        <span class="result-desc">Reducción real en costos energéticos</span>
-      </div>
-      <div class="result-box">
-        <span class="result-number">100%</span>
-        <span class="result-desc">Visibilidad del consumo en todas sus tiendas</span>
-      </div>
-      <div class="result-box">
-        <span class="result-number">24/7</span>
-        <span class="result-desc">Control automatizado de clima e iluminación</span>
-      </div>
-      <div class="result-box">
-        <span class="result-number">2.5+</span>
-        <span class="result-desc">Años de trabajo continuo junto a Clickie</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- STEPS: ¿Y ahora? -->
-<section class="section" style="background:var(--gray-50)">
-  <div class="container">
-    <div style="text-align:center">
+    <div class="story-cta-block">
       <span class="section-label">¿Y ahora?</span>
-      <h2 style="font-size:2rem;font-weight:800;color:var(--secondary);margin-bottom:8px;">¿Tu empresa también quiere dejar de operar a ciegas?</h2>
-      <p style="color:var(--text-secondary);font-size:1.05rem;">Descubre cómo Clickie puede ayudarte a tomar el control de tu consumo energético.</p>
+      <h2 class="story-cta-title">Lleva este mismo enfoque a tu operación</h2>
+      <p class="story-cta-copy">Te ayudamos a identificar oportunidades, optimizar tu consumo y generar ahorros medibles desde el primer mes.</p>
     </div>
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-number">1</div>
-        <h4>Contáctanos</h4>
-        <p>Escríbenos a <strong>hola@clickie.io</strong> o solicita una cotización. Un especialista de Clickie se pondrá en contacto contigo.</p>
+        <h4>Cuéntanos tu operación</h4>
+        <p>Detectamos oportunidades de mejora en tu consumo energético.</p>
       </div>
       <div class="step-card">
         <div class="step-number">2</div>
-        <h4>Coordinamos una reunión</h4>
-        <p>Propondremos una solución que se ajuste a tu operación, tus necesidades y tus objetivos de ahorro.</p>
+        <h4>Analizamos tu consumo</h4>
+        <p>Analizamos tus datos y definimos un plan de optimización.</p>
       </div>
       <div class="step-card">
         <div class="step-number">3</div>
-        <h4>Te acompañamos en todo</h4>
-        <p>Te guiamos en todo el proceso para que logres resultados concretos. Queremos que seas nuestra próxima historia de éxito.</p>
+        <h4>Implementamos y medimos</h4>
+        <p>Te acompañamos en la ejecución para asegurar resultados.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA FINAL -->
-<section class="cta-banner">
-  <div class="container"><div class="cta-inner">
-    <h2>¿Quieres resultados similares<br>en tu empresa?</h2>
-    <p>Descubre cómo Clickie puede reducir tus costos energéticos.</p>
-    <div class="cta-actions">
-      <a href="../cotiza.html" class="btn btn-outline-dark btn-lg">Hablar con un experto</a>
-      <a href="../cotiza.html" class="btn btn-primary btn-lg">Cotiza aquí →</a>
+<!-- CTA LIMPIO -->
+<section class="section section-surface-white section-compact story-cta-clean">
+  <div class="container">
+    <div class="story-cta-clean-inner">
+      <div class="story-cta-clean-actions">
+        <a href="../index.html#contacto" class="btn btn-outline btn-large">
+          Hablar con un experto
+        </a>
+        <a href="../index.html#contacto" class="btn btn-primary btn-large">
+          Cotiza aquí →
+        </a>
+      </div>
     </div>
-  </div></div>
+  </div>
 </section>
 
-<footer class="footer"><div class="container"><div class="footer-bottom">
-  <span class="footer-copy">© 2017–2026 Desarrollos y Proyectos Clickie SpA. Todos los derechos reservados.</span>
-  <div class="footer-legal"><a href="https://es.clickie.io/tos" target="_blank">Términos y condiciones</a><a href="https://es.clickie.io/privacy" target="_blank">Política de privacidad</a></div>
-</div></div></footer>
+<div data-site-shell="footer"></div>
 
+<script src="../scripts/shared-layout.js"></script>
 <script src="../scripts/main.js"></script>
-
-  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/46669151.js"></script>
-  <!-- End of HubSpot Embed Code -->
-
+<script>
+function playPreunicStoryVideo() {
+  var container = document.getElementById('preunicVideoContainer');
+  if (!container) return;
+  container.innerHTML = '<iframe src="https://www.youtube.com/embed/oFySR-UcADw?autoplay=1&rel=0" title="Preunic - Caso de éxito Clickie" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  container.classList.add('is-playing');
+  container.onclick = null;
+}
+</script>
 </body>
 </html>

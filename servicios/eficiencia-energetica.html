@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TYPPJZ22DC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-TYPPJZ22DC');
-  </script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eficiencia Energética Industrial — Clickie</title>
@@ -18,254 +8,200 @@
   <link rel="icon" type="image/png" href="../assets/favicon_navbar.png" sizes="256x256" />
   <link rel="stylesheet" href="../styles/main.css" />
 </head>
-<body>
+<body class="service-page">
 
-<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
-  <button class="mobile-menu-close" id="mobileClose" aria-label="Cerrar menú">✕</button>
-  <button class="mobile-servicios-toggle">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-servicios-sub">
-    <a href="../servicios/ubm.html"><span class="mobile-sub-icon">📄</span> UBM — Gestión de Suministros</a>
-    <a href="../servicios/ems.html"><span class="mobile-sub-icon">📊</span> EMS — Monitoreo y Optimización</a>
-    <a href="../servicios/bms.html"><span class="mobile-sub-icon">🖥️</span> BMS — Control Inteligente</a>
-    <a href="../servicios/remarcacion.html"><span class="mobile-sub-icon">⚡</span> Remarcación y Submetering</a>
-    <div style="border-top:1px solid rgba(255,255,255,0.1);margin:8px 16px;"></div>
-    <span style="padding:4px 16px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);">Por Rubro</span>
-    <a href="../servicios/gestion-retail.html"><span class="mobile-sub-icon">🏪</span> Retail</a>
-    <a href="../servicios/eficiencia-energetica.html"><span class="mobile-sub-icon">🏭</span> Industria</a>
-  </div>
-  <button class="mobile-historias-toggle">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-historias-sub">
-    <a href="../historias/oxxo.html"><span class="mobile-sub-icon">🏪</span> OXXO</a>
-    <a href="../historias/starbucks.html"><span class="mobile-sub-icon">☕</span> Starbucks</a>
-    <a href="../historias/copec.html"><span class="mobile-sub-icon">⛽</span> COPEC</a>
-    <a href="../historias/lipigas.html"><span class="mobile-sub-icon">🔥</span> LIPIGAS</a>
-    <a href="../historias/tattersall.html"><span class="mobile-sub-icon">🏢</span> Tattersall</a>
-    <a href="../historias/renova.html"><span class="mobile-sub-icon">🌿</span> RENOVA</a>
-    <a href="../historias/preunic.html"><span class="mobile-sub-icon">🛍️</span> Preunic</a>
-    <a href="../historias/la-araucana-co2.html"><span class="mobile-sub-icon">🌱</span> La Araucana</a>
-  </div>
-
-          <button class="mobile-recursos-toggle">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-recursos-sub">
-    <a href="../recursos/guias.html"><span class="mobile-sub-icon">📘</span> Guías de Ahorro Energético</a>
-    <a href="../recursos/casos-de-exito.html"><span class="mobile-sub-icon">📊</span> Casos de Éxito</a>
-    <!-- Calculadora oculta temporalmente -->
-    <a href="../recursos/encuesta-madurez.html"><span class="mobile-sub-icon">📋</span> Encuesta de Madurez Energética</a>
-    <a href="https://www.youtube.com/@clickie4338" target="_blank" rel="noopener"><span class="mobile-sub-icon">🎬</span> Canal de YouTube</a>
-    <a href="https://blog.clickie.io" target="_blank" rel="noopener"><span class="mobile-sub-icon">📝</span> Blog</a>
-  </div>
-  <button class="mobile-nosotros-toggle">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-nosotros-sub">
-    <a href="../nosotros.html"><span class="mobile-sub-icon">💛</span> Nuestros Valores</a>
-    <a href="../nosotros/prensa.html"><span class="mobile-sub-icon">📰</span> Clickie en la Prensa</a>
-  </div>
-  <a href="https://app.clickie.io/" class="btn btn-primary" target="_blank" rel="noopener">Iniciar sesión</a>
-</div>
-
-<nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Navegación principal">
-  <div class="container">
-    <div class="navbar-inner">
-
-      <a href="../index.html" class="navbar-logo" aria-label="Clickie inicio">
-        <img class="logo-badge" src="../assets/favicon_navbar_blue.png" alt="Clickie Logo" width="36" height="36" style="vertical-align:bottom; position:relative; bottom:5px;" />
-        Clickie
-      </a>
-
-      <div class="navbar-nav">
-        <div class="nav-dropdown" id="navDropdownServicios">
-          <a href="../index.html#servicios" class="nav-link nav-link-dropdown">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownServicios">
-            <div class="mega-dropdown-inner" style="display:flex;gap:0;">
-              <!-- POR SOLUCIÓN -->
-              <div style="flex:3;">
-                <div class="mega-dropdown-header">
-                  <span class="mega-dropdown-title">Por Solución ›</span>
-                  <p class="mega-dropdown-subtitle">Nuestras plataformas de gestión energética.</p>
-                </div>
-                <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
-                  <a href="../servicios/ubm.html" class="mega-item">
-                    <div class="mega-item-icon yellow">📄</div>
-                    <div class="mega-item-content"><strong>UBM</strong><span>Gestión de Suministros Eléctricos.</span></div>
-                  </a>
-                  <a href="../servicios/ems.html" class="mega-item">
-                    <div class="mega-item-icon green">📊</div>
-                    <div class="mega-item-content"><strong>EMS</strong><span>Monitoreo, Gestión y Optimización Energética en Tiempo Real.</span></div>
-                  </a>
-                  <a href="../servicios/bms.html" class="mega-item">
-                    <div class="mega-item-icon violet">🖥️</div>
-                    <div class="mega-item-content"><strong>BMS</strong><span>Control Inteligente.</span></div>
-                  </a>
-                  <a href="../servicios/remarcacion.html" class="mega-item">
-                    <div class="mega-item-icon yellow">⚡</div>
-                    <div class="mega-item-content"><strong>Remarcación y Submetering</strong><span>Distribución interna justa de energía.</span></div>
-                  </a>
-                </div>
-              </div>
-              <!-- SEPARADOR -->
-              <div style="width:1px;background:var(--gray-200);margin:0 24px;"></div>
-              <!-- POR RUBRO -->
-              <div style="flex:1.5;">
-                <div class="mega-dropdown-header">
-                  <span class="mega-dropdown-title">Por Rubro ›</span>
-                  <p class="mega-dropdown-subtitle">Soluciones por industria.</p>
-                </div>
-                <div class="mega-dropdown-grid" style="grid-template-columns:1fr;">
-                  <a href="../servicios/gestion-retail.html" class="mega-item">
-                    <div class="mega-item-icon green">🏪</div>
-                    <div class="mega-item-content"><strong>Retail</strong><span>Eficiencia energética en tiendas y cadenas comerciales.</span></div>
-                  </a>
-                  <a href="../servicios/eficiencia-energetica.html" class="mega-item">
-                    <div class="mega-item-icon violet">🏭</div>
-                    <div class="mega-item-content"><strong>Industria</strong><span>Optimización energética en plantas e instalaciones industriales.</span></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-dropdown" id="navDropdownHistorias">
-          <a href="../index.html#historias" class="nav-link nav-link-dropdown">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownHistorias">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Historias de Éxito ›</span>
-                <p class="mega-dropdown-subtitle">Conoce cómo empresas líderes optimizaron su energía con Clickie.</p>
-              </div>
-              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(4,1fr);">
-                <a href="../historias/oxxo.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🏪</div>
-                  <div class="mega-item-content"><strong>OXXO</strong><span>20% de ahorro en 230+ tiendas.</span></div>
-                </a>
-                <a href="../historias/starbucks.html" class="mega-item">
-                  <div class="mega-item-icon green">☕</div>
-                  <div class="mega-item-content"><strong>Starbucks</strong><span>Eficiencia energética en cafeterías.</span></div>
-                </a>
-                <a href="../historias/copec.html" class="mega-item">
-                  <div class="mega-item-icon violet">⛽</div>
-                  <div class="mega-item-content"><strong>COPEC</strong><span>Monitoreo de red renovable completa.</span></div>
-                </a>
-                <a href="../historias/lipigas.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🔥</div>
-                  <div class="mega-item-content"><strong>LIPIGAS</strong><span>8% ahorro en plantas productivas.</span></div>
-                </a>
-                <a href="../historias/tattersall.html" class="mega-item">
-                  <div class="mega-item-icon violet">🏢</div>
-                  <div class="mega-item-content"><strong>Tattersall</strong><span>Gestión energética industrial.</span></div>
-                </a>
-                <a href="../historias/renova.html" class="mega-item">
-                  <div class="mega-item-icon green">🌿</div>
-                  <div class="mega-item-content"><strong>RENOVA</strong><span>+20% rendimiento en activos renovables.</span></div>
-                </a>
-                <a href="../historias/preunic.html" class="mega-item">
-                  <div class="mega-item-icon green">🛍️</div>
-                  <div class="mega-item-content"><strong>Preunic</strong><span>20% de reducción en costos energéticos.</span></div>
-                </a>
-                <a href="../historias/la-araucana-co2.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🌱</div>
-                  <div class="mega-item-content"><strong>La Araucana</strong><span>Reducción de huella de carbono.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-                <div class="nav-dropdown" id="navDropdownRecursos">
-          <a href="../index.html#recursos" class="nav-link nav-link-dropdown">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownRecursos">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Recursos Clickie ›</span>
-                <p class="mega-dropdown-subtitle">Guías, casos de éxito y herramientas prácticas para optimizar tu gestión energética.</p>
-              </div>
-              <div class="mega-dropdown-grid">
-                <a href="../recursos/guias.html" class="mega-item">
-                  <div class="mega-item-icon yellow">📘</div>
-                  <div class="mega-item-content"><strong>Guías de Ahorro Energético</strong><span>Descarga guías prácticas de eficiencia energética para tu rubro.</span></div>
-                </a>
-                <a href="../recursos/casos-de-exito.html" class="mega-item">
-                  <div class="mega-item-icon violet">📊</div>
-                  <div class="mega-item-content"><strong>Casos de Éxito</strong><span>OXXO, Starbucks, COPEC, LIPIGAS y más empresas que optimizaron su energía.</span></div>
-                </a>
-                <!-- Calculadora oculta temporalmente
-                <a href="../recursos/calculadora.html" class="mega-item">
-                  <div class="mega-item-icon green">🧮</div>
-                  <div class="mega-item-content"><strong>Calculadora de Ahorro</strong><span>Ingresa tus datos de consumo y descubre cuánto podrías ahorrar.</span></div>
-                </a>
-                -->
-                <a href="https://blog.clickie.io" target="_blank" rel="noopener" class="mega-item">
-                  <div class="mega-item-icon yellow">📝</div>
-                  <div class="mega-item-content"><strong>Blog</strong><span>Artículos sobre eficiencia energética, casos de éxito y tendencias.</span></div>
-                </a>
-                <a href="../recursos/encuesta-madurez.html" class="mega-item">
-                  <div class="mega-item-icon green">📋</div>
-                  <div class="mega-item-content"><strong>Encuesta de Madurez Energética</strong><span>Descubre tu nivel de madurez y recibe un plan de acción personalizado.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-dropdown" id="navDropdownNosotros">
-          <a href="../nosotros.html" class="nav-link nav-link-dropdown">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownNosotros">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Nosotros ›</span>
-                <p class="mega-dropdown-subtitle">Conoce quiénes somos y qué nos mueve.</p>
-              </div>
-              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
-                <a href="../nosotros.html" class="mega-item">
-                  <div class="mega-item-icon yellow">💛</div>
-                  <div class="mega-item-content"><strong>Nuestros Valores</strong><span>Propósito, misión y los valores que guían cada decisión en Clickie.</span></div>
-                </a>
-                <a href="../nosotros/prensa.html" class="mega-item">
-                  <div class="mega-item-icon violet">📰</div>
-                  <div class="mega-item-content"><strong>Clickie en la Prensa</strong><span>Noticias, artículos y apariciones de Clickie en medios de comunicación.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="https://blog.clickie.io" class="nav-link" target="_blank" rel="noopener">Blog</a>
-      </div>
-
-      <div class="navbar-actions">
-        <a href="https://app.clickie.io/" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Iniciar sesión</a>
-        <a href="../cotiza.html" class="btn btn-primary btn-sm">Cotiza aquí</a>
-      </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú móvil">
-        <span></span><span></span><span></span>
-      </button>
-
-    </div>
-  </div>
-</nav>
+<div data-site-shell="mobile-menu"></div>
+<div data-site-shell="navbar"></div>
 
 <section class="subpage-hero">
   <div class="container">
     <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="../index.html#servicios">Servicios</a> / Eficiencia Energética Industrial</div>
-    <h1>Eficiencia Energética <span class="accent">Industrial</span></h1>
-    <p class="hero-desc">Optimiza tus procesos productivos, mejora la eficiencia operativa e impulsa la sostenibilidad en tus plantas y activos clave.</p>
-    <div class="hero-metric">
-      <span class="hero-metric-value">+20%</span>
-      <span class="hero-metric-label">Eficiencia operativa</span>
+    <h1>Optimiza el consumo energético en tu <span class="accent">planta</span></h1>
+    <p class="hero-desc">Monitorea procesos, reduce costos y mejora la eficiencia operativa. Lleva visibilidad y control a los equipos clave de tu planta.</p>
+    <div class="hero-metric hero-metric--kpi">
+      <span class="hero-metric-value">20%</span>
+      <span class="hero-metric-label">Gestión energética para industria</span>
     </div>
   </div>
 </section>
 
 <section class="subpage-content">
-  <div class="container">
-    <div class="content-grid">
-      <div class="content-text">
+  <div class="container"><div class="content-grid">
+      <div class="content-text text-left">
         <span class="section-label">El desafío</span>
-        <h2>¿Conoces la eficiencia real de tus procesos?</h2>
-        <p>En la industria, los equipos críticos como compresores, bombas, calderas y líneas de producción consumen grandes cantidades de energía. Sin monitoreo granular, es imposible identificar dónde se desperdicia.</p>
-        <p>La falta de visibilidad genera costos ocultos, paradas no planificadas y un impacto ambiental que podría reducirse significativamente.</p>
+        <h2>¿Tienes visibilidad real del consumo energético de tu planta?</h2>
+        <p>Cuando los procesos productivos operan sin medición clara, los consumos altos se normalizan y las ineficiencias quedan ocultas en la operación diaria.</p>
+        <p>Sin datos confiables es difícil entender qué equipos, líneas o turnos están consumiendo más de lo necesario y dónde están las oportunidades de mejora.</p>
+        <p>Eso termina generando <strong>sobrecostos y baja eficiencia</strong> en una operación que necesita precisión para ser competitiva.</p>
+      </div>
+      <div class="content-text text-left">
+        <span class="section-label">La solución Clickie</span>
+        <h2>Controla y mejora la eficiencia energética de tu operación</h2>
+        <div class="summary-chip summary-chip--primary">
+          <i class="fa-solid fa-industry" aria-hidden="true"></i>
+          Gestión energética para industria
+        </div>
+        <p><strong>Monitoreamos</strong> el consumo en procesos clave para darte una base clara y confiable sobre cómo opera tu planta.</p>
+        <p><strong>Analizamos</strong> patrones y desviaciones para identificar equipos, líneas o turnos con comportamiento ineficiente.</p>
+        <p><strong>Optimizamos</strong> el uso energético para reducir costos, mejorar desempeño y sostener la eficiencia operativa.</p>
+        <div class="checklist">
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Visibilidad completa del consumo</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Identificación de ineficiencias</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Optimización de procesos energéticos</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary"><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span>
+            <p>Reducción de costos operativos</p>
+          </div>
+        </div>
+      </div>
+  </div></div>
+</section>
+
+<section class="section section-surface-muted section-compact">
+  <div class="container">
+    <div class="text-center section-intro">
+      <span class="section-label">La Plataforma</span>
+      <h2 class="section-title">Toda la eficiencia de tu planta en <span class="highlight">un solo lugar</span></h2>
+      <p class="section-subtitle">Visualiza consumos, desviaciones y oportunidades de mejora por proceso, línea o equipo crítico.</p>
+    </div>
+    <div class="media-frame media-frame--wide">
+      <div class="story-image-rotator story-image-rotator--vertical" aria-label="Casos reales de industria con Clickie">
+        <img src="../Imagenes/clickie_bimbo1.jpg" class="home-visual-filter is-active" alt="Operación industrial de Bimbo con monitoreo energético" />
+        <img src="../Imagenes/clickie_lipigas.jpg" class="home-visual-filter" alt="Operación industrial de Lipigas con visibilidad energética" />
+        <img src="../Imagenes/clickie_bimbo4.jpg" class="home-visual-filter" alt="Procesos industriales de Bimbo con gestión Clickie" />
+        <img src="../Imagenes/clickie_bimbo5.jpg" class="home-visual-filter" alt="Eficiencia energética industrial con casos reales de Clickie" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-surface-white section-compact ubm-process">
+  <div class="container">
+    <div class="text-center section-intro">
+      <span class="section-label">Cómo funciona</span>
+      <h2 class="section-title">Industria: Cómo Clickie mejora la eficiencia de tu <span class="highlight">operación</span></h2>
+      <p class="section-subtitle">Un Experto Clickie te acompaña en cada etapa, conoce tu planta y tus datos.</p>
+    </div>
+    <div class="three-up-grid content-grid-centered ubm-process-grid">
+      <div class="step-card">
+        <span class="ubm-process-number">01</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
+        </div>
+        <h3>Medimos</h3>
+        <p>Capturamos datos de consumo en procesos, equipos y líneas críticas para entender cómo opera tu planta.</p>
+      </div>
+      <div class="step-card">
+        <span class="ubm-process-number">02</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
+        </div>
+        <h3>Analizamos</h3>
+        <p>Evaluamos patrones, desviaciones e ineficiencias para priorizar acciones de alto impacto operativo.</p>
+      </div>
+      <div class="step-card">
+        <span class="ubm-process-number">03</span>
+        <div class="step-card-icon step-card-icon--brand">
+          <i class="fa-solid fa-sack-dollar" aria-hidden="true"></i>
+        </div>
+        <h3>Optimizamos</h3>
+        <p>Aplicamos mejoras sobre la operación para reducir consumo, controlar costos y sostener eficiencia.</p>
+      </div>
+    </div>
+    <div class="step-track">
+      <div class="step-track-line step-track-line--brand"></div>
+      <div class="step-track-dots">
+        <div class="step-track-dot step-track-dot--brand"></div>
+        <div class="step-track-dot step-track-dot--brand"></div>
+        <div class="step-track-dot step-track-dot--brand"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-surface-muted section-compact">
+  <div class="container">
+    <div class="content-grid-centered">
+      <div class="text-left content-text">
+        <span class="section-label">Industria y procesos</span>
+        <h2 class="section-title text-left">Eficiencia energética para una operación más <span class="highlight">productiva</span></h2>
+        <div class="checklist">
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary">✔</span>
+            <p><strong>Control y visibilidad:</strong><br>Monitoreo claro sobre procesos, líneas y equipos de alto consumo.</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary">✔</span>
+            <p><strong>Optimización y ahorro:</strong><br>Identificación de ineficiencias para reducir consumo y mejorar desempeño operativo.</p>
+          </div>
+          <div class="checklist-item">
+            <span class="checklist-icon checklist-icon--primary">✔</span>
+            <p><strong>Gestión y soporte:</strong><br>Seguimiento continuo con datos accionables para sostener mejoras en el tiempo.</p>
+          </div>
+        </div>
+        <div class="ubm-results text-center">
+          <div class="hero-stats hero-stats--ubm">
+            <div class="hero-stat">
+              <span class="hero-stat-heading" aria-hidden="true"><i class="fa-solid fa-sack-dollar hero-stat-icon"></i></span>
+              <span class="hero-stat-value">20%</span>
+              <span class="hero-stat-label">Ahorro energético</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-heading" aria-hidden="true"><i class="fa-solid fa-industry hero-stat-icon"></i></span>
+              <span class="hero-stat-value">100%</span>
+              <span class="hero-stat-label">Control de procesos</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-heading" aria-hidden="true"><i class="fa-solid fa-arrow-trend-up hero-stat-icon"></i></span>
+              <span class="hero-stat-value">24/7</span>
+              <span class="hero-stat-label">Mejora continua de eficiencia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-surface-white section-compact">
+  <div class="container">
+    <div class="content-grid-equal">
+      <div class="text-center">
+        <div class="media-frame media-frame--score media-frame--shadow-soft">
+          <img src="../assets/ubm-score-eficiencia.png" alt="Eficiencia energética industrial con Clickie" />
+        </div>
       </div>
       <div class="content-text">
-        <span class="section-label">La solución Clickie</span>
-        <h2>Monitoreo inteligente de activos industriales</h2>
-        <p>Instalamos sensores IoT en tus equipos críticos para medir variables como consumo eléctrico, temperatura, presión y vibración en tiempo real.</p>
-        <p>Nuestros algoritmos detectan ineficiencias, predicen fallas y generan recomendaciones accionables para optimizar cada proceso productivo.</p>
+        <span class="section-label">Caso de uso</span>
+        <h2 class="section-title text-left">Más visibilidad, mejores decisiones y una planta más <span class="highlight">eficiente</span></h2>
+        <p>Clickie permite identificar dónde se pierde energía y cómo intervenir procesos críticos con una mirada clara y accionable.</p>
+        <div class="service-score-grid">
+          <div class="service-score-card service-score-card--primary">
+            <h4><i class="fa-solid fa-industry" aria-hidden="true"></i>Procesos críticos bajo control</h4>
+            <p>Monitorea los activos que más impactan el consumo de tu planta.</p>
+          </div>
+          <div class="service-score-card service-score-card--secondary">
+            <h4><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>Menos ineficiencias</h4>
+            <p>Identifica desvíos antes de que se conviertan en costos permanentes.</p>
+          </div>
+          <div class="service-score-card service-score-card--primary">
+            <h4><i class="fa-solid fa-chart-column" aria-hidden="true"></i>Datos para decidir</h4>
+            <p>Prioriza acciones sobre una base objetiva y fácil de seguir.</p>
+          </div>
+          <div class="service-score-card service-score-card--secondary">
+            <h4><i class="fa-solid fa-gears" aria-hidden="true"></i>Mejora operativa continua</h4>
+            <p>Sostiene la eficiencia con seguimiento constante y recomendaciones claras.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -279,32 +215,32 @@
     </div>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon">🏭</div>
+        <div class="feature-icon"><i class="fa-solid fa-industry" aria-hidden="true"></i></div>
         <h4>Monitoreo de equipos críticos</h4>
         <p>Compresores, bombas, calderas, motores — todos monitoreados con sensores IoT de alta precisión.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔧</div>
+        <div class="feature-icon"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div>
         <h4>Mantenimiento predictivo</h4>
         <p>Detecta anomalías antes de que se conviertan en fallas costosas, reduciendo paradas no planificadas.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📊</div>
+        <div class="feature-icon"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></div>
         <h4>KPIs de eficiencia</h4>
         <p>Dashboards con indicadores clave: kWh/unidad producida, factor de potencia, consumo por turno.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🌡️</div>
+        <div class="feature-icon"><i class="fa-solid fa-temperature-half" aria-hidden="true"></i></div>
         <h4>Multi-variable</h4>
         <p>Monitorea energía, temperatura, presión, vibración y más de 200 tipos de variables simultáneamente.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔔</div>
+        <div class="feature-icon"><i class="fa-solid fa-bell" aria-hidden="true"></i></div>
         <h4>Alertas inteligentes</h4>
         <p>Notificaciones automáticas cuando un equipo opera fuera de sus parámetros óptimos.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">📈</div>
+        <div class="feature-icon"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i></div>
         <h4>Benchmarking entre plantas</h4>
         <p>Compara la eficiencia entre diferentes plantas, líneas o turnos para identificar mejores prácticas.</p>
       </div>
@@ -325,23 +261,9 @@
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2017–2026 Desarrollos y Proyectos Clickie SpA. Todos los derechos reservados.</span>
-      <div class="footer-legal">
-        <a href="https://es.clickie.io/tos" target="_blank" rel="noopener">Términos y condiciones</a>
-        <a href="https://es.clickie.io/privacy" target="_blank" rel="noopener">Política de privacidad</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<div data-site-shell="footer"></div>
 
+<script src="../scripts/shared-layout.js"></script>
 <script src="../scripts/main.js"></script>
-
-  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/46669151.js"></script>
-  <!-- End of HubSpot Embed Code -->
-
 </body>
 </html>

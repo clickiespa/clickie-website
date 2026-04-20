@@ -1,417 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TYPPJZ22DC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-TYPPJZ22DC');
-  </script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Encuesta de Madurez Energética — Clickie</title>
   <meta name="description" content="Descubre en qué nivel de madurez energética se encuentra tu empresa y recibe un plan de acción personalizado para optimizar tu gestión de energía." />
   <link rel="icon" type="image/png" href="../assets/favicon_navbar.png" sizes="256x256" />
   <link rel="stylesheet" href="../styles/main.css" />
-  <style>
-    /* ── SURVEY STYLES ── */
-    .survey-container { max-width: 800px; margin: 0 auto; }
-
-    .survey-progress {
-      display: flex; align-items: center; gap: 8px;
-      margin-bottom: 48px; position: relative;
-    }
-    .survey-progress-step {
-      display: flex; align-items: center; justify-content: center;
-      width: 44px; height: 44px; border-radius: 50%;
-      background: var(--gray-100); color: var(--text-secondary);
-      font-weight: 700; font-size: 0.95rem;
-      transition: all 0.4s ease; flex-shrink: 0;
-    }
-    .survey-progress-step.active {
-      background: var(--primary); color: var(--dark);
-      box-shadow: 0 0 0 6px rgba(253,196,0,0.18);
-    }
-    .survey-progress-step.completed {
-      background: var(--secondary); color: white;
-    }
-    .survey-progress-line {
-      flex: 1; height: 3px; background: var(--gray-200);
-      border-radius: 4px; position: relative; overflow: hidden;
-    }
-    .survey-progress-line .fill {
-      position: absolute; left: 0; top: 0; height: 100%;
-      background: var(--secondary); border-radius: 4px;
-      transition: width 0.5s ease; width: 0;
-    }
-
-    .survey-question-card {
-      background: white; border-radius: 20px;
-      padding: 40px; box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-      border: 1px solid var(--gray-100);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-    .survey-question-card.hidden { display: none; }
-
-    .survey-question-label {
-      font-size: 0.78rem; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 0.12em; color: var(--secondary); opacity: 0.6;
-      margin-bottom: 8px;
-    }
-    .survey-question-title {
-      font-size: 1.35rem; font-weight: 700; color: var(--text-primary);
-      margin-bottom: 8px; line-height: 1.4;
-    }
-    .survey-question-desc {
-      color: var(--text-secondary); font-size: 0.92rem;
-      margin-bottom: 28px; line-height: 1.6;
-    }
-
-    .survey-option {
-      display: flex; align-items: flex-start; gap: 16px;
-      padding: 16px 20px; border-radius: 14px;
-      border: 2px solid var(--gray-100); margin-bottom: 12px;
-      cursor: pointer; transition: all 0.25s ease;
-      background: white;
-    }
-    .survey-option:hover {
-      border-color: var(--gray-300); background: var(--gray-50);
-    }
-    .survey-option.selected {
-      border-color: var(--secondary); background: rgba(32,33,127,0.03);
-    }
-    .survey-option-radio {
-      width: 22px; height: 22px; border-radius: 50%;
-      border: 2px solid var(--gray-300); flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.25s ease; margin-top: 2px;
-    }
-    .survey-option.selected .survey-option-radio {
-      border-color: var(--secondary); background: var(--secondary);
-    }
-    .survey-option.selected .survey-option-radio::after {
-      content: '✓'; color: white; font-size: 12px; font-weight: 700;
-    }
-    .survey-option-text {
-      font-size: 0.92rem; color: var(--text-primary);
-      line-height: 1.55;
-    }
-
-    .survey-actions {
-      display: flex; justify-content: space-between;
-      align-items: center; margin-top: 32px;
-    }
-    .survey-btn-back {
-      background: none; border: none; color: var(--text-secondary);
-      font-size: 0.9rem; cursor: pointer; padding: 10px 16px;
-      border-radius: 10px; transition: all 0.2s;
-    }
-    .survey-btn-back:hover { background: var(--gray-50); color: var(--text-primary); }
-    .survey-btn-back:disabled { opacity: 0; pointer-events: none; }
-    .survey-btn-next {
-      background: var(--secondary); color: white; border: none;
-      padding: 14px 32px; border-radius: 12px; font-size: 0.95rem;
-      font-weight: 600; cursor: pointer; transition: all 0.25s;
-    }
-    .survey-btn-next:hover { background: #181966; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(32,33,127,0.3); }
-    .survey-btn-next:disabled { opacity: 0.4; pointer-events: none; transform: none; box-shadow: none; }
-
-    /* ── RESULTS ── */
-    .survey-results { display: none; }
-    .survey-results.show { display: block; animation: fadeInUp 0.6s ease; }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .result-level-badge {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 10px 24px; border-radius: 50px;
-      font-weight: 700; font-size: 1.1rem; margin-bottom: 20px;
-    }
-    .result-level-badge .level-dot {
-      width: 14px; height: 14px; border-radius: 50%;
-    }
-
-    .result-card {
-      background: white; border-radius: 20px; padding: 40px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-      border: 1px solid var(--gray-100); margin-bottom: 24px;
-    }
-    .result-section { margin-bottom: 24px; }
-    .result-section:last-child { margin-bottom: 0; }
-    .result-section-icon {
-      font-size: 1.3rem; margin-right: 8px;
-    }
-    .result-section h4 {
-      font-size: 1.05rem; font-weight: 700; color: var(--text-primary);
-      margin-bottom: 8px; display: flex; align-items: center;
-    }
-    .result-section p {
-      color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7;
-    }
-
-    .result-savings-highlight {
-      display: flex; align-items: center; gap: 16px;
-      background: linear-gradient(135deg, rgba(253,196,0,0.08), rgba(253,196,0,0.02));
-      border: 1px solid rgba(253,196,0,0.2);
-      border-radius: 14px; padding: 20px 24px; margin: 20px 0;
-    }
-    .result-savings-value {
-      font-size: 2rem; font-weight: 800; color: var(--secondary);
-      line-height: 1;
-    }
-    .result-savings-label {
-      font-size: 0.88rem; color: var(--text-secondary);
-    }
-
-    .result-gauge {
-      display: flex; gap: 4px; margin: 24px 0 8px;
-    }
-    .result-gauge-bar {
-      flex: 1; height: 8px; border-radius: 4px; background: var(--gray-100);
-      transition: background 0.5s ease;
-    }
-
-    .survey-score-display {
-      text-align: center; margin-bottom: 32px;
-    }
-    .survey-score-number {
-      font-size: 3.5rem; font-weight: 800; color: var(--secondary);
-      line-height: 1;
-    }
-    .survey-score-total {
-      font-size: 1.2rem; color: var(--text-secondary); font-weight: 500;
-    }
-  </style>
 </head>
 <body>
 
 <!-- NAVBAR -->
-<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
-  <button class="mobile-menu-close" id="mobileClose" aria-label="Cerrar menú">✕</button>
-  <button class="mobile-servicios-toggle">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-servicios-sub">
-    <a href="../servicios/ubm.html"><span class="mobile-sub-icon">📄</span> UBM — Gestión de Suministros</a>
-    <a href="../servicios/ems.html"><span class="mobile-sub-icon">📊</span> EMS — Monitoreo y Optimización</a>
-    <a href="../servicios/bms.html"><span class="mobile-sub-icon">🖥️</span> BMS — Control Inteligente</a>
-    <a href="../servicios/remarcacion.html"><span class="mobile-sub-icon">⚡</span> Remarcación y Submetering</a>
-    <div style="border-top:1px solid rgba(255,255,255,0.1);margin:8px 16px;"></div>
-    <span style="padding:4px 16px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.4);">Por Rubro</span>
-    <a href="../servicios/gestion-retail.html"><span class="mobile-sub-icon">🏪</span> Retail</a>
-    <a href="../servicios/eficiencia-energetica.html"><span class="mobile-sub-icon">🏭</span> Industria</a>
-  </div>
-  <button class="mobile-historias-toggle">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-historias-sub">
-    <a href="../historias/oxxo.html"><span class="mobile-sub-icon">🏪</span> OXXO</a>
-    <a href="../historias/starbucks.html"><span class="mobile-sub-icon">☕</span> Starbucks</a>
-    <a href="../historias/copec.html"><span class="mobile-sub-icon">⛽</span> COPEC</a>
-    <a href="../historias/lipigas.html"><span class="mobile-sub-icon">🔥</span> LIPIGAS</a>
-    <a href="../historias/tattersall.html"><span class="mobile-sub-icon">🏢</span> Tattersall</a>
-    <a href="../historias/renova.html"><span class="mobile-sub-icon">🌿</span> RENOVA</a>
-    <a href="../historias/preunic.html"><span class="mobile-sub-icon">🛍️</span> Preunic</a>
-    <a href="../historias/la-araucana-co2.html"><span class="mobile-sub-icon">🌱</span> La Araucana</a>
-  </div>
-
-          <button class="mobile-recursos-toggle">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-recursos-sub">
-    <a href="../recursos/guias.html"><span class="mobile-sub-icon">📘</span> Guías de Ahorro Energético</a>
-    <a href="../recursos/casos-de-exito.html"><span class="mobile-sub-icon">📊</span> Casos de Éxito</a>
-    <!-- Calculadora oculta temporalmente -->
-    <a href="../recursos/encuesta-madurez.html"><span class="mobile-sub-icon">📋</span> Encuesta de Madurez Energética</a>
-    <a href="https://www.youtube.com/@clickie4338" target="_blank" rel="noopener"><span class="mobile-sub-icon">🎬</span> Canal de YouTube</a>
-    <a href="https://blog.clickie.io" target="_blank" rel="noopener"><span class="mobile-sub-icon">📝</span> Blog</a>
-  </div>
-  <button class="mobile-nosotros-toggle">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-  <div class="mobile-nosotros-sub">
-    <a href="../nosotros.html"><span class="mobile-sub-icon">💛</span> Nuestros Valores</a>
-    <a href="../nosotros/prensa.html"><span class="mobile-sub-icon">📰</span> Clickie en la Prensa</a>
-  </div>
-  <a href="https://app.clickie.io/" class="btn btn-primary" target="_blank" rel="noopener">Iniciar sesión</a>
-</div>
-
-<nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Navegación principal">
-  <div class="container">
-    <div class="navbar-inner">
-
-      <a href="../index.html" class="navbar-logo" aria-label="Clickie inicio">
-        <img class="logo-badge" src="../assets/favicon_navbar_blue.png" alt="Clickie Logo" width="36" height="36" style="vertical-align:bottom; position:relative; bottom:5px;" />
-        Clickie
-      </a>
-
-      <div class="navbar-nav">
-        <div class="nav-dropdown" id="navDropdownServicios">
-          <a href="../index.html#servicios" class="nav-link nav-link-dropdown">Servicios <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownServicios">
-            <div class="mega-dropdown-inner" style="display:flex;gap:0;">
-              <div style="flex:3;">
-                <div class="mega-dropdown-header">
-                  <span class="mega-dropdown-title">Por Solución ›</span>
-                  <p class="mega-dropdown-subtitle">Nuestras plataformas de gestión energética.</p>
-                </div>
-                <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
-                  <a href="../servicios/ubm.html" class="mega-item">
-                    <div class="mega-item-icon yellow">📄</div>
-                    <div class="mega-item-content"><strong>UBM</strong><span>Gestión de Suministros Eléctricos.</span></div>
-                  </a>
-                  <a href="../servicios/ems.html" class="mega-item">
-                    <div class="mega-item-icon green">📊</div>
-                    <div class="mega-item-content"><strong>EMS</strong><span>Monitoreo, Gestión y Optimización Energética en Tiempo Real.</span></div>
-                  </a>
-                  <a href="../servicios/bms.html" class="mega-item">
-                    <div class="mega-item-icon violet">🖥️</div>
-                    <div class="mega-item-content"><strong>BMS</strong><span>Control Inteligente.</span></div>
-                  </a>
-                  <a href="../servicios/remarcacion.html" class="mega-item">
-                    <div class="mega-item-icon yellow">⚡</div>
-                    <div class="mega-item-content"><strong>Remarcación y Submetering</strong><span>Distribución interna justa de energía.</span></div>
-                  </a>
-                </div>
-              </div>
-              <div style="width:1px;background:var(--gray-200);margin:0 24px;"></div>
-              <div style="flex:1.5;">
-                <div class="mega-dropdown-header">
-                  <span class="mega-dropdown-title">Por Rubro ›</span>
-                  <p class="mega-dropdown-subtitle">Soluciones por industria.</p>
-                </div>
-                <div class="mega-dropdown-grid" style="grid-template-columns:1fr;">
-                  <a href="../servicios/gestion-retail.html" class="mega-item">
-                    <div class="mega-item-icon green">🏪</div>
-                    <div class="mega-item-content"><strong>Retail</strong><span>Eficiencia energética en tiendas y cadenas comerciales.</span></div>
-                  </a>
-                  <a href="../servicios/eficiencia-energetica.html" class="mega-item">
-                    <div class="mega-item-icon violet">🏭</div>
-                    <div class="mega-item-content"><strong>Industria</strong><span>Optimización energética en plantas e instalaciones industriales.</span></div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-dropdown" id="navDropdownHistorias">
-          <a href="../index.html#historias" class="nav-link nav-link-dropdown">Historias de éxito <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownHistorias">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Historias de Éxito ›</span>
-                <p class="mega-dropdown-subtitle">Conoce cómo empresas líderes optimizaron su energía con Clickie.</p>
-              </div>
-              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(4,1fr);">
-                <a href="../historias/oxxo.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🏪</div>
-                  <div class="mega-item-content"><strong>OXXO</strong><span>20% de ahorro en 230+ tiendas.</span></div>
-                </a>
-                <a href="../historias/starbucks.html" class="mega-item">
-                  <div class="mega-item-icon green">☕</div>
-                  <div class="mega-item-content"><strong>Starbucks</strong><span>Eficiencia energética en cafeterías.</span></div>
-                </a>
-                <a href="../historias/copec.html" class="mega-item">
-                  <div class="mega-item-icon violet">⛽</div>
-                  <div class="mega-item-content"><strong>COPEC</strong><span>Monitoreo de red renovable completa.</span></div>
-                </a>
-                <a href="../historias/lipigas.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🔥</div>
-                  <div class="mega-item-content"><strong>LIPIGAS</strong><span>8% ahorro en plantas productivas.</span></div>
-                </a>
-                <a href="../historias/tattersall.html" class="mega-item">
-                  <div class="mega-item-icon violet">🏢</div>
-                  <div class="mega-item-content"><strong>Tattersall</strong><span>Gestión energética industrial.</span></div>
-                </a>
-                <a href="../historias/renova.html" class="mega-item">
-                  <div class="mega-item-icon green">🌿</div>
-                  <div class="mega-item-content"><strong>RENOVA</strong><span>+20% rendimiento en activos renovables.</span></div>
-                </a>
-                <a href="../historias/preunic.html" class="mega-item">
-                  <div class="mega-item-icon green">🛍️</div>
-                  <div class="mega-item-content"><strong>Preunic</strong><span>20% de reducción en costos energéticos.</span></div>
-                </a>
-                <a href="../historias/la-araucana-co2.html" class="mega-item">
-                  <div class="mega-item-icon yellow">🌱</div>
-                  <div class="mega-item-content"><strong>La Araucana</strong><span>Reducción de huella de carbono.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-                <div class="nav-dropdown" id="navDropdownRecursos">
-          <a href="../index.html#recursos" class="nav-link nav-link-dropdown">Recursos <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownRecursos">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Recursos Clickie ›</span>
-                <p class="mega-dropdown-subtitle">Guías, casos de éxito y herramientas prácticas para optimizar tu gestión energética.</p>
-              </div>
-              <div class="mega-dropdown-grid">
-                <a href="../recursos/guias.html" class="mega-item">
-                  <div class="mega-item-icon yellow">📘</div>
-                  <div class="mega-item-content"><strong>Guías de Ahorro Energético</strong><span>Descarga guías prácticas de eficiencia energética para tu rubro.</span></div>
-                </a>
-                <a href="../recursos/casos-de-exito.html" class="mega-item">
-                  <div class="mega-item-icon violet">📊</div>
-                  <div class="mega-item-content"><strong>Casos de Éxito</strong><span>OXXO, Starbucks, COPEC, LIPIGAS y más empresas que optimizaron su energía.</span></div>
-                </a>
-                <!-- Calculadora oculta temporalmente
-                <a href="../recursos/calculadora.html" class="mega-item">
-                  <div class="mega-item-icon green">🧮</div>
-                  <div class="mega-item-content"><strong>Calculadora de Ahorro</strong><span>Ingresa tus datos de consumo y descubre cuánto podrías ahorrar.</span></div>
-                </a>
-                -->
-                <a href="https://blog.clickie.io" target="_blank" rel="noopener" class="mega-item">
-                  <div class="mega-item-icon yellow">📝</div>
-                  <div class="mega-item-content"><strong>Blog</strong><span>Artículos sobre eficiencia energética, casos de éxito y tendencias.</span></div>
-                </a>
-                <a href="../recursos/encuesta-madurez.html" class="mega-item">
-                  <div class="mega-item-icon green">📋</div>
-                  <div class="mega-item-content"><strong>Encuesta de Madurez Energética</strong><span>Descubre tu nivel de madurez y recibe un plan de acción personalizado.</span></div>
-                </a>
-                <a href="https://www.youtube.com/@clickie4338" target="_blank" rel="noopener" class="mega-item">
-                  <div class="mega-item-icon yellow">🎬</div>
-                  <div class="mega-item-content"><strong>Canal de YouTube</strong><span>Videos sobre eficiencia energética, entrevistas y casos de éxito.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="nav-dropdown" id="navDropdownNosotros">
-          <a href="../nosotros.html" class="nav-link nav-link-dropdown">Nosotros <svg class="dropdown-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <div class="mega-dropdown" id="megaDropdownNosotros">
-            <div class="mega-dropdown-inner">
-              <div class="mega-dropdown-header">
-                <span class="mega-dropdown-title">Nosotros ›</span>
-                <p class="mega-dropdown-subtitle">Conoce quiénes somos y qué nos mueve.</p>
-              </div>
-              <div class="mega-dropdown-grid" style="grid-template-columns:repeat(2,1fr);">
-                <a href="../nosotros.html" class="mega-item">
-                  <div class="mega-item-icon yellow">💛</div>
-                  <div class="mega-item-content"><strong>Nuestros Valores</strong><span>Propósito, misión y los valores que guían cada decisión en Clickie.</span></div>
-                </a>
-                <a href="../nosotros/prensa.html" class="mega-item">
-                  <div class="mega-item-icon violet">📰</div>
-                  <div class="mega-item-content"><strong>Clickie en la Prensa</strong><span>Noticias, artículos y apariciones de Clickie en medios de comunicación.</span></div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="https://blog.clickie.io" class="nav-link" target="_blank" rel="noopener">Blog</a>
-      </div>
-
-      <div class="navbar-actions">
-        <a href="https://app.clickie.io/" class="btn btn-outline btn-sm" target="_blank" rel="noopener">Iniciar sesión</a>
-        <a href="../cotiza.html" class="btn btn-primary btn-sm">Cotiza aquí</a>
-      </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú móvil">
-        <span></span><span></span><span></span>
-      </button>
-
-    </div>
-  </div>
-</nav>
+<div data-site-shell="mobile-menu"></div>
+<div data-site-shell="navbar"></div>
 
 <!-- HERO -->
 <section class="subpage-hero">
@@ -424,7 +25,7 @@
 </section>
 
 <!-- SURVEY -->
-<section class="section" style="background:var(--white)">
+<section class="section section-surface-white">
   <div class="container">
     <div class="survey-container">
 
@@ -543,7 +144,7 @@
           <div class="survey-score-total">de 15 puntos</div>
         </div>
 
-        <div id="resultLevelBadge" class="result-level-badge" style="display:inline-flex;"></div>
+        <div id="resultLevelBadge" class="result-level-badge"></div>
 
         <!-- Gauge bar -->
         <div class="result-gauge" id="resultGauge">
@@ -553,7 +154,7 @@
           <div class="result-gauge-bar" id="g4"></div>
           <div class="result-gauge-bar" id="g5"></div>
         </div>
-        <div style="display:flex;justify-content:space-between;font-size:0.72rem;color:var(--text-secondary);margin-bottom:32px;opacity:0.7;">
+        <div class="survey-results-scale">
           <span>Ausencia Total</span>
           <span>Sobresaliente</span>
         </div>
@@ -577,7 +178,7 @@
           </div>
         </div>
 
-        <div style="display:flex;gap:16px;justify-content:center;margin-top:36px;flex-wrap:wrap;">
+        <div class="actions-center-wrap">
           <a href="../cotiza.html" class="btn btn-primary btn-lg">Quiero mejorar mi nivel → Cotiza aquí</a>
           <button class="btn btn-outline-dark btn-lg" onclick="resetSurvey()">Repetir encuesta</button>
         </div>
@@ -599,10 +200,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="footer"><div class="container"><div class="footer-bottom">
-  <span class="footer-copy">© 2017–2026 Desarrollos y Proyectos Clickie SpA. Todos los derechos reservados.</span>
-  <div class="footer-legal"><a href="https://es.clickie.io/tos" target="_blank">Términos y condiciones</a><a href="https://es.clickie.io/privacy" target="_blank">Política de privacidad</a></div>
-</div></div></footer>
+<div data-site-shell="footer"></div>
 
 <script>
 // ── SURVEY LOGIC ──
@@ -638,8 +236,8 @@ function goToQuestion(n) {
   }
 
   // Update progress lines
-  document.getElementById('progLine1').style.width = n > 1 ? '100%' : '0';
-  document.getElementById('progLine2').style.width = n > 2 ? '100%' : '0';
+  document.getElementById('progLine1').classList.toggle('is-complete', n > 1);
+  document.getElementById('progLine2').classList.toggle('is-complete', n > 2);
 
   currentQ = n;
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -659,15 +257,13 @@ function showResults() {
 
   // Update badge
   var badge = document.getElementById('resultLevelBadge');
-  badge.innerHTML = '<div class="level-dot" style="background:' + level.color + '"></div> NIVEL ' + level.num + ' — ' + level.name;
-  badge.style.background = level.bgColor;
-  badge.style.color = level.textColor;
+  badge.className = 'result-level-badge level-' + level.num;
+  badge.innerHTML = '<div class="level-dot"></div> NIVEL ' + level.num + ' — ' + level.name;
 
   // Update gauge
-  var gaugeColors = ['#ef4444', '#f97316', '#eab308', '#22c55e', '#3b82f6'];
   for (var i = 1; i <= 5; i++) {
     var bar = document.getElementById('g' + i);
-    bar.style.background = i <= level.num ? gaugeColors[i - 1] : 'var(--gray-100)';
+    bar.className = 'result-gauge-bar' + (i <= level.num ? ' is-active level-' + i : '');
   }
 
   // Update content
@@ -680,8 +276,8 @@ function showResults() {
     document.getElementById('progStep' + j).classList.remove('active');
     document.getElementById('progStep' + j).classList.add('completed');
   }
-  document.getElementById('progLine1').style.width = '100%';
-  document.getElementById('progLine2').style.width = '100%';
+  document.getElementById('progLine1').classList.add('is-complete');
+  document.getElementById('progLine2').classList.add('is-complete');
 
   // Show results
   document.getElementById('surveyResults').classList.add('show');
@@ -746,18 +342,19 @@ function resetSurvey() {
   document.getElementById('progStep1').className = 'survey-progress-step active';
   document.getElementById('progStep2').className = 'survey-progress-step';
   document.getElementById('progStep3').className = 'survey-progress-step';
-  document.getElementById('progLine1').style.width = '0';
-  document.getElementById('progLine2').style.width = '0';
+  document.getElementById('progLine1').className = 'survey-progress-line';
+  document.getElementById('progLine2').className = 'survey-progress-line';
+  document.getElementById('resultLevelBadge').className = 'result-level-badge';
+  document.getElementById('resultLevelBadge').textContent = '';
+  for (var i = 1; i <= 5; i++) {
+    document.getElementById('g' + i).className = 'result-gauge-bar';
+  }
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
 
+<script src="../scripts/shared-layout.js"></script>
 <script src="../scripts/main.js"></script>
-
-  <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/46669151.js"></script>
-  <!-- End of HubSpot Embed Code -->
-
 </body>
 </html>
