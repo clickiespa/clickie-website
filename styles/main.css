@@ -948,7 +948,7 @@ small { font-size: var(--fs-small); line-height: 1.6; }
 }
 .navbar-logo {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   font-size: 1.35rem;
   font-weight: 700;
   color: var(--secondary);
@@ -956,6 +956,29 @@ small { font-size: var(--fs-small); line-height: 1.6; }
   letter-spacing: -0.01em;
 }
 .navbar.scrolled .navbar-logo { color: var(--secondary); }
+.navbar-logo-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 6px;
+  margin-bottom: -3px;
+  object-fit: contain;
+  vertical-align: baseline;
+  filter: brightness(0) saturate(100%) invert(14%) sepia(60%) saturate(2800%) hue-rotate(230deg) brightness(90%) contrast(95%);
+  transition: filter var(--transition);
+}
+.navbar-logo--light .navbar-logo-icon {
+  filter: brightness(0) invert(1);
+}
+.navbar-logo-full {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-top: -8px;
+}
+.navbar-logo--light .navbar-logo-full {
+  filter: brightness(0) invert(1);
+}
 .logo-icon {
   width: 36px;
   height: 36px;
