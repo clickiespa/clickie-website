@@ -2156,17 +2156,17 @@ small { font-size: var(--fs-small); line-height: 1.6; }
 .client-logo img {
   height: auto;
   width: auto;
-  max-width: 110px;
-  max-height: 40px;
+  max-width: 120px;
+  max-height: 48px;
   object-fit: contain;
   mix-blend-mode: multiply;
 }
 .logo-img-h40 {
-  height: 40px;
+  height: 50px;
   max-height: none;
 }
 .logo-img-h40-free {
-  height: 40px;
+  height: 65px;
   max-height: none;
   max-width: none;
 }
@@ -2174,25 +2174,25 @@ small { font-size: var(--fs-small); line-height: 1.6; }
   max-height: 36px;
   max-width: 120px;
 }
-.logo-img-max-32-90 {
-  max-height: 32px;
-  max-width: 90px;
-}
-.logo-img-max-26-70 {
-  max-height: 26px;
-  max-width: 70px;
-}
-.logo-img-max-26-80 {
-  max-height: 26px;
+.client-logo .logo-img-max-32-90 {
+  max-height: 30px;
   max-width: 80px;
+}
+.client-logo .logo-img-max-26-70 {
+  max-height: 24px;
+  max-width: 65px;
+}
+.client-logo .logo-img-max-26-80 {
+  max-height: 34px;
+  max-width: 90px;
 }
 .logo-img-max-34-110 {
   max-height: 34px;
   max-width: 110px;
 }
 .logo-img-max-30-110 {
-  max-height: 30px;
-  max-width: 110px;
+  max-height: 44px;
+  max-width: 140px;
 }
 .logo-img-max-22-110 {
   max-height: 22px;
@@ -2206,11 +2206,32 @@ small { font-size: var(--fs-small); line-height: 1.6; }
   max-height: 36px;
   max-width: 110px;
 }
-.logo-img-h70 {
-  height: 70px;
+.client-logo .logo-img-h70 {
+  height: 90px;
   max-height: none;
   max-width: none;
   mix-blend-mode: normal;
+}
+.client-logo .logo-img-itau {
+  height: 36px;
+}
+.client-logo .logo-img-weir {
+  max-height: 26px;
+  max-width: 80px;
+}
+.client-logo .logo-img-enex {
+  max-height: 28px;
+  max-width: 90px;
+}
+.client-logo .logo-img-ecer {
+  max-height: 32px;
+  max-width: 100px;
+}
+.client-logo .logo-img-imelsa {
+  height: 40px;
+}
+.client-logo .logo-img-salcobrand {
+  height: 40px;
 }
 
 /* ════════════════════════════════════════════════════════════
