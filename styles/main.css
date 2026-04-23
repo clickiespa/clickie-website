@@ -1760,7 +1760,7 @@ small { font-size: var(--fs-small); line-height: 1.6; }
 .hero-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  align-items: start;
   gap: var(--space-8);
   width: 100%;
   position: relative;
