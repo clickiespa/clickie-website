@@ -338,3 +338,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+/* ── Video click-to-play ─────────────────── */
+function playClickieVideo(wrapper) {
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://www.youtube.com/embed/DXF10lbkIf4?autoplay=1&rel=0';
+  iframe.title = 'Revoluciona tu Consumo Energético con Clickie';
+  iframe.frameBorder = '0';
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  iframe.allowFullscreen = true;
+  wrapper.innerHTML = '';
+  wrapper.appendChild(iframe);
+  wrapper.classList.remove('has-thumbnail');
+  wrapper.style.cursor = 'default';
+  wrapper.onclick = null;
+}
