@@ -318,8 +318,6 @@
     + "        <div class=\"footer-links\">"
     + "          <a href=\"https://app.clickie.io/\" class=\"footer-link\" target=\"_blank\">Ingresar a la plataforma</a>"
     + "          <a href=\"https://blog.clickie.io/\" class=\"footer-link\" target=\"_blank\">Blog</a>"
-    + "          <a href=\"https://clickie.io/como-monitorear-energia-chile\" class=\"footer-link\" target=\"_blank\">Monitoreo IoT</a>"
-    + "          <a href=\"https://clickie.io/monitoreo_de_energia\" class=\"footer-link\" target=\"_blank\">Monitoreo de Energía</a>"
     + "          <a href=\"mailto:hola@clickie.io\" class=\"footer-link\">hola@clickie.io</a>"
     + "        </div>"
     + "      </div>"
