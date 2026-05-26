@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Caso de Negocio México — Clickie</title>
+    <link rel="icon" type="image/png" href="../../assets/favicon-navbar.png" sizes="256x256">
+    <link rel="apple-touch-icon" href="../../assets/favicon-navbar.png">
+    <!-- Tailwind CSS para layouts rápidos y limpios -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins (Editorial/Titulares) y Lato (Cuerpo elegante) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconografía corporativa -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            forest: '#005C42',
+                            mint: '#10B981',
+                            charcoal: '#111827',
+                            slate: '#4B5563',
+                            cream: '#FCFCF9',
+                            greenLight: '#ECFDF5',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Animaciones fluidas para transiciones de diapositivas */
+        .slide-transition {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .slide-inactive {
+            opacity: 0;
+            transform: scale(0.97) translateY(10px);
+            pointer-events: none;
+            position: absolute;
+        }
+        .slide-active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            pointer-events: auto;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 min-h-screen flex items-center justify-center p-4 overflow-hidden selection:bg-brand-forest selection:text-white">
+
+    <!-- CONTENEDOR PRINCIPAL DE LA PRESENTACIÓN (Proporción estándar 16:9 de pantalla ejecutiva) -->
+    <div class="w-full max-w-6xl aspect-[16/9] bg-brand-cream rounded-2xl shadow-2xl relative flex flex-col justify-between overflow-hidden border border-gray-100">
+
+        <!-- Línea de acento superior con el gradiente Clickie -->
+        <div class="absolute top-0 left-0 w-full h-[6px] bg-gradient-to-r from-brand-forest via-brand-mint to-[#3B82F6] z-50"></div>
+
+        <!-- CABECERA: Identidad de Marca y Progreso -->
+        <header class="w-full px-12 pt-8 pb-4 flex items-center justify-between z-40 select-none">
+            <div class="flex items-center space-x-3">
+                <div class="w-2.5 h-2.5 rounded-full bg-brand-forest animate-pulse"></div>
+                <span class="font-display font-bold text-xs tracking-[0.2em] text-brand-forest">CLICKIE × STARBUCKS</span>
+            </div>
+
+            <!-- Indicadores de barra superior de secciones -->
+            <nav id="section-nav" class="hidden md:flex space-x-4 lg:space-x-5 text-[10px] lg:text-xs font-semibold tracking-widest text-gray-400">
+                <!-- Se inyecta dinámicamente vía JS -->
+            </nav>
+        </header>
+
+        <!-- ÁREA DE DIAPOSITIVAS -->
+        <main class="flex-grow px-16 flex items-center justify-center relative select-text overflow-y-auto">
+            <div class="w-full h-full flex flex-col justify-center">
+
+                <!-- SLIDE 1: PORTADA -->
+                <div class="slide slide-transition slide-active" id="slide-0" data-tab="PORTADA">
+                    <div class="text-center max-w-4xl mx-auto space-y-6">
+                        <p class="text-brand-slate tracking-[0.3em] text-xs font-bold uppercase">Resultados del Piloto UBM & Monitoreo</p>
+                        <h1 class="font-display font-extrabold text-5xl md:text-[64px] text-brand-charcoal leading-[1.1] tracking-tight">
+                            Tres tiendas. <br>
+                            <span class="text-brand-forest">Datos en impacto real.</span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-brand-slate max-w-2xl mx-auto font-light leading-relaxed pt-2">
+                            El piloto cerró con datos reales, payback comprobado y un modelo listo para escalar a toda la red Alsea México.
+                        </p>
+                        <div class="flex items-center justify-center gap-12 pt-8">
+                            <div class="text-center">
+                                <p class="font-display text-4xl font-extrabold text-brand-charcoal">$485K</p>
+                                <p class="text-[10px] font-bold text-brand-forest uppercase tracking-wider mt-1">Ahorro 30 Meses</p>
+                            </div>
+                            <div class="w-[1px] h-10 bg-gray-200"></div>
+                            <div class="text-center">
+                                <p class="font-display text-4xl font-extrabold text-brand-charcoal">19 meses</p>
+                                <p class="text-[10px] font-bold text-brand-forest uppercase tracking-wider mt-1">Payback Promedio</p>
+                            </div>
+                            <div class="w-[1px] h-10 bg-gray-200"></div>
+                            <div class="text-center">
+                                <p class="font-display text-4xl font-extrabold text-brand-charcoal">40</p>
+                                <p class="text-[10px] font-bold text-brand-forest uppercase tracking-wider mt-1">Acciones Propuestas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2: EL DESAFÍO -->
+                <div class="slide slide-transition slide-inactive" id="slide-1" data-tab="DESAFÍO">
+                    <h2 class="slide-title font-display text-3xl font-bold text-brand-charcoal mb-8 border-l-4 border-brand-forest pl-4">Operar a ciegas <span>cuesta dinero.</span></h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                        <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-10 h-10 rounded-full bg-red-50 text-red-500 flex items-center justify-center mb-6"><i class="fa-solid fa-wrench text-lg"></i></div>
+                            <h3 class="font-display font-semibold text-lg text-brand-charcoal mb-3">Mantenimiento Reactivo</h3>
+                            <p class="text-sm text-brand-slate leading-relaxed">Equipos críticos (A/C, hieleras) fallan repentinamente, provocando costos correctivos altos e interrupciones en tienda.</p>
+                        </div>
+                        <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-10 h-10 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center mb-6"><i class="fa-solid fa-file-invoice-dollar text-lg"></i></div>
+                            <h3 class="font-display font-semibold text-lg text-brand-charcoal mb-3">Ineficiencias facturas</h3>
+                            <p class="text-sm text-brand-slate leading-relaxed">Contratos de tarifa GDMTO sobredimensionados. Cobros innecesarios por capacidad debido a la falta de análisis continuo.</p>
+                        </div>
+                        <div class="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-10 h-10 rounded-full bg-slate-50 text-brand-slate flex items-center justify-center mb-6"><i class="fa-solid fa-link-slash text-lg"></i></div>
+                            <h3 class="font-display font-semibold text-lg text-brand-charcoal mb-3">Comportamiento Operativo</h3>
+                            <p class="text-sm text-brand-slate leading-relaxed">Jefes de local operando sin datos y conocimiento de cómo generar eficiencias energéticas, ni herramientas predictivas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3: INVOLUCRAMIENTO Y ACCIONES -->
+                <div class="slide slide-transition slide-inactive" id="slide-2" data-tab="ACCIONES">
+                    <h2 class="slide-title font-display text-3xl font-bold text-brand-charcoal mb-6 border-l-4 border-brand-forest pl-4">Involucramos a las <span>personas.</span></h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full items-center">
+                        <div class="space-y-6">
+                            <h3 class="font-display font-semibold text-2xl text-brand-forest">Transformando datos en impacto a través de las personas</h3>
+                            <p class="text-brand-slate leading-relaxed">
+                                No somos una plataforma pasiva de gráficos. Logramos capturar el ahorro enviando guías de acción diaria directo a los jefes de local por <strong>WhatsApp , Correo , Reportes, Alertas y Plataforma</strong>.
+                            </p>
+                            <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm flex items-start space-x-4">
+                                <div class="bg-brand-greenLight p-2 rounded-full text-brand-mint shrink-0"><i class="fa-solid fa-check text-sm"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-brand-charcoal text-sm">Generación de Hábitos</h4>
+                                    <p class="text-xs text-brand-slate mt-0.5">El equipo comenzó a realizar cambios de comportamiento en el uso de equipos y dejó de reaccionar ante los fallos físicos logrando preverlos gracias a la reportería y recomendaciones.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gráfico Circular Analítico (CSS-built) -->
+                        <div class="flex items-center justify-center space-x-8 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
+                            <div class="relative w-44 h-44 rounded-full flex items-center justify-center shrink-0" style="background: conic-gradient(#005C42 0% 43%, #10B981 43% 63%, #E5E7EB 63% 100%);">
+                                <div class="absolute w-32 h-32 bg-white rounded-full flex flex-col items-center justify-center shadow-inner">
+                                    <span class="font-display text-4xl font-extrabold text-brand-charcoal">40</span>
+                                    <span class="text-[9px] font-bold text-brand-slate uppercase tracking-wider">Acciones</span>
+                                </div>
+                            </div>
+                            <div class="space-y-3.5">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 rounded-full bg-brand-forest"></div>
+                                    <span class="text-xs text-brand-slate font-bold">13 Ejecutadas (43%)</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 rounded-full bg-brand-mint"></div>
+                                    <span class="text-xs text-brand-slate font-bold">6 En Curso (20%)</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 rounded-full bg-gray-200"></div>
+                                    <span class="text-xs text-brand-slate font-bold">21 Oportunidades (37%)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 4: CASOS PREDICTIVOS -->
+                <div class="slide slide-transition slide-inactive" id="slide-3" data-tab="CASOS">
+                    <h2 class="slide-title font-display text-3xl font-bold text-brand-charcoal mb-6 border-l-4 border-brand-forest pl-4">Inteligencia predictiva: <span>99% de acierto.</span></h2>
+                    <p class="text-brand-slate mb-8 leading-relaxed max-w-2xl">Detectamos anomalías en el flujo energético antes de que ocurra el fallo mecánico, dándole tiempo al equipo técnico.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                        <div class="bg-white border-t-4 border-brand-forest rounded-xl p-6 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-brand-forest">REVOLUCIÓN DT</span>
+                                <h3 class="font-display font-semibold text-lg text-brand-charcoal mt-2 mb-3">Motor de Hielera</h3>
+                                <p class="text-xs text-brand-slate leading-relaxed">Identificado motor consumiendo el doble de energía el 17-Feb. El fallo mecánico ocurrió el 4-May. Se evitó pérdida de inventario.</p>
+                            </div>
+                            <div class="bg-brand-greenLight text-brand-forest text-xs font-bold py-1.5 px-3 rounded-md text-center mt-6">Alerta con 2.5 meses de margen</div>
+                        </div>
+                        <div class="bg-white border-t-4 border-brand-forest rounded-xl p-6 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-brand-forest">COYOACÁN CENTRO</span>
+                                <h3 class="font-display font-semibold text-lg text-brand-charcoal mt-2 mb-3">Compresor de A/C</h3>
+                                <p class="text-xs text-brand-slate leading-relaxed">Detección temprana de compresor dañado y desbalance grave en la Fase A. Se programó el recambio con MCC sin afectar la operación.</p>
+                            </div>
+                            <div class="bg-brand-greenLight text-brand-forest text-xs font-bold py-1.5 px-3 rounded-md text-center mt-6">MCC intervino el 14-Abr</div>
+                        </div>
+                        <div class="bg-white border-t-4 border-blue-500 rounded-xl p-6 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-blue-500">INSURGENTES CAPITAL</span>
+                                <h3 class="font-display font-semibold text-lg text-brand-charcoal mt-2 mb-3">Eficiencia Térmica</h3>
+                                <p class="text-xs text-brand-slate leading-relaxed">Detección de ineficiencia grave en el equipo de clima antes del mantenimiento regular programado. Optimización guiada por datos.</p>
+                            </div>
+                            <div class="bg-blue-50 text-blue-600 text-xs font-bold py-1.5 px-3 rounded-md text-center mt-6">Acción Preventiva de Climas</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 5: PROACTIVIDAD Y HARDWARE -->
+                <div class="slide slide-transition slide-inactive" id="slide-4" data-tab="PROACTIVIDAD">
+                    <h2 class="slide-title font-display text-3xl font-bold text-brand-charcoal mb-6 border-l-4 border-brand-forest pl-4">Inteligencia trasciende <span>software.</span></h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full items-center">
+                        <div class="space-y-6">
+                            <h3 class="font-display font-semibold text-2xl text-brand-charcoal">Banco de Condensadores Coyoacán</h3>
+                            <p class="text-brand-slate leading-relaxed text-sm">
+                                Clickie no solo es una plataforma de software; analizamos las ineficiencias de hardware e instalamos soluciones físicas llave en mano mediante partners certificados, protegiendo a la sucursal de penalizaciones.
+                            </p>
+                            <div class="bg-[#F1F5F9] p-5 rounded-xl border border-gray-200">
+                                <p class="text-xs text-brand-slate uppercase tracking-wider font-bold mb-1">Inversión Necesaria</p>
+                                <p class="font-display text-3xl font-extrabold text-brand-charcoal">$75,000 <span class="text-base font-normal text-gray-400">MXN</span></p>
+                                <p class="text-xs text-brand-slate mt-2">Instalación integral para regular y elevar el Factor de Potencia (FP) a un óptimo 99%.</p>
+                            </div>
+                        </div>
+
+                        <!-- Tarjetas de Escenarios de Retorno Financiero -->
+                        <div class="space-y-4">
+                            <div class="bg-white p-5 rounded-xl border-l-6 border-slate-400 shadow-sm relative overflow-hidden flex flex-col justify-between" style="border-left-width: 6px;">
+                                <div class="flex justify-between items-start">
+                                    <span class="text-[10px] font-bold text-brand-slate uppercase tracking-widest bg-gray-100 px-2 py-0.5 rounded">Escenario realista (99%)</span>
+                                </div>
+                                <h4 class="font-display text-3xl font-extrabold text-brand-charcoal mt-2">185 Meses <span class="text-xs font-normal text-brand-slate">de Payback Estimado</span></h4>
+                                <p class="text-xs text-brand-slate mt-1">Recuperación calculada únicamente considerando la bonificación mensual del FP en 99%.</p>
+                            </div>
+
+                            <div class="bg-white p-5 rounded-xl border-l-6 border-brand-forest shadow-sm relative overflow-hidden flex flex-col justify-between" style="border-left-width: 6px;">
+                                <div class="flex justify-between items-start">
+                                    <span class="text-[10px] font-bold text-brand-forest uppercase tracking-widest bg-brand-greenLight px-2 py-0.5 rounded">Escenario optimista (89%, si que es que llegara a existir una multa)</span>
+                                </div>
+                                <h4 class="font-display text-3xl font-extrabold text-brand-charcoal mt-2">1 Mes <span class="text-xs font-normal text-brand-slate">de Payback Estimado</span></h4>
+                                <p class="text-xs text-brand-slate mt-1">El retorno es inmediato al neutralizar el severo cargo punitivo de la CFE.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 6: RESULTADOS ROI -->
+                <div class="slide slide-transition slide-inactive" id="slide-5" data-tab="ROI">
+                    <h2 class="slide-title font-display text-3xl font-bold text-brand-charcoal mb-6 border-l-4 border-brand-forest pl-4">Impacto Financiero del <span>Piloto.</span></h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full items-center">
+                        <div class="space-y-6">
+                            <h3 class="font-display font-semibold text-2xl text-brand-charcoal">Retorno de inversión probado</h3>
+                            <p class="text-brand-slate leading-relaxed">
+                                El piloto de 3 tiendas valida que el ahorro energético no es una meta teórica. Se genera rentabilidad de manera acelerada y sostenible.
+                            </p>
+                            <div class="space-y-4 pt-2">
+                                <div class="flex items-start space-x-3 text-sm">
+                                    <div class="bg-brand-greenLight p-1.5 rounded-full text-brand-forest shrink-0 mt-0.5"><i class="fa-solid fa-chart-line text-xs"></i></div>
+                                    <p class="text-brand-slate"><strong>19 meses de Payback:</strong> Promedio consolidado de las tres tiendas piloto.</p>
+                                </div>
+                                <div class="flex items-start space-x-3 text-sm">
+                                    <div class="bg-brand-greenLight p-1.5 rounded-full text-brand-forest shrink-0 mt-0.5"><i class="fa-solid fa-arrow-trend-up text-xs"></i></div>
+                                    <p class="text-brand-slate"><strong>+215% ROI al mes 30:</strong> Proyección de valor capturado en Revolución DT.</p>
+                                </div>
+                                <div class="flex items-start space-x-3 text-sm">
+                                    <div class="bg-brand-greenLight p-1.5 rounded-full text-brand-forest shrink-0 mt-0.5"><i class="fa-solid fa-leaf text-xs"></i></div>
+                                    <p class="text-brand-slate"><strong>16% de Eficiencia Neta:</strong> Reducción neta sobre el consumo base.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gráfico Analítico de Ahorros -->
+                        <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col justify-end h-64 relative">
+                            <div class="absolute top-6 left-6 flex justify-between w-[90%]">
+                                <span class="text-[10px] font-bold text-brand-slate uppercase tracking-wider">Curva de Ahorro Acumulado (MXN)</span>
+                                <span class="text-[10px] font-bold text-brand-forest uppercase">$485,544</span>
+                            </div>
+                            <div class="relative h-32 flex items-end justify-between px-4">
+                                <!-- Línea discontinua de Equilibrio (Payback) -->
+                                <div class="absolute bottom-12 left-0 w-full border-t border-dashed border-gray-200 z-0"></div>
+                                <span class="absolute bottom-[54px] left-0 text-[8px] text-gray-400 font-bold uppercase tracking-wider z-10">Punto de Equilibrio</span>
+
+                                <div class="w-8 h-[20%] bg-red-200 rounded-t z-10"></div>
+                                <div class="w-8 h-[35%] bg-red-200 rounded-t z-10"></div>
+                                <div class="w-8 h-[50%] bg-red-200 rounded-t z-10"></div>
+                                <div class="w-8 h-[65%] bg-brand-forest rounded-t z-10"></div>
+                                <div class="w-8 h-[80%] bg-brand-forest rounded-t z-10"></div>
+                                <div class="w-8 h-[100%] bg-brand-forest rounded-t z-10"></div>
+                            </div>
+                            <div class="flex justify-between text-[10px] text-brand-slate font-bold uppercase px-4 pt-4 border-t border-gray-100 mt-4">
+                                <span>Mes 1</span>
+                                <span>Mes 9 (Payback)</span>
+                                <span>Mes 30 (Proyección)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 7: GESTIÓN CFE -->
+                <div class="slide slide-transition slide-inactive" id="slide-6" data-tab="CFE">
+                    <h2 class="slide-title font-display text-3xl font-bold text-brand-charcoal mb-6 border-l-4 border-brand-forest pl-4">Gestión UBM: <span>Dinero en mesa.</span></h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full items-center">
+                        <div class="bg-white border-2 border-dashed border-brand-forest p-10 rounded-2xl text-center space-y-4">
+                            <p class="text-xs text-brand-slate uppercase tracking-wider font-bold">Recuperación Total Estimada CFE</p>
+                            <h3 class="font-display text-6xl font-extrabold text-brand-forest">$43,000 <span class="text-2xl font-normal text-brand-slate">MXN</span></h3>
+                            <p class="text-sm text-brand-slate leading-relaxed max-w-sm mx-auto">Ajustes contractuales directos sin requerir un peso de inversión física. Trámite de CFE completado en ~30 días.</p>
+                        </div>
+                        <div class="space-y-6">
+                            <h3 class="font-display font-semibold text-2xl text-brand-charcoal">Optimización contractual sin inversión</h3>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-brand-mint pl-4">
+                                    <p class="font-bold text-brand-charcoal text-sm">Sobredimensionamiento de Demanda</p>
+                                    <p class="text-xs text-brand-slate mt-1">Ajuste de demandas contratadas basadas en picos reales de consumo (ej. Coyoacán de 61 kW → 44 kW, Revolución de 59 kW → 48 kW).</p>
+                                </div>
+                                <div class="border-l-4 border-brand-mint pl-4">
+                                    <p class="font-bold text-brand-charcoal text-sm">Protocolo de Capacidad (Ajuste Mediodía)</p>
+                                    <p class="text-xs text-brand-slate mt-1">El pico del mediodía dicta el cargo mensual de capacidad. Protocolo de simultaneidad operativa de 11:00 a 14:00 horas enviado el 17-Feb.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 8: BENEFICIOS ESTRATÉGICOS -->
+                <div class="slide slide-transition slide-inactive" id="slide-7" data-tab="BENEFICIOS">
+                    <h2 class="slide-title font-display text-3xl font-bold text-brand-charcoal mb-8 border-l-4 border-brand-forest pl-4">Más allá de los <span>kWh.</span></h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                        <div class="bg-white border border-gray-100 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 rounded-full bg-brand-greenLight text-brand-forest flex items-center justify-center mb-6"><i class="fa-solid fa-clock text-xl"></i></div>
+                            <h3 class="font-display font-semibold text-lg text-brand-charcoal mb-3">+15 Horas / Mes</h3>
+                            <p class="text-sm text-brand-slate leading-relaxed">Horas de trabajo manual recuperadas por cada tienda al eliminar la supervisión de facturas e inventarios preventivos.</p>
+                        </div>
+                        <div class="bg-white border border-gray-100 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 rounded-full bg-brand-greenLight text-brand-forest flex items-center justify-center mb-6"><i class="fa-solid fa-leaf text-xl"></i></div>
+                            <h3 class="font-display font-semibold text-lg text-brand-charcoal mb-3">Agenda ESG Alsea</h3>
+                            <p class="text-sm text-brand-slate leading-relaxed">Reducción medible y auditable de emisiones de carbono certificada bajo metodología internacional IPMVP Opción C.</p>
+                        </div>
+                        <div class="bg-white border border-gray-100 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 rounded-full bg-brand-greenLight text-brand-forest flex items-center justify-center mb-6"><i class="fa-solid fa-network-wired text-xl"></i></div>
+                            <h3 class="font-display font-semibold text-lg text-brand-charcoal mb-3">Replicabilidad</h3>
+                            <p class="text-sm text-brand-slate leading-relaxed">Modelo validado operativamente en Chile (107 locales). La expansión a toda la red Alsea México es ejecutable en semanas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 9: SIMULACIÓN DE EXPANSIÓN -->
+                <div class="slide slide-transition slide-inactive" id="slide-8" data-tab="EXPANSIÓN">
+                    <h2 class="slide-title font-display text-3xl font-bold text-brand-charcoal mb-4 border-l-4 border-brand-forest pl-4">Simulación de Expansión <span>Alsea México.</span></h2>
+                    <p class="text-brand-slate mb-8 text-sm">Escalamiento financiero basado en un promedio del perfil de consumo y del 16% de eficiencia real obtenido durante el piloto.</p>
+                    <div class="table-layout w-full">
+                        <table class="w-full text-left bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
+                            <thead class="bg-brand-forest text-white">
+                                <tr>
+                                    <th class="font-display p-4">Escenario de Red</th>
+                                    <th class="font-display p-4">Ahorro Anual Proyectado</th>
+                                    <th class="font-display p-4">Payback Promedio</th>
+                                    <th class="font-display p-4">Recuperable CFE Inmediato</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-100">
+                                    <td class="font-bold text-brand-charcoal p-4">Piloto Inicial (3 Tiendas)</td>
+                                    <td class="p-4 text-brand-slate">$161,848 MXN</td>
+                                    <td class="p-4 text-brand-slate">19 meses</td>
+                                    <td class="text-brand-forest font-bold p-4">$43,000 MXN</td>
+                                </tr>
+                                <tr class="border-b border-gray-100">
+                                    <td class="font-bold text-brand-charcoal p-4">Fase Comercial A (50 Tiendas)</td>
+                                    <td class="p-4 text-brand-slate">~$8.1M MXN</td>
+                                    <td class="p-4 text-brand-slate">~18 meses</td>
+                                    <td class="text-brand-forest font-bold p-4">~$715,000 MXN</td>
+                                </tr>
+                                <tr class="bg-brand-greenLight font-bold">
+                                    <td class="text-brand-forest p-4">Red Completa (900 Locales)</td>
+                                    <td class="text-brand-forest p-4">~$145.8M MXN / año</td>
+                                    <td class="text-brand-forest p-4">~16 meses</td>
+                                    <td class="text-brand-forest p-4">~$12.8M MXN</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- SLIDE 10: CONCLUSIÓN Y CIERRE -->
+                <div class="slide slide-transition slide-inactive" id="slide-9" data-tab="CIERRE">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 w-full items-center">
+                        <div class="space-y-5">
+                            <h2 class="font-display font-extrabold text-[28px] lg:text-[32px] text-brand-charcoal leading-[1.2]">
+                                Transformamos los datos en <span class="text-brand-forest">acciones y en impactos cuantificables.</span>
+                            </h2>
+                            <p class="text-brand-slate leading-relaxed">
+                                El piloto en las tiendas de Revolución, Coyoacán e Insurgentes demostró que con Clickie, Starbucks no solo ahorra energía: mejora la vida operativa de sus tiendas, alarga la vida útil de sus equipos y protege sus utilidades ante cargos contractuales.
+                            </p>
+
+                            <!-- RESULTADOS COMPROBADOS -->
+                            <div class="bg-brand-greenLight border border-brand-mint border-l-4 p-4 rounded-xl shadow-sm mt-4">
+                                <h4 class="font-display font-bold text-brand-charcoal text-sm flex items-center gap-2 mb-1.5">
+                                    <i class="fa-solid fa-star text-brand-mint"></i> Resultados comprobados
+                                </h4>
+                                <p class="text-xs text-brand-slate leading-relaxed">
+                                    Se lograron ahorros de <strong>11% en consumo neto en Starbucks Chile</strong> gracias a la combinación de monitoreo, control y cambios de comportamiento directos con las personas de tienda.
+                                </p>
+                            </div>
+
+                            <div class="pt-4">
+                                <p class="font-bold text-brand-charcoal text-base">Daniela San Miguel Garafulic</p>
+                                <p class="text-xs text-brand-forest font-semibold uppercase tracking-wider">Encargada del área CSM</p>
+                                <p class="text-xs text-brand-slate mt-1">daniela.sanmiguel@clickie.io | www.clickie.io</p>
+                            </div>
+                        </div>
+
+                        <!-- Panel de Conclusión Rápida -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center">
+                                <i class="fa-solid fa-chart-line text-brand-forest text-2xl mb-2"></i>
+                                <h4 class="font-display font-bold text-sm text-brand-charcoal">ROI Validado</h4>
+                                <p class="text-[10px] text-brand-slate mt-1">Modelo rentable desde el noveno mes.</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center">
+                                <i class="fa-solid fa-shield-halved text-brand-forest text-2xl mb-2"></i>
+                                <h4 class="font-display font-bold text-sm text-brand-charcoal">99% de Precisión</h4>
+                                <p class="text-[10px] text-brand-slate mt-1">Algoritmo predictivo de fallos mecánicos.</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center">
+                                <i class="fa-solid fa-user-check text-brand-forest text-2xl mb-2"></i>
+                                <h4 class="font-display font-bold text-sm text-brand-charcoal">Equipo Empoderado</h4>
+                                <p class="text-[10px] text-brand-slate mt-1">Acciones diarias y automatización por WhatsApp.</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm text-center">
+                                <i class="fa-solid fa-rocket text-brand-forest text-2xl mb-2"></i>
+                                <h4 class="font-display font-bold text-sm text-brand-charcoal">Escalamiento Veloz</h4>
+                                <p class="text-[10px] text-brand-slate mt-1">Listo para desplegarse a nivel nacional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- PIE DE PÁGINA: Navegación Manual -->
+        <footer class="w-full px-12 pb-8 pt-4 flex items-center justify-between text-[11px] text-gray-400 font-semibold uppercase tracking-widest select-none z-40">
+            <div>
+                <span>Tarifa CFE GDMTO | CDMX</span>
+            </div>
+
+            <div class="flex items-center space-x-6">
+                <button onclick="prevSlide()" class="flex items-center hover:text-brand-forest transition-colors group">
+                    <i class="fa-solid fa-chevron-left mr-2 group-hover:-translate-x-1 transition-transform"></i> Anterior
+                </button>
+                <span id="slide-indicator" class="text-brand-charcoal font-bold tracking-normal font-display">1 / 10</span>
+                <button onclick="nextSlide()" class="flex items-center hover:text-brand-forest transition-colors group">
+                    Siguiente <i class="fa-solid fa-chevron-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- CONTROLADOR JAVASCRIPT DE LA DIAPOSITIVA INTERACTIVA -->
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlideIndex = 0;
+        const totalSlides = slides.length;
+        const sectionNav = document.getElementById('section-nav');
+        const slideIndicator = document.getElementById('slide-indicator');
+
+        // Generar dinámicamente el menú superior
+        function renderHeaderMenu() {
+            sectionNav.innerHTML = '';
+            slides.forEach((slide, idx) => {
+                const tabName = slide.getAttribute('data-tab');
+                const btn = document.createElement('button');
+                btn.innerText = tabName;
+                btn.className = `hover:text-brand-forest transition-all duration-300 ${idx === currentSlideIndex ? 'text-brand-forest font-bold border-b-2 border-brand-forest pb-1' : ''}`;
+                btn.onclick = () => goToSlide(idx);
+                sectionNav.appendChild(btn);
+            });
+        }
+
+        // Cambiar a una diapositiva específica con animación limpia
+        function goToSlide(index) {
+            slides.forEach((slide, idx) => {
+                if (idx === index) {
+                    slide.classList.remove('slide-inactive');
+                    slide.classList.add('slide-active');
+                } else {
+                    slide.classList.remove('slide-active');
+                    slide.classList.add('slide-inactive');
+                }
+            });
+            currentSlideIndex = index;
+            slideIndicator.innerText = `${currentSlideIndex + 1} / ${totalSlides}`;
+            renderHeaderMenu();
+        }
+
+        function nextSlide() {
+            if (currentSlideIndex < totalSlides - 1) {
+                goToSlide(currentSlideIndex + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlideIndex > 0) {
+                goToSlide(currentSlideIndex - 1);
+            }
+        }
+
+        // Teclado físico: soporte para flechas direccionales y barra espaciadora
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'Space') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                prevSlide();
+            }
+        });
+
+        // Inicializar
+        window.onload = () => {
+            goToSlide(0);
+        };
+    </script>
+</body>
+</html>
