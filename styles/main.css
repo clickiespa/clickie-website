@@ -2287,6 +2287,32 @@ small { font-size: var(--fs-small); line-height: 1.6; }
 .client-logo .logo-img-salcobrand {
   height: 40px;
 }
+.clients--industry {
+  padding: 14px 0;
+  border-top: 1px solid rgba(229,231,235,0.8);
+  border-bottom: 1px solid rgba(229,231,235,0.8);
+}
+.clients--industry .clients-track-wrapper {
+  margin-bottom: 0;
+}
+.clients--industry .clients-track-wrapper::before,
+.clients--industry .clients-track-wrapper::after {
+  width: 72px;
+}
+.clients--industry .clients-track {
+  gap: 36px;
+  animation-duration: 34s;
+}
+.clients--industry .client-logo {
+  height: 40px;
+  width: 118px;
+  min-width: 118px;
+  padding: 4px 8px;
+  font-size: 1.05rem;
+}
+.clients--industry .client-logo img {
+  max-height: 42px;
+}
 
 /* ════════════════════════════════════════════════════════════
    SERVICES
@@ -3882,6 +3908,9 @@ small { font-size: var(--fs-small); line-height: 1.6; }
   align-items: center;
   justify-content: center;
 }
+.subpage-hero--with-image .subpage-hero-image {
+  padding-top: 56px;
+}
 .subpage-hero-image .media-frame {
   width: 100%;
   max-width: 520px;
@@ -3918,6 +3947,9 @@ small { font-size: var(--fs-small); line-height: 1.6; }
     max-width: 18ch;
     margin-left: 14px;
     padding-left: 14px;
+  }
+  .subpage-hero--with-image .subpage-hero-image {
+    padding-top: 0;
   }
   .subpage-hero-image {
     order: -1;
