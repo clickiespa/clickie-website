@@ -1465,6 +1465,15 @@ small { font-size: var(--fs-small); line-height: 1.6; }
 .mega-dropdown--recursos .mega-dropdown-inner {
   max-width: 920px;
 }
+/* El dropdown de Recursos creció con "Casos de Negocio": se centra
+   respecto al botón para que no se corte en el borde derecho */
+.mega-dropdown--recursos {
+  left: 50%;
+  transform: translate(-50%, -8px);
+}
+.nav-dropdown.open .mega-dropdown--recursos {
+  transform: translate(-50%, 0);
+}
 .mega-dropdown--nosotros .mega-dropdown-inner {
   max-width: 340px;
   padding-top: 18px;
@@ -4836,6 +4845,78 @@ small { font-size: var(--fs-small); line-height: 1.6; }
   align-items: center;
 }
 .guia-card:hover .guia-card-cta {
+  color: var(--secondary-light);
+}
+
+/* Casos de Negocio: tarjeta con botón (abre modal) en vez de link */
+.guia-card--caso { cursor: default; }
+.guia-card--caso .guia-card-cover img { object-position: top; }
+
+/* Portada de marca (no revela el contenido del PDF) */
+.caso-cover {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 20px 22px;
+  color: #fff;
+}
+.caso-cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.caso-cover-brand {
+  font-weight: 800;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+.caso-cover-brand span { color: var(--primary, #f5c542); }
+.caso-cover-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.65);
+  white-space: nowrap;
+}
+.caso-cover-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+.caso-cover-center i {
+  font-size: 2.6rem;
+  color: var(--primary, #f5c542);
+  opacity: 0.95;
+}
+.caso-cover-center strong {
+  font-size: 1.35rem;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 800;
+}
+.caso-cover-badge {
+  align-self: center;
+  background: var(--primary, #f5c542);
+  color: #191947;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 7px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.guia-card:hover .caso-cover-center i { transform: scale(1.08); transition: transform 0.3s ease; }
+button.guia-card-cta {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+button.guia-card-cta:hover {
   color: var(--secondary-light);
 }
 

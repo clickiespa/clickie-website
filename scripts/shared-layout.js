@@ -146,6 +146,7 @@
     + "  <div class=\"mobile-recursos-sub menu-section\">"
     + "    <a href=\"" + siteUrl("recursos/analisis-ems-2025/") + "\" class=\"" + mobileItemClass("recursos/analisis-ems-2025/", "mobile-item--featured") + "\"><i class=\"fa-solid fa-chart-line mobile-sub-icon menu-item-icon\" aria-hidden=\"true\"></i><span>Análisis EMS 2025 <em>Nuevo</em></span></a>"
     + "    <a href=\"" + siteUrl("recursos/guias.html") + "\" class=\"" + mobileItemClass("recursos/guias.html") + "\"><i class=\"fa-solid fa-book-open mobile-sub-icon menu-item-icon\" aria-hidden=\"true\"></i><span>Guías de Ahorro Energético</span></a>"
+    + "    <a href=\"" + siteUrl("recursos/casos-de-negocio.html") + "\" class=\"" + mobileItemClass("recursos/casos-de-negocio.html") + "\"><i class=\"fa-solid fa-file-invoice-dollar mobile-sub-icon menu-item-icon\" aria-hidden=\"true\"></i><span>Casos de Negocio por Rubro <em>Nuevo</em></span></a>"
     +      mobileCaseLink
     + "    <a href=\"" + siteUrl("recursos/encuesta-madurez.html") + "\" class=\"" + mobileItemClass("recursos/encuesta-madurez.html") + "\"><i class=\"fa-solid fa-list-check mobile-sub-icon menu-item-icon\" aria-hidden=\"true\"></i><span>Encuesta de Madurez Energética</span></a>"
     + "    <a href=\"https://www.youtube.com/@clickie4338\" target=\"_blank\" rel=\"noopener\" class=\"" + mobileItemClass(null) + "\"><i class=\"fa-solid fa-circle-play mobile-sub-icon menu-item-icon\" aria-hidden=\"true\"></i><span>Canal de YouTube</span></a>"
@@ -255,6 +256,7 @@
     + "              <div class=\"mega-dropdown-section\">"
     + "                <span class=\"mega-dropdown-section-title\">EVALUAR</span>"
     + "                <div class=\"mega-dropdown-items\">"
+    + "                  <a href=\"" + siteUrl("recursos/casos-de-negocio.html") + "\" class=\"" + dropdownItemClass("recursos/casos-de-negocio.html") + "\"><div class=\"mega-item-icon\"><i class=\"fa-solid fa-file-invoice-dollar\" aria-hidden=\"true\"></i></div><div class=\"mega-item-content\"><strong>Casos de Negocio</strong></div></a>"
     + "                  <a href=\"" + siteUrl("recursos/casos-de-exito.html") + "\" class=\"" + dropdownItemClass("recursos/casos-de-exito.html", "hidden") + "\"><div class=\"mega-item-icon\"><i class=\"fa-solid fa-chart-line\" aria-hidden=\"true\"></i></div><div class=\"mega-item-content\"><strong>Casos de éxito</strong></div></a>"
     + "                  <a href=\"" + siteUrl("recursos/encuesta-madurez.html") + "\" class=\"" + dropdownItemClass("recursos/encuesta-madurez.html") + "\"><div class=\"mega-item-icon\"><i class=\"fa-solid fa-list-check\" aria-hidden=\"true\"></i></div><div class=\"mega-item-content\"><strong>Encuesta</strong></div></a>"
     + "                </div>"
