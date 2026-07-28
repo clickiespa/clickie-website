@@ -3,125 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculadora de Ahorro Energético — Clickie</title>
-  <meta name="description" content="Calcula cuánto podría ahorrar tu empresa en consumo energético con una solución de gestión inteligente de Clickie." />
-  <link rel="icon" type="image/png" href="../assets/favicon-navbar.png" sizes="256x256" />
-  <link rel="stylesheet" href="../styles/main.css" />
+  <title>Clickie — Cotiza aquí</title>
+  <meta name="robots" content="noindex" />
+  <!-- La calculadora fue retirada del sitio. Esta redirección se mantiene
+       porque los PDFs de casos de negocio ya distribuidos enlazan a esta URL. -->
+  <meta http-equiv="refresh" content="0; url=../cotiza.html" />
+  <link rel="canonical" href="https://clickie.io/cotiza.html" />
 </head>
 <body>
-
-<div data-site-shell="mobile-menu"></div>
-<div data-site-shell="navbar"></div>
-
-<section class="subpage-hero">
-  <div class="container">
-    <div class="breadcrumb"><a href="../index.html">Inicio</a> / <a href="../index.html#recursos">Recursos</a> / Calculadora de Ahorro</div>
-    <h1>Calculadora de <span class="accent">Ahorro Energético</span></h1>
-    <p class="hero-desc">Ingresa los datos de consumo de tu empresa y descubre cuánto podrías ahorrar anualmente con una solución de gestión energética inteligente.</p>
-  </div>
-</section>
-
-<section class="section section-surface-white">
-  <div class="container">
-    <div class="calculator-container">
-      <div class="calc-card">
-        <h3 class="calc-title">Calcula tu ahorro potencial</h3>
-        <p class="calc-subtitle">Completa los campos y descubre cuánto podrías ahorrar con Clickie.</p>
-
-        <div class="calc-inputs">
-          <div class="calc-group">
-            <label class="calc-label" for="calcKwh">Consumo mensual (kWh)</label>
-            <input class="calc-input" type="number" id="calcKwh" placeholder="Ej: 50.000" min="1" />
-          </div>
-          <div class="calc-group">
-            <label class="calc-label" for="calcPrice">Precio por kWh (CLP)</label>
-            <input class="calc-input" type="number" id="calcPrice" placeholder="Ej: 120" min="1" />
-          </div>
-          <div class="calc-group">
-            <label class="calc-label" for="calcLocations">Número de localizaciones</label>
-            <input class="calc-input" type="number" id="calcLocations" placeholder="Ej: 10" min="1" value="1" />
-          </div>
-          <div class="calc-group">
-            <label class="calc-label" for="calcSavings">Porcentaje de ahorro estimado</label>
-            <select class="calc-input calc-select" id="calcSavings">
-              <option value="10">Conservador (10%)</option>
-              <option value="15" selected>Moderado (15%)</option>
-              <option value="20">Optimista (20%)</option>
-            </select>
-          </div>
-        </div>
-
-        <button class="btn btn-primary calc-submit" onclick="calculateSavings()">Calcular ahorro →</button>
-
-        <div class="calc-results" id="calcResults">
-          <h4 class="calc-result-title">📊 Tu ahorro estimado</h4>
-          <div class="calc-results-grid">
-            <div class="calc-result-card">
-              <span class="calc-result-value" id="resultSavings">$0</span>
-              <span class="calc-result-label">Ahorro anual estimado (CLP)</span>
-            </div>
-            <div class="calc-result-card">
-              <span class="calc-result-value" id="resultKwh">0</span>
-              <span class="calc-result-label">kWh ahorrados al año</span>
-            </div>
-            <div class="calc-result-card">
-              <span class="calc-result-value" id="resultCo2">0</span>
-              <span class="calc-result-label">kg CO₂ reducidos al año</span>
-            </div>
-          </div>
-          <p class="calc-note">* Estimación basada en promedios de la industria. Los resultados reales pueden variar según tu operación específica.</p>
-          <div class="calc-result-actions">
-            <a href="../cotiza.html" class="btn btn-primary btn-lg">Quiero este ahorro → Cotiza aquí</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-banner">
-  <div class="container"><div class="cta-inner">
-    <h2>¿Te gustaría lograr estos ahorros<br>en tu empresa?</h2>
-    <p>Nuestros expertos te ayudan a diseñar la estrategia perfecta para tu operación.</p>
-    <div class="cta-actions">
-      <a href="../index.html#contacto" class="btn btn-outline-dark btn-lg">Hablar con un experto</a>
-    </div>
-  </div></div>
-</section>
-
-<div data-site-shell="footer"></div>
-
-<script>
-function calculateSavings() {
-  const kwh = parseFloat(document.getElementById('calcKwh').value) || 0;
-  const price = parseFloat(document.getElementById('calcPrice').value) || 0;
-  const locations = parseInt(document.getElementById('calcLocations').value) || 1;
-  const savingsPercent = parseInt(document.getElementById('calcSavings').value) || 15;
-
-  if (!kwh || !price) {
-    alert('Por favor completa el consumo mensual y el precio por kWh.');
-    return;
-  }
-
-  const annualKwh = kwh * 12 * locations;
-  const savedKwh = Math.round(annualKwh * (savingsPercent / 100));
-  const savedMoney = Math.round(savedKwh * price);
-  const co2Factor = 0.42; // kg CO2 per kWh (Chile grid average)
-  const savedCo2 = Math.round(savedKwh * co2Factor);
-
-  // Format numbers
-  document.getElementById('resultSavings').textContent = '$' + savedMoney.toLocaleString('es-CL');
-  document.getElementById('resultKwh').textContent = savedKwh.toLocaleString('es-CL') + ' kWh';
-  document.getElementById('resultCo2').textContent = savedCo2.toLocaleString('es-CL') + ' kg';
-
-  // Show results with animation
-  const results = document.getElementById('calcResults');
-  results.classList.add('show');
-  results.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-</script>
-
-<script src="../scripts/shared-layout.js"></script>
-<script src="../scripts/main.js"></script>
+  <p>Esta página se movió. Te estamos redirigiendo a <a href="../cotiza.html">clickie.io/cotiza</a>…</p>
+  <script>window.location.replace('../cotiza.html');</script>
 </body>
 </html>
