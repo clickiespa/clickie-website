@@ -4861,7 +4861,7 @@ small { font-size: var(--fs-small); line-height: 1.6; }
 }
 .casos-hero-visual img {
   width: 100%;
-  max-width: 400px;
+  max-width: 470px;
   height: auto;
   filter: drop-shadow(0 18px 40px rgba(25, 25, 71, 0.18));
 }
