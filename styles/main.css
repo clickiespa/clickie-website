@@ -4848,6 +4848,28 @@ small { font-size: var(--fs-small); line-height: 1.6; }
   color: var(--secondary-light);
 }
 
+/* Casos de Negocio: hero con ilustración al costado derecho */
+.casos-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+.casos-hero-visual {
+  display: flex;
+  justify-content: center;
+}
+.casos-hero-visual img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  filter: drop-shadow(0 18px 40px rgba(25, 25, 71, 0.18));
+}
+@media (max-width: 900px) {
+  .casos-hero-grid { grid-template-columns: 1fr; gap: 28px; }
+  .casos-hero-visual img { max-width: 320px; }
+}
+
 /* Casos de Negocio: tarjeta con botón (abre modal) en vez de link */
 .guia-card--caso { cursor: default; }
 .guia-card--caso .guia-card-cover img { object-position: top; }
