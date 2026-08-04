@@ -23,3 +23,5 @@ node_modules/
 /tmp/
 *.log
 *.pdf
+__pycache__/
+*.pyc
