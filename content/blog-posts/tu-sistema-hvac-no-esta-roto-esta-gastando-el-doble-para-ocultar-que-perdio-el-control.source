@@ -1,0 +1,37 @@
+<!-- ARTICLE_HIGHLIGHT: la operación acepta la deriva térmica como un comportamiento normal -->
+<!-- ARTICLE_CONTENT_START -->
+<div class="article-content">
+  <div style="background-color: #ffffff; color: rgba(0, 0, 0, 0.9);">
+    <em>El verdadero problema de climatización en una red multisucursal casi nunca empieza con una falla técnica ni con un cliente quejándose del frío: empieza cuando la operación acepta la deriva térmica como un comportamiento normal.</em>
+  </div>
+  <p>En retail, el HVAC suele analizarse únicamente bajo la lente del confort del cliente. Sin embargo, en redes multisucursal, intentar estabilizar la temperatura interna a fuerza de sobreconsumo energético suele convertirse en uno de los desvíos operativos más costosos y menos visibilizados del negocio.</p>
+  <p>Cuando la operación no monitorea el desalineamiento térmico en tiempo real, termina comprando estabilidad operativa a costa de más consumo, picos de demanda evitables y una degradación acelerada de los equipos. El sistema sigue funcionando, pero lo hace con una calidad de control cada vez peor.</p>
+  <h3>Qué es la deriva térmica y por qué se instala sin hacer ruido</h3>
+  <p>La deriva térmica es el desfasaje progresivo entre los setpoints teóricos y el comportamiento real del sistema en planta. Se manifiesta en <em>overrides</em> manuales que jamás se revierten, horarios de operación que se extienden fuera de la jornada comercial y tiempos de recuperación cada vez más largos.</p>
+  <p>Ningún desvío individual parece crítico por sí solo, pero multiplicado por decenas o cientos de sucursales representa un drenaje permanente de margen operativo. Lo que parece un ajuste menor en un local aislado se convierte en una fuga estructural cuando la red completa repite el mismo patrón.</p>
+  <h3>El error de mirar solo tickets o promedios</h3>
+  <p>La mayoría de los equipos de operaciones evalúa la climatización a partir de tickets de mantenimiento o temperaturas promedio por local. Esos indicadores describen el síntoma cuando el costo ya fue ejecutado. Para anticipar la deriva antes de que impacte en el P&amp;L, la variable clave es la relación funcional entre temperatura exterior, velocidad de recuperación térmica, consignas autorizadas y perfil de potencia demandada en horas punta.</p>
+  <p>En los más de 5.000 edificios que analizamos y gestionamos desde <a href="../../index.html">Clickie</a>, comprobamos que gran parte de los sobrecostos de climatización en cadenas de conveniencia, farmacias y gastronómicos no proviene de fallas de compresores, sino de la falta de gobernanza sobre el control.</p>
+  <h3>El sobrecosto oculto no está en enfriar: está en cómo se enfría</h3>
+  <p>Equipos compensando infiltraciones con sobreenfriamiento o encendidos nocturnos innecesarios no son solamente fallas técnicas: son fallas de gestión operativa. El impacto financiero no se limita al consumo mensual reflejado en kWh. La deriva térmica empuja la demanda máxima a bloques tarifarios penalizados y multiplica el ciclado de los componentes mecánicos.</p>
+  <p>El costo oculto no está en la energía necesaria para climatizar, sino en la pésima calidad del control que ejecuta esa climatización. Cuanto más tiempo tarda la organización en detectar ese deterioro, más caro resulta sostener una sensación aparente de normalidad.</p>
+  <h3>Gestionar climatización a escala exige reglas, no reacción</h3>
+  <p>Gestionar HVAC a escala no significa ajustar termostatos manualmente ni esperar la próxima auditoría técnica. Implica establecer reglas por formato de local y zona climática, automatizar la detección de desvíos en tiempo real y separar con claridad los locales que tienen problemas de infraestructura de aquellos que solo sufren un descontrol operativo.</p>
+  <p>Esa diferencia cambia por completo la priorización de mantenimiento, la conversación con operaciones y la velocidad con que una red puede recuperar eficiencia sin comprometer confort.</p>
+  <hr>
+  <p>Auditá horarios, setpoints y desvíos de climatización en tu red multisucursal con un diagnóstico de control operativo.</p>
+  <p>Si quieres identificar dónde tu sistema HVAC está escondiendo ineficiencias detrás del sobreconsumo, escríbenos a <a href="mailto:hola@clickie.io">hola@clickie.io</a> o visita <a href="../../index.html">www.clickie.io</a>.</p>
+</div>
+<!-- ARTICLE_CONTENT_END -->
+
+<!-- ARTICLE_TAGS_START -->
+<div class="article-footer">
+  <div class="article-tags">
+    <span>#HVAC</span>
+    <span>#RetailMultisucursal</span>
+    <span>#GestionEnergetica</span>
+    <span>#EficienciaOperacional</span>
+    <span>#Climatizacion</span>
+  </div>
+</div>
+<!-- ARTICLE_TAGS_END -->

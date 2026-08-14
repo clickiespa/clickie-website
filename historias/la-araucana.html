@@ -304,6 +304,13 @@
 function playLaAraucanaStoryVideo() {
   var container = document.getElementById('laAraucanaVideoContainer');
   if (!container) return;
+  window.clickieAnalytics?.trackVideoStart({
+    video_id: '7p4_q-MCZ8E',
+    video_title: 'La Araucana - Caso de éxito Clickie',
+    video_provider: 'youtube',
+    video_location: 'historia_la_araucana',
+    video_action: 'inline_play'
+  });
   container.innerHTML = '<iframe src="https://www.youtube.com/embed/7p4_q-MCZ8E?autoplay=1&rel=0" title="La Araucana - Caso de éxito Clickie" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
   container.classList.add('is-playing');
   container.onclick = null;

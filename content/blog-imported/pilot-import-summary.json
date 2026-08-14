@@ -1,0 +1,64 @@
+[
+  {
+    "slug": "5-errores-gestion-energetica",
+    "title": "5 Errores Comunes en la Gestión Energética y Cómo Solucionarlos",
+    "description": "Descubre los errores comunes en la gestión energética y cómo solucionarlos para optimizar el consumo y reducir costos con la ayuda de Clickie.",
+    "publishedAt": "2024-10-03",
+    "categoryKey": "eficiencia",
+    "categoryLabel": "Eficiencia Energética",
+    "subtitle": "Cinco errores frecuentes que frenan ahorros energéticos y cómo corregirlos con mejor visibilidad, segmentación y apoyo experto.",
+    "coverImage": "assets/blog/5-errores-gestion-energetica-cover.png",
+    "coverAlt": "5 Errores Comunes en la Gestión Energética y Cómo Solucionarlos",
+    "sourceFile": "content/blog-imported/5-errores-gestion-energetica.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "ahorro"
+    ]
+  },
+  {
+    "slug": "alza-tarifaria-julio-2026-retailers-multisucursal",
+    "title": "Como prepararte para el alza tarifaria de julio 2026: impacto del 10% a los retailers multisucursal.",
+    "description": "El alza tarifaria de julio 2026 impactará fuertemente a los retailers multisucursal, con aumentos reales de hasta el 10%. Descubre cómo prepararte.",
+    "publishedAt": "2026-04-24",
+    "categoryKey": "industria",
+    "categoryLabel": "Industria",
+    "subtitle": "El ajuste tarifario de julio de 2026 puede transformarse en un golpe de 6% a 10% para cadenas multisucursal si no se gestiona con datos por local.",
+    "coverImage": "assets/blog/alza-tarifaria-julio-2026-retailers-multisucursal-cover.png",
+    "coverAlt": "Como prepararte para el alza tarifaria de julio 2026: impacto del 10% a los retailers multisucursal.",
+    "sourceFile": "content/blog-imported/alza-tarifaria-julio-2026-retailers-multisucursal.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "MonitoreoEnergia",
+      "retail",
+      "ahorro",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "slug": "caso-exito-oxxo-energia-chile",
+    "title": "Caso de éxito: Cómo OXXO gestiona la energía de más de 230 tiendas en Chile con Clickie",
+    "description": "Caso de éxito: Monitoreo de Energía en Empresas de Chile. OXXO optimiza la energía de más de 230 tiendas en Chile con Clickie, logrando eficiencia y sostenibilidad a través de un monitoreo personalizado.",
+    "publishedAt": "2025-07-03",
+    "categoryKey": "casos",
+    "categoryLabel": "Caso de Éxito",
+    "subtitle": "Cómo una operación de más de 230 tiendas convirtió monitoreo, análisis y personalización por local en una palanca real de eficiencia.",
+    "coverImage": "assets/blog/caso-exito-oxxo-energia-chile-cover.png",
+    "coverAlt": "Caso de éxito: Cómo OXXO gestiona la energía de más de 230 tiendas en Chile con Clickie",
+    "sourceFile": "content/blog-imported/caso-exito-oxxo-energia-chile.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "energia",
+      "MonitoreoEnergia",
+      "ahorro",
+      "Chile",
+      "EmpresasChile"
+    ]
+  }
+]

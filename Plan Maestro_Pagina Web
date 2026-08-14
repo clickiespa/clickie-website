@@ -64,4 +64,6 @@ El esquema de datos para que el equipo gestione la web sin programar:
 - [ ] **Fase 1: Setup Frontend.** Inicializar proyecto en Next.js. Configurar Tailwind CSS inyectando los colores corporativos (`#7a8c1f`, `#db6a00`, `#98b518`).
 - [ ] **Fase 2: Setup Headless CMS.** Configurar el CMS (Sanity/Strapi) y crear los esquemas para "Ebooks", "Documentación" y "Casos de Éxito".
 - [ ] **Fase 3: Desarrollo UI Core.** Construir Layout base (Navbar, Footer B2B), Hero Section y Grid de características.
--
+- [ ] **Fase 4: SEO técnico y monitoreo.** Verificar el dominio en Google Search Console solicitando al responsable del dominio la carga del registro DNS de validación. Una vez validado, enviar el sitemap del sitio (`https://clickie.io/sitemap.xml`) para monitorear errores de indexación, páginas eliminadas, consultas relevantes y potenciales caídas de tráfico orgánico.
+- [ ] **Fase 5: Inventario completo de URLs.** Registrar todas las páginas actuales, antiguas, duplicadas, redirigidas y con error para ordenar la migración, detectar contenido perdido y asegurar que cada tema mantenga una sola URL principal.
+- [ ] **Fase 6: Corrección de páginas antiguas y duplicadas.** Eliminar o redirigir versiones antiguas que sigan publicadas con diseño o contenido desactualizado para que cada solución conserve una sola página principal y no compita consigo misma en Google.

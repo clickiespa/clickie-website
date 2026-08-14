@@ -330,6 +330,13 @@
 function playOxxoStoryVideo() {
   var container = document.getElementById('oxxoVideoContainer');
   if (!container) return;
+  window.clickieAnalytics?.trackVideoStart({
+    video_id: 'cKBs9g4vL9Y',
+    video_title: 'OXXO - Caso de éxito Clickie',
+    video_provider: 'youtube',
+    video_location: 'historia_oxxo',
+    video_action: 'inline_play'
+  });
   container.innerHTML = '<iframe src="https://www.youtube.com/embed/cKBs9g4vL9Y?autoplay=1&rel=0" title="OXXO - Caso de éxito Clickie" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
   container.classList.add('is-playing');
   container.onclick = null;

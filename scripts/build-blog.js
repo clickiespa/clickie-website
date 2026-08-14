@@ -7,7 +7,7 @@ const blogDir = path.join(rootDir, "recursos", "blog");
 const blogIndexFile = path.join(rootDir, "recursos", "blog.html");
 const robotsFile = path.join(rootDir, "robots.txt");
 const sitemapFile = path.join(rootDir, "sitemap.xml");
-const excludedHtmlPrefixes = ["recursos/hubspot_notas_blog_clickie "];
+const excludedHtmlPrefixes = ["content/hubspot-site-export"];
 const categoryLabelByKey = new Map(categories.map((category) => [category.key, category.label]));
 const fontAwesomeStylesheet = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css";
 
@@ -35,6 +35,45 @@ function escapeAttribute(value) {
 
 function pageUrl(relativePath) {
   return new URL(relativePath, site.url).href;
+}
+
+function extractMatch(contents, pattern) {
+  const match = contents.match(pattern);
+  return match ? match[1].trim() : "";
+}
+
+function normalizeComparableUrl(value) {
+  if (!value) {
+    return "";
+  }
+
+  const url = new URL(value);
+
+  url.hash = "";
+  url.pathname = url.pathname
+    .replace(/\/index\.html$/u, "/")
+    .replace(/\/+$/u, "/");
+
+  return url.toString();
+}
+
+function shouldIncludeInSitemap(relativePath) {
+  if (relativePath === "404.html") {
+    return false;
+  }
+
+  const contents = readFile(relativePath);
+  const robots = extractMatch(contents, /<meta\s+name="robots"\s+content="([^"]+)"/iu).toLowerCase();
+  const canonical = extractMatch(contents, /<link\s+rel="canonical"\s+href="([^"]+)"/iu);
+  const publicUrl = pageUrl(relativePath.replace(/\\/g, "/"));
+  const hasNoindex = robots.includes("noindex");
+  const hasRedirectBehavior =
+    /<meta\s+http-equiv="refresh"/iu.test(contents) ||
+    /window\.location\.replace\s*\(/u.test(contents);
+  const pointsElsewhere =
+    canonical && normalizeComparableUrl(new URL(canonical, publicUrl).toString()) !== normalizeComparableUrl(publicUrl);
+
+  return !hasNoindex && !hasRedirectBehavior && !pointsElsewhere;
 }
 
 function slugToUrl(slug) {
@@ -739,6 +778,10 @@ function buildSitemap() {
       }
 
       if (!entry.isFile() || !entry.name.endsWith(".html")) {
+        return;
+      }
+
+      if (!shouldIncludeInSitemap(relativePath)) {
         return;
       }
 

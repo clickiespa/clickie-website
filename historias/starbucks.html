@@ -330,6 +330,13 @@
 function playStarbucksStoryVideo() {
   var container = document.getElementById('starbucksVideoContainer');
   if (!container) return;
+  window.clickieAnalytics?.trackVideoStart({
+    video_id: 'Rxt0fJNXZMQ',
+    video_title: 'Starbucks transforma su consumo energético en ahorro junto a Clickie',
+    video_provider: 'youtube',
+    video_location: 'historia_starbucks',
+    video_action: 'inline_play'
+  });
   container.innerHTML = '<iframe src="https://www.youtube.com/embed/Rxt0fJNXZMQ?autoplay=1&rel=0" title="Starbucks transforma su consumo energético en ahorro junto a Clickie" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
   container.classList.add('is-playing');
   container.onclick = null;

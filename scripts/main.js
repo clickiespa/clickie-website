@@ -257,6 +257,205 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ── Analytics ───────────────────────────── */
+  const analytics = window.clickieAnalytics;
+  const normalizePath = (pathname) => pathname.replace(/\/+$/, '') || '/';
+  const normalizeText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
+  const currentPath = normalizePath(window.location.pathname);
+  const isHomePage = currentPath === '/' || currentPath.endsWith('/index.html');
+  const pageGroup = analytics?.getPageGroup?.(currentPath) || null;
+  const trackedPageGroups = new Set(['home', 'soluciones', 'recursos', 'contacto', 'calculadora']);
+
+  const getAbsoluteUrl = (href) => {
+    try {
+      return new URL(href, window.location.href);
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const getElementLabel = (element) => normalizeText(
+    element?.getAttribute('data-doc-name')
+    || element?.getAttribute('aria-label')
+    || element?.getAttribute('title')
+    || element?.textContent
+  );
+
+  const getElementArea = (element) => {
+    const area = element?.closest(
+      'section[id], section[class], nav, footer, .cta-banner, .guia-card, .resource-card, .story-cta-clean, .video-section'
+    );
+
+    if (!area) return 'sitio';
+    if (area.id) return area.id;
+
+    const className = Array.from(area.classList || []).find((name) => !name.startsWith('fade-'));
+    return className || area.tagName.toLowerCase();
+  };
+
+  const isYouTubeUrl = (url) => {
+    const host = url?.hostname || '';
+    return host.includes('youtube.com') || host.includes('youtu.be');
+  };
+
+  const isContactDestination = (href, url) => {
+    if (!href) return false;
+    if (href.startsWith('mailto:') || href.startsWith('tel:')) return true;
+    if (href === '#contacto') return true;
+    return normalizePath(url?.pathname || '').endsWith('/cotiza.html');
+  };
+
+  const getContactType = (href, url) => {
+    if (href.startsWith('mailto:')) return 'email';
+    if (href.startsWith('tel:')) return 'telefono';
+    if (href === '#contacto') return 'seccion_contacto';
+    if (normalizePath(url?.pathname || '').endsWith('/cotiza.html')) return 'cotizacion';
+    return 'contacto';
+  };
+
+  const isCalculatorDestination = (url) => normalizePath(url?.pathname || '').endsWith('/recursos/calculadora.html');
+  const getYouTubeVideoId = (url) => {
+    if (!url) return '';
+    if (url.hostname.includes('youtu.be')) {
+      return normalizeText(url.pathname.replace(/^\//, ''));
+    }
+    if (url.hostname.includes('youtube.com')) {
+      return normalizeText(url.searchParams.get('v') || url.pathname.split('/').pop());
+    }
+    return '';
+  };
+
+  if (analytics && trackedPageGroups.has(pageGroup)) {
+    analytics.trackOnce(`page-group:${currentPath}`, () => {
+      analytics.trackEvent(`view_${pageGroup}_page`, {
+        page_group: pageGroup,
+        page_path: currentPath,
+        page_title: document.title
+      });
+    });
+  }
+
+  if (analytics && isHomePage) {
+    analytics.trackOnce(`home-section:${currentPath}:home`, () => {
+      analytics.trackEvent('view_home_section', {
+        page_group: 'home',
+        page_section: 'home',
+        page_path: currentPath,
+        page_title: document.title
+      });
+    });
+
+    const trackedSections = [
+      {
+        id: 'servicios',
+        name: 'soluciones',
+        eventName: 'view_soluciones_section',
+        virtualPath: '/#soluciones',
+        pageTitle: 'Clickie | Soluciones'
+      },
+      {
+        id: 'recursos',
+        name: 'recursos',
+        eventName: 'view_recursos_section',
+        virtualPath: '/#recursos',
+        pageTitle: 'Clickie | Recursos'
+      },
+      {
+        id: 'contacto',
+        name: 'contacto',
+        eventName: 'view_contacto_section',
+        virtualPath: '/#contacto',
+        pageTitle: 'Clickie | Contacto'
+      }
+    ];
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const section = trackedSections.find((item) => item.id === entry.target.id);
+        if (!section) return;
+
+        analytics.trackOnce(`home-section:${currentPath}:${section.name}`, () => {
+          analytics.trackEvent(section.eventName, {
+            page_group: 'home',
+            page_section: section.name,
+            page_path: currentPath,
+            page_title: document.title
+          });
+
+          analytics.trackSectionView(section.name, {
+            page_group: 'home',
+            virtual_path: section.virtualPath,
+            page_title: section.pageTitle
+          });
+        });
+      });
+    }, {
+      threshold: 0.45,
+      rootMargin: '-10% 0px -30% 0px'
+    });
+
+    trackedSections.forEach((section) => {
+      const element = document.getElementById(section.id);
+      if (element) {
+        sectionObserver.observe(element);
+      }
+    });
+  }
+
+  if (analytics) {
+    document.addEventListener('click', (event) => {
+      const target = event.target.closest('a, button');
+      if (!target) return;
+
+      const href = target.getAttribute('href') || '';
+      const url = href ? getAbsoluteUrl(href) : null;
+      const label = getElementLabel(target);
+      const area = getElementArea(target);
+      const destination = href
+        ? (url ? `${normalizePath(url.pathname)}${url.hash || ''}` : href)
+        : (target.getAttribute('data-doc-id') || target.id || '');
+      const isCta = target.matches('.btn, .resource-btn, .guia-card, .guia-card-cta, .story-video-preview, .mega-featured-card, .social-link');
+
+      if (isCta) {
+        analytics.trackCtaClick({
+          cta_text: label,
+          cta_destination: destination,
+          cta_area: area,
+          cta_style: target.className
+        });
+      }
+
+      if (href && isYouTubeUrl(url)) {
+        analytics.trackVideoStart({
+          video_id: getYouTubeVideoId(url),
+          video_title: label || 'Video externo',
+          video_provider: 'youtube',
+          video_location: area,
+          video_action: 'outbound_click'
+        });
+      }
+
+      if (href && isContactDestination(href, url)) {
+        analytics.trackContact({
+          contact_type: getContactType(href, url),
+          cta_text: label,
+          cta_destination: destination,
+          cta_area: area
+        });
+      }
+
+      if (href && isCalculatorDestination(url)) {
+        analytics.trackEvent('click_calculadora', analytics.getPageContext({
+          cta_text: label,
+          cta_destination: destination,
+          cta_area: area
+        }));
+      }
+    }, true);
+  }
+
   /* ── Contact form ─────────────────────────── */
   const form = document.getElementById('contactForm');
   const successMsg = document.getElementById('formSuccess');
@@ -295,6 +494,16 @@ document.addEventListener('DOMContentLoaded', () => {
     modalSuccess.classList.remove('show');
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
+
+    analytics?.trackOnce(`form-view:lead-modal:${currentPath}:${resourceId}`, () => {
+      analytics.trackFormView({
+        form_id: resourceId,
+        form_type: 'lead_modal',
+        content_type: 'recurso',
+        document_name: resourceName,
+        delivery_method: 'email'
+      });
+    });
   };
 
   // Close modal
@@ -308,6 +517,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
+  });
+
+  analytics?.bindFormStart(leadForm, {
+    once_key: `form-start:lead-modal:${currentPath}`,
+    form_id: 'lead_modal',
+    form_type: 'lead_modal',
+    content_type: 'recurso',
+    delivery_method: 'email'
   });
 
   // Submit lead form
@@ -328,6 +545,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     localStorage.setItem('clickie_leads', JSON.stringify(leads));
 
+    analytics?.trackLead({
+      form_id: resourceId || 'lead_modal',
+      form_type: 'lead_modal',
+      lead_source: 'website',
+      content_type: 'recurso',
+      delivery_method: 'email'
+    });
+
+    analytics?.trackDownload({
+      form_id: resourceId || 'lead_modal',
+      form_type: 'lead_modal',
+      content_type: 'recurso',
+      file_extension: 'pdf',
+      delivery_method: 'email'
+    });
+
     // Show success
     modalFormSection.style.display = 'none';
     modalSuccess.classList.add('show');
@@ -341,6 +574,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ── Video click-to-play ─────────────────── */
 function playClickieVideo(wrapper) {
+  window.clickieAnalytics?.trackVideoStart({
+    video_id: 'DXF10lbkIf4',
+    video_title: 'Video Clickie',
+    video_provider: 'youtube',
+    video_location: 'video-clickie',
+    video_action: 'inline_play'
+  });
+
   const iframe = document.createElement('iframe');
   iframe.src = 'https://www.youtube.com/embed/DXF10lbkIf4?autoplay=1&rel=0';
   iframe.title = 'Revoluciona tu Consumo Energético con Clickie';

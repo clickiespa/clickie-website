@@ -298,6 +298,13 @@
     <script>
     function playStoriesVideo(){
       var c=document.getElementById('storiesVideoContainer');
+      window.clickieAnalytics?.trackVideoStart({
+        video_id: 'NUNo2LWLtlQ',
+        video_title: 'Video testimonios clientes Clickie',
+        video_provider: 'youtube',
+        video_location: 'historias',
+        video_action: 'inline_play'
+      });
       c.innerHTML='<iframe src="https://www.youtube.com/embed/NUNo2LWLtlQ?autoplay=1&rel=0" allow="autoplay;encrypted-media" allowfullscreen></iframe>';
       c.classList.add('is-playing');
       c.onclick=null;
@@ -744,7 +751,31 @@
             portalId: "46669151",
             formId: "1a7881fc-e0cd-4c7f-bf28-c048a563cc81",
             region: "na1",
-            target: "#hubspotFormContainer"
+            target: "#hubspotFormContainer",
+            onFormReady: function (form) {
+              window.clickieAnalytics?.trackFormView({
+                form_id: "1a7881fc-e0cd-4c7f-bf28-c048a563cc81",
+                form_type: "contacto_home",
+                page_group: "contacto",
+                page_section: "contacto"
+              });
+              window.clickieAnalytics?.bindFormStart(form, {
+                once_key: "form-start:contacto-home",
+                form_id: "1a7881fc-e0cd-4c7f-bf28-c048a563cc81",
+                form_type: "contacto_home",
+                page_group: "contacto",
+                page_section: "contacto"
+              });
+            },
+            onFormSubmitted: function () {
+              window.clickieAnalytics?.trackLead({
+                form_id: "1a7881fc-e0cd-4c7f-bf28-c048a563cc81",
+                form_type: "contacto_home",
+                lead_source: "website",
+                page_group: "contacto",
+                page_section: "contacto"
+              });
+            }
           });
         </script>
       </div>

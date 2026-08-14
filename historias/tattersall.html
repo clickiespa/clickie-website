@@ -344,6 +344,13 @@
 function playTattersallStoryVideo() {
   var container = document.getElementById('tattersallVideoContainer');
   if (!container) return;
+  window.clickieAnalytics?.trackVideoStart({
+    video_id: 'bQ65TU3WdHs',
+    video_title: 'Cómo Tattersall optimizó su consumo y tarifas con Clickie',
+    video_provider: 'youtube',
+    video_location: 'historia_tattersall',
+    video_action: 'inline_play'
+  });
   container.innerHTML = '<iframe src="https://www.youtube.com/embed/bQ65TU3WdHs?autoplay=1&rel=0" title="Cómo Tattersall optimizó su consumo y tarifas con Clickie" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
   container.classList.add('is-playing');
   container.onclick = null;

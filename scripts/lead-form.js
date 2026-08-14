@@ -18,6 +18,65 @@
 
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+  function getAnalytics() {
+    return window.clickieAnalytics || null;
+  }
+
+  function trackFormView(docId, docName, formType, onceKey) {
+    var analytics = getAnalytics();
+
+    if (!analytics) return;
+
+    analytics.trackOnce(onceKey, function () {
+      analytics.trackFormView({
+        form_id: docId,
+        form_type: formType,
+        content_type: 'caso_de_negocio',
+        document_name: docName || docId,
+        delivery_method: 'email'
+      });
+    });
+  }
+
+  function bindTrackedFormStart(form, docId, docName, formType, onceKey) {
+    var analytics = getAnalytics();
+
+    if (!analytics) return;
+
+    analytics.bindFormStart(form, {
+      once_key: onceKey,
+      form_id: docId,
+      form_type: formType,
+      content_type: 'caso_de_negocio',
+      document_name: docName || docId,
+      delivery_method: 'email'
+    });
+  }
+
+  function trackLeadSuccess(docId, docName, formType) {
+    var analytics = getAnalytics();
+
+    if (!analytics) return;
+
+    analytics.trackLead({
+      form_id: docId,
+      form_type: formType,
+      lead_source: 'website',
+      content_type: 'caso_de_negocio',
+      document_name: docName || docId,
+      delivery_method: 'email'
+    });
+
+    analytics.trackDownload({
+      form_id: docId,
+      form_type: formType,
+      content_type: 'caso_de_negocio',
+      document_name: docName || docId,
+      file_extension: 'pdf',
+      delivery_method: 'email'
+    });
+  }
+
   function formHtml(submitLabel) {
     return '' +
       '<div class="form-group">' +
@@ -46,7 +105,15 @@
     '</div>';
   }
 
-  function bindSubmit(form, docId, onSuccess) {
+  function bindSubmit(form, docId, docName, formType, onSuccess) {
+    bindTrackedFormStart(
+      form,
+      docId,
+      docName,
+      formType,
+      'form-start:' + formType + ':' + window.location.pathname + ':' + docId
+    );
+
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
 
@@ -78,6 +145,7 @@
         .then(function (r) { return r.json(); })
         .then(function (res) {
           if (!res.ok) throw new Error(res.error || 'error');
+          trackLeadSuccess(docId, docName, formType);
           onSuccess(email);
         })
         .catch(function () {
@@ -96,7 +164,8 @@
     if (!docId) return;
 
     container.innerHTML = '<form class="lead-form" novalidate>' + formHtml('Recibir por correo') + '</form>';
-    bindSubmit(container.querySelector('form'), docId, function (email) {
+    trackFormView(docId, docId, 'inline_lead_form', 'form-view:inline:' + window.location.pathname + ':' + docId);
+    bindSubmit(container.querySelector('form'), docId, docId, 'inline_lead_form', function (email) {
       container.innerHTML = successHtml(email);
     });
   }
@@ -143,7 +212,8 @@
       '<p class="modal-subtitle">' + escapeHtml(docName) + ' — te lo enviamos en PDF a tu correo.</p>' +
       '<form class="modal-form" novalidate>' + formHtml('Recibir por correo →') + '</form>';
 
-    bindSubmit(body.querySelector('form'), docId, function (email) {
+    trackFormView(docId, docName, 'caso_modal', 'form-view:modal:' + window.location.pathname + ':' + docId);
+    bindSubmit(body.querySelector('form'), docId, docName, 'caso_modal', function (email) {
       body.innerHTML =
         '<h3 class="modal-title">&#127881; ¡Enviado!</h3>' +
         '<p class="modal-subtitle">' + successHtml(email).replace(/^<div[^>]*>|<\/div>$/g, '') + '</p>';

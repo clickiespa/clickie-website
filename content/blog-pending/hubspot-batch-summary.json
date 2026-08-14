@@ -1,0 +1,916 @@
+[
+  {
+    "source": "5-errores-comunes-en-la-gestión-energética-y-cómo-solucionarlos.html",
+    "title": "5 Errores Comunes en la Gestión Energética y Cómo Solucionarlos",
+    "status": "already-published",
+    "existingSlug": "5-errores-gestion-energetica"
+  },
+  {
+    "source": "5-niveles-de-madurez-en-la-gestión-energética-⚡️.html",
+    "status": "pending",
+    "slug": "5-niveles-de-madurez-en-la-gestion-energetica",
+    "title": "5 Niveles de Madurez en la Gestión Energética ⚡️",
+    "subtitle": "Descubre los cinco niveles de madurez en la gestión energética y cómo optimizar recursos y reducir costos en tu empresa de manera eficiente y sostenible",
+    "description": "Descubre los cinco niveles de madurez en la gestión energética y cómo optimizar recursos y reducir costos en tu empresa de manera eficiente y sostenible.",
+    "publishedAt": "2024-10-15",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/5-niveles-de-madurez-en-la-gestion-energetica-cover.jpeg",
+    "coverAlt": "5 Niveles de Madurez en la Gestión Energética ⚡️",
+    "sourceFile": "content/blog-pending/5-niveles-de-madurez-en-la-gestion-energetica.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "ahorro"
+    ]
+  },
+  {
+    "source": "aquí-van-algunas-mezclas-el-alza-de-julio-carga-el-84-al-sector-comercial-está-tu-operación-lista.html",
+    "status": "pending",
+    "slug": "aqui-van-algunas-mezclas-el-alza-de-julio-carga-el-84-al-sector-comercial-esta-tu-operacion-lista",
+    "title": "Aquí van algunas mezclas: El alza de julio carga el 84% al sector comercial: ¿está tu operación lista?",
+    "subtitle": "El primer semestre te da una falsa sensación de alivio. La bajada en tu boleta no es una buena noticia estructural — es una devolución puntual. Lo que llega en julio sí es permanente, y el sector comercial y retail es el",
+    "description": "",
+    "publishedAt": "2026-07-14",
+    "categoryKey": "eficiencia",
+    "coverImage": "",
+    "coverAlt": "Aquí van algunas mezclas: El alza de julio carga el 84% al sector comercial: ¿está tu operación lista?",
+    "sourceFile": "content/blog-pending/aqui-van-algunas-mezclas-el-alza-de-julio-carga-el-84-al-sector-comercial-esta-tu-operacion-lista.source",
+    "tags": []
+  },
+  {
+    "source": "así-monitoreamos-la-energía-en-la-industria-qué-son-los-gemelos-digitales.html",
+    "status": "pending",
+    "slug": "asi-monitoreamos-la-energia-en-la-industria-que-son-los-gemelos-digitales",
+    "title": "Así monitoreamos la energía en la industria: ¿Qué son los gemelos digitales?",
+    "subtitle": "Optimiza el uso de energía en tu planta industrial con gemelos digitales y tableros inteligentes. Descubre cómo Clickie mejora la eficiencia operativa y reduce la huella de carbono",
+    "description": "Optimiza el uso de energía en tu planta industrial con gemelos digitales y tableros inteligentes. Descubre cómo Clickie mejora la eficiencia operativa y reduce la huella de carbono.",
+    "publishedAt": "2025-07-29",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/asi-monitoreamos-la-energia-en-la-industria-que-son-los-gemelos-digitales-cover.png",
+    "coverAlt": "Así monitoreamos la energía en la industria: ¿Qué son los gemelos digitales?",
+    "sourceFile": "content/blog-pending/asi-monitoreamos-la-energia-en-la-industria-que-son-los-gemelos-digitales.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "energia",
+      "MonitoreoEnergia",
+      "ahorro",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "benchmark-energético-en-retail-por-qué-no-todos-los-locales-deberían-medirse-igual.html",
+    "status": "pending",
+    "slug": "benchmark-energetico-en-retail-por-que-no-todos-los-locales-deberian-medirse-igual",
+    "title": "Benchmark energético en retail: por qué no todos los locales deberían medirse igual",
+    "subtitle": "Descubre los errores comunes en las facturas eléctricas de retail y cómo optimizar costos antes de invertir en tecnología. Ahorra revisando lo que ya pagas",
+    "description": "Descubre los errores comunes en las facturas eléctricas de retail y cómo optimizar costos antes de invertir en tecnología. Ahorra revisando lo que ya pagas.",
+    "publishedAt": "2026-06-08",
+    "categoryKey": "industria",
+    "coverImage": "assets/blog/benchmark-energetico-en-retail-por-que-no-todos-los-locales-deberian-medirse-igual-cover.jpeg",
+    "coverAlt": "Benchmark energético en retail: por qué no todos los locales deberían medirse igual",
+    "sourceFile": "content/blog-pending/benchmark-energetico-en-retail-por-que-no-todos-los-locales-deberian-medirse-igual.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "MonitoreoEnergia",
+      "retail",
+      "ahorro",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "caso-de-éxito-cómo-oxxo-gestiona-la-energía-de-más-de-230-tiendas-en-chile-con-clickie.html",
+    "title": "Caso de éxito: Cómo OXXO gestiona la energía de más de 230 tiendas en Chile con Clickie",
+    "status": "already-published",
+    "existingSlug": "caso-exito-oxxo-energia-chile"
+  },
+  {
+    "source": "clickie-en-el-diario-el-mercurio-startup-crea-plataforma-que-permite-a-empresas-ahorrar-hasta-20-en-cuenta-de-la-luz.html",
+    "status": "pending",
+    "slug": "clickie-en-el-diario-el-mercurio-startup-crea-plataforma-que-permite-a-empresas-ahorrar-hasta-20-en-cuenta-de-la-luz",
+    "title": "Clickie en el diario El Mercurio: Startup crea plataforma que permite a empresas ahorrar hasta 20% en cuenta de la luz",
+    "subtitle": "Plataforma Clickie ayuda a empresas a ahorrar energía, gestionando el consumo en tiempo real y adaptándose a sus necesidades",
+    "description": "Plataforma Clickie ayuda a empresas a ahorrar energía, gestionando el consumo en tiempo real y adaptándose a sus necesidades.",
+    "publishedAt": "2025-09-30",
+    "categoryKey": "prensa",
+    "coverImage": "assets/blog/clickie-en-el-diario-el-mercurio-startup-crea-plataforma-que-permite-a-empresas-ahorrar-hasta-20-en-cuenta-de-la-luz-cover.png",
+    "coverAlt": "Clickie en el diario El Mercurio: Startup crea plataforma que permite a empresas ahorrar hasta 20% en cuenta de la luz",
+    "sourceFile": "content/blog-pending/clickie-en-el-diario-el-mercurio-startup-crea-plataforma-que-permite-a-empresas-ahorrar-hasta-20-en-cuenta-de-la-luz.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "produccion",
+      "MonitoreoEnergia",
+      "ahorro",
+      "gestionhídrica",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "clickie-en-la-feria-del-medio-ambiente-de-vulco-tecnología-sostenibilidad-y-trabajo-conjunto.html",
+    "status": "pending",
+    "slug": "clickie-en-la-feria-del-medio-ambiente-de-vulco-tecnologia-sostenibilidad-y-trabajo-conjunto",
+    "title": "Clickie en la Feria del Medio Ambiente de Vulco: tecnología, sostenibilidad y trabajo conjunto",
+    "subtitle": "Clickie participa en la Feria del Medio Ambiente de Vulco, mostrando cómo su tecnología mejora la eficiencia y sostenibilidad en la gestión energética",
+    "description": "Clickie participa en la Feria del Medio Ambiente de Vulco, mostrando cómo su tecnología mejora la eficiencia y sostenibilidad en la gestión energética.",
+    "publishedAt": "2025-06-26",
+    "categoryKey": "prensa",
+    "coverImage": "assets/blog/clickie-en-la-feria-del-medio-ambiente-de-vulco-tecnologia-sostenibilidad-y-trabajo-conjunto-cover.png",
+    "coverAlt": "Clickie en la Feria del Medio Ambiente de Vulco: tecnología, sostenibilidad y trabajo conjunto",
+    "sourceFile": "content/blog-pending/clickie-en-la-feria-del-medio-ambiente-de-vulco-tecnologia-sostenibilidad-y-trabajo-conjunto.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "energia",
+      "produccion",
+      "ahorro"
+    ]
+  },
+  {
+    "source": "como-prepararte-para-el-alza-tarifaria-de-julio-2026-impacto-del-10-a-los-retailers-multisucursal.html",
+    "status": "pending",
+    "slug": "como-prepararte-para-el-alza-tarifaria-de-julio-2026-impacto-del-10-a-los-retailers-multisucursal",
+    "title": "Como prepararte para el alza tarifaria de julio 2026: impacto del 10% a los retailers multisucursal.",
+    "subtitle": "El alza tarifaria de julio 2026 impactará fuertemente a los retailers multisucursal, con aumentos reales de hasta el 10%. Descubre cómo prepararte",
+    "description": "El alza tarifaria de julio 2026 impactará fuertemente a los retailers multisucursal, con aumentos reales de hasta el 10%. Descubre cómo prepararte.",
+    "publishedAt": "2026-04-24",
+    "categoryKey": "industria",
+    "coverImage": "assets/blog/como-prepararte-para-el-alza-tarifaria-de-julio-2026-impacto-del-10-a-los-retailers-multisucursal-cover.png",
+    "coverAlt": "Como prepararte para el alza tarifaria de julio 2026: impacto del 10% a los retailers multisucursal.",
+    "sourceFile": "content/blog-pending/como-prepararte-para-el-alza-tarifaria-de-julio-2026-impacto-del-10-a-los-retailers-multisucursal.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "MonitoreoEnergia",
+      "retail",
+      "ahorro",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "consumo-nocturno-retail-multisucursal.html",
+    "status": "pending",
+    "slug": "consumo-nocturno-retail-multisucursal",
+    "title": "Consumo nocturno en retail multisucursal: el costo que sigue corriendo cuando el local ya cerró",
+    "subtitle": "El consumo nocturno en retail puede revelar desvíos operativos, cargas residuales y oportunidades de ahorro. Cómo construir una línea base nocturna por formato y gestionar mejor la red",
+    "description": "El consumo nocturno en retail puede revelar desvíos operativos, cargas residuales y oportunidades de ahorro. Cómo construir una línea base nocturna por formato y gestionar mejor la red.",
+    "publishedAt": "2026-06-10",
+    "categoryKey": "industria",
+    "coverImage": "assets/blog/consumo-nocturno-retail-multisucursal-cover.png",
+    "coverAlt": "Consumo nocturno en retail multisucursal: el costo que sigue corriendo cuando el local ya cerró",
+    "sourceFile": "content/blog-pending/consumo-nocturno-retail-multisucursal.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "produccion",
+      "MonitoreoEnergia",
+      "retail",
+      "ahorro",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "cómo-ahorrar-energía-en-tu-tienda-y-reducir-costos-operativos.html",
+    "status": "pending",
+    "slug": "como-ahorrar-energia-en-tu-tienda-y-reducir-costos-operativos",
+    "title": "Cómo ahorrar energía en tu tienda y reducir costos operativos",
+    "subtitle": "Optimiza el consumo energético en tu tienda con estrategias simples para reducir costos operativos y contribuir al cuidado del medioambiente. Descubre cómo ahorrar energía de manera efectiva",
+    "description": "Optimiza el consumo energético en tu tienda con estrategias simples para reducir costos operativos y contribuir al cuidado del medioambiente. Descubre cómo ahorrar energía de manera efectiva.",
+    "publishedAt": "2025-03-14",
+    "categoryKey": "eficiencia",
+    "coverImage": "assets/blog/como-ahorrar-energia-en-tu-tienda-y-reducir-costos-operativos-cover.jpeg",
+    "coverAlt": "Cómo ahorrar energía en tu tienda y reducir costos operativos",
+    "sourceFile": "content/blog-pending/como-ahorrar-energia-en-tu-tienda-y-reducir-costos-operativos.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "ahorro"
+    ]
+  },
+  {
+    "source": "cómo-en-clickie-convertimos-datos-en-ahorros-de-energía.html",
+    "title": "Cómo en Clickie convertimos datos en ahorros de energía",
+    "status": "already-published",
+    "existingSlug": "datos-en-ahorros"
+  },
+  {
+    "source": "cómo-grupo-tattersall-logró-eficiencia-energética-con-clickie-un-caso-de-éxito-en-sostenibilidad.html",
+    "status": "pending",
+    "slug": "como-grupo-tattersall-logro-eficiencia-energetica-con-clickie-un-caso-de-exito-en-sostenibilidad",
+    "title": "Cómo Grupo Tattersall logró eficiencia energética con Clickie: un caso de éxito en sostenibilidad",
+    "subtitle": "Grupo Tattersall optimizó su eficiencia energética con Clickie, logrando una significativa reducción de costos y mejorando la sostenibilidad en sus operaciones diversificadas",
+    "description": "Grupo Tattersall optimizó su eficiencia energética con Clickie, logrando una significativa reducción de costos y mejorando la sostenibilidad en sus operaciones diversificadas.",
+    "publishedAt": "2025-08-04",
+    "categoryKey": "casos",
+    "coverImage": "assets/blog/como-grupo-tattersall-logro-eficiencia-energetica-con-clickie-un-caso-de-exito-en-sostenibilidad-cover.png",
+    "coverAlt": "Cómo Grupo Tattersall logró eficiencia energética con Clickie: un caso de éxito en sostenibilidad",
+    "sourceFile": "content/blog-pending/como-grupo-tattersall-logro-eficiencia-energetica-con-clickie-un-caso-de-exito-en-sostenibilidad.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "energia",
+      "produccion",
+      "MonitoreoEnergia",
+      "ahorro",
+      "gestionhídrica",
+      "EnergyManagementSystem",
+      "Chile"
+    ]
+  },
+  {
+    "source": "cómo-la-araucana-redujo-su-huella-de-carbono-un-14-con-clickie.html",
+    "title": "Cómo La Araucana redujo su huella de carbono un 14% con Clickie",
+    "status": "already-published",
+    "existingSlug": "la-araucana-co2"
+  },
+  {
+    "source": "cómo-las-tarifas-eléctricas-impactan-tu-operación-diaria-y-qué-hacer-para-pagar-menos.html",
+    "status": "pending",
+    "slug": "como-las-tarifas-electricas-impactan-tu-operacion-diaria-y-que-hacer-para-pagar-menos",
+    "title": "Cómo las tarifas eléctricas impactan tu operación diaria (y qué hacer para pagar menos)",
+    "subtitle": "Descubre cómo las tarifas eléctricas afectan tus costos operativos y aprende a optimizar tu consumo para reducir gastos en tu negocio",
+    "description": "Descubre cómo las tarifas eléctricas afectan tus costos operativos y aprende a optimizar tu consumo para reducir gastos en tu negocio.",
+    "publishedAt": "2026-04-23",
+    "categoryKey": "industria",
+    "coverImage": "assets/blog/como-las-tarifas-electricas-impactan-tu-operacion-diaria-y-que-hacer-para-pagar-menos-cover.png",
+    "coverAlt": "Cómo las tarifas eléctricas impactan tu operación diaria (y qué hacer para pagar menos)",
+    "sourceFile": "content/blog-pending/como-las-tarifas-electricas-impactan-tu-operacion-diaria-y-que-hacer-para-pagar-menos.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "MonitoreoEnergia",
+      "retail",
+      "ahorro",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "cómo-preparar-tu-tienda-para-ahorrar-energía-este-invierno.html",
+    "status": "pending",
+    "slug": "como-preparar-tu-tienda-para-ahorrar-energia-este-invierno",
+    "title": "¿Cómo preparar tu tienda para ahorrar energía este invierno?",
+    "subtitle": "Descubre cómo reducir costos de energía en tu tienda este invierno con estrategias prácticas para calefacción eficiente y aprovechamiento de la luz natural. Mejora tu gestión energética hoy mismo",
+    "description": "Descubre cómo reducir costos de energía en tu tienda este invierno con estrategias prácticas para calefacción eficiente y aprovechamiento de la luz natural. Mejora tu gestión energética hoy mismo.",
+    "publishedAt": "2025-04-27",
+    "categoryKey": "eficiencia",
+    "coverImage": "assets/blog/como-preparar-tu-tienda-para-ahorrar-energia-este-invierno-cover.jpeg",
+    "coverAlt": "¿Cómo preparar tu tienda para ahorrar energía este invierno?",
+    "sourceFile": "content/blog-pending/como-preparar-tu-tienda-para-ahorrar-energia-este-invierno.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "ahorro"
+    ]
+  },
+  {
+    "source": "cómo-se-logran-ahorros-reales-en-locales-como-oxxo-monitoreo-de-energía-en-retail.html",
+    "status": "pending",
+    "slug": "como-se-logran-ahorros-reales-en-locales-como-oxxo-monitoreo-de-energia-en-retail",
+    "title": "¿Cómo se logran ahorros reales en locales como OXXO? Monitoreo de Energía en Retail",
+    "subtitle": "Descubre cómo OXXO optimiza su consumo eléctrico en Chile con Clickie, a través del monitoreo y control de energía en tiempo real. Ahorros reales y eficiencia energética para el retail",
+    "description": "Descubre cómo OXXO optimiza su consumo eléctrico en Chile con Clickie, a través del monitoreo y control de energía en tiempo real. Ahorros reales y eficiencia energética para el retail.",
+    "publishedAt": "2025-07-18",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/como-se-logran-ahorros-reales-en-locales-como-oxxo-monitoreo-de-energia-en-retail-cover.jpeg",
+    "coverAlt": "¿Cómo se logran ahorros reales en locales como OXXO? Monitoreo de Energía en Retail",
+    "sourceFile": "content/blog-pending/como-se-logran-ahorros-reales-en-locales-como-oxxo-monitoreo-de-energia-en-retail.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "MonitoreoEnergia",
+      "ahorro",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "cómo-un-buen-uso-de-la-energía-puede-transformar-tu-negocio.html",
+    "status": "pending",
+    "slug": "como-un-buen-uso-de-la-energia-puede-transformar-tu-negocio",
+    "title": "Día Mundial del Ahorro de Energía: Cómo tu empresa puede hacer la diferencia",
+    "subtitle": "El 21 de octubre es el Día Mundial del Ahorro de Energía. Descubre cómo pequeñas acciones y soluciones como las de Clickie pueden optimizar el consumo energético de tu empresa, reducir costos y contribuir a un futuro sos",
+    "description": "El 21 de octubre es el Día Mundial del Ahorro de Energía. Descubre cómo pequeñas acciones y soluciones como las de Clickie pueden optimizar el consumo energético de tu empresa, reducir costos y contribuir a un futuro sostenible.",
+    "publishedAt": "2024-10-23",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/como-un-buen-uso-de-la-energia-puede-transformar-tu-negocio-cover.jpg",
+    "coverAlt": "Día Mundial del Ahorro de Energía: Cómo tu empresa puede hacer la diferencia",
+    "sourceFile": "content/blog-pending/como-un-buen-uso-de-la-energia-puede-transformar-tu-negocio.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "energia",
+      "ahorro"
+    ]
+  },
+  {
+    "source": "edificios-una-oportunidad-para-reducir-la-demanda-energética-global.html",
+    "title": "Edificios: Una Oportunidad para Reducir la Demanda Energética Global",
+    "status": "already-published",
+    "existingSlug": "edificios-una-oportunidad-para-reducir-la-demanda-energetica-global"
+  },
+  {
+    "source": "edificios-verdes-y-monitoreo-de-energía-con-clickie.html",
+    "title": "Edificios Verdes y Monitoreo de Energía con Clickie",
+    "status": "already-published",
+    "existingSlug": "edificios-verdes-y-monitoreo-de-energia-con-clickie"
+  },
+  {
+    "source": "el-costo-invisible-del-confort-en-tiendas-por-departamento.html",
+    "title": "El Costo invisible del confort en tiendas por departamento",
+    "status": "already-published",
+    "existingSlug": "costo-confort-tiendas"
+  },
+  {
+    "source": "el-impacto-del-aumento-de-tarifas-de-energía-eléctrica-en-chile.html",
+    "title": "El Impacto del Aumento de Tarifas de Energía Eléctrica en Chile",
+    "status": "already-published",
+    "existingSlug": "el-impacto-del-aumento-de-tarifas-de-energia-electrica-en-chile"
+  },
+  {
+    "source": "el-problema-no-es-el-consumo-energético-en-retail.-es-la-falta-de-decisiones.html",
+    "status": "pending",
+    "slug": "el-problema-no-es-el-consumo-energetico-en-retail-es-la-falta-de-decisiones",
+    "title": "El problema no es el consumo energético en retail. Es la falta de decisiones",
+    "subtitle": "Optimiza el consumo energético de tu edificio con submetering. Descubre cómo la medición individual puede transformar datos en eficiencia y transparencia",
+    "description": "Optimiza el consumo energético de tu edificio con submetering. Descubre cómo la medición individual puede transformar datos en eficiencia y transparencia.",
+    "publishedAt": "2026-04-07",
+    "categoryKey": "industria",
+    "coverImage": "assets/blog/el-problema-no-es-el-consumo-energetico-en-retail-es-la-falta-de-decisiones-cover.png",
+    "coverAlt": "El problema no es el consumo energético en retail. Es la falta de decisiones",
+    "sourceFile": "content/blog-pending/el-problema-no-es-el-consumo-energetico-en-retail-es-la-falta-de-decisiones.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "MonitoreoEnergia",
+      "retail",
+      "ahorro",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "el-rol-del-gestor-energético-clave-para-la-eficiencia-y-sostenibilidad-empresarial.html",
+    "title": "El Rol del Gestor Energético: Clave para la Eficiencia y Sostenibilidad Empresarial",
+    "status": "already-published",
+    "existingSlug": "el-rol-del-gestor-energetico-clave-para-la-eficiencia-y-sostenibilidad-empresarial"
+  },
+  {
+    "source": "energía-datos-y-futuro-clickie-visitó-la-expo-osaka-2025.html",
+    "status": "pending",
+    "slug": "energia-datos-y-futuro-clickie-visito-la-expo-osaka-2025",
+    "title": "Energía, datos y futuro: Clickie visitó la Expo Osaka 2025",
+    "subtitle": "Descubre cómo la Expo Osaka 2025 está moldeando el futuro de la energía y la sostenibilidad con innovaciones de China, Arabia Saudita y Japón",
+    "description": "Descubre cómo la Expo Osaka 2025 está moldeando el futuro de la energía y la sostenibilidad con innovaciones de China, Arabia Saudita y Japón.",
+    "publishedAt": "2025-06-23",
+    "categoryKey": "prensa",
+    "coverImage": "assets/blog/energia-datos-y-futuro-clickie-visito-la-expo-osaka-2025-cover.jpeg",
+    "coverAlt": "Energía, datos y futuro: Clickie visitó la Expo Osaka 2025",
+    "sourceFile": "content/blog-pending/energia-datos-y-futuro-clickie-visito-la-expo-osaka-2025.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "energia"
+    ]
+  },
+  {
+    "source": "equipos-que-funcionan-pero-ya-están-fallando-lo-que-la-curva-de-energía-detecta-antes-del-service.html",
+    "status": "pending",
+    "slug": "equipos-que-funcionan-pero-ya-estan-fallando-lo-que-la-curva-de-energia-detecta-antes-del-service",
+    "title": "Equipos que \"funcionan\" pero ya están fallando: lo que la curva de energía detecta antes del service.",
+    "subtitle": "Descubre cómo el análisis energético puede anticipar fallos en equipos críticos, mejorando la eficiencia y reduciendo costos operativos antes de que ocurra una interrupción",
+    "description": "Descubre cómo el análisis energético puede anticipar fallos en equipos críticos, mejorando la eficiencia y reduciendo costos operativos antes de que ocurra una interrupción.",
+    "publishedAt": "2026-07-06",
+    "categoryKey": "industria",
+    "coverImage": "assets/blog/equipos-que-funcionan-pero-ya-estan-fallando-lo-que-la-curva-de-energia-detecta-antes-del-service-cover.png",
+    "coverAlt": "Equipos que \"funcionan\" pero ya están fallando: lo que la curva de energía detecta antes del service.",
+    "sourceFile": "content/blog-pending/equipos-que-funcionan-pero-ya-estan-fallando-lo-que-la-curva-de-energia-detecta-antes-del-service.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "MonitoreoEnergia",
+      "retail",
+      "ahorro",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "esg-datos-reales-trazabilidad-energia.html",
+    "status": "pending",
+    "slug": "esg-datos-reales-trazabilidad-energia",
+    "title": "ESG con datos reales: por qué una factura no alcanza para reportar energía, agua y gas",
+    "subtitle": "Descubre por qué un buen reporte ESG va más allá de las facturas y cómo mejorar la trazabilidad de tus datos de energía, agua y gas",
+    "description": "Descubre por qué un buen reporte ESG va más allá de las facturas y cómo mejorar la trazabilidad de tus datos de energía, agua y gas.",
+    "publishedAt": "2026-07-14",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/esg-datos-reales-trazabilidad-energia-cover.jpg",
+    "coverAlt": "ESG con datos reales: por qué una factura no alcanza para reportar energía, agua y gas",
+    "sourceFile": "content/blog-pending/esg-datos-reales-trazabilidad-energia.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "agua",
+      "MonitoreoEnergia",
+      "retail",
+      "ahorro",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "la-energía-dejó-de-ser-un-gasto.-conoce-cómo-la-energy-cloud-te-hace-ganar-control-y-eficiencia.html",
+    "status": "pending",
+    "slug": "la-energia-dejo-de-ser-un-gasto-conoce-como-la-energy-cloud-te-hace-ganar-control-y-eficiencia",
+    "title": "La energía dejó de ser un gasto. Conoce cómo la Energy Cloud te hace ganar control y eficiencia.",
+    "subtitle": "Descubre cómo la Energy Cloud transforma la industria energética, empoderando a los usuarios y optimizando el consumo mediante tecnologías avanzadas y energías renovables",
+    "description": "Descubre cómo la Energy Cloud transforma la industria energética, empoderando a los usuarios y optimizando el consumo mediante tecnologías avanzadas y energías renovables.",
+    "publishedAt": "2025-04-07",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/la-energia-dejo-de-ser-un-gasto-conoce-como-la-energy-cloud-te-hace-ganar-control-y-eficiencia-cover.jpeg",
+    "coverAlt": "La energía dejó de ser un gasto. Conoce cómo la Energy Cloud te hace ganar control y eficiencia.",
+    "sourceFile": "content/blog-pending/la-energia-dejo-de-ser-un-gasto-conoce-como-la-energy-cloud-te-hace-ganar-control-y-eficiencia.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "energia",
+      "ahorro"
+    ]
+  },
+  {
+    "source": "la-hora-del-planeta-más-que-apagar-las-luces.html",
+    "status": "pending",
+    "slug": "la-hora-del-planeta-mas-que-apagar-las-luces",
+    "title": "🌍 La Hora del Planeta: Más que apagar las luces 💡",
+    "subtitle": "Descubrí cómo transformar el gesto simbólico de La Hora del Planeta en hábitos diarios de eficiencia energética en tu empresa con medidas prácticas y sostenibles",
+    "description": "Descubrí cómo transformar el gesto simbólico de La Hora del Planeta en hábitos diarios de eficiencia energética en tu empresa con medidas prácticas y sostenibles.",
+    "publishedAt": "2025-03-28",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/la-hora-del-planeta-mas-que-apagar-las-luces-cover.png",
+    "coverAlt": "🌍 La Hora del Planeta: Más que apagar las luces 💡",
+    "sourceFile": "content/blog-pending/la-hora-del-planeta-mas-que-apagar-las-luces.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "energia"
+    ]
+  },
+  {
+    "source": "la-transición-energética-como-oportunidad-de-crecimiento.html",
+    "title": "La transición energética como oportunidad de crecimiento",
+    "status": "already-published",
+    "existingSlug": "transicion-energetica"
+  },
+  {
+    "source": "las-empresas-consumidoras-de-energía-están-cambiando-las-reglas-del-juego-en-el-sector-energético-entrevista-a-marcelo-llévenes-ceo-de-clickie.html",
+    "status": "pending",
+    "slug": "las-empresas-consumidoras-de-energia-estan-cambiando-las-reglas-del-juego-en-el-sector-energetico-entrevista-a-marcelo-llevenes-ceo-de-clickie",
+    "title": "Entrevista a Marcelo Llévenes, CEO de Clickie",
+    "subtitle": "Entrevista con Marcelo Llévenes sobre cómo las nuevas tecnologías y la sostenibilidad están transformando el sector energético, empoderando a los consumidores y modernizando la regulación",
+    "description": "Entrevista con Marcelo Llévenes sobre cómo las nuevas tecnologías y la sostenibilidad están transformando el sector energético, empoderando a los consumidores y modernizando la regulación.",
+    "publishedAt": "2025-01-08",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/las-empresas-consumidoras-de-energia-estan-cambiando-las-reglas-del-juego-en-el-sector-energetico-entrevista-a-marcelo-llevenes-ceo-de-clickie-cover.png",
+    "coverAlt": "Entrevista a Marcelo Llévenes, CEO de Clickie",
+    "sourceFile": "content/blog-pending/las-empresas-consumidoras-de-energia-estan-cambiando-las-reglas-del-juego-en-el-sector-energetico-entrevista-a-marcelo-llevenes-ceo-de-clickie.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "energia"
+    ]
+  },
+  {
+    "source": "los-4-errores-que-esconde-una-factura-eléctrica-de-retail.html",
+    "status": "pending",
+    "slug": "los-4-errores-que-esconde-una-factura-electrica-de-retail",
+    "title": "Los 4 errores que esconde una factura eléctrica de retail",
+    "subtitle": "Descubre los errores comunes en las facturas eléctricas de retail y cómo optimizar costos antes de invertir en tecnología. Ahorra revisando lo que ya pagas",
+    "description": "Descubre los errores comunes en las facturas eléctricas de retail y cómo optimizar costos antes de invertir en tecnología. Ahorra revisando lo que ya pagas.",
+    "publishedAt": "2026-05-11",
+    "categoryKey": "industria",
+    "coverImage": "assets/blog/los-4-errores-que-esconde-una-factura-electrica-de-retail-cover.jpg",
+    "coverAlt": "Los 4 errores que esconde una factura eléctrica de retail",
+    "sourceFile": "content/blog-pending/los-4-errores-que-esconde-una-factura-electrica-de-retail.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "MonitoreoEnergia",
+      "retail",
+      "ahorro",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "los-impulsores-del-cambio-energético-clientes-más-exigentes-datos-más-valiosos-y-un-sistema-más-descentralizado.html",
+    "status": "pending",
+    "slug": "los-impulsores-del-cambio-energetico-clientes-mas-exigentes-datos-mas-valiosos-y-un-sistema-mas-descentralizado",
+    "title": "Los impulsores del cambio energético: clientes más exigentes, datos más valiosos y un sistema más descentralizado",
+    "subtitle": "Transformación energética: consumidores informados, datos valiosos y sistemas descentralizados redefinen el sector. ¿Está tu empresa preparada para liderar este cambio? Descubrí más en nuestro blog",
+    "description": "Transformación energética: consumidores informados, datos valiosos y sistemas descentralizados redefinen el sector. ¿Está tu empresa preparada para liderar este cambio? Descubrí más en nuestro blog.",
+    "publishedAt": "2025-04-07",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/los-impulsores-del-cambio-energetico-clientes-mas-exigentes-datos-mas-valiosos-y-un-sistema-mas-descentralizado-cover.jpg",
+    "coverAlt": "Los impulsores del cambio energético: clientes más exigentes, datos más valiosos y un sistema más descentralizado",
+    "sourceFile": "content/blog-pending/los-impulsores-del-cambio-energetico-clientes-mas-exigentes-datos-mas-valiosos-y-un-sistema-mas-descentralizado.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "energia",
+      "ahorro"
+    ]
+  },
+  {
+    "source": "mide-lo-que-realmente-importa-optimización-datos-y-eficiencia-al-alcance-de-tu-línea-de-producción.html",
+    "status": "pending",
+    "slug": "mide-lo-que-realmente-importa-optimizacion-datos-y-eficiencia-al-alcance-de-tu-linea-de-produccion",
+    "title": "Mide lo que realmente importa: Optimización, datos y eficiencia al alcance de tu línea de producción",
+    "subtitle": "Optimiza tu producción midiendo indicadores clave como OPI-NONA y OEE para mejorar eficiencia, reducir costos y tomar decisiones rápidas basadas en datos reales. === Generated Blog Summary",
+    "description": "Optimiza tu producción midiendo indicadores clave como OPI-NONA y OEE para mejorar eficiencia, reducir costos y tomar decisiones rápidas basadas en datos reales. === Generated Blog Summary:",
+    "publishedAt": "2025-06-16",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/mide-lo-que-realmente-importa-optimizacion-datos-y-eficiencia-al-alcance-de-tu-linea-de-produccion-cover.png",
+    "coverAlt": "Mide lo que realmente importa: Optimización, datos y eficiencia al alcance de tu línea de producción",
+    "sourceFile": "content/blog-pending/mide-lo-que-realmente-importa-optimizacion-datos-y-eficiencia-al-alcance-de-tu-linea-de-produccion.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "energia",
+      "produccion",
+      "ahorro",
+      "EnergyManagementSystem"
+    ]
+  },
+  {
+    "source": "monitoreo_de_agua.html",
+    "status": "pending",
+    "slug": "monitoreo-de-agua",
+    "title": "Monitoreo de Agua para un Reciclado Eficiente y Cumplimiento con la DGA",
+    "subtitle": "Soluciones tecnológicas para el monitoreo y transmisión de extracciones de agua subterránea, asegurando el cumplimiento de la normativa DGA y promoviendo la sostenibilidad hídrica",
+    "description": "Soluciones tecnológicas para el monitoreo y transmisión de extracciones de agua subterránea, asegurando el cumplimiento de la normativa DGA y promoviendo la sostenibilidad hídrica.",
+    "publishedAt": "2025-03-14",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/monitoreo-de-agua-cover.jpeg",
+    "coverAlt": "Monitoreo de Agua para un Reciclado Eficiente y Cumplimiento con la DGA",
+    "sourceFile": "content/blog-pending/monitoreo-de-agua.source",
+    "tags": [
+      "sostenibilidad",
+      "agua",
+      "ahorro",
+      "gestionhídrica"
+    ]
+  },
+  {
+    "source": "nuevo-aumento-en-el-precio-de-la-electricidad-a-partir-de-julio-2025.html",
+    "status": "pending",
+    "slug": "nuevo-aumento-en-el-precio-de-la-electricidad-a-partir-de-julio-2025",
+    "title": "Nuevo aumento en el precio de la electricidad a partir de julio 2025",
+    "subtitle": "Nuevo aumento en tarifas eléctricas en julio 2025. Clickie te ayuda a optimizar tu consumo energético y reducir costos",
+    "description": "Nuevo aumento en tarifas eléctricas en julio 2025. Clickie te ayuda a optimizar tu consumo energético y reducir costos.",
+    "publishedAt": "2025-04-23",
+    "categoryKey": "industria",
+    "coverImage": "assets/blog/nuevo-aumento-en-el-precio-de-la-electricidad-a-partir-de-julio-2025-cover.jpeg",
+    "coverAlt": "Nuevo aumento en el precio de la electricidad a partir de julio 2025",
+    "sourceFile": "content/blog-pending/nuevo-aumento-en-el-precio-de-la-electricidad-a-partir-de-julio-2025.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "ahorro"
+    ]
+  },
+  {
+    "source": "optimiza-tu-operación-diaria-cada-decisión-energética-cuenta.html",
+    "status": "pending",
+    "slug": "optimiza-tu-operacion-diaria-cada-decision-energetica-cuenta",
+    "title": "Optimiza tu operación diaria: cada decisión energética cuenta",
+    "subtitle": "Optimiza el consumo energético de tu edificio con submetering. Descubre cómo la medición individual puede transformar datos en eficiencia y transparencia",
+    "description": "Optimiza el consumo energético de tu edificio con submetering. Descubre cómo la medición individual puede transformar datos en eficiencia y transparencia.",
+    "publishedAt": "2026-04-16",
+    "categoryKey": "industria",
+    "coverImage": "assets/blog/optimiza-tu-operacion-diaria-cada-decision-energetica-cuenta-cover.png",
+    "coverAlt": "Optimiza tu operación diaria: cada decisión energética cuenta",
+    "sourceFile": "content/blog-pending/optimiza-tu-operacion-diaria-cada-decision-energetica-cuenta.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "MonitoreoEnergia",
+      "retail",
+      "ahorro",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "paso-a-paso-cómo-ayuda-clickie-a-las-empresas-a-gestionar-mejor-su-energía.html",
+    "title": "Paso a paso: ¿Cómo ayuda Clickie a las empresas a gestionar mejor su energía?",
+    "status": "already-published",
+    "existingSlug": "como-ayuda-clickie"
+  },
+  {
+    "source": "piloto-de-avión-y-no-médico-forense-la-diferencia-de-hacer-gestión-energética-con-datos-pasados-vs.-datos-en-línea.html",
+    "title": "Piloto de Avión y No Médico Forense: La Diferencia de Hacer Gestión Energética con Datos Pasados vs. Datos en Línea",
+    "status": "already-published",
+    "existingSlug": "piloto-de-avion-y-no-medico-forense-la-diferencia-de-hacer-gestion-energetica-con-datos-pasados-vs-datos-en-linea"
+  },
+  {
+    "source": "potencia-tu-empresa-con-clickie-una-solución-integral-para-la-gestión-energética.html",
+    "title": "Potencia tu Empresa con Clickie: Una Solución Integral para la Gestión Energética",
+    "status": "already-published",
+    "existingSlug": "potencia-tu-empresa-con-clickie-una-solucion-integral-para-la-gestion-energetica"
+  },
+  {
+    "source": "primer-trimestre-del-año-cómo-medir-y-mejorar-tu-gestión-energética.html",
+    "status": "pending",
+    "slug": "primer-trimestre-del-ano-como-medir-y-mejorar-tu-gestion-energetica",
+    "title": "📢 Primer trimestre del año: ¿Cómo medir y mejorar tu gestión energética?",
+    "subtitle": "Análisis trimestral de gestión energética: mide tu consumo, reduce costos y mejora la eficiencia de tu empresa con estrategias efectivas y herramientas como Clickie",
+    "description": "Análisis trimestral de gestión energética: mide tu consumo, reduce costos y mejora la eficiencia de tu empresa con estrategias efectivas y herramientas como Clickie.",
+    "publishedAt": "2025-03-31",
+    "categoryKey": "eficiencia",
+    "coverImage": "assets/blog/primer-trimestre-del-ano-como-medir-y-mejorar-tu-gestion-energetica-cover.png",
+    "coverAlt": "📢 Primer trimestre del año: ¿Cómo medir y mejorar tu gestión energética?",
+    "sourceFile": "content/blog-pending/primer-trimestre-del-ano-como-medir-y-mejorar-tu-gestion-energetica.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "ahorro"
+    ]
+  },
+  {
+    "source": "prorrateos-a-ciegas-la-ineficiencia-energética-que-los-centros-comerciales-mall.html",
+    "status": "pending",
+    "slug": "prorrateos-a-ciegas-la-ineficiencia-energetica-que-los-centros-comerciales-mall",
+    "title": "Prorrateos con baja visibilidad: cómo identificar desvíos energéticos en locales dentro de centros comerciales",
+    "subtitle": "Descubre cómo la gestión ineficiente de la energía en centros comerciales impacta negativamente en tu empresa y aprende a auditar tus costos eléctricos",
+    "description": "Descubre cómo la gestión ineficiente de la energía en centros comerciales impacta negativamente en tu empresa y aprende a auditar tus costos eléctricos.",
+    "publishedAt": "2026-06-23",
+    "categoryKey": "eficiencia",
+    "coverImage": "assets/blog/prorrateos-a-ciegas-la-ineficiencia-energetica-que-los-centros-comerciales-mall-cover.png",
+    "coverAlt": "Prorrateos con baja visibilidad: cómo identificar desvíos energéticos en locales dentro de centros comerciales",
+    "sourceFile": "content/blog-pending/prorrateos-a-ciegas-la-ineficiencia-energetica-que-los-centros-comerciales-mall.source",
+    "tags": [
+      "EficienciaEnergética",
+      "MonitoreoEnergia",
+      "ahorro",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "qué-hacen-distinto-los-líderes-en-sostenibilidad.html",
+    "status": "pending",
+    "slug": "que-hacen-distinto-los-lideres-en-sostenibilidad",
+    "title": "Qué hacen distinto los líderes en sostenibilidad",
+    "subtitle": "Un nuevo estudio de Boston Consulting Group revela que las empresas líderes en sostenibilidad comparten cuatro rasgos clave que marcan la diferencia",
+    "description": "",
+    "publishedAt": "2026-07-14",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "",
+    "coverAlt": "Qué hacen distinto los líderes en sostenibilidad",
+    "sourceFile": "content/blog-pending/que-hacen-distinto-los-lideres-en-sostenibilidad.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "energia",
+      "produccion",
+      "MonitoreoEnergia",
+      "ahorro",
+      "gestionhídrica",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "qué-significa-una-inflación-energética-de-0-para-las-empresas-en-américa-latina.html",
+    "status": "pending",
+    "slug": "que-significa-una-inflacion-energetica-de-0-para-las-empresas-en-america-latina",
+    "title": "¿Qué significa una inflación energética de 0% para las empresas en América Latina?",
+    "subtitle": "Inflación energética en 0%: Descubre su impacto en empresas de América Latina y cómo aprovechar esta estabilidad para mejorar la eficiencia energética",
+    "description": "Inflación energética en 0%: Descubre su impacto en empresas de América Latina y cómo aprovechar esta estabilidad para mejorar la eficiencia energética.",
+    "publishedAt": "2025-08-20",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/que-significa-una-inflacion-energetica-de-0-para-las-empresas-en-america-latina-cover.png",
+    "coverAlt": "¿Qué significa una inflación energética de 0% para las empresas en América Latina?",
+    "sourceFile": "content/blog-pending/que-significa-una-inflacion-energetica-de-0-para-las-empresas-en-america-latina.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "energia",
+      "MonitoreoEnergia",
+      "ahorro",
+      "Chile"
+    ]
+  },
+  {
+    "source": "qué-va-a-pasar-con-tu-factura-eléctrica-en-2026.html",
+    "status": "pending",
+    "slug": "que-va-a-pasar-con-tu-factura-electrica-en-2026",
+    "title": "¿Qué va a pasar con tu factura eléctrica en 2026?",
+    "subtitle": "Descubre cómo se dividirá el año 2026 en relación a tu factura eléctrica y lo que necesitas saber antes de julio para prepararte",
+    "description": "Descubre cómo se dividirá el año 2026 en relación a tu factura eléctrica y lo que necesitas saber antes de julio para prepararte.",
+    "publishedAt": "2026-04-07",
+    "categoryKey": "industria",
+    "coverImage": "assets/blog/que-va-a-pasar-con-tu-factura-electrica-en-2026-cover.jpg",
+    "coverAlt": "¿Qué va a pasar con tu factura eléctrica en 2026?",
+    "sourceFile": "content/blog-pending/que-va-a-pasar-con-tu-factura-electrica-en-2026.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "MonitoreoEnergia",
+      "ahorro",
+      "gestionhídrica",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "remarcación-y-submetering-lo-que-no-mides-lo-subsidias.html",
+    "title": "Remarcación y Submetering: lo que no mides, lo subsidias",
+    "status": "already-published",
+    "existingSlug": "remarcacion-submetering"
+  },
+  {
+    "source": "sabes-cuánto-impacto-positivo-está-generando-tu-empresa.html",
+    "status": "pending",
+    "slug": "sabes-cuanto-impacto-positivo-esta-generando-tu-empresa",
+    "title": "🌱 ¿Sabes cuánto impacto positivo está generando tu empresa?",
+    "subtitle": "Descubre cómo medir el impacto positivo de tu ahorro energético traducido en CO₂ evitado, árboles salvados y más, impulsando tu estrategia de sostenibilidad",
+    "description": "Descubre cómo medir el impacto positivo de tu ahorro energético traducido en CO₂ evitado, árboles salvados y más, impulsando tu estrategia de sostenibilidad.",
+    "publishedAt": "2025-05-15",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/sabes-cuanto-impacto-positivo-esta-generando-tu-empresa-cover.jpeg",
+    "coverAlt": "🌱 ¿Sabes cuánto impacto positivo está generando tu empresa?",
+    "sourceFile": "content/blog-pending/sabes-cuanto-impacto-positivo-esta-generando-tu-empresa.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "energia",
+      "agua",
+      "ahorro",
+      "gestionhídrica"
+    ]
+  },
+  {
+    "source": "sabías-que-1c-puede-definir-la-rentabilidad-de-tu-tienda-este-verano-️.html",
+    "title": "¿Sabías que 1°C puede definir la rentabilidad de tu tienda este verano? 🌡️📉",
+    "status": "already-published",
+    "existingSlug": "1-grado-rentabilidad"
+  },
+  {
+    "source": "sabías-que-puedes-usar-tus-datos-del-coordinador-eléctrico-en-la-plataforma-clickie.html",
+    "status": "pending",
+    "slug": "sabias-que-puedes-usar-tus-datos-del-coordinador-electrico-en-la-plataforma-clickie",
+    "title": "¿Sabías que puedes usar tus datos del Coordinador Eléctrico en la Plataforma Clickie?",
+    "subtitle": "Integra automáticamente tus datos del Coordinador Eléctrico Nacional a Clickie y optimiza tu gestión energética sin complicaciones. === Generated Summary of the Blog Text",
+    "description": "Integra automáticamente tus datos del Coordinador Eléctrico Nacional a Clickie y optimiza tu gestión energética sin complicaciones. === Generated Summary of the Blog Text:",
+    "publishedAt": "2025-06-10",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/sabias-que-puedes-usar-tus-datos-del-coordinador-electrico-en-la-plataforma-clickie-cover.png",
+    "coverAlt": "¿Sabías que puedes usar tus datos del Coordinador Eléctrico en la Plataforma Clickie?",
+    "sourceFile": "content/blog-pending/sabias-que-puedes-usar-tus-datos-del-coordinador-electrico-en-la-plataforma-clickie.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "energia",
+      "ahorro"
+    ]
+  },
+  {
+    "source": "starbucks-ahorra-energía-junto-a-clickie.html",
+    "title": "Starbucks ahorra energía junto a Clickie",
+    "status": "already-published",
+    "existingSlug": "starbucks-clickie"
+  },
+  {
+    "source": "tarifa-electrica-operacion-real.html",
+    "status": "pending",
+    "slug": "tarifa-electrica-operacion-real",
+    "title": "Cómo saber si tu tarifa eléctrica dejó de calzar con tu operación",
+    "subtitle": "Una tarifa eléctrica para empresas puede quedar desfasada cuando cambia la operación, la demanda máxima o el perfil de carga. Cómo detectar si el contrato sigue siendo conveniente",
+    "description": "Una tarifa eléctrica para empresas puede quedar desfasada cuando cambia la operación, la demanda máxima o el perfil de carga. Cómo detectar si el contrato sigue siendo conveniente.",
+    "publishedAt": "2026-06-16",
+    "categoryKey": "industria",
+    "coverImage": "assets/blog/tarifa-electrica-operacion-real-cover.png",
+    "coverAlt": "Cómo saber si tu tarifa eléctrica dejó de calzar con tu operación",
+    "sourceFile": "content/blog-pending/tarifa-electrica-operacion-real.source",
+    "tags": [
+      "EficienciaEnergética",
+      "MonitoreoEnergia",
+      "ahorro",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  },
+  {
+    "source": "tienes-datos-de-tu-consumo-de-energía-ahora-usalos-para-tomar-decisiones-reales.html",
+    "status": "pending",
+    "slug": "tienes-datos-de-tu-consumo-de-energia-ahora-usalos-para-tomar-decisiones-reales",
+    "title": "¿Tienes datos de tu consumo de energía? Ahora usalos para tomar decisiones reales",
+    "subtitle": "Optimiza tu consumo energético usando datos reales. Aprende a detectar patrones, tomar decisiones informadas y mejorar continuamente con la ayuda de Clickie",
+    "description": "Optimiza tu consumo energético usando datos reales. Aprende a detectar patrones, tomar decisiones informadas y mejorar continuamente con la ayuda de Clickie.",
+    "publishedAt": "2025-05-07",
+    "categoryKey": "eficiencia",
+    "coverImage": "assets/blog/tienes-datos-de-tu-consumo-de-energia-ahora-usalos-para-tomar-decisiones-reales-cover.jpeg",
+    "coverAlt": "¿Tienes datos de tu consumo de energía? Ahora usalos para tomar decisiones reales",
+    "sourceFile": "content/blog-pending/tienes-datos-de-tu-consumo-de-energia-ahora-usalos-para-tomar-decisiones-reales.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "ahorro"
+    ]
+  },
+  {
+    "source": "transformar-datos-en-ahorros-así-reduces-tus-costos-energéticos.html",
+    "status": "pending",
+    "slug": "transformar-datos-en-ahorros-asi-reduces-tus-costos-energeticos",
+    "title": "¿Transformar Datos en Ahorros? Así reduces tus costos energéticos.",
+    "subtitle": "Reduce tus costos energéticos utilizando datos precisos y análisis predictivos para optimizar el consumo de tus equipos y contribuir al cuidado del medio ambiente",
+    "description": "Reduce tus costos energéticos utilizando datos precisos y análisis predictivos para optimizar el consumo de tus equipos y contribuir al cuidado del medio ambiente.",
+    "publishedAt": "2025-09-08",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/transformar-datos-en-ahorros-asi-reduces-tus-costos-energeticos-cover.png",
+    "coverAlt": "¿Transformar Datos en Ahorros? Así reduces tus costos energéticos.",
+    "sourceFile": "content/blog-pending/transformar-datos-en-ahorros-asi-reduces-tus-costos-energeticos.source",
+    "tags": [
+      "EficienciaEnergética",
+      "sostenibilidad",
+      "gestorenergetico",
+      "energia",
+      "MonitoreoEnergia",
+      "ahorro",
+      "Chile"
+    ]
+  },
+  {
+    "source": "verdantix-smart-innovators-2025-qué-cambió-en-el-ems-moderno.html",
+    "status": "pending",
+    "slug": "verdantix-smart-innovators-2025-que-cambio-en-el-ems-moderno",
+    "title": "El EMS dejó de ser un dashboard.",
+    "subtitle": "El EMS evoluciona de ser una herramienta de visualización a un sistema operativo que automatiza decisiones y se integra a la sostenibilidad. Conoce las claves para elegirlo",
+    "description": "El EMS evoluciona de ser una herramienta de visualización a un sistema operativo que automatiza decisiones y se integra a la sostenibilidad. Conoce las claves para elegirlo.",
+    "publishedAt": "2026-05-18",
+    "categoryKey": "sostenibilidad",
+    "coverImage": "assets/blog/verdantix-smart-innovators-2025-que-cambio-en-el-ems-moderno-cover.png",
+    "coverAlt": "El EMS dejó de ser un dashboard.",
+    "sourceFile": "content/blog-pending/verdantix-smart-innovators-2025-que-cambio-en-el-ems-moderno.source",
+    "tags": [
+      "EficienciaEnergética",
+      "gestorenergetico",
+      "energia",
+      "MonitoreoEnergia",
+      "retail",
+      "ahorro",
+      "EnergyManagementSystem",
+      "Chile",
+      "EmpresasChile"
+    ]
+  }
+]

@@ -28,6 +28,28 @@ module.exports = {
   ],
   posts: [
     {
+      slug: "tu-sistema-hvac-no-esta-roto-esta-gastando-el-doble-para-ocultar-que-perdio-el-control",
+      sourceFile: "content/blog-posts/tu-sistema-hvac-no-esta-roto-esta-gastando-el-doble-para-ocultar-que-perdio-el-control.source",
+      title: "Tu sistema HVAC no está roto: está gastando el doble para ocultar que perdió el control",
+      subtitle: "Cuando la operación normaliza la deriva térmica, la climatización empieza a comprar estabilidad con sobreconsumo, demanda punta y desgaste acelerado.",
+      description: "La mayor parte de los sobrecostos HVAC no nace en una falla del equipo, sino en la pérdida de gobernanza sobre horarios, setpoints y desvíos operativos.",
+      categoryKey: "multisucursal",
+      publishedAt: "2026-08-06",
+      coverImage: "assets/blog/tu-sistema-hvac-no-esta-roto-cover.png",
+      coverAlt: "Bloques azules desalineados que representan la deriva y la pérdida de control en un sistema HVAC"
+    },
+    {
+      slug: "sin-revision-mensual-activa-tu-sistema-de-gestion-energetica-genera-reportes-pero-no-ahorros",
+      sourceFile: "content/blog-posts/sin-revision-mensual-activa-tu-sistema-de-gestion-energetica-genera-reportes-pero-no-ahorros.source",
+      title: "Sin revisión mensual activa, tu sistema de gestión energética genera reportes, pero no ahorros",
+      subtitle: "La diferencia entre un panel cargado de datos y un 15% de ahorro real no está en la plataforma: está en la intervención humana.",
+      description: "Acumular datos energéticos sin revisión mensual activa solo genera reportes presentables. El ahorro real aparece cuando hay análisis, priorización e intervención humana.",
+      categoryKey: "eficiencia",
+      publishedAt: "2026-08-06",
+      coverImage: "assets/blog/revision-mensual-gestion-energetica-cover.jpg",
+      coverAlt: "Equipo de Clickie junto a un tablero de monitoreo energético durante una jornada en terreno"
+    },
+    {
       slug: "presupuesto-energetico-no-es-un-bloque-fijo",
       sourceFile: "content/blog-posts/presupuesto-energetico-no-es-un-bloque-fijo.source",
       title: "Tu presupuesto energético no es un bloque fijo: por qué romper la estimación lineal evita sorpresas",

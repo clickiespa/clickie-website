@@ -48,6 +48,8 @@
       window.__clickieGaInitialized = true;
     }
 
+    ensureAnalyticsHelpers();
+
     if (
       !document.getElementById("hs-script-loader") &&
       !document.querySelector('script[src*="js.hs-scripts.com/' + HUBSPOT_PORTAL_ID + '.js"]')
@@ -64,6 +66,248 @@
 
   function normalizePath(pathname) {
     return pathname.replace(/\/+$/, "") || "/";
+  }
+
+  function cleanAnalyticsParams(params) {
+    var cleaned = {};
+
+    Object.keys(params || {}).forEach(function (key) {
+      var value = params[key];
+
+      if (value === undefined || value === null || value === "") {
+        return;
+      }
+
+      cleaned[key] = value;
+    });
+
+    return cleaned;
+  }
+
+  function normalizeText(value) {
+    return String(value || "").replace(/\s+/g, " ").trim();
+  }
+
+  function slugifyValue(value) {
+    var normalized = normalizeText(value).toLowerCase();
+
+    if (normalized.normalize) {
+      normalized = normalized.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    normalized = normalized.replace(/[^a-z0-9]+/g, "_");
+    normalized = normalized.replace(/^_+|_+$/g, "");
+
+    return normalized || "sin_valor";
+  }
+
+  function mergeAnalyticsParams(baseParams, extraParams) {
+    var merged = {};
+
+    Object.keys(baseParams || {}).forEach(function (key) {
+      merged[key] = baseParams[key];
+    });
+
+    Object.keys(extraParams || {}).forEach(function (key) {
+      merged[key] = extraParams[key];
+    });
+
+    return cleanAnalyticsParams(merged);
+  }
+
+  function getPageGroup(pathname) {
+    var path = normalizePath(pathname || window.location.pathname);
+
+    if (path === "/" || /\/index\.html$/.test(path)) {
+      return "home";
+    }
+
+    if (/\/servicios\//.test(path)) {
+      return "soluciones";
+    }
+
+    if (/\/recursos\/calculadora\.html$/.test(path)) {
+      return "calculadora";
+    }
+
+    if (/\/recursos\//.test(path)) {
+      return "recursos";
+    }
+
+    if (/\/cotiza\.html$/.test(path)) {
+      return "contacto";
+    }
+
+    if (/\/historias\//.test(path)) {
+      return "historias";
+    }
+
+    if (path === "/nosotros.html" || /\/nosotros\//.test(path)) {
+      return "nosotros";
+    }
+
+    if (/\/reportes\//.test(path)) {
+      return "reportes";
+    }
+
+    return "sitio";
+  }
+
+  function resolveFormElement(formRef) {
+    if (!formRef) {
+      return null;
+    }
+
+    if (formRef.nodeType === 1) {
+      return formRef;
+    }
+
+    if (typeof formRef.get === "function" && formRef.get(0)) {
+      return formRef.get(0);
+    }
+
+    if (formRef.jquery && formRef[0]) {
+      return formRef[0];
+    }
+
+    if (formRef[0] && formRef[0].nodeType === 1) {
+      return formRef[0];
+    }
+
+    return null;
+  }
+
+  function ensureAnalyticsHelpers() {
+    var sentKeys = window.__clickieAnalyticsSentKeys;
+
+    if (!(sentKeys instanceof Set)) {
+      sentKeys = new Set();
+      window.__clickieAnalyticsSentKeys = sentKeys;
+    }
+
+    window.clickieAnalytics = window.clickieAnalytics || {};
+
+    window.clickieAnalytics.measurementId = GA_MEASUREMENT_ID;
+    window.clickieAnalytics.getPageGroup = getPageGroup;
+    window.clickieAnalytics.normalizeText = normalizeText;
+    window.clickieAnalytics.slugify = slugifyValue;
+    window.clickieAnalytics.getPageContext = function (params) {
+      return mergeAnalyticsParams({
+        page_group: getPageGroup(window.location.pathname),
+        page_path: window.location.pathname,
+        page_title: document.title
+      }, params);
+    };
+
+    window.clickieAnalytics.trackEvent = function (name, params) {
+      if (typeof window.gtag !== "function" || !name) {
+        return;
+      }
+
+      window.gtag("event", name, cleanAnalyticsParams(params));
+    };
+
+    window.clickieAnalytics.trackCtaClick = function (params) {
+      window.clickieAnalytics.trackEvent("click_cta", window.clickieAnalytics.getPageContext(params));
+    };
+
+    window.clickieAnalytics.trackFormView = function (params) {
+      window.clickieAnalytics.trackEvent("form_view", window.clickieAnalytics.getPageContext(params));
+    };
+
+    window.clickieAnalytics.trackFormStart = function (params) {
+      window.clickieAnalytics.trackEvent("form_start", window.clickieAnalytics.getPageContext(params));
+    };
+
+    window.clickieAnalytics.trackLead = function (params) {
+      window.clickieAnalytics.trackEvent("generate_lead", window.clickieAnalytics.getPageContext(params));
+    };
+
+    window.clickieAnalytics.trackDownload = function (params) {
+      window.clickieAnalytics.trackEvent("file_download", window.clickieAnalytics.getPageContext(params));
+    };
+
+    window.clickieAnalytics.trackVideoStart = function (params) {
+      window.clickieAnalytics.trackEvent("video_start", window.clickieAnalytics.getPageContext(params));
+    };
+
+    window.clickieAnalytics.trackContact = function (params) {
+      window.clickieAnalytics.trackEvent("contact", window.clickieAnalytics.getPageContext(params));
+    };
+
+    window.clickieAnalytics.trackPageView = function (pagePath, options) {
+      var settings = options || {};
+      var resolvedPath = pagePath || window.location.pathname + window.location.search;
+      var resolvedLocation = settings.page_location || new URL(resolvedPath, window.location.origin).href;
+
+      window.clickieAnalytics.trackEvent("page_view", {
+        page_path: resolvedPath,
+        page_location: resolvedLocation,
+        page_title: settings.page_title || document.title,
+        page_section: settings.page_section,
+        page_group: settings.page_group
+      });
+    };
+
+    window.clickieAnalytics.trackSectionView = function (sectionName, options) {
+      var settings = options || {};
+
+      window.clickieAnalytics.trackEvent("section_view", {
+        section_name: sectionName,
+        page_section: sectionName,
+        page_group: settings.page_group,
+        page_path: window.location.pathname
+      });
+
+      if (settings.virtual_path) {
+        window.clickieAnalytics.trackPageView(settings.virtual_path, {
+          page_title: settings.page_title,
+          page_location: settings.page_location,
+          page_section: sectionName,
+          page_group: settings.page_group
+        });
+      }
+    };
+
+    window.clickieAnalytics.trackOnce = function (key, callback) {
+      if (!key || sentKeys.has(key)) {
+        return false;
+      }
+
+      sentKeys.add(key);
+
+      if (typeof callback === "function") {
+        callback();
+      }
+
+      return true;
+    };
+
+    window.clickieAnalytics.bindFormStart = function (formRef, params) {
+      var form = resolveFormElement(formRef);
+      var settings = params || {};
+      var onceKey = settings.once_key || [
+        "form-start",
+        window.location.pathname,
+        settings.form_id || settings.form_type || "form"
+      ].join(":");
+
+      if (!form || form.__clickieFormStartBound) {
+        return;
+      }
+
+      form.__clickieFormStartBound = true;
+
+      function trackStart() {
+        window.clickieAnalytics.trackOnce(onceKey, function () {
+          window.clickieAnalytics.trackFormStart(settings);
+        });
+      }
+
+      form.addEventListener("focusin", trackStart, true);
+      form.addEventListener("input", trackStart, true);
+      form.addEventListener("change", trackStart, true);
+    };
   }
 
   function siteUrl(path) {

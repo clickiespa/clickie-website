@@ -315,6 +315,13 @@
 function playLipigasStoryVideo() {
   var container = document.getElementById('lipigasVideoContainer');
   if (!container) return;
+  window.clickieAnalytics?.trackVideoStart({
+    video_id: 'F1ciN7Ezo08',
+    video_title: 'Video sobre avatares industriales',
+    video_provider: 'youtube',
+    video_location: 'historia_lipigas',
+    video_action: 'inline_play'
+  });
   container.innerHTML = '<iframe src="https://www.youtube.com/embed/F1ciN7Ezo08?autoplay=1&rel=0" title="Video sobre avatares industriales" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
   container.classList.add('is-playing');
   container.onclick = null;

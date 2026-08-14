@@ -343,6 +343,13 @@
 function playPreunicStoryVideo() {
   var container = document.getElementById('preunicVideoContainer');
   if (!container) return;
+  window.clickieAnalytics?.trackVideoStart({
+    video_id: 'oFySR-UcADw',
+    video_title: 'Preunic - Caso de éxito Clickie',
+    video_provider: 'youtube',
+    video_location: 'historia_preunic',
+    video_action: 'inline_play'
+  });
   container.innerHTML = '<iframe src="https://www.youtube.com/embed/oFySR-UcADw?autoplay=1&rel=0" title="Preunic - Caso de éxito Clickie" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
   container.classList.add('is-playing');
   container.onclick = null;

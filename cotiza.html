@@ -80,7 +80,25 @@
                 portalId: "46669151",
                 formId: "7e453ab9-0f44-45c0-a15f-bd26dbcbe207",
                 region: "na1",
-                target: "#hubspot-form-container"
+                target: "#hubspot-form-container",
+                onFormReady: function (form) {
+                  window.clickieAnalytics?.trackFormView({
+                    form_id: "7e453ab9-0f44-45c0-a15f-bd26dbcbe207",
+                    form_type: "cotizacion"
+                  });
+                  window.clickieAnalytics?.bindFormStart(form, {
+                    once_key: "form-start:cotizacion",
+                    form_id: "7e453ab9-0f44-45c0-a15f-bd26dbcbe207",
+                    form_type: "cotizacion"
+                  });
+                },
+                onFormSubmitted: function () {
+                  window.clickieAnalytics?.trackLead({
+                    form_id: "7e453ab9-0f44-45c0-a15f-bd26dbcbe207",
+                    form_type: "cotizacion",
+                    lead_source: "website"
+                  });
+                }
               });
             </script>
           </div>
