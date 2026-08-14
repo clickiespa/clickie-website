@@ -680,6 +680,21 @@ small { font-size: var(--fs-small); line-height: 1.6; }
   font-weight: 700;
   color: var(--text-primary);
 }
+.service-score-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Raleway', 'Inter', sans-serif;
+  margin: 0 0 6px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+.service-score-card h3 i {
+  color: #2B2E6F;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
 .service-score-card h4 i {
   color: #2B2E6F;
   font-size: 0.95rem;
@@ -3912,6 +3927,41 @@ small { font-size: var(--fs-small); line-height: 1.6; }
 }
 .service-page .subpage-hero .hero-metric--kpi .hero-metric-label {
   max-width: 24ch;
+}
+.remarcacion-hero-note {
+  display: block;
+  margin-bottom: var(--space-4);
+  font-family: 'Open Sans', 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #1F2A44;
+}
+.remarcacion-card-grid {
+  align-items: stretch;
+}
+.remarcacion-info-card {
+  min-height: 100%;
+}
+.remarcacion-checklist .checklist-item p {
+  font-weight: 600;
+  color: #1F2A44;
+}
+.remarcacion-section-note {
+  margin-top: var(--space-4);
+  text-align: center;
+  font-family: 'Open Sans', 'Inter', sans-serif;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: #2B2E6F;
+}
+.remarcacion-closing-copy {
+  margin-top: var(--space-4);
+  font-weight: 600;
+  color: #1F2A44;
+}
+#como-funciona {
+  scroll-margin-top: 120px;
 }
 
 /* Hero with image (two-column layout) */
