@@ -174,7 +174,7 @@ function buildEmailHtml(primerNombre, docName) {
             '<p style="margin:0 0 24px;font-size:15px;line-height:1.6;color:#4a4a68;">' +
               '¿Quieres ver cómo se ven estos números en tu red? Conversemos.' +
             '</p>' +
-            '<a href="https://clickie.io/cotiza.html" style="display:inline-block;background:#f5c542;color:#191947;font-weight:bold;font-size:15px;padding:12px 28px;border-radius:999px;text-decoration:none;">Agendar una reunión con Clickie</a>' +
+            '<a href="https://clickie.io/index.html#contacto" style="display:inline-block;background:#f5c542;color:#191947;font-weight:bold;font-size:15px;padding:12px 28px;border-radius:999px;text-decoration:none;">Agendar una reunión con Clickie</a>' +
           '</td></tr>' +
           '<tr><td style="padding:28px 40px 32px;">' +
             '<p style="margin:0;font-size:13px;color:#9a9ab0;line-height:1.5;">' +
