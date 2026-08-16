@@ -29,9 +29,19 @@ var CONFIG = {
   // Carpeta de Drive donde viven los PDFs descargables (ID de la URL de la carpeta)
   DRIVE_FOLDER_ID: '1mO5Y84aARU3tTosNhwOEy3uQl6o_r7QN',
 
+  // Dominios de correo personales/genéricos que se rechazan (se exige correo de empresa)
+  FREE_MAIL: ['gmail', 'googlemail', 'hotmail', 'outlook', 'live', 'msn', 'yahoo',
+    'ymail', 'icloud', 'me', 'mac', 'aol', 'protonmail', 'proton', 'gmx', 'zoho',
+    'yandex', 'mail', 'email', 'terra', 'latinmail', 'inbox', 'rocketmail'],
+
   // Catálogo de documentos descargables.
   // file = nombre exacto del PDF dentro de la carpeta de Drive.
+  // fileId = alternativa: ID directo del archivo en Drive.
   DOCS: {
+    'guia-evaluacion-financiera': {
+      name: 'Energía: el costo que sí puedes reducir — Cómo evaluar financieramente un proyecto de eficiencia energética',
+      fileId: '13BqfALR0etM69DT5Wbwj-kvp2ggFyroh'
+    },
     'caso-banca': {
       name: 'Caso de Negocio — Banca',
       file: 'Clickie_Caso_Negocio_Banca.pdf'
@@ -77,22 +87,28 @@ function doPost(e) {
     if (p.website) return jsonResponse({ ok: true });
 
     var nombre = String(p.nombre || '').trim();
+    var apellido = String(p.apellido || '').trim();
     var email = String(p.email || '').trim().toLowerCase();
+    var telefono = String(p.telefono || '').trim();
     var empresa = String(p.empresa || '').trim();
+    var cargo = String(p.cargo || '').trim();
     var docId = String(p.docId || '').trim();
     var pagina = String(p.pagina || '').trim();
 
     if (!nombre || !isValidEmail(email)) {
       return jsonResponse({ ok: false, error: 'Datos inválidos' });
     }
+    if (isFreeMail(email)) {
+      return jsonResponse({ ok: false, error: 'Por favor usa tu correo de empresa' });
+    }
     var doc = CONFIG.DOCS[docId];
     if (!doc) {
       return jsonResponse({ ok: false, error: 'Documento no encontrado' });
     }
 
-    saveLead([new Date(), nombre, email, empresa, doc.name, pagina]);
+    saveLead([new Date(), nombre, apellido, email, telefono, empresa, cargo, doc.name, pagina]);
     sendDocumentEmail(nombre, email, doc);
-    if (CONFIG.NOTIFY_EMAIL) notifyTeam(nombre, email, empresa, doc);
+    if (CONFIG.NOTIFY_EMAIL) notifyTeam(nombre + ' ' + apellido, email, telefono, empresa, cargo, doc);
 
     return jsonResponse({ ok: true });
   } catch (err) {
@@ -102,12 +118,15 @@ function doPost(e) {
 
 // ========================= LÓGICA =========================
 
+var LEAD_HEADERS = ['Fecha', 'Nombre', 'Apellido', 'Email', 'Teléfono', 'Empresa', 'Cargo', 'Documento', 'Página origen'];
+
 function saveLead(row) {
   var ss = SpreadsheetApp.openById(CONFIG.SHEET_ID);
   var sheet = ss.getSheetByName(CONFIG.SHEET_NAME) || ss.insertSheet(CONFIG.SHEET_NAME);
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['Fecha', 'Nombre', 'Email', 'Empresa', 'Documento', 'Página origen']);
-    sheet.getRange(1, 1, 1, 6).setFontWeight('bold');
+  // Actualiza el encabezado si faltan columnas (migración de esquema)
+  var firstCell = sheet.getLastRow() > 0 ? sheet.getRange(1, 1).getValue() : '';
+  if (sheet.getLastRow() === 0 || (firstCell === 'Fecha' && sheet.getLastColumn() < LEAD_HEADERS.length)) {
+    sheet.getRange(1, 1, 1, LEAD_HEADERS.length).setValues([LEAD_HEADERS]).setFontWeight('bold');
   }
   sheet.appendRow(row);
 }
@@ -125,11 +144,12 @@ function sendDocumentEmail(nombre, email, doc) {
   });
 }
 
-function notifyTeam(nombre, email, empresa, doc) {
+function notifyTeam(nombre, email, telefono, empresa, cargo, doc) {
   GmailApp.sendEmail(
     CONFIG.NOTIFY_EMAIL,
     'Nuevo lead: ' + nombre + (empresa ? ' (' + empresa + ')' : ''),
-    'Nombre: ' + nombre + '\nEmail: ' + email + '\nEmpresa: ' + (empresa || '—') +
+    'Nombre: ' + nombre + '\nEmail: ' + email + '\nTeléfono: ' + (telefono || '—') +
+    '\nEmpresa: ' + (empresa || '—') + '\nCargo: ' + (cargo || '—') +
     '\nDocumento: ' + doc.name + '\n\nLeads: https://docs.google.com/spreadsheets/d/' + CONFIG.SHEET_ID
   );
 }
@@ -168,12 +188,20 @@ function buildEmailHtml(primerNombre, docName) {
   '</div>';
 }
 
-/** Busca el PDF por nombre dentro de la carpeta de guías en Drive. */
+/** Obtiene el PDF: por ID directo (fileId) o por nombre dentro de la carpeta de guías. */
 function getPdf(doc) {
+  if (doc.fileId) return DriveApp.getFileById(doc.fileId);
   var folder = DriveApp.getFolderById(CONFIG.DRIVE_FOLDER_ID);
   var files = folder.getFilesByName(doc.file);
   if (!files.hasNext()) throw new Error('PDF no encontrado en Drive: ' + doc.file);
   return files.next();
+}
+
+/** true si el dominio del correo es un proveedor personal (Gmail, Hotmail, etc.) */
+function isFreeMail(email) {
+  var dominio = email.split('@')[1] || '';
+  var base = dominio.split('.')[0];
+  return CONFIG.FREE_MAIL.indexOf(base) !== -1;
 }
 
 // ========================= UTILIDADES =========================
@@ -189,7 +217,7 @@ function jsonResponse(obj) {
 
 /** Prueba manual desde el editor: ejecutar y revisar que llegue el correo. */
 function testEnvio() {
-  var doc = CONFIG.DOCS['caso-banca'];
-  saveLead([new Date(), 'Prueba Interna', CONFIG.REPLY_TO, 'Clickie', doc.name, 'test-manual']);
+  var doc = CONFIG.DOCS['guia-evaluacion-financiera'];
+  saveLead([new Date(), 'Prueba', 'Interna', CONFIG.REPLY_TO, '', 'Clickie', 'Test', doc.name, 'test-manual']);
   sendDocumentEmail('Prueba', CONFIG.REPLY_TO, doc);
 }

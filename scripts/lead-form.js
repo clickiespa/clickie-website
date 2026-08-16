@@ -18,6 +18,16 @@
 
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+  // Dominios de correo personales/genéricos: se exige correo de empresa
+  var FREE_MAIL = ['gmail', 'googlemail', 'hotmail', 'outlook', 'live', 'msn', 'yahoo',
+    'ymail', 'icloud', 'me', 'mac', 'aol', 'protonmail', 'proton', 'gmx', 'zoho',
+    'yandex', 'mail', 'email', 'terra', 'latinmail', 'inbox', 'rocketmail'];
+
+  function isFreeMail(email) {
+    var dominio = (email.split('@')[1] || '').toLowerCase();
+    return FREE_MAIL.indexOf(dominio.split('.')[0]) !== -1;
+  }
+
   function getAnalytics() {
     return window.clickieAnalytics || null;
   }
@@ -79,17 +89,31 @@
 
   function formHtml(submitLabel) {
     return '' +
+      '<div class="form-grid form-grid--lead">' +
       '<div class="form-group">' +
         '<label class="form-label">Nombre *</label>' +
-        '<input class="form-input" type="text" name="nombre" required autocomplete="name" placeholder="Tu nombre">' +
+        '<input class="form-input" type="text" name="nombre" required autocomplete="given-name" placeholder="Tu nombre">' +
       '</div>' +
       '<div class="form-group">' +
-        '<label class="form-label">Correo electrónico *</label>' +
+        '<label class="form-label">Apellido *</label>' +
+        '<input class="form-input" type="text" name="apellido" required autocomplete="family-name" placeholder="Tu apellido">' +
+      '</div>' +
+      '<div class="form-group full-width">' +
+        '<label class="form-label">Correo de empresa *</label>' +
         '<input class="form-input" type="email" name="email" required autocomplete="email" placeholder="tu@empresa.com">' +
       '</div>' +
       '<div class="form-group">' +
-        '<label class="form-label">Empresa</label>' +
-        '<input class="form-input" type="text" name="empresa" autocomplete="organization" placeholder="Nombre de tu empresa">' +
+        '<label class="form-label">Número de teléfono</label>' +
+        '<input class="form-input" type="tel" name="telefono" autocomplete="tel" placeholder="+56 9 1234 5678">' +
+      '</div>' +
+      '<div class="form-group">' +
+        '<label class="form-label">Cargo</label>' +
+        '<input class="form-input" type="text" name="cargo" autocomplete="organization-title" placeholder="Tu cargo">' +
+      '</div>' +
+      '<div class="form-group full-width">' +
+        '<label class="form-label">Nombre de empresa *</label>' +
+        '<input class="form-input" type="text" name="empresa" required autocomplete="organization" placeholder="Nombre de tu empresa">' +
+      '</div>' +
       '</div>' +
       // Honeypot anti-spam: oculto para humanos, los bots lo llenan
       '<input type="text" name="website" tabindex="-1" autocomplete="off" ' +
@@ -118,12 +142,19 @@
       ev.preventDefault();
 
       var nombre = form.nombre.value.trim();
+      var apellido = form.apellido.value.trim();
       var email = form.email.value.trim();
+      var empresa = form.empresa.value.trim();
       var errorEl = form.querySelector('.lead-form-error');
       errorEl.style.display = 'none';
 
-      if (!nombre || !EMAIL_RE.test(email)) {
-        errorEl.textContent = 'Por favor completa tu nombre y un correo válido.';
+      if (!nombre || !apellido || !empresa || !EMAIL_RE.test(email)) {
+        errorEl.textContent = 'Por favor completa los campos obligatorios (*) con datos válidos.';
+        errorEl.style.display = 'block';
+        return;
+      }
+      if (isFreeMail(email)) {
+        errorEl.textContent = 'Por favor usa tu correo de empresa (no correos personales como Gmail, Hotmail o Yahoo).';
         errorEl.style.display = 'block';
         return;
       }
@@ -135,8 +166,11 @@
 
       var data = new URLSearchParams();
       data.append('nombre', nombre);
+      data.append('apellido', apellido);
       data.append('email', email);
-      data.append('empresa', form.empresa.value.trim());
+      data.append('telefono', form.telefono.value.trim());
+      data.append('empresa', empresa);
+      data.append('cargo', form.cargo.value.trim());
       data.append('website', form.website.value);
       data.append('docId', docId);
       data.append('pagina', window.location.pathname);
