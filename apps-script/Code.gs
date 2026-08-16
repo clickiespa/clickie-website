@@ -311,3 +311,90 @@ function testEnvio() {
   saveLead([new Date(), 'Prueba', 'Interna', CONFIG.REPLY_TO, '', 'Clickie', 'Test', doc.name, 'test-manual']);
   sendDocumentEmail('Prueba', CONFIG.REPLY_TO, doc);
 }
+
+// ========================= UTILIDAD: CORREGIR GUÍAS =========================
+// Copia los decks de Google Slides, reemplaza los enlaces de HubSpot por el
+// formulario de contacto de clickie.io, exporta a PDF y los deja en la
+// carpeta de guías de Drive con el nombre canónico. Ejecutar manualmente.
+
+function fixGuias() {
+  var trabajos = [
+    { deckId: '1_t59JOgsGihee0G_uB7KqOwa7dfqGdikWktEA-5PX9Q', out: 'Clickie_Guia_Tiendas_por_Departamento.pdf' },
+    { deckId: '1KN7YNBlBcRnFmqN6iQc0AH6rYpJvi1fWaNekkpFAxNM', out: 'Clickie_Guia_Cafeterias.pdf' }
+  ];
+  var NUEVO_LINK = 'https://clickie.io/index.html#contacto';
+  var folder = DriveApp.getFolderById(CONFIG.DRIVE_FOLDER_ID);
+
+  trabajos.forEach(function (t) {
+    var copia = DriveApp.getFileById(t.deckId).makeCopy('tmp-' + t.out, folder);
+    var pres = SlidesApp.openById(copia.getId());
+    var cambiados = 0;
+    pres.getSlides().forEach(function (slide) {
+      slide.getPageElements().forEach(function (el) {
+        cambiados += fixLinksEnElemento(el, NUEVO_LINK);
+      });
+    });
+    pres.saveAndClose();
+    // Borra versiones anteriores del PDF con el mismo nombre
+    var previos = folder.getFilesByName(t.out);
+    while (previos.hasNext()) previos.next().setTrashed(true);
+    folder.createFile(DriveApp.getFileById(copia.getId()).getAs('application/pdf')).setName(t.out);
+    copia.setTrashed(true);
+    Logger.log(t.out + ': ' + cambiados + ' enlaces corregidos');
+  });
+
+  // Renombra el PDF de tarifas al nombre canónico si se subió con otro nombre
+  var archivos = folder.getFiles();
+  while (archivos.hasNext()) {
+    var f = archivos.next();
+    if (/tarifas/i.test(f.getName()) && f.getName() !== 'Clickie_Guia_Tarifas_Electricas.pdf' && /pdf$/i.test(f.getName())) {
+      f.setName('Clickie_Guia_Tarifas_Electricas.pdf');
+      Logger.log('Renombrado PDF de tarifas');
+    }
+  }
+}
+
+function fixLinksEnElemento(el, nuevo) {
+  var n = 0;
+  var tipo = el.getPageElementType();
+  if (tipo == SlidesApp.PageElementType.GROUP) {
+    el.asGroup().getChildren().forEach(function (c) { n += fixLinksEnElemento(c, nuevo); });
+    return n;
+  }
+  var conLink = null;
+  if (tipo == SlidesApp.PageElementType.SHAPE) conLink = el.asShape();
+  else if (tipo == SlidesApp.PageElementType.IMAGE) conLink = el.asImage();
+  if (conLink && conLink.getLink) {
+    var link = conLink.getLink();
+    if (link && link.getUrl && link.getUrl() && esLinkHubspot(link.getUrl())) {
+      conLink.setLinkUrl(nuevo);
+      n++;
+    }
+  }
+  if (tipo == SlidesApp.PageElementType.SHAPE) {
+    n += fixLinksEnTexto(el.asShape().getText(), nuevo);
+  }
+  if (tipo == SlidesApp.PageElementType.TABLE) {
+    var tabla = el.asTable();
+    for (var r = 0; r < tabla.getNumRows(); r++)
+      for (var c = 0; c < tabla.getNumColumns(); c++)
+        n += fixLinksEnTexto(tabla.getCell(r, c).getText(), nuevo);
+  }
+  return n;
+}
+
+function fixLinksEnTexto(texto, nuevo) {
+  var n = 0;
+  texto.getRuns().forEach(function (run) {
+    var link = run.getTextStyle().getLink();
+    if (link && link.getUrl && link.getUrl() && esLinkHubspot(link.getUrl())) {
+      run.getTextStyle().setLinkUrl(nuevo);
+      n++;
+    }
+  });
+  return n;
+}
+
+function esLinkHubspot(url) {
+  return /hubspot|meetings\.|hs-sites|hsforms|hs\.com|calendly/i.test(url);
+}
