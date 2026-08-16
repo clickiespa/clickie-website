@@ -744,40 +744,7 @@
 
       <div class="contact-form fade-in-right">
         <h3 class="form-title">Contáctanos</h3>
-        <div id="hubspotFormContainer"></div>
-        <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
-        <script>
-          hbspt.forms.create({
-            portalId: "46669151",
-            formId: "1a7881fc-e0cd-4c7f-bf28-c048a563cc81",
-            region: "na1",
-            target: "#hubspotFormContainer",
-            onFormReady: function (form) {
-              window.clickieAnalytics?.trackFormView({
-                form_id: "1a7881fc-e0cd-4c7f-bf28-c048a563cc81",
-                form_type: "contacto_home",
-                page_group: "contacto",
-                page_section: "contacto"
-              });
-              window.clickieAnalytics?.bindFormStart(form, {
-                once_key: "form-start:contacto-home",
-                form_id: "1a7881fc-e0cd-4c7f-bf28-c048a563cc81",
-                form_type: "contacto_home",
-                page_group: "contacto",
-                page_section: "contacto"
-              });
-            },
-            onFormSubmitted: function () {
-              window.clickieAnalytics?.trackLead({
-                form_id: "1a7881fc-e0cd-4c7f-bf28-c048a563cc81",
-                form_type: "contacto_home",
-                lead_source: "website",
-                page_group: "contacto",
-                page_section: "contacto"
-              });
-            }
-          });
-        </script>
+        <div data-contact-form data-form-type="contacto_home"></div>
       </div>
 
     </div>
@@ -828,5 +795,6 @@
 
 <script src="scripts/shared-layout.js"></script>
 <script src="scripts/main.js"></script>
+<script src="scripts/lead-form.js"></script>
 </body>
 </html>

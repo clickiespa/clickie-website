@@ -1,7 +1,6 @@
 (function () {
   var currentScript = document.currentScript;
   var GA_MEASUREMENT_ID = "G-TYPPJZ22DC";
-  var HUBSPOT_PORTAL_ID = "46669151";
 
   if (!currentScript) {
     return;
@@ -49,19 +48,6 @@
     }
 
     ensureAnalyticsHelpers();
-
-    if (
-      !document.getElementById("hs-script-loader") &&
-      !document.querySelector('script[src*="js.hs-scripts.com/' + HUBSPOT_PORTAL_ID + '.js"]')
-    ) {
-      var hubspotLoader = document.createElement("script");
-      hubspotLoader.type = "text/javascript";
-      hubspotLoader.id = "hs-script-loader";
-      hubspotLoader.async = true;
-      hubspotLoader.defer = true;
-      hubspotLoader.src = "https://js.hs-scripts.com/" + HUBSPOT_PORTAL_ID + ".js";
-      head.appendChild(hubspotLoader);
-    }
   }
 
   function normalizePath(pathname) {

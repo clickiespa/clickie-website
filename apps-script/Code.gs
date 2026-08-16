@@ -42,6 +42,18 @@ var CONFIG = {
       name: 'Energía: el costo que sí puedes reducir — Cómo evaluar financieramente un proyecto de eficiencia energética',
       fileId: '13BqfALR0etM69DT5Wbwj-kvp2ggFyroh'
     },
+    'guia-cafeterias': {
+      name: 'Guía de Eficiencia Energética en Cafeterías',
+      file: 'Clickie_Guia_Cafeterias.pdf'
+    },
+    'guia-tiendas': {
+      name: 'Guía de Eficiencia Energética en Tiendas por Departamento',
+      file: 'Clickie_Guia_Tiendas_por_Departamento.pdf'
+    },
+    'guia-tarifas-electricas': {
+      name: 'Guía de Tarifas Eléctricas para Empresas en Chile',
+      file: 'Clickie_Guia_Tarifas_Electricas.pdf'
+    },
     'caso-banca': {
       name: 'Caso de Negocio — Banca',
       file: 'Clickie_Caso_Negocio_Banca.pdf'
@@ -86,6 +98,9 @@ function doPost(e) {
     // Honeypot anti-spam: los bots llenan este campo oculto, los humanos no.
     if (p.website) return jsonResponse({ ok: true });
 
+    // Ruta 1: formulario de contacto/cotización (sin documento)
+    if (String(p.tipo || '') === 'contacto') return handleContacto(p);
+
     var nombre = String(p.nombre || '').trim();
     var apellido = String(p.apellido || '').trim();
     var email = String(p.email || '').trim().toLowerCase();
@@ -114,6 +129,81 @@ function doPost(e) {
   } catch (err) {
     return jsonResponse({ ok: false, error: 'Error interno: ' + err.message });
   }
+}
+
+// ========================= CONTACTO =========================
+
+var CONTACT_HEADERS = ['Fecha', 'Nombre', 'Apellido', 'Email', 'Teléfono', 'Empresa', 'Industria', 'Mensaje', 'Origen', 'Página'];
+
+function handleContacto(p) {
+  var nombre = String(p.nombre || '').trim();
+  var apellido = String(p.apellido || '').trim();
+  var email = String(p.email || '').trim().toLowerCase();
+  var telefono = String(p.telefono || '').trim();
+  var empresa = String(p.empresa || '').trim();
+  var industria = String(p.industria || '').trim();
+  var mensaje = String(p.mensaje || '').trim();
+  var origen = String(p.origen || 'contacto').trim();
+  var pagina = String(p.pagina || '').trim();
+
+  if (!nombre || !isValidEmail(email)) {
+    return jsonResponse({ ok: false, error: 'Datos inválidos' });
+  }
+
+  var ss = SpreadsheetApp.openById(CONFIG.SHEET_ID);
+  var sheet = ss.getSheetByName('Contactos') || ss.insertSheet('Contactos');
+  if (sheet.getLastRow() === 0) {
+    sheet.getRange(1, 1, 1, CONTACT_HEADERS.length).setValues([CONTACT_HEADERS]).setFontWeight('bold');
+  }
+  sheet.appendRow([new Date(), nombre, apellido, email, telefono, empresa, industria, mensaje, origen, pagina]);
+
+  // Aviso al equipo comercial
+  if (CONFIG.NOTIFY_EMAIL) {
+    GmailApp.sendEmail(
+      CONFIG.NOTIFY_EMAIL,
+      'Nuevo contacto web: ' + nombre + ' ' + apellido + (empresa ? ' (' + empresa + ')' : ''),
+      'Nombre: ' + nombre + ' ' + apellido + '\nEmail: ' + email +
+      '\nTeléfono: ' + (telefono || '—') + '\nEmpresa: ' + (empresa || '—') +
+      '\nIndustria: ' + (industria || '—') + '\nOrigen: ' + origen +
+      '\n\nMensaje:\n' + (mensaje || '—') +
+      '\n\nContactos: https://docs.google.com/spreadsheets/d/' + CONFIG.SHEET_ID
+    );
+  }
+
+  // Confirmación breve al remitente
+  GmailApp.sendEmail(email, 'Recibimos tu mensaje — Clickie', '', {
+    name: CONFIG.FROM_NAME,
+    from: CONFIG.FROM_ADDRESS,
+    replyTo: CONFIG.REPLY_TO,
+    htmlBody: buildContactoHtml(nombre)
+  });
+
+  return jsonResponse({ ok: true });
+}
+
+function buildContactoHtml(primerNombre) {
+  return '' +
+  '<div style="margin:0;padding:0;background:#f4f5fb;font-family:Helvetica,Arial,sans-serif;">' +
+    '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f5fb;padding:32px 16px;">' +
+      '<tr><td align="center">' +
+        '<table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;background:#ffffff;border-radius:16px;overflow:hidden;">' +
+          '<tr><td style="background:#191947;padding:28px 40px;">' +
+            '<span style="color:#ffffff;font-size:24px;font-weight:bold;">Clickie</span>' +
+            '<span style="color:#f5c542;font-size:24px;">&#10022;</span>' +
+          '</td></tr>' +
+          '<tr><td style="padding:36px 40px 32px;">' +
+            '<h1 style="margin:0 0 16px;font-size:22px;color:#191947;">¡Gracias ' + primerNombre + '!</h1>' +
+            '<p style="margin:0 0 12px;font-size:15px;line-height:1.6;color:#4a4a68;">' +
+              'Recibimos tu mensaje y nuestro equipo te contactará dentro de las próximas 24 horas hábiles.' +
+            '</p>' +
+            '<p style="margin:0;font-size:13px;color:#9a9ab0;line-height:1.5;">' +
+              'Clickie — Gestión de energía inteligente para redes multisucursal en LATAM · <a href="https://clickie.io" style="color:#5b5bd6;">clickie.io</a>' +
+            '</p>' +
+          '</td></tr>' +
+        '</table>' +
+      '</td></tr>' +
+    '</table>' +
+  '</div>';
 }
 
 // ========================= LÓGICA =========================

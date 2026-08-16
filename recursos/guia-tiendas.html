@@ -75,15 +75,12 @@
         </ul>
       </div>
 
-      <!-- RIGHT: HubSpot Form -->
+      <!-- RIGHT: Formulario de descarga -->
       <div class="guia-detail-form">
         <div class="hubspot-form-wrapper">
           <h3>Obtén tu Ebook gratis completando el formulario</h3>
-          <p>Recibirás el documento directamente en tu correo electrónico.</p>
-          <div id="hubspotFormContainer"></div>
-          <div id="downloadReady" class="form-success" role="status" aria-live="polite">
-            Gracias. Tu solicitud fue enviada correctamente y el material llegará a tu correo.
-          </div>
+          <p>Recibirás el documento directamente en tu correo de empresa.</p>
+          <div data-lead-form data-doc-id="guia-tiendas"></div>
         </div>
       </div>
 
@@ -106,55 +103,9 @@
 <!-- FOOTER -->
 <div data-site-shell="footer"></div>
 
-<!-- HubSpot Form Script -->
-<script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/embed/v2.js"></script>
-<script>
-  hbspt.forms.create({
-    portalId: "46669151",
-    formId: "5f9a8758-ae75-4b8d-8d58-27048f9cac06",
-    region: "na1",
-    target: "#hubspotFormContainer",
-    onFormReady: function(form) {
-      window.clickieAnalytics?.trackFormView({
-        form_id: "5f9a8758-ae75-4b8d-8d58-27048f9cac06",
-        form_type: "guia_descarga",
-        content_type: "guia",
-        document_name: "Guía Eficiencia Energética en Tiendas por Departamento",
-        delivery_method: "email"
-      });
-      window.clickieAnalytics?.bindFormStart(form, {
-        once_key: "form-start:guia-tiendas",
-        form_id: "5f9a8758-ae75-4b8d-8d58-27048f9cac06",
-        form_type: "guia_descarga",
-        content_type: "guia",
-        document_name: "Guía Eficiencia Energética en Tiendas por Departamento",
-        delivery_method: "email"
-      });
-    },
-    onFormSubmitted: function() {
-      window.clickieAnalytics?.trackLead({
-        form_id: "5f9a8758-ae75-4b8d-8d58-27048f9cac06",
-        form_type: "guia_descarga",
-        lead_source: "website",
-        content_type: "guia",
-        document_name: "Guía Eficiencia Energética en Tiendas por Departamento",
-        delivery_method: "email"
-      });
-      window.clickieAnalytics?.trackDownload({
-        form_id: "5f9a8758-ae75-4b8d-8d58-27048f9cac06",
-        form_type: "guia_descarga",
-        content_type: "guia",
-        document_name: "Guía Eficiencia Energética en Tiendas por Departamento",
-        file_extension: "pdf",
-        delivery_method: "email"
-      });
-      var downloadSection = document.getElementById('downloadReady');
-      if (downloadSection) downloadSection.classList.add('show');
-    }
-  });
-</script>
 
 <script src="../scripts/shared-layout.js"></script>
 <script src="../scripts/main.js"></script>
+<script src="../scripts/lead-form.js"></script>
 </body>
 </html>

@@ -260,10 +260,130 @@
     if (first) setTimeout(function () { first.focus(); }, 150);
   };
 
+  /* ── Modo 3: formulario de contacto (sin documento) ─────── */
+
+  var INDUSTRIAS = ['Supermercados', 'Farmacias', 'Banca', 'Tiendas de Conveniencia',
+    'Cadenas de Comida', 'Cafeterías', 'Tiendas por Departamento',
+    'Sucursales de Atención a Público', 'Industria / Manufactura', 'Otro'];
+
+  function contactFormHtml() {
+    return '' +
+      '<div class="form-grid form-grid--lead">' +
+      '<div class="form-group">' +
+        '<label class="form-label">Nombre *</label>' +
+        '<input class="form-input" type="text" name="nombre" required autocomplete="given-name" placeholder="Tu nombre">' +
+      '</div>' +
+      '<div class="form-group">' +
+        '<label class="form-label">Apellido *</label>' +
+        '<input class="form-input" type="text" name="apellido" required autocomplete="family-name" placeholder="Tu apellido">' +
+      '</div>' +
+      '<div class="form-group">' +
+        '<label class="form-label">Correo *</label>' +
+        '<input class="form-input" type="email" name="email" required autocomplete="email" placeholder="tu@empresa.com">' +
+      '</div>' +
+      '<div class="form-group">' +
+        '<label class="form-label">Número de teléfono</label>' +
+        '<input class="form-input" type="tel" name="telefono" autocomplete="tel" placeholder="+56 9 1234 5678">' +
+      '</div>' +
+      '<div class="form-group full-width">' +
+        '<label class="form-label">Nombre de la empresa *</label>' +
+        '<input class="form-input" type="text" name="empresa" required autocomplete="organization" placeholder="Nombre de tu empresa">' +
+      '</div>' +
+      '<div class="form-group full-width">' +
+        '<label class="form-label">Industria</label>' +
+        '<select class="form-select" name="industria">' +
+          '<option value="">Selecciona</option>' +
+          INDUSTRIAS.map(function (i) { return '<option value="' + i + '">' + i + '</option>'; }).join('') +
+        '</select>' +
+      '</div>' +
+      '<div class="form-group full-width">' +
+        '<label class="form-label">Mensaje</label>' +
+        '<textarea class="form-textarea" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu empresa y tu desafío energético"></textarea>' +
+      '</div>' +
+      '</div>' +
+      '<input type="text" name="website" tabindex="-1" autocomplete="off" ' +
+        'style="position:absolute;left:-9999px;height:0;overflow:hidden" aria-hidden="true">' +
+      '<button type="submit" class="btn btn-primary form-submit">Enviar mensaje →</button>' +
+      '<p class="lead-form-error" style="display:none;color:#c0392b;font-size:14px;margin-top:10px"></p>';
+  }
+
+  function buildContactForm(container) {
+    var formType = container.getAttribute('data-form-type') || 'contacto';
+    container.innerHTML = '<form class="lead-form contact-lead-form" novalidate>' + contactFormHtml() + '</form>';
+    var form = container.querySelector('form');
+
+    var analytics = getAnalytics();
+    if (analytics) {
+      analytics.trackOnce('form-view:' + formType + ':' + window.location.pathname, function () {
+        analytics.trackFormView({ form_id: formType, form_type: formType, delivery_method: 'email' });
+      });
+      analytics.bindFormStart(form, {
+        once_key: 'form-start:' + formType + ':' + window.location.pathname,
+        form_id: formType,
+        form_type: formType
+      });
+    }
+
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+
+      var nombre = form.nombre.value.trim();
+      var apellido = form.apellido.value.trim();
+      var email = form.email.value.trim();
+      var empresa = form.empresa.value.trim();
+      var errorEl = form.querySelector('.lead-form-error');
+      errorEl.style.display = 'none';
+
+      if (!nombre || !apellido || !empresa || !EMAIL_RE.test(email)) {
+        errorEl.textContent = 'Por favor completa los campos obligatorios (*) con datos válidos.';
+        errorEl.style.display = 'block';
+        return;
+      }
+
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+
+      var data = new URLSearchParams();
+      data.append('tipo', 'contacto');
+      data.append('nombre', nombre);
+      data.append('apellido', apellido);
+      data.append('email', email);
+      data.append('telefono', form.telefono.value.trim());
+      data.append('empresa', empresa);
+      data.append('industria', form.industria.value);
+      data.append('mensaje', form.mensaje.value.trim());
+      data.append('origen', formType);
+      data.append('website', form.website.value);
+      data.append('pagina', window.location.pathname);
+
+      fetch(ENDPOINT, { method: 'POST', body: data })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (!res.ok) throw new Error(res.error || 'error');
+          if (analytics) {
+            analytics.trackLead({ form_id: formType, form_type: formType, lead_source: 'website' });
+            analytics.trackContact({ form_id: formType, form_type: formType });
+          }
+          container.innerHTML = '<div class="form-success show" style="display:block">' +
+            '&#9989; ¡Gracias! Recibimos tu mensaje y te contactaremos dentro de las próximas 24 horas hábiles. ' +
+            'Te enviamos una confirmación a <strong>' + escapeHtml(email) + '</strong>.' +
+          '</div>';
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.textContent = 'Enviar mensaje →';
+          errorEl.textContent = 'Hubo un problema al enviar. Inténtalo de nuevo o escríbenos a hola@clickie.io.';
+          errorEl.style.display = 'block';
+        });
+    });
+  }
+
   /* ── Auto-init ─────────────────────────────────────────── */
 
   function init() {
     document.querySelectorAll('[data-lead-form]').forEach(buildInlineForm);
+    document.querySelectorAll('[data-contact-form]').forEach(buildContactForm);
     document.querySelectorAll('[data-caso-modal]').forEach(function (btn) {
       btn.addEventListener('click', function (ev) {
         ev.preventDefault();
