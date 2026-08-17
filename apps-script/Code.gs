@@ -589,3 +589,44 @@ function limpiarPruebas() {
     Logger.log(h.nombre + ': ' + borradas + ' filas borradas, quedan ' + (sh.getLastRow() - 1));
   });
 }
+
+// ============== HISTÓRICO HUBSPOT (migración de datos) ==============
+
+var HUBSPOT_HEADERS = ['Fecha de creación', 'Nombre', 'Apellido', 'Email', 'Teléfono',
+  'Empresa', 'Cargo', 'Etapa del ciclo', 'Fuente original', 'Última actividad', 'Notas'];
+
+/**
+ * Crea (o reinicia) la pestaña "Histórico HubSpot" con los encabezados listos
+ * para pegar el CSV exportado de HubSpot. Se mantiene separada de Leads y
+ * Contactos para no contaminar la analítica de los formularios nuevos.
+ */
+function crearHistoricoHubspot() {
+  var ss = SpreadsheetApp.openById(CONFIG.SHEET_ID);
+  var nombre = 'Histórico HubSpot';
+  var sh = ss.getSheetByName(nombre);
+  if (!sh) sh = ss.insertSheet(nombre);
+
+  if (sh.getLastRow() > 1) {
+    Logger.log('La hoja ya tiene ' + (sh.getLastRow() - 1) + ' filas; no se toca el contenido.');
+  } else {
+    sh.clear();
+    sh.getRange(1, 1, 1, HUBSPOT_HEADERS.length)
+      .setValues([HUBSPOT_HEADERS])
+      .setFontWeight('bold')
+      .setBackground('#191947')
+      .setFontColor('#ffffff');
+    sh.setFrozenRows(1);
+    // Teléfono como texto para que "+56..." no se interprete como fórmula
+    sh.getRange(2, 5, sh.getMaxRows() - 1, 1).setNumberFormat('@');
+    sh.getRange(2, 1, sh.getMaxRows() - 1, 1).setNumberFormat('yyyy-mm-dd');
+    for (var c = 1; c <= HUBSPOT_HEADERS.length; c++) sh.setColumnWidth(c, c === 11 ? 260 : 150);
+    Logger.log('Hoja "' + nombre + '" lista con ' + HUBSPOT_HEADERS.length + ' columnas.');
+  }
+
+  if (/^Hoja de cálculo sin título$/i.test(ss.getName())) {
+    ss.setName('Clickie — Leads y Contactos Web');
+    Logger.log('Planilla renombrada: Clickie — Leads y Contactos Web');
+  }
+
+  Logger.log('Pestañas: ' + ss.getSheets().map(function (s) { return s.getName(); }).join(' | '));
+}
