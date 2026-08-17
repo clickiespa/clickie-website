@@ -465,3 +465,57 @@ function fixLinksEnTexto(texto, nuevo) {
 function esLinkHubspot(url) {
   return /hubspot|meetings\.|hs-sites|hsforms|hs\.com|calendly/i.test(url);
 }
+
+/**
+ * Limpia duplicados en la carpeta de guías: manda a la papelera las
+ * versiones antiguas subidas a mano (las que empiezan con
+ * "Guía-Eficiencia-..."), solo si existe el PDF canónico que las reemplaza.
+ */
+function limpiarDuplicados() {
+  var folder = carpetaGuias();
+  if (!folder) return Logger.log('No existe la carpeta de guías');
+
+  var canonicos = ['Clickie_Guia_Cafeterias.pdf', 'Clickie_Guia_Tiendas_por_Departamento.pdf'];
+  var existeCanonico = {};
+  canonicos.forEach(function (n) { existeCanonico[n] = folder.getFilesByName(n).hasNext(); });
+
+  Logger.log('--- Antes ---');
+  logCarpeta(folder);
+
+  // Se buscan por patrón porque los nombres traen acentos con codificación distinta
+  var aBorrar = [];
+  var it = folder.getFiles();
+  while (it.hasNext()) {
+    var f = it.next();
+    var n = f.getName();
+    // Solo las versiones antiguas: empiezan con "Guía-Eficiencia-Energetica"
+    if (/^Gu[ií]a[-_ ]?Eficiencia/i.test(n)) {
+      var reemplazo = /cafeter/i.test(n) ? canonicos[0] : canonicos[1];
+      if (!existeCanonico[reemplazo]) {
+        Logger.log('OJO: sin reemplazo (' + reemplazo + '), NO se borra: ' + n);
+        continue;
+      }
+      aBorrar.push({ f: f, n: n, kb: Math.round(f.getSize() / 1024), reemplazo: reemplazo });
+    }
+  }
+
+  aBorrar.forEach(function (d) {
+    Logger.log('Papelera: ' + d.n + ' (' + d.kb + ' KB) — reemplazado por ' + d.reemplazo);
+    d.f.setTrashed(true);
+  });
+  if (!aBorrar.length) Logger.log('No se encontraron duplicados');
+
+  Logger.log('--- Después ---');
+  logCarpeta(folder);
+}
+
+/** Restaura la guía financiera si quedó en la papelera por error. */
+function restaurarFinanciera() {
+  var f = DriveApp.getFileById(CONFIG.DOCS['guia-evaluacion-financiera'].fileId);
+  Logger.log('Antes -> ' + f.getName() + ' | en papelera: ' + f.isTrashed());
+  if (f.isTrashed()) f.setTrashed(false);
+  var destino = carpetaGuias();
+  if (destino) f.moveTo(destino);
+  Logger.log('Después -> ' + f.getName() + ' | en papelera: ' + f.isTrashed());
+  logCarpeta(carpetaGuias());
+}
