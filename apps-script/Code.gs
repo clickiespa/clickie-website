@@ -125,7 +125,7 @@ function doPost(e) {
       return jsonResponse({ ok: false, error: 'Documento no encontrado' });
     }
 
-    saveLead([new Date(), nombre, apellido, email, telefono, empresa, cargo, doc.name, pagina]);
+    saveLead([new Date(), nombre, apellido, email, textoSeguro(telefono), empresa, cargo, doc.name, pagina]);
     sendDocumentEmail(nombre, email, doc);
     if (CONFIG.NOTIFY_EMAIL) notifyTeam(nombre + ' ' + apellido, email, telefono, empresa, cargo, doc);
 
@@ -159,7 +159,7 @@ function handleContacto(p) {
   if (sheet.getLastRow() === 0) {
     sheet.getRange(1, 1, 1, CONTACT_HEADERS.length).setValues([CONTACT_HEADERS]).setFontWeight('bold');
   }
-  sheet.appendRow([new Date(), nombre, apellido, email, telefono, empresa, industria, mensaje, origen, pagina]);
+  sheet.appendRow([new Date(), nombre, apellido, email, textoSeguro(telefono), empresa, industria, mensaje, origen, pagina]);
 
   // Aviso al equipo comercial
   if (CONFIG.NOTIFY_EMAIL) {
@@ -361,6 +361,15 @@ function isFreeMail(email) {
   return CONFIG.FREE_MAIL.indexOf(base) !== -1;
 }
 
+/**
+ * Evita que Sheets interprete el valor como fórmula (teléfonos "+56...",
+ * textos que empiezan con =, - o @). El apóstrofo no se muestra en la celda.
+ */
+function textoSeguro(valor) {
+  var s = String(valor == null ? '' : valor);
+  return /^[=+\-@]/.test(s) ? "'" + s : s;
+}
+
 // ========================= UTILIDADES =========================
 
 function isValidEmail(email) {
@@ -539,5 +548,44 @@ function verificarPdfs() {
     } catch (e) {
       Logger.log('ERROR ' + k + ': ' + e.message);
     }
+  });
+}
+
+/** Lista todas las filas de Leads y Contactos para revisar antes de borrar. */
+function listarRegistros() {
+  var ss = SpreadsheetApp.openById(CONFIG.SHEET_ID);
+  ['Leads', 'Contactos'].forEach(function (nombre) {
+    var sh = ss.getSheetByName(nombre);
+    if (!sh) return Logger.log('(no existe la hoja ' + nombre + ')');
+    var datos = sh.getDataRange().getValues();
+    Logger.log('===== ' + nombre + ': ' + (datos.length - 1) + ' filas =====');
+    for (var i = 1; i < datos.length; i++) {
+      Logger.log('fila ' + (i + 1) + ' | ' + datos[i].slice(0, 9).join(' ~ ').slice(0, 200));
+    }
+  });
+}
+
+/**
+ * Borra los registros de prueba: filas cuyo correo es del dominio interno
+ * @clickie.io (no son leads reales). Registra cada fila antes de borrarla.
+ */
+function limpiarPruebas() {
+  var ss = SpreadsheetApp.openById(CONFIG.SHEET_ID);
+  [{ nombre: 'Leads', colEmail: 4 }, { nombre: 'Contactos', colEmail: 4 }].forEach(function (h) {
+    var sh = ss.getSheetByName(h.nombre);
+    if (!sh) return Logger.log('(sin hoja ' + h.nombre + ')');
+    var datos = sh.getDataRange().getValues();
+    var borradas = 0;
+    // De abajo hacia arriba para que no se corran los índices
+    for (var i = datos.length - 1; i >= 1; i--) {
+      var email = String(datos[i][h.colEmail - 1] || '').toLowerCase();
+      if (email.indexOf('@') === -1) email = String(datos[i][2] || '').toLowerCase(); // esquema viejo
+      if (/@clickie\.io$/.test(email.trim())) {
+        Logger.log('Borrando ' + h.nombre + ' fila ' + (i + 1) + ': ' + email);
+        sh.deleteRow(i + 1);
+        borradas++;
+      }
+    }
+    Logger.log(h.nombre + ': ' + borradas + ' filas borradas, quedan ' + (sh.getLastRow() - 1));
   });
 }
