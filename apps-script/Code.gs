@@ -519,3 +519,25 @@ function restaurarFinanciera() {
   Logger.log('Después -> ' + f.getName() + ' | en papelera: ' + f.isTrashed());
   logCarpeta(carpetaGuias());
 }
+
+/**
+ * Auditoría: revisa el contenido real de cada PDF del catálogo y reporta si
+ * quedan enlaces a HubSpot y si aparece el enlace de clickie.io.
+ * Nota: en PDFs con streams comprimidos el conteo puede dar 0 aunque haya
+ * enlaces; para esos conviene revisar el archivo con un lector de PDF.
+ */
+function verificarPdfs() {
+  Object.keys(CONFIG.DOCS).forEach(function (k) {
+    var doc = CONFIG.DOCS[k];
+    try {
+      var f = getPdf(doc);
+      var txt = f.getBlob().getDataAsString('ISO-8859-1');
+      var hub = (txt.match(/hubspot|meetings\.|hs-sites|hsforms|calendly/gi) || []).length;
+      var ok = (txt.match(/clickie\.io/gi) || []).length;
+      Logger.log((hub > 0 ? '*** HUBSPOT: ' : 'OK  ') + k + ' | archivo: ' + f.getName() +
+        ' | hubspot: ' + hub + ' | clickie.io: ' + ok);
+    } catch (e) {
+      Logger.log('ERROR ' + k + ': ' + e.message);
+    }
+  });
+}
