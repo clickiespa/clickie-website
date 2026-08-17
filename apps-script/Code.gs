@@ -26,8 +26,12 @@ var CONFIG = {
   REPLY_TO: 'hola@clickie.io',
   NOTIFY_EMAIL: 'nicolas.llevenes@clickie.io', // '' para desactivar aviso interno
 
-  // Carpeta de Drive donde viven los PDFs descargables (ID de la URL de la carpeta)
-  DRIVE_FOLDER_ID: '1mO5Y84aARU3tTosNhwOEy3uQl6o_r7QN',
+  // Carpetas de Drive donde viven los PDFs descargables.
+  // Los PDFs se buscan por nombre en ambas, así que mover archivos entre
+  // ellas no rompe nada. Nombres usados por organizarDrive().
+  DRIVE_FOLDER_ID: '1mO5Y84aARU3tTosNhwOEy3uQl6o_r7QN', // Guías de casos de negocio
+  FOLDER_CASOS: 'Guías de casos de negocio',
+  FOLDER_GUIAS: 'Guías Pagina Web Clickie',
 
   // Dominios de correo personales/genéricos que se rechazan (se exige correo de empresa)
   FREE_MAIL: ['gmail', 'googlemail', 'hotmail', 'outlook', 'live', 'msn', 'yahoo',
@@ -278,13 +282,76 @@ function buildEmailHtml(primerNombre, docName) {
   '</div>';
 }
 
-/** Obtiene el PDF: por ID directo (fileId) o por nombre dentro de la carpeta de guías. */
+/**
+ * Obtiene el PDF: por ID directo (fileId) o por nombre, buscando en las
+ * carpetas de guías y de casos de negocio. Al buscar en ambas, reordenar
+ * los archivos en Drive no rompe las descargas.
+ */
 function getPdf(doc) {
   if (doc.fileId) return DriveApp.getFileById(doc.fileId);
-  var folder = DriveApp.getFolderById(CONFIG.DRIVE_FOLDER_ID);
-  var files = folder.getFilesByName(doc.file);
-  if (!files.hasNext()) throw new Error('PDF no encontrado en Drive: ' + doc.file);
-  return files.next();
+  var carpetas = [carpetaGuias(), DriveApp.getFolderById(CONFIG.DRIVE_FOLDER_ID)];
+  for (var i = 0; i < carpetas.length; i++) {
+    if (!carpetas[i]) continue;
+    var files = carpetas[i].getFilesByName(doc.file);
+    if (files.hasNext()) return files.next();
+  }
+  throw new Error('PDF no encontrado en Drive: ' + doc.file);
+}
+
+/** Carpeta de guías de la web (por nombre); null si no existe. */
+function carpetaGuias() {
+  var it = DriveApp.getFoldersByName(CONFIG.FOLDER_GUIAS);
+  return it.hasNext() ? it.next() : null;
+}
+
+/**
+ * Ordena Drive: mueve los PDFs de guías a "Guías Pagina Web Clickie" y deja
+ * los casos de negocio en "Guías de casos de negocio". Ejecutar manualmente.
+ */
+function organizarDrive() {
+  var destinoGuias = carpetaGuias() || DriveApp.createFolder(CONFIG.FOLDER_GUIAS);
+  var casos = DriveApp.getFolderById(CONFIG.DRIVE_FOLDER_ID);
+
+  // Nombres de archivo de las guías (según el catálogo DOCS)
+  var nombresGuias = [];
+  Object.keys(CONFIG.DOCS).forEach(function (k) {
+    if (k.indexOf('guia-') === 0 && CONFIG.DOCS[k].file) nombresGuias.push(CONFIG.DOCS[k].file);
+  });
+  // Además, la guía financiera y la de tarifas se referencian por fileId
+  var porId = ['guia-evaluacion-financiera', 'guia-tarifas-electricas'];
+
+  var movidos = [];
+  // 1. Mover por nombre desde la carpeta de casos
+  nombresGuias.forEach(function (nombre) {
+    var it = casos.getFilesByName(nombre);
+    while (it.hasNext()) {
+      var f = it.next();
+      f.moveTo(destinoGuias);
+      movidos.push(nombre);
+    }
+  });
+  // 2. Mover las que se referencian por ID (estén donde estén)
+  porId.forEach(function (k) {
+    var doc = CONFIG.DOCS[k];
+    if (!doc || !doc.fileId) return;
+    var f = DriveApp.getFileById(doc.fileId);
+    f.moveTo(destinoGuias);
+    movidos.push(f.getName());
+  });
+
+  Logger.log('Carpeta de guías: ' + destinoGuias.getId());
+  Logger.log('Movidos a "' + CONFIG.FOLDER_GUIAS + '": ' + (movidos.length ? movidos.join(', ') : 'ninguno'));
+  Logger.log('--- Contenido final ---');
+  logCarpeta(destinoGuias);
+  logCarpeta(casos);
+}
+
+function logCarpeta(folder) {
+  var nombres = [];
+  var it = folder.getFiles();
+  while (it.hasNext()) nombres.push(it.next().getName());
+  nombres.sort();
+  Logger.log(folder.getName() + ' (' + nombres.length + '): ' + nombres.join(' | '));
 }
 
 /** true si el dominio del correo es un proveedor personal (Gmail, Hotmail, etc.) */
@@ -323,7 +390,7 @@ function fixGuias() {
     { deckId: '1KN7YNBlBcRnFmqN6iQc0AH6rYpJvi1fWaNekkpFAxNM', out: 'Clickie_Guia_Cafeterias.pdf' }
   ];
   var NUEVO_LINK = 'https://clickie.io/index.html#contacto';
-  var folder = DriveApp.getFolderById(CONFIG.DRIVE_FOLDER_ID);
+  var folder = carpetaGuias() || DriveApp.createFolder(CONFIG.FOLDER_GUIAS);
 
   trabajos.forEach(function (t) {
     var copia = DriveApp.getFileById(t.deckId).makeCopy('tmp-' + t.out, folder);
