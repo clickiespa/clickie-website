@@ -52,7 +52,7 @@ var CONFIG = {
     },
     'guia-tarifas-electricas': {
       name: 'Guía de Tarifas Eléctricas para Empresas en Chile',
-      file: 'Clickie_Guia_Tarifas_Electricas.pdf'
+      fileId: '1jrGwuzHdtk6bDdio8zk0VW7suZyY3BvG'
     },
     'caso-banca': {
       name: 'Caso de Negocio — Banca',
