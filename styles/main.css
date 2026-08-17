@@ -5160,6 +5160,31 @@ button.guia-card-cta:hover {
   box-shadow: var(--shadow-md);
   max-width: 360px;
 }
+
+/* Hero de guía con la portada al costado derecho */
+.guia-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+}
+.guia-hero-cover {
+  display: flex;
+  justify-content: flex-end;
+}
+.guia-hero-cover img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 22px 50px rgba(25, 25, 71, 0.22);
+}
+@media (max-width: 900px) {
+  .guia-hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .guia-hero-cover { justify-content: center; }
+  .guia-hero-cover img { max-width: 360px; }
+}
 .guia-detail-cover img {
   width: 100%;
   display: block;
