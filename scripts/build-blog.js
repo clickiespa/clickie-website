@@ -627,9 +627,15 @@ function renderBlogIndex(allPosts) {
 
 <section class="section section-surface-white">
   <div class="container">
-    <div class="blog-filters">
+    <div class="blog-toolbar">
+      <div class="blog-filters">
 ${categories.map((category) => `      <button class="blog-filter-btn${category.key === "all" ? " active" : ""}" data-filter="${escapeAttribute(category.key)}">${escapeHtml(category.label)}</button>`).join("\n")}
+      </div>
+      <div class="blog-search">
+        <input type="search" id="blogSearchInput" class="blog-search-input" placeholder="Buscar por palabra clave" aria-label="Buscar artículos del blog por palabra clave" />
+      </div>
     </div>
+    <p class="blog-results-info" id="blogResultsInfo" aria-live="polite"></p>
 
     <div class="blog-grid" id="blogGrid">
 ${allPosts.map(renderPostCard).join("\n")}
@@ -655,13 +661,64 @@ ${allPosts.map(renderPostCard).join("\n")}
 const pageSize = 12;
 const blogGrid = document.getElementById('blogGrid');
 const pagination = document.getElementById('blogPagination');
+const searchInput = document.getElementById('blogSearchInput');
+const resultsInfo = document.getElementById('blogResultsInfo');
 const cards = Array.from(document.querySelectorAll('.blog-card'));
 const filterButtons = Array.from(document.querySelectorAll('.blog-filter-btn'));
 let currentFilter = 'all';
 let currentPage = 1;
+let currentQuery = '';
 
 function getFilteredCards() {
-  return cards.filter((card) => currentFilter === 'all' || card.dataset.category === currentFilter);
+  const normalizedQuery = normalizeText(currentQuery);
+
+  return cards.filter((card) => {
+    const matchesCategory = currentFilter === 'all' || card.dataset.category === currentFilter;
+    const matchesQuery = !normalizedQuery || card.dataset.searchIndex.includes(normalizedQuery);
+
+    return matchesCategory && matchesQuery;
+  });
+}
+
+function normalizeText(value) {
+  return (value || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
+function updateResultsInfo(count) {
+  if (!resultsInfo) {
+    return;
+  }
+
+  const trimmedQuery = currentQuery.trim();
+
+  if (trimmedQuery) {
+    resultsInfo.textContent = count === 1
+      ? '1 resultado para "' + trimmedQuery + '"'
+      : count + ' resultados para "' + trimmedQuery + '"';
+
+    if (count === 0) {
+      resultsInfo.textContent = 'No encontramos resultados para "' + trimmedQuery + '"';
+    }
+
+    return;
+  }
+
+  if (currentFilter === 'all') {
+    resultsInfo.textContent = count === 1 ? '1 artículo' : count + ' artículos';
+    return;
+  }
+
+  const activeFilter = filterButtons.find((button) => button.dataset.filter === currentFilter);
+  const filterLabel = activeFilter ? activeFilter.textContent : 'la categoría seleccionada';
+
+  resultsInfo.textContent = count === 1
+    ? '1 artículo en ' + filterLabel
+    : count + ' artículos en ' + filterLabel;
 }
 
 function scrollBlogToTop() {
@@ -731,8 +788,13 @@ function applyBlogListing() {
     card.classList.toggle('blog-filtered-hidden', !visible);
   });
 
+  updateResultsInfo(filteredCards.length);
   renderPagination(totalPages);
 }
+
+cards.forEach((card) => {
+  card.dataset.searchIndex = normalizeText(card.textContent);
+});
 
 filterButtons.forEach((btn) => {
   btn.addEventListener('click', () => {
@@ -742,6 +804,12 @@ filterButtons.forEach((btn) => {
     currentPage = 1;
     applyBlogListing();
   });
+});
+
+searchInput?.addEventListener('input', () => {
+  currentQuery = searchInput.value;
+  currentPage = 1;
+  applyBlogListing();
 });
 
 applyBlogListing();
