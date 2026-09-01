@@ -28,6 +28,17 @@ module.exports = {
   ],
   posts: [
     {
+      slug: "clickie-finalista-premio-avonni-2026",
+      sourceFile: "content/blog-posts/clickie-finalista-premio-avonni-2026.source",
+      title: "Clickie es finalista del Premio Nacional de Innovación Avonni 2026",
+      subtitle: "La nominación en Soluciones y Servicios Digitales Entel reconoce el trabajo de Clickie para convertir datos energéticos en decisiones concretas para las empresas.",
+      description: "Clickie fue seleccionado como finalista del Premio Nacional de Innovación Avonni 2026 por su propuesta para transformar datos energéticos en acciones concretas.",
+      categoryKey: "prensa",
+      publishedAt: "2026-09-01",
+      coverImage: "assets/blog/clickie-finalista-premio-avonni-2026-cover.jpeg",
+      coverAlt: "Página de El Mercurio sobre los finalistas del Premio Avonni 2026 con Clickie destacado en Soluciones y Servicios Digitales Entel"
+    },
+    {
       slug: "tu-sistema-hvac-no-esta-roto-esta-gastando-el-doble-para-ocultar-que-perdio-el-control",
       sourceFile: "content/blog-posts/tu-sistema-hvac-no-esta-roto-esta-gastando-el-doble-para-ocultar-que-perdio-el-control.source",
       title: "Tu sistema HVAC no está roto: está gastando el doble para ocultar que perdió el control",
