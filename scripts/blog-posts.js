@@ -39,6 +39,17 @@ module.exports = {
       coverAlt: "Página de El Mercurio sobre los finalistas del Premio Avonni 2026 con Clickie destacado en Soluciones y Servicios Digitales Entel"
     },
     {
+      slug: "los-desvios-energeticos-que-hoy-no-llegan-a-gerencia-y-como-ordenar-su-gestion",
+      sourceFile: "content/blog-posts/los-desvios-energeticos-que-hoy-no-llegan-a-gerencia-y-como-ordenar-su-gestion.source",
+      title: "Los desvíos energéticos que hoy no llegan a gerencia y cómo ordenar su gestión",
+      subtitle: "Detectar una anomalía toma minutos; resolverla dentro de la operación requiere reglas claras de asignación, criticidad y escalamiento.",
+      description: "En redes multisucursal, el problema no es detectar alertas energéticas, sino ordenar quién las toma, en qué plazo y con qué criterio de impacto.",
+      categoryKey: "multisucursal",
+      publishedAt: "2026-08-26",
+      coverImage: "assets/blog/desvios-energeticos-gerencia-cover.jpeg",
+      coverAlt: "Visual del artículo de LinkedIn sobre desvíos energéticos y gestión en redes multisucursal"
+    },
+    {
       slug: "tu-sistema-hvac-no-esta-roto-esta-gastando-el-doble-para-ocultar-que-perdio-el-control",
       sourceFile: "content/blog-posts/tu-sistema-hvac-no-esta-roto-esta-gastando-el-doble-para-ocultar-que-perdio-el-control.source",
       title: "Tu sistema HVAC no está roto: está gastando el doble para ocultar que perdió el control",

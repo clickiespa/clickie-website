@@ -1,0 +1,32 @@
+<!-- ARTICLE_HIGHLIGHT: la asignación de responsables -->
+<!-- ARTICLE_CONTENT_START -->
+<div class="article-content">
+  <div style="background-color: #ffffff; color: rgba(0, 0, 0, 0.9);">
+    <em>Un dashboard detecta un desvío energético en minutos, pero el flujo operativo para resolverlo suele tomar semanas; en ese desfase se diluye el impacto financiero de la información.</em>
+  </div>
+  <p>En las redes multisucursal, la acumulación de alertas sin un canal de resolución definido genera una inercia donde los equipos conviven con el sobreconsumo. La brecha principal no surge por falta de datos, sino por la ausencia de un circuito claro que priorice y escale las anomalías antes del cierre mensual.</p>
+  <h3>El problema no es la visibilidad, es la asignación de responsables</h3>
+  <p>Monitorear permite identificar variaciones; articular una respuesta requiere definir responsabilidades, criterios de gravedad y tiempos de acción. En los edificios que gestionamos en <a href="../../index.html">Clickie</a>, observamos que la falta de resolución no ocurre por desinterés de los equipos, sino porque las alertas llegan descontextualizadas a los locales, sin una guía clara sobre si corresponden a un ajuste de rutina o a una mantención técnica.</p>
+  <p>Cuando un punto de venta presenta un consumo nocturno fuera de rango o una deriva en el sistema de climatización, la señal suele ingresar al mismo buzón que un salto puntual de demanda. Al no contar con un filtro previo basado en el costo estimado o en la criticidad, la operación termina atendiendo las urgencias del día a día en lugar de enfocar recursos en las desviaciones de mayor impacto económico.</p>
+  <h3>Estructurar un árbol de decisión funcional</h3>
+  <p>Un gobierno energético efectivo transforma el flujo de datos en una matriz de escalamiento funcional. Esto implica formalizar qué ajustes resuelve la dotación del local, cuáles pasan a mantención centralizada, qué variaciones justifican la intervención de la jefatura de red y qué anomalías de alto valor requieren visibilidad en las decisiones gerenciales.</p>
+  <p>El objetivo de este ordenamiento no es multiplicar las notificaciones en pantalla, sino filtrar los falsos positivos y empaquetar únicamente los casos con impacto real sobre la cuenta. Al integrar un circuito de respuesta estructurado, el seguimiento de la energía deja de ser una revisión contable a mes vencido y se convierte en una herramienta continua de control operacional.</p>
+  <p>Cuando una cadena multisucursal define con claridad quién toma cada desvío, en qué plazo debe resolverse y bajo qué indicador se valida, la gestión de energía se vuelve sostenible. El paso decisivo para una red no consiste en sumar más monitores, sino en formalizar las reglas de asignación y escalamiento dentro de la operación diaria.</p>
+  <hr>
+  <p>Si quieren evaluar el circuito de escalamiento de su red y estructurar una matriz de respuesta para que los desvíos energéticos de alto impacto se resuelvan dentro del periodo operativo, escríbannos a <a href="mailto:hola@clickie.io">hola@clickie.io</a>.</p>
+  <p><a href="https://es.linkedin.com/pulse/los-desv%C3%ADos-energ%C3%A9ticos-que-hoy-llegan-gerencia-y-c%C3%B3mo-ordenar-h6xxc/" target="_blank" rel="noopener" class="accent-link">Lee la publicación original en LinkedIn</a>.</p>
+</div>
+<!-- ARTICLE_CONTENT_END -->
+
+<!-- ARTICLE_TAGS_START -->
+<div class="article-footer">
+  <div class="article-tags">
+    <span>#GestionEnergetica</span>
+    <span>#RetailMultisucursal</span>
+    <span>#ControlOperacional</span>
+    <span>#EficienciaOperacional</span>
+    <span>#Gerencia</span>
+    <span>#Chile</span>
+  </div>
+</div>
+<!-- ARTICLE_TAGS_END -->
