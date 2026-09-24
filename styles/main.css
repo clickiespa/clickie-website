@@ -9772,20 +9772,6 @@ blockquote.interview-quote {
   align-items: center;
 }
 
-.clickie-home-product-logo {
-  display: block;
-  width: min(480px, 82vw);
-  height: auto;
-}
-
-.clickie-home-logo-band {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 34px 24px;
-  background: #FFFFFF;
-}
-
 .clickie-home-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -10434,21 +10420,6 @@ blockquote.interview-quote {
   font-size: 0.64rem;
 }
 
-.clickie-home-wide-image {
-  width: 100%;
-  margin: 0;
-  overflow: hidden;
-  background: var(--home-ink);
-}
-
-.clickie-home-wide-image img {
-  display: block;
-  width: 100%;
-  max-height: min(760px, 70vh);
-  object-fit: cover;
-  object-position: center;
-}
-
 .clickie-home-cta-section {
   background:
     linear-gradient(135deg, rgba(246,247,249,0.98), rgba(255,255,255,0.98)),
@@ -10582,10 +10553,6 @@ blockquote.interview-quote {
 
   .clickie-home-hero-image {
     border-radius: 16px;
-  }
-
-  .clickie-home-logo-band {
-    padding: 28px 20px;
   }
 
   .clickie-home-journey {
