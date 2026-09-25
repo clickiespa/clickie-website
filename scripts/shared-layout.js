@@ -112,6 +112,10 @@
       return "soluciones";
     }
 
+    if (/\/como-funciona\.html$/.test(path)) {
+      return "como_funciona";
+    }
+
     if (/\/recursos\/calculadora\.html$/.test(path)) {
       return "calculadora";
     }
@@ -325,6 +329,7 @@
   var navbarClass = isHome ? "navbar" : "navbar scrolled";
   var logoHref = isHome ? "#hero" : siteUrl("index.html");
   var serviciosHref = isHome ? "#servicios" : siteUrl("index.html#servicios");
+  var comoFuncionaHref = siteUrl("como-funciona.html");
   var historiasHref = isHome ? "#historias" : siteUrl("index.html#historias");
   var recursosHref = isHome ? "#recursos" : siteUrl("index.html#recursos");
   var contactoHref = isHome ? "#contacto" : siteUrl("index.html#contacto");
@@ -361,6 +366,7 @@
     + "    <a href=\"" + siteUrl("servicios/bms.html") + "\" class=\"" + mobileItemClass("servicios/bms.html") + "\"><i class=\"fa-solid fa-desktop mobile-sub-icon menu-item-icon\" aria-hidden=\"true\"></i><span>BMS — Control Inteligente</span></a>"
     + "    <a href=\"" + siteUrl("servicios/remarcacion.html") + "\" class=\"" + mobileItemClass("servicios/remarcacion.html") + "\"><i class=\"fa-solid fa-bolt mobile-sub-icon menu-item-icon\" aria-hidden=\"true\"></i><span>Remarcación y Submetering</span></a>"
     + "  </div>"
+    + "  <a href=\"" + comoFuncionaHref + "\" class=\"" + mobileItemClass("como-funciona.html") + "\"><i class=\"fa-solid fa-arrow-right-arrow-left mobile-sub-icon menu-item-icon\" aria-hidden=\"true\"></i><span>Cómo funciona</span></a>"
     + "  <button class=\"mobile-historias-toggle menu-section-title\"><span>Historias de éxito</span><i class=\"fa-solid fa-chevron-down dropdown-chevron menu-chevron\" aria-hidden=\"true\"></i></button>"
     + "  <div class=\"mobile-historias-sub menu-section\">"
     + "    <a href=\"" + siteUrl("historias/oxxo.html") + "\" class=\"" + mobileItemClass("historias/oxxo.html") + "\"><i class=\"fa-solid fa-store mobile-sub-icon menu-item-icon\" aria-hidden=\"true\"></i><span>OXXO</span></a>"
@@ -444,6 +450,7 @@
     + "            </div>"
     + "          </div>"
     + "        </div>"
+    + "        <a href=\"" + comoFuncionaHref + "\" class=\"nav-link" + (isCurrentPage("como-funciona.html") ? " active" : "") + "\">Cómo funciona</a>"
     + "        <div class=\"nav-dropdown\" id=\"navDropdownHistorias\">"
     + "          <a href=\"" + historiasHref + "\" class=\"nav-link nav-link-dropdown\">Historias de éxito <svg class=\"dropdown-chevron\" width=\"10\" height=\"6\" viewBox=\"0 0 10 6\" fill=\"none\"><path d=\"M1 1L5 5L9 1\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>"
     + "          <div class=\"mega-dropdown mega-dropdown--compact mega-dropdown--historias\" id=\"megaDropdownHistorias\">"
@@ -567,6 +574,7 @@
     + "        <div class=\"footer-links\">"
     + "          <a href=\"https://app.clickie.io/\" class=\"footer-link\" target=\"_blank\">Ingresar a la plataforma</a>"
     + "          <a href=\"" + siteUrl("recursos/blog.html") + "\" class=\"footer-link\">Blog</a>"
+    + "          <a href=\"" + comoFuncionaHref + "\" class=\"footer-link\">Cómo funciona</a>"
     + "          <a href=\"mailto:hola@clickie.io\" class=\"footer-link\">hola@clickie.io</a>"
     + "        </div>"
     + "      </div>"
