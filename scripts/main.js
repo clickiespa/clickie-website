@@ -34,7 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(overlay);
 
     function closeAllDropdowns() {
-      dropdowns.forEach(d => d.classList.remove('open'));
+      dropdowns.forEach(d => {
+        d.classList.remove('open');
+        d.querySelector('.nav-link-dropdown')?.setAttribute('aria-expanded', 'false');
+      });
       overlay.classList.remove('visible');
     }
 
@@ -44,17 +47,31 @@ document.addEventListener('DOMContentLoaded', () => {
       const trigger = dd.querySelector('.nav-link-dropdown');
       if (!trigger) return;
 
-      // Prevent click from scrolling the page
-      trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-      });
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.setAttribute('aria-controls', dd.querySelector('.mega-dropdown').id);
 
-      // Open on hover
-      dd.addEventListener('mouseenter', () => {
+      function openDropdown() {
         clearTimeout(closeTimer);
         closeAllDropdowns();
         dd.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
         overlay.classList.add('visible');
+      }
+
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        openDropdown();
+      });
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown' || e.key === ' ') {
+          e.preventDefault();
+          openDropdown();
+          dd.querySelector('.mega-dropdown a')?.focus();
+        }
+      });
+      dd.addEventListener('mouseenter', openDropdown);
+      dd.addEventListener('focusout', (e) => {
+        if (!dd.contains(e.relatedTarget)) closeAllDropdowns();
       });
 
       // Close on mouse leave with small delay
@@ -82,7 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     overlay.addEventListener('click', closeAllDropdowns);
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeAllDropdowns();
+      if (e.key === 'Escape') {
+        const activeDropdown = dropdowns.find(d => d.classList.contains('open'));
+        closeAllDropdowns();
+        activeDropdown?.querySelector('.nav-link-dropdown').focus();
+      }
     });
   }
 
@@ -164,6 +185,32 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.querySelectorAll('.testimonial-card').forEach((el, i) => {
     el.style.transitionDelay = `${i * 0.1}s`;
+  });
+
+  /* ── Testimonial carousel ─────────────────── */
+  document.querySelectorAll('[data-testimonial-carousel]').forEach((carousel) => {
+    const track = carousel.querySelector('[data-testimonial-track]');
+    const previous = carousel.querySelector('[data-testimonial-prev]');
+    const next = carousel.querySelector('[data-testimonial-next]');
+    if (!track || !previous || !next) return;
+
+    const updateControls = () => {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      previous.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= maxScroll - 2;
+    };
+    const move = (direction) => {
+      const card = track.querySelector('.testimonial-card');
+      const gap = Number.parseFloat(getComputedStyle(track).gap) || 0;
+      const amount = card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+      track.scrollBy({ left: direction * amount, behavior: 'smooth' });
+    };
+
+    previous.addEventListener('click', () => move(-1));
+    next.addEventListener('click', () => move(1));
+    track.addEventListener('scroll', updateControls, { passive: true });
+    window.addEventListener('resize', updateControls, { passive: true });
+    updateControls();
   });
 
   /* ── Hero image slider ───────────────────── */

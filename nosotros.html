@@ -9,126 +9,124 @@
   <link rel="apple-touch-icon" href="assets/favicon-navbar.png" />
   <link rel="stylesheet" href="styles/main.css" />
   <style>
-    /* ── NOSOTROS PAGE STYLES ── */
-    .nosotros-intro {
-      text-align: center; max-width: 780px; margin: 0 auto 64px;
+    /* Nuestros valores: superficies simples y énfasis tipográfico. */
+    .nosotros-page .subpage-hero {
+      padding-bottom: 32px;
     }
-    .nosotros-intro p {
-      font-size: 1.12rem; line-height: 1.8; color: var(--text-secondary);
+    .nosotros-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 48px;
+      align-items: center;
     }
-
-    /* ── PURPOSE & MISSION CARDS ── */
+    .nosotros-page .subpage-hero h1 { max-width: 18ch; }
+    .nosotros-page .hero-desc { margin-bottom: 0; }
+    .nosotros-team-photo {
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 8px 28px rgba(31, 42, 68, 0.1);
+    }
+    .nosotros-team-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .nosotros-content {
+      padding-top: 24px;
+    }
     .purpose-mission-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
-      margin-bottom: 80px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+      max-width: 800px;
+      margin: 0 auto 64px;
     }
     .pm-card {
-      border-radius: 24px; padding: 48px 40px; position: relative;
-      overflow: hidden; min-height: 320px;
-      display: flex; flex-direction: column; justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 32px;
+      min-height: 280px;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: 0 6px 24px rgba(31, 42, 68, 0.07);
     }
-    .pm-card-label {
-      font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.15em; margin-bottom: 20px; display: block;
+    .pm-card-label,
+    .value-card h3 {
+      margin-bottom: 20px;
+      color: #2B2E6F;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      text-wrap: balance;
     }
-    .pm-card-text {
-      font-size: 1.55rem; font-weight: 700; line-height: 1.45;
+    .pm-card-text,
+    .value-card-desc,
+    .value-card-list li {
+      color: var(--text-body);
+      font-size: var(--fs-body);
+      font-weight: 400;
+      line-height: 1.7;
     }
-    .pm-card-text .highlight-word {
-      padding: 2px 8px; border-radius: 4px;
+    .pm-card-text + .pm-card-text { margin-top: 16px; }
+    .nosotros-page .highlight-word {
+      color: #2B2E6F;
+      font-weight: 700;
     }
-
-    .pm-card.purpose {
-      background: linear-gradient(135deg, #fdc400 0%, #f5a623 100%);
-    }
-    .pm-card.purpose .pm-card-label { color: rgba(32,33,127,0.6); }
-    .pm-card.purpose .pm-card-text { color: var(--secondary); }
-    .pm-card.purpose .highlight-word {
-      background: rgba(255,255,255,0.35); color: var(--secondary);
-    }
-    .pm-card.purpose::after {
-      content: ''; position: absolute; right: -30px; bottom: -30px;
-      width: 200px; height: 200px; border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-    }
-
-    .pm-card.mission {
-      background: var(--gray-50); border: 1.5px solid var(--gray-200);
-    }
-    .pm-card.mission .pm-card-label { color: var(--secondary); opacity: 0.5; }
-    .pm-card.mission .pm-card-text { color: var(--secondary); }
-    .pm-card.mission .highlight-word {
-      background: rgba(253,196,0,0.25); color: var(--secondary);
-    }
-    .pm-card.mission::after {
-      content: ''; position: absolute; right: -20px; top: -20px;
-      width: 150px; height: 150px; border-radius: 50%;
-      background: rgba(32,33,127,0.03);
-    }
-
-    /* ── VALUES SECTION ── */
     .values-header {
-      text-align: center; margin-bottom: 48px;
+      text-align: center;
+      margin-bottom: 32px;
     }
     .values-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
-      margin-bottom: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
     }
     .value-card {
-      background: white; border-radius: 20px; padding: 36px 32px;
-      border: 1.5px solid var(--gray-200);
-      transition: all 0.3s ease; position: relative; overflow: hidden;
+      padding: 28px;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: 0 4px 18px rgba(31, 42, 68, 0.06);
     }
-    .value-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-    }
-    .value-card-header {
-      border-radius: 14px; padding: 20px 24px;
-      margin-bottom: 24px;
-    }
-    .value-card:nth-child(1) .value-card-header {
-      background: linear-gradient(135deg, #fdc400, #f5b800);
-    }
-    .value-card:nth-child(2) .value-card-header {
-      background: linear-gradient(135deg, #8cb133, #749a1c);
-    }
-    .value-card:nth-child(3) .value-card-header {
-      background: linear-gradient(135deg, #b8b6e8, #9997d6);
-    }
-    .value-card-header h3 {
-      color: white; font-size: 1.3rem; font-weight: 700;
-      margin: 0; line-height: 1.3;
-    }
-    .value-card:nth-child(1) .value-card-header h3 { color: var(--secondary); }
-
-    .value-card-desc {
-      font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary);
+    .value-card-desc { margin-bottom: 20px; }
+    .value-card-icon {
+      display: block;
       margin-bottom: 20px;
+      color: #2B2E6F;
+      font-size: 2rem;
+      line-height: 1.25;
     }
     .value-card-list {
-      list-style: none; padding: 0; margin: 0;
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0;
     }
-    .value-card-list li {
-      font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;
-      padding: 6px 0; padding-left: 20px; position: relative;
+    .value-card-list li { padding-left: 4px; }
+    .value-card-list li + li { margin-top: 12px; }
+    .value-card-list li::marker { color: #2B2E6F; }
+    @media (max-width: 900px) {
+      .nosotros-hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .nosotros-team-photo { width: 100%; max-width: 620px; }
+      .values-grid { grid-template-columns: 1fr; gap: 20px; }
     }
-    .value-card-list li::before {
-      content: '•'; position: absolute; left: 0; font-weight: 700;
-    }
-    .value-card:nth-child(1) .value-card-list li::before { color: #fdc400; }
-    .value-card:nth-child(2) .value-card-list li::before { color: #8cb133; }
-    .value-card:nth-child(3) .value-card-list li::before { color: #9997d6; }
-
     @media (max-width: 768px) {
-      .purpose-mission-grid { grid-template-columns: 1fr; }
-      .values-grid { grid-template-columns: 1fr; }
-      .pm-card { padding: 36px 28px; min-height: auto; }
-      .pm-card-text { font-size: 1.25rem; }
+      .nosotros-page .subpage-hero { padding-bottom: 24px; }
+      .purpose-mission-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-bottom: 48px;
+      }
+      .pm-card, .value-card { padding: 24px; }
+      .purpose-mission-grid { max-width: 420px; }
+      .pm-card { min-height: 0; }
+      .pm-card-label { margin-bottom: 16px; }
     }
   </style>
 </head>
-<body>
+<body class="nosotros-page">
 
 <!-- MOBILE MENU -->
 <div data-site-shell="mobile-menu"></div>
@@ -137,33 +135,38 @@
 <!-- HERO -->
 <section class="subpage-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="index.html">Inicio</a> / Nosotros</div>
-    <span class="guia-hero-tag">Nuestro propósito y valores</span>
-    <h1>Tecnología al servicio de las <span class="accent">personas</span></h1>
-    <p class="hero-desc">En Clickie creemos que la tecnología solo tiene sentido cuando está al servicio de las personas. Por eso construimos una empresa con valores que guían cada decisión, cada conversación y cada solución que entregamos.</p>
+    <div class="nosotros-hero-grid">
+      <div>
+        <div class="breadcrumb"><a href="index.html">Inicio</a> / Nosotros</div>
+        <span class="guia-hero-tag">Nuestro propósito y valores</span>
+        <h1>Tecnología al servicio de las <span class="accent">personas</span></h1>
+        <p class="hero-desc">Detrás de Clickie hay un equipo que escucha, aprende y trabaja junto a sus clientes. Compartimos una convicción: la tecnología debe ayudar a las personas a <strong class="highlight-word">tomar mejores decisiones.</strong></p>
+      </div>
+      <figure class="nosotros-team-photo">
+        <img src="assets/equipo-clickie.jpg" width="5794" height="3863" alt="El equipo Clickie reunido al aire libre" fetchpriority="high" />
+      </figure>
+    </div>
   </div>
 </section>
 
 <!-- PURPOSE & MISSION -->
-<section class="section" style="background:var(--white);">
+<section class="section section-surface-white nosotros-content">
   <div class="container">
 
     <div class="purpose-mission-grid">
 
       <!-- PROPÓSITO -->
       <div class="pm-card purpose fade-in">
-        <span class="pm-card-label">Propósito</span>
-        <p class="pm-card-text">
-          <span class="highlight-word">Simplificamos</span> la forma en que las personas se relacionan con el uso de la energía, disminuyendo el desperdicio y <span class="highlight-word">promoviendo el uso consciente.</span>
-        </p>
+        <h2 class="pm-card-label">Propósito</h2>
+        <p class="pm-card-text"><strong class="highlight-word">Simplificamos</strong> la relación de las personas con la energía.</p>
+        <p class="pm-card-text">Buscamos disminuir el desperdicio y promover un <strong class="highlight-word">uso consciente</strong> de los recursos.</p>
       </div>
 
       <!-- MISIÓN -->
       <div class="pm-card mission fade-in" style="transition-delay:0.1s">
-        <span class="pm-card-label">Misión</span>
-        <p class="pm-card-text">
-          Creamos <span class="highlight-word">valor recurrente</span> a nuestros clientes, transformando <span class="highlight-word">datos en impacto.</span>
-        </p>
+        <h2 class="pm-card-label">Misión</h2>
+        <p class="pm-card-text">Creamos <strong class="highlight-word">valor recurrente</strong> para nuestros clientes.</p>
+        <p class="pm-card-text">Transformamos <strong class="highlight-word">datos en impacto</strong> con tecnología y acompañamiento para mejorar su gestión energética.</p>
       </div>
 
     </div>
@@ -178,41 +181,37 @@
 
       <!-- VALUE 1 -->
       <div class="value-card fade-in">
-        <div class="value-card-header">
-          <h3>Somos<br>simples</h3>
-        </div>
-        <p class="value-card-desc">No nos enamoramos de nuestras soluciones, nos enamoramos del problema. Transformamos lo complejo en simple, con flexibilidad pero siempre con un propósito claro.</p>
+        <i class="fa-solid fa-wand-magic-sparkles value-card-icon" aria-hidden="true"></i>
+        <h3>Somos simples</h3>
+        <p class="value-card-desc">Elegimos el camino más claro para resolver lo que importa.</p>
         <ul class="value-card-list">
-          <li>Flexibles, pero con un propósito claro.</li>
-          <li>Nos importa el ¿Para qué?: Nos enamoramos del problema, no de nuestras soluciones.</li>
-          <li>Transformamos lo complejo en simple.</li>
+          <li>Partimos del <strong class="highlight-word">problema</strong>, antes de proponer una solución.</li>
+          <li>Nos adaptamos sin perder de vista el <strong class="highlight-word">propósito</strong>.</li>
+          <li>Hacemos que lo complejo sea <strong class="highlight-word">fácil de entender y usar</strong>.</li>
         </ul>
       </div>
 
       <!-- VALUE 2 -->
       <div class="value-card fade-in" style="transition-delay:0.1s">
-        <div class="value-card-header">
-          <h3>Comprometidos<br>con las personas</h3>
-        </div>
-        <p class="value-card-desc">Nos tomamos el tiempo de entender el dolor real de quienes trabajan con nosotros. Construimos relaciones de largo plazo, creamos valor desde la diversidad y creemos que las personas deben seguir un propósito, no solo instrucciones.</p>
+        <i class="fa-solid fa-people-group value-card-icon" aria-hidden="true"></i>
+        <h3>Comprometidos con las personas</h3>
+        <p class="value-card-desc">La confianza se construye en la forma en que trabajamos juntos.</p>
         <ul class="value-card-list">
-          <li>Nos adaptamos, buscamos entender el dolor y las preocupaciones de las personas.</li>
-          <li>Construimos relaciones a largo plazo y creamos desde el cliente.</li>
-          <li>Creamos valor a partir de la diversidad.</li>
-          <li>Queremos que nuestros colaboradores sigan un propósito, no solo instrucciones.</li>
+          <li><strong class="highlight-word">Escuchamos</strong> las necesidades de cada cliente y construimos relaciones duraderas.</li>
+          <li>Integramos <strong class="highlight-word">miradas diversas</strong> para encontrar mejores respuestas.</li>
+          <li>Damos al equipo un <strong class="highlight-word">propósito compartido</strong> que oriente sus decisiones.</li>
         </ul>
       </div>
 
       <!-- VALUE 3 -->
       <div class="value-card fade-in" style="transition-delay:0.2s">
-        <div class="value-card-header">
-          <h3>Nos gusta<br>aprender y crear</h3>
-        </div>
-        <p class="value-card-desc">La curiosidad es parte de nuestro ADN. Fomentamos la proactividad, premiamos a quienes hacen que las cosas sucedan y nos adaptamos constantemente a los cambios del mercado y la tecnología.</p>
+        <i class="fa-solid fa-lightbulb value-card-icon" aria-hidden="true"></i>
+        <h3>Nos gusta aprender y crear</h3>
+        <p class="value-card-desc">Siempre hay una mejor forma de hacer las cosas por descubrir.</p>
         <ul class="value-card-list">
-          <li>Fomentamos la curiosidad, proactividad y adaptabilidad.</li>
-          <li>Premiamos a quienes hacen que las cosas sucedan.</li>
-          <li>Nos adaptamos a los cambios tecnológicos y del mercado.</li>
+          <li>Hacemos preguntas y exploramos ideas con <strong class="highlight-word">curiosidad</strong>.</li>
+          <li>Reconocemos la <strong class="highlight-word">iniciativa</strong> de quienes hacen que las cosas sucedan.</li>
+          <li>Aprendemos de los cambios para <strong class="highlight-word">adaptarnos y mejorar</strong>.</li>
         </ul>
       </div>
 
