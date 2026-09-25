@@ -3269,8 +3269,14 @@ small { font-size: var(--fs-small); line-height: 1.6; }
 }
 .about-content h2 {
   max-width: 680px;
-  margin-bottom: 32px;
+  margin-bottom: 8px;
   font-size: clamp(1.5rem, 2.7vw, 2.15rem);
+}
+.about-content .about-intro {
+  max-width: 600px;
+  margin-bottom: 28px;
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 .about-content p  {
   max-width: 640px;
@@ -3280,12 +3286,12 @@ small { font-size: var(--fs-small); line-height: 1.6; }
 }
 .about-pillars {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0;
   margin-top: 0;
 }
 .about-pillar {
-  padding: 8px 28px;
+  padding: 8px 20px;
   min-width: 0;
 }
 .about-pillar + .about-pillar {
@@ -3293,7 +3299,7 @@ small { font-size: var(--fs-small); line-height: 1.6; }
 }
 .pillar-value {
   color: #2B2E6F;
-  font-size: clamp(1.55rem, 2.5vw, 2.2rem);
+  font-size: clamp(1.4rem, 2.25vw, 2rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1.05;
@@ -3380,13 +3386,17 @@ small { font-size: var(--fs-small); line-height: 1.6; }
   display: flex;
   gap: 24px;
   overflow-x: auto;
+  overflow-y: hidden;
   padding: 4px 2px 8px;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  touch-action: pan-y;
+  cursor: grab;
 }
 .testimonials-grid::-webkit-scrollbar { display: none; }
+.testimonials-grid.is-dragging { cursor: grabbing; }
 .testimonial-carousel-controls {
   display: flex;
   justify-content: flex-end;
@@ -4571,10 +4581,14 @@ small { font-size: var(--fs-small); line-height: 1.6; }
   .how-steps::before { display: none; }
   .about-inner   { grid-template-columns: 1fr; gap: 48px; }
   .about-pillars {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     row-gap: 24px;
   }
-  .about-pillar:nth-child(3) { border-left: 0; }
+  .about-pillar { grid-column: span 2; }
+  .about-pillar:nth-child(4) {
+    grid-column: 2 / span 2;
+    border-left: 0;
+  }
   .footer {
     padding: 64px 0 32px;
   }
@@ -5118,7 +5132,9 @@ small { font-size: var(--fs-small); line-height: 1.6; }
   }
   .about-pillar {
     padding: 18px 0;
+    grid-column: auto;
   }
+  .about-pillar:nth-child(4) { grid-column: auto; }
   .about-pillar + .about-pillar {
     border-left: 0;
     border-top: 1px solid rgba(43,46,111,0.15);

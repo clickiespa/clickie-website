@@ -210,6 +210,52 @@ document.addEventListener('DOMContentLoaded', () => {
     next.addEventListener('click', () => move(1));
     track.addEventListener('scroll', updateControls, { passive: true });
     window.addEventListener('resize', updateControls, { passive: true });
+
+    let drag = null;
+    const endDrag = (event) => {
+      if (!drag || (event && event.pointerId !== drag.pointerId)) return;
+      if (track.hasPointerCapture(drag.pointerId)) {
+        track.releasePointerCapture(drag.pointerId);
+      }
+      track.classList.remove('is-dragging');
+      drag = null;
+    };
+
+    track.addEventListener('pointerdown', (event) => {
+      if (event.pointerType === 'mouse' && event.button !== 0) return;
+      drag = {
+        pointerId: event.pointerId,
+        startX: event.clientX,
+        startY: event.clientY,
+        scrollLeft: track.scrollLeft,
+        horizontal: false
+      };
+    });
+
+    track.addEventListener('pointermove', (event) => {
+      if (!drag || event.pointerId !== drag.pointerId) return;
+
+      const deltaX = event.clientX - drag.startX;
+      const deltaY = event.clientY - drag.startY;
+
+      if (!drag.horizontal) {
+        if (Math.abs(deltaX) < 8 && Math.abs(deltaY) < 8) return;
+        if (Math.abs(deltaY) >= Math.abs(deltaX)) {
+          drag = null;
+          return;
+        }
+        drag.horizontal = true;
+        track.setPointerCapture(event.pointerId);
+        track.classList.add('is-dragging');
+      }
+
+      event.preventDefault();
+      track.scrollLeft = drag.scrollLeft - deltaX;
+    });
+
+    track.addEventListener('pointerup', endDrag);
+    track.addEventListener('pointercancel', endDrag);
+
     updateControls();
   });
 
