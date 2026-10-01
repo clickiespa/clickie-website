@@ -398,23 +398,6 @@
 </section>
 
 
-<!-- ════════════════════════════════════════
-     VIDEO CLICKIE
-════════════════════════════════════════ -->
-<section class="section video-section" id="video-clickie">
-  <div class="container">
-    <span class="section-label">Conoce Clickie</span>
-    <h2 class="section-title">Descubre cómo transformamos tu <span class="text-accent-primary">gestión energética</span></h2>
-    <p class="section-subtitle">Ahorra hasta un 20% en tu consumo y reduce tu huella de carbono con nuestra plataforma inteligente.</p>
-    <div class="video-wrapper video-wrapper--clickie has-thumbnail" id="videoClickieWrapper" onclick="playClickieVideo(this)">
-      <img src="https://img.youtube.com/vi/DXF10lbkIf4/maxresdefault.jpg" alt="Video Clickie" class="video-thumbnail" loading="lazy">
-      <button class="video-play-btn" aria-label="Reproducir video">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-      </button>
-    </div>
-  </div>
-</section>
-
 
 <!-- ════════════════════════════════════════
      TESTIMONIALS
@@ -506,21 +489,20 @@
   <div class="container">
     <div class="resources-intro-layout">
       <div class="resources-header">
-        <h2 class="section-title">Conocimiento para pasar del <span class="highlight">dato a la acción</span></h2>
-        <p class="section-subtitle">Explora guías, casos y contenidos para mejorar la gestión energética de tu operación.</p>
-        <a href="recursos/encuesta-madurez.html" class="resource-btn">Explorar recursos →</a>
+        <h2 class="section-title">Recursos para aprender, evaluar y tomar mejores decisiones</h2>
+        <p class="section-subtitle">Guías, casos, análisis y herramientas para entender mejor tu gestión energética y detectar nuevas oportunidades.</p>
+        <nav class="resources-intro-categories" aria-label="Categorías de recursos">
+          <a href="recursos/guias.html">Guías</a><span aria-hidden="true">·</span>
+          <a href="recursos/blog.html">Blog</a><span aria-hidden="true">·</span>
+          <a href="https://www.youtube.com/@clickie4338" target="_blank" rel="noopener">YouTube</a><span aria-hidden="true">·</span>
+          <a href="recursos/casos-de-negocio.html">Casos de Negocio</a><span aria-hidden="true">·</span>
+          <a href="recursos/encuesta-madurez.html">Encuesta</a>
+        </nav>
       </div>
 
-      <article class="resource-card resources-intro-feature">
-        <div class="resource-preview resource-preview-photo resource-preview-photo--survey">
-          <img class="home-visual-filter" src="Imagenes/encuesta-madurez-energetica-de-tamano-grande.jpeg" alt="Nivel de Madurez Energética" loading="lazy" />
-        </div>
-        <div class="resource-body">
-          <span class="resource-tag tool">Destacado</span>
-          <h3>¿Cuál es tu Nivel de Madurez Energética?</h3>
-          <a href="recursos/encuesta-madurez.html" class="resources-intro-link">Ver recurso →</a>
-        </div>
-      </article>
+      <figure class="resources-intro-editorial">
+        <img class="home-visual-filter" src="Imagenes/encuesta-madurez-energetica-de-tamano-grande.jpeg" alt="Personas explorando recursos de Clickie" loading="lazy" />
+      </figure>
     </div>
   </div>
 </section>
@@ -573,7 +555,6 @@
 <section class="cta-banner">
   <div class="container">
     <div class="cta-inner">
-      <span class="section-label section-label-soft">Únete a más de 5.000 localizaciones</span>
       <h2>¿Listo para ahorrar energía <br>y reducir costos?</h2>
       <p>Contáctanos hoy y diseñamos juntos la solución perfecta para tu empresa.</p>
       <div class="cta-actions">
