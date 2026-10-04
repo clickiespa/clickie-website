@@ -474,7 +474,7 @@ function renderArticlePage(post, allPosts, previousPost, nextPost) {
   <meta name="twitter:title" content="${escapeAttribute(post.title)}" />
   <meta name="twitter:description" content="${escapeAttribute(post.description)}" />
   <meta name="twitter:image" content="${escapeAttribute(imageUrl)}" />
-  <link rel="icon" type="image/png" href="../../assets/favicon-navbar.png" sizes="256x256" />
+  <link rel="icon" type="image/png" href="../../assets/favicon-clickie-gris.png" sizes="256x256" />
   <link rel="stylesheet" href="${fontAwesomeStylesheet}" />
   <link rel="stylesheet" href="../../styles/main.css" />
   ${renderStructuredData(articleStructuredData)}
@@ -607,7 +607,7 @@ function renderBlogIndex(allPosts) {
   <meta name="twitter:title" content="Blog Clickie | Energía, eficiencia y sostenibilidad" />
   <meta name="twitter:description" content="Artículos sobre eficiencia energética, sostenibilidad, casos de éxito y tendencias para empresas multisucursal en Latinoamérica." />
   <meta name="twitter:image" content="${escapeAttribute(isAbsoluteUrl(socialPreviewImage) ? socialPreviewImage : pageUrl(socialPreviewImage))}" />
-  <link rel="icon" type="image/png" href="../assets/favicon-navbar.png" sizes="256x256" />
+  <link rel="icon" type="image/png" href="../assets/favicon-clickie-gris.png" sizes="256x256" />
   <link rel="stylesheet" href="${fontAwesomeStylesheet}" />
   <link rel="stylesheet" href="../styles/main.css" />
   ${renderStructuredData(blogStructuredData)}
