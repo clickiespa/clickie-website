@@ -1,6 +1,7 @@
 (function () {
   var currentScript = document.currentScript;
   var GA_MEASUREMENT_ID = "G-TYPPJZ22DC";
+  var LUSHA_SITE_ID = "7707e229-9fa2-40a0-8df4-2aec42da5a52";
 
   if (!currentScript) {
     return;
@@ -48,6 +49,23 @@
     }
 
     ensureAnalyticsHelpers();
+    ensureLushaPixel(head);
+  }
+
+  // Pixel de Lusha (Website Visitors): identifica a nivel de empresa las organizaciones que visitan el sitio.
+  function ensureLushaPixel(head) {
+    if (document.querySelector('script[src*="lusha.com/website-visitor-pixel/"]')) {
+      return;
+    }
+
+    var lusha = document.createElement("script");
+    lusha.src = "https://static-packages-prod.lusha.com/website-visitor-pixel/latest/insights.min.js?nocache=" + Math.random().toString(36).substring(7);
+    lusha.async = true;
+    lusha.defer = true;
+    lusha.onload = function () {
+      window.trackingLusha.onLoad({ siteId: LUSHA_SITE_ID });
+    };
+    head.appendChild(lusha);
   }
 
   function normalizePath(pathname) {
