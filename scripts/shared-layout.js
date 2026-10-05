@@ -514,7 +514,7 @@
     + "                </div>"
     + "              </div>"
     + "              <a class=\"mega-about-feature\" href=\"" + siteUrl("nosotros.html") + "\">"
-    + "                <img src=\"" + siteUrl("assets/equipo-clickie.jpg") + "\" width=\"5794\" height=\"3863\" alt=\"El equipo Clickie reunido al aire libre\" loading=\"lazy\" />"
+    + "                <img src=\"" + siteUrl("assets/equipo-clickie-2026.jpg") + "\" width=\"1500\" height=\"1000\" alt=\"El equipo Clickie reunido al aire libre\" loading=\"lazy\" />"
     + "                <div class=\"mega-about-copy\"><p>Simplificamos la relación de las personas con la energía.</p><span>Conoce al equipo <span aria-hidden=\"true\">→</span></span></div>"
     + "              </a>"
     + "            </div>"
