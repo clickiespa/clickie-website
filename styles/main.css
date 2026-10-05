@@ -11319,6 +11319,9 @@ blockquote.interview-quote {
 .how-lumi-section .text-link { color: #2B2E6F; }
 .how-action-visual { margin: 0; overflow: hidden; background: var(--white); }
 .how-action-visual img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.how-media-link { display: block; cursor: pointer; }
+.how-media-link img { display: block; transition: transform .4s ease; }
+.how-media-link:hover img { transform: scale(1.03); }
 .how-action-copy h2 { margin: 10px 0 16px; color: #1F2A44; }
 .how-action-list { display: grid; gap: 10px; margin-top: 24px; }
 .how-action-list li { position: relative; padding-left: 18px; color: var(--text-secondary); font-size: .94rem; font-weight: 600; line-height: 1.5; }
