@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <clipPath id="favicon-corners">
+      <rect width="256" height="256" rx="52" />
+    </clipPath>
+    <filter id="blue-mark" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values="-1 -1 -1 0 2 -1 -1 -1 0 2 -1 -1 -1 0 2 0 0 0 1 0" />
+      <feComponentTransfer>
+        <feFuncR type="discrete" tableValues="0 1" />
+        <feFuncG type="discrete" tableValues="0 1" />
+        <feFuncB type="discrete" tableValues="0 1" />
+      </feComponentTransfer>
+    </filter>
+    <mask id="mark-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="256" height="256">
+      <image href="favicon-clickie-yellow.png" width="256" height="256" filter="url(#blue-mark)" />
+    </mask>
+  </defs>
+  <g clip-path="url(#favicon-corners)">
+    <rect width="256" height="256" fill="#FDC400" />
+    <rect width="256" height="256" fill="#30326D" mask="url(#mark-mask)" />
+  </g>
+</svg>
