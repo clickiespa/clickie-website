@@ -458,8 +458,7 @@ function renderArticlePage(post, allPosts, previousPost, nextPost) {
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="author" content="Clickie" />
   <link rel="canonical" href="${escapeAttribute(canonicalUrl)}" />
-  ${prevLink}
-  ${nextLink}
+  ${[prevLink, nextLink].filter(Boolean).join("\n  ")}
   <meta property="og:locale" content="es_CL" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Clickie" />
@@ -888,7 +887,7 @@ Sitemap: ${pageUrl("sitemap.xml")}
 }
 
 function main() {
-  const generatedOn = new Date().toISOString().slice(0, 10);
+  const generatedOn = process.env.BLOG_GENERATED_ON || new Date().toISOString().slice(0, 10);
   const enrichedPosts = posts
     .map((post) => {
       const source = readSourcePost(post.sourceFile);

@@ -28,6 +28,17 @@ module.exports = {
   ],
   posts: [
     {
+      slug: "energy-cloud-4-0-el-valor-de-la-energia-se-esta-trasladando-hacia-el-cliente",
+      sourceFile: "content/blog-posts/energy-cloud-4-0-el-valor-de-la-energia-se-esta-trasladando-hacia-el-cliente.source",
+      title: "Chile ante una nueva etapa energética: ¿qué cambia para las empresas?",
+      subtitle: "Datos, conectividad y control del consumo están redefiniendo dónde se crea valor y cómo las empresas pueden capturarlo.",
+      description: "Chile entra en una nueva etapa energética: datos, conectividad y control del consumo ayudarán a las empresas a anticipar cambios y gestionar mejor su energía.",
+      categoryKey: "sostenibilidad",
+      publishedAt: "2026-10-19",
+      coverImage: "assets/blog/energy-cloud-4-0-cover.png",
+      coverAlt: "Instalación artística que representa una red energética conectada entre distintos tipos de edificios e industrias"
+    },
+    {
       slug: "clickie-finalista-premio-avonni-2026",
       sourceFile: "content/blog-posts/clickie-finalista-premio-avonni-2026.source",
       title: "Clickie es finalista del Premio Nacional de Innovación Avonni 2026",

@@ -6117,6 +6117,14 @@ button.guia-card-cta:hover {
   margin: 0 0 20px;
   color: var(--text-secondary);
 }
+.article-content .article-lede {
+  max-width: 62ch;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  font-size: 1.18em;
+  font-weight: 600;
+  line-height: 1.55;
+}
 .article-content ul, .article-content ol {
   margin: 0 0 20px;
   padding-left: 24px;
