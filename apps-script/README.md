@@ -61,4 +61,5 @@ publicar (la función `testEnvio` sirve para probarlo).
 - Límite de envío de Gmail con Workspace: ~1.500 correos/día (sobra para leads).
 - El correo sale con SPF/DKIM del dominio clickie.io → buena entregabilidad.
 - Anti-spam: campo honeypot oculto; los envíos de bots se descartan en silencio.
-- Los leads quedan en la Sheet: Fecha, Nombre, Email, Empresa, Documento, Página.
+- Los leads y contactos quedan con la página de origen y los datos de atribución
+  disponibles: UTM, identificadores de clic de campañas y página/referente de entrada.

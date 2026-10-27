@@ -9,6 +9,53 @@
 
   var siteRootUrl = new URL("../", currentScript.src);
   var currentUrl = new URL(window.location.href);
+  var ATTRIBUTION_STORAGE_KEY = "clickie_attribution";
+
+  function getAttributionData() {
+    var query = currentUrl.searchParams;
+    var campaignKeys = [
+      "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
+      "gclid", "gbraid", "wbraid", "msclkid", "fbclid", "li_fat_id"
+    ];
+    var saved = {};
+
+    try {
+      saved = JSON.parse(window.sessionStorage.getItem(ATTRIBUTION_STORAGE_KEY) || "{}") || {};
+    } catch (error) {
+      saved = {};
+    }
+
+    var currentCampaign = {};
+    campaignKeys.forEach(function (key) {
+      var value = query.get(key);
+      if (value) {
+        currentCampaign[key] = value;
+      }
+    });
+
+    var attribution = Object.assign({}, saved);
+
+    // Una nueva campaña inicia una atribución nueva dentro de la misma sesión.
+    if (Object.keys(currentCampaign).length) {
+      campaignKeys.forEach(function (key) {
+        delete attribution[key];
+      });
+      Object.assign(attribution, currentCampaign);
+    }
+
+    if (!attribution.landing_page) {
+      attribution.landing_page = window.location.pathname + window.location.search;
+      attribution.landing_referrer = document.referrer || "";
+    }
+
+    try {
+      window.sessionStorage.setItem(ATTRIBUTION_STORAGE_KEY, JSON.stringify(attribution));
+    } catch (error) {
+      // La medición no debe depender de que sessionStorage esté disponible.
+    }
+
+    return attribution;
+  }
 
   function ensureSharedAssets() {
     var head = document.head;
@@ -196,6 +243,8 @@
     window.clickieAnalytics = window.clickieAnalytics || {};
 
     window.clickieAnalytics.measurementId = GA_MEASUREMENT_ID;
+    window.clickieAttribution = window.clickieAttribution || {};
+    window.clickieAttribution.getData = getAttributionData;
     window.clickieAnalytics.getPageGroup = getPageGroup;
     window.clickieAnalytics.normalizeText = normalizeText;
     window.clickieAnalytics.slugify = slugifyValue;
@@ -614,6 +663,7 @@
   }
 
   ensureSharedAssets();
+  getAttributionData();
   ensureThirdPartyIntegrations();
   mountLayout("mobile-menu", mobileMenu);
   mountLayout("navbar", navbar);

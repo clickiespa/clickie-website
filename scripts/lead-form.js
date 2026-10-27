@@ -32,6 +32,20 @@
     return window.clickieAnalytics || null;
   }
 
+  function getAttribution() {
+    return window.clickieAttribution && window.clickieAttribution.getData
+      ? window.clickieAttribution.getData()
+      : {};
+  }
+
+  function appendAttribution(data, attribution) {
+    Object.keys(attribution).forEach(function (key) {
+      if (attribution[key]) {
+        data.append(key, attribution[key]);
+      }
+    });
+  }
+
   function trackFormView(docId, docName, formType, onceKey) {
     var analytics = getAnalytics();
 
@@ -174,6 +188,7 @@
       data.append('website', form.website.value);
       data.append('docId', docId);
       data.append('pagina', window.location.pathname);
+      appendAttribution(data, getAttribution());
 
       fetch(ENDPOINT, { method: 'POST', body: data })
         .then(function (r) { return r.json(); })
@@ -356,6 +371,7 @@
       data.append('origen', formType);
       data.append('website', form.website.value);
       data.append('pagina', window.location.pathname);
+      appendAttribution(data, getAttribution());
 
       fetch(ENDPOINT, { method: 'POST', body: data })
         .then(function (r) { return r.json(); })

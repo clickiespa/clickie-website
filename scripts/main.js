@@ -442,23 +442,17 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         id: 'servicios',
         name: 'soluciones',
-        eventName: 'view_soluciones_section',
-        virtualPath: '/#soluciones',
-        pageTitle: 'Clickie | Soluciones'
+        eventName: 'view_soluciones_section'
       },
       {
         id: 'recursos',
         name: 'recursos',
-        eventName: 'view_recursos_section',
-        virtualPath: '/#recursos',
-        pageTitle: 'Clickie | Recursos'
+        eventName: 'view_recursos_section'
       },
       {
         id: 'contacto',
         name: 'contacto',
-        eventName: 'view_contacto_section',
-        virtualPath: '/#contacto',
-        pageTitle: 'Clickie | Contacto'
+        eventName: 'view_contacto_section'
       }
     ];
 
@@ -478,9 +472,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
 
           analytics.trackSectionView(section.name, {
-            page_group: 'home',
-            virtual_path: section.virtualPath,
-            page_title: section.pageTitle
+            page_group: 'home'
           });
         });
       });

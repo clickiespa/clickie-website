@@ -125,7 +125,9 @@ function doPost(e) {
       return jsonResponse({ ok: false, error: 'Documento no encontrado' });
     }
 
-    saveLead([new Date(), nombre, apellido, email, textoSeguro(telefono), empresa, cargo, doc.name, pagina]);
+    saveLead([
+      new Date(), nombre, apellido, email, textoSeguro(telefono), empresa, cargo, doc.name, pagina
+    ].concat(getAttributionValues(p)));
     sendDocumentEmail(nombre, email, doc);
     if (CONFIG.NOTIFY_EMAIL) notifyTeam(nombre + ' ' + apellido, email, telefono, empresa, cargo, doc);
 
@@ -137,7 +139,15 @@ function doPost(e) {
 
 // ========================= CONTACTO =========================
 
-var CONTACT_HEADERS = ['Fecha', 'Nombre', 'Apellido', 'Email', 'Teléfono', 'Empresa', 'Industria', 'Mensaje', 'Origen', 'Página'];
+var ATTRIBUTION_HEADERS = [
+  'UTM source', 'UTM medium', 'UTM campaign', 'UTM term', 'UTM content',
+  'Google click ID', 'Google braid', 'Microsoft click ID', 'Meta click ID', 'LinkedIn click ID',
+  'Página de entrada', 'Referente de entrada'
+];
+
+var CONTACT_HEADERS = [
+  'Fecha', 'Nombre', 'Apellido', 'Email', 'Teléfono', 'Empresa', 'Industria', 'Mensaje', 'Origen', 'Página'
+].concat(ATTRIBUTION_HEADERS);
 
 function handleContacto(p) {
   var nombre = String(p.nombre || '').trim();
@@ -156,10 +166,13 @@ function handleContacto(p) {
 
   var ss = SpreadsheetApp.openById(CONFIG.SHEET_ID);
   var sheet = ss.getSheetByName('Contactos') || ss.insertSheet('Contactos');
-  if (sheet.getLastRow() === 0) {
+  var firstCell = sheet.getLastRow() > 0 ? sheet.getRange(1, 1).getValue() : '';
+  if (sheet.getLastRow() === 0 || (firstCell === 'Fecha' && sheet.getLastColumn() < CONTACT_HEADERS.length)) {
     sheet.getRange(1, 1, 1, CONTACT_HEADERS.length).setValues([CONTACT_HEADERS]).setFontWeight('bold');
   }
-  sheet.appendRow([new Date(), nombre, apellido, email, textoSeguro(telefono), empresa, industria, mensaje, origen, pagina]);
+  sheet.appendRow([
+    new Date(), nombre, apellido, email, textoSeguro(telefono), empresa, industria, mensaje, origen, pagina
+  ].concat(getAttributionValues(p)));
 
   // Aviso al equipo comercial
   if (CONFIG.NOTIFY_EMAIL) {
@@ -212,7 +225,19 @@ function buildContactoHtml(primerNombre) {
 
 // ========================= LÓGICA =========================
 
-var LEAD_HEADERS = ['Fecha', 'Nombre', 'Apellido', 'Email', 'Teléfono', 'Empresa', 'Cargo', 'Documento', 'Página origen'];
+var LEAD_HEADERS = [
+  'Fecha', 'Nombre', 'Apellido', 'Email', 'Teléfono', 'Empresa', 'Cargo', 'Documento', 'Página origen'
+].concat(ATTRIBUTION_HEADERS);
+
+function getAttributionValues(p) {
+  return [
+    p.utm_source, p.utm_medium, p.utm_campaign, p.utm_term, p.utm_content,
+    p.gclid, p.gbraid || p.wbraid, p.msclkid, p.fbclid, p.li_fat_id,
+    p.landing_page, p.landing_referrer
+  ].map(function (value) {
+    return textoSeguro(String(value || '').trim());
+  });
+}
 
 function saveLead(row) {
   var ss = SpreadsheetApp.openById(CONFIG.SHEET_ID);
