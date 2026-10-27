@@ -3002,6 +3002,16 @@ small { font-size: var(--fs-small); line-height: 1.6; }
   height: 100%;
   border: none;
 }
+.video-wrapper video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.ubm-video {
+  margin-top: 56px;
+}
 
 /* ════════════════════════════════════════════════════════════
    METRICS / IMPACT

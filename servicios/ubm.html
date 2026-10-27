@@ -121,6 +121,11 @@
         <div class="step-track-dot step-track-dot--brand"></div>
       </div>
     </div>
+    <!-- Video UBM -->
+    <div class="video-wrapper has-thumbnail ubm-video" id="ubmVideo" onclick="playUbmVideo(this)">
+      <img src="../assets/ubm-video-portada.jpg" alt="Video UBM de Clickie: cientos de facturas eléctricas" class="video-thumbnail" loading="lazy" />
+      <button class="video-play-btn" aria-label="Reproducir video de UBM"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button>
+    </div>
   </div>
 </section>
 
@@ -236,6 +241,15 @@
 
 <div data-site-shell="footer"></div>
 
+<script>
+function playUbmVideo(container) {
+  if (container.dataset.playing) return;
+  container.dataset.playing = 'true';
+  container.classList.remove('has-thumbnail');
+  window.clickieAnalytics?.trackVideoStart({ video_id: 'ubm-de-clickie', video_title: 'UBM de Clickie', video_provider: 'self_hosted', video_location: 'servicios_ubm', video_action: 'inline_play' });
+  container.innerHTML = '<video src="../assets/ubm-de-clickie.mp4" poster="../assets/ubm-video-portada.jpg" controls autoplay playsinline title="UBM de Clickie"></video>';
+}
+</script>
 <script src="../scripts/shared-layout.js"></script>
 <script src="../scripts/main.js"></script>
 </body>
