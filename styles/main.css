@@ -2465,6 +2465,33 @@ small { font-size: var(--fs-small); line-height: 1.6; }
 .client-logo .logo-img-salcobrand {
   height: 40px;
 }
+.client-logo .logo-img-copefrut {
+  height: 58px;
+  max-height: none;
+  mix-blend-mode: normal;
+}
+.client-logo .logo-img-udp {
+  max-height: 30px;
+  max-width: 120px;
+}
+.client-logo .logo-img-forus {
+  max-height: 42px;
+  max-width: 110px;
+}
+.client-logo .logo-img-entel,
+.client-logo .logo-img-tarragona {
+  height: 86px;
+  max-height: none;
+}
+.client-logo .logo-img-grupo-patio {
+  max-height: 46px;
+  max-width: 100px;
+}
+.client-logo .logo-img-ripley {
+  height: 76px;
+  max-height: none;
+  mix-blend-mode: normal;
+}
 .clients--industry {
   padding: 14px 0;
   border-top: 1px solid rgba(229,231,235,0.8);
