@@ -50,38 +50,6 @@
           <a href="#servicios" class="btn btn-outline-dark btn-lg">Explorar servicios</a>
         </div>
 
-        <div class="hero-stats hero-stats--countries">
-          <div class="hero-stat hero-stat--country">
-            <div class="hero-stat-heading">
-              <span class="metric-flag metric-flag--chile" aria-hidden="true"></span>
-            </div>
-            <span class="hero-stat-label">Chile</span>
-          </div>
-          <div class="hero-stat hero-stat--country">
-            <div class="hero-stat-heading">
-              <span class="metric-flag metric-flag--argentina" aria-hidden="true"></span>
-            </div>
-            <span class="hero-stat-label">Argentina</span>
-          </div>
-          <div class="hero-stat hero-stat--country">
-            <div class="hero-stat-heading">
-              <span class="metric-flag metric-flag--bolivia" aria-hidden="true"></span>
-            </div>
-            <span class="hero-stat-label">Bolivia</span>
-          </div>
-          <div class="hero-stat hero-stat--country">
-            <div class="hero-stat-heading">
-              <span class="metric-flag metric-flag--peru" aria-hidden="true"></span>
-            </div>
-            <span class="hero-stat-label">Perú</span>
-          </div>
-          <div class="hero-stat hero-stat--country">
-            <div class="hero-stat-heading">
-              <span class="metric-flag metric-flag--mexico" aria-hidden="true"></span>
-            </div>
-            <span class="hero-stat-label">México</span>
-          </div>
-        </div>
       </div>
 
       <div class="hero-image" data-hero-slider>
@@ -158,6 +126,7 @@
       </div>
 
     </div>
+    <div id="heroClientsSlot" class="hero-clients-slot"></div>
   </div>
 </section>
 
@@ -231,7 +200,7 @@
 <!-- ════════════════════════════════════════
      CLIENTS STRIP
 ════════════════════════════════════════ -->
-<section class="clients" aria-label="Clientes de Clickie">
+<section id="clientsStrip" class="clients clients--hero" aria-label="Clientes de Clickie">
   <div class="container">
     <p class="clients-label">Más de 60 empresas ya confían en Clickie</p>
   </div>
@@ -240,11 +209,11 @@
     <div class="clients-track" id="clientsTrack">
       <span class="client-logo"><img src="assets/logos/copefrut.png" alt="Copefrut" class="logo-img-copefrut"></span>
       <span class="client-logo"><img src="assets/logos/Logo_Universidad_Diego_Portales.png" alt="Universidad Diego Portales" class="logo-img-udp"></span>
-      <span class="client-logo"><img src="assets/logos/Logo_Forus.png" alt="Forus" class="logo-img-forus"></span>
-      <span class="client-logo"><img src="assets/logos/entel.png" alt="Entel" class="logo-img-entel"></span>
+      <span class="client-logo"><img src="assets/logos/clickie-forus-transparent.png" alt="Forus" class="logo-img-forus"></span>
+      <span class="client-logo"><img src="assets/logos/entel-transparent.png" alt="Entel" class="logo-img-entel"></span>
       <span class="client-logo"><img src="assets/logos/Logo_Ripley.png" alt="Ripley" class="logo-img-ripley"></span>
-      <span class="client-logo"><img src="assets/logos/Tarragona.jpg" alt="Tarragona" class="logo-img-tarragona"></span>
-      <span class="client-logo"><img src="assets/logos/grupopatio.jpeg" alt="Grupo Patio" class="logo-img-grupo-patio"></span>
+      <span class="client-logo"><img src="assets/logos/Tarragona-transparent.png" alt="Tarragona" class="logo-img-tarragona"></span>
+      <span class="client-logo"><img src="assets/logos/grupopatio-transparent.png" alt="Grupo Patio" class="logo-img-grupo-patio"></span>
       <span class="client-logo"><img src="assets/logos/clickie-salcobrand.png" alt="Salcobrand" class="logo-img-h40 logo-img-salcobrand"></span>
       <span class="client-logo"><img src="assets/logos/clickie-cruz-verde.svg" alt="Cruz Verde" class="logo-img-h40"></span>
       <span class="client-logo"><img src="assets/logos/clickie-lipigas.png" alt="Lipigas" class="logo-img-h40"></span>
@@ -263,11 +232,11 @@
       <!-- duplicate for seamless loop -->
       <span class="client-logo"><img src="assets/logos/copefrut.png" alt="Copefrut" class="logo-img-copefrut"></span>
       <span class="client-logo"><img src="assets/logos/Logo_Universidad_Diego_Portales.png" alt="Universidad Diego Portales" class="logo-img-udp"></span>
-      <span class="client-logo"><img src="assets/logos/Logo_Forus.png" alt="Forus" class="logo-img-forus"></span>
-      <span class="client-logo"><img src="assets/logos/entel.png" alt="Entel" class="logo-img-entel"></span>
+      <span class="client-logo"><img src="assets/logos/clickie-forus-transparent.png" alt="Forus" class="logo-img-forus"></span>
+      <span class="client-logo"><img src="assets/logos/entel-transparent.png" alt="Entel" class="logo-img-entel"></span>
       <span class="client-logo"><img src="assets/logos/Logo_Ripley.png" alt="Ripley" class="logo-img-ripley"></span>
-      <span class="client-logo"><img src="assets/logos/Tarragona.jpg" alt="Tarragona" class="logo-img-tarragona"></span>
-      <span class="client-logo"><img src="assets/logos/grupopatio.jpeg" alt="Grupo Patio" class="logo-img-grupo-patio"></span>
+      <span class="client-logo"><img src="assets/logos/Tarragona-transparent.png" alt="Tarragona" class="logo-img-tarragona"></span>
+      <span class="client-logo"><img src="assets/logos/grupopatio-transparent.png" alt="Grupo Patio" class="logo-img-grupo-patio"></span>
       <span class="client-logo"><img src="assets/logos/clickie-salcobrand.png" alt="Salcobrand" class="logo-img-h40 logo-img-salcobrand"></span>
       <span class="client-logo"><img src="assets/logos/clickie-cruz-verde.svg" alt="Cruz Verde" class="logo-img-h40"></span>
       <span class="client-logo"><img src="assets/logos/clickie-lipigas.png" alt="Lipigas" class="logo-img-h40"></span>
@@ -294,7 +263,7 @@
       <span class="client-logo"><img src="assets/logos/clickie-ecer.png" alt="Ecer" class="logo-img-max-34-110 logo-img-ecer"></span>
       <span class="client-logo"><img src="assets/logos/clickie-enex.png" alt="Enex" class="logo-img-max-34-110 logo-img-enex"></span>
       <span class="client-logo"><img src="assets/logos/clickie-ideal.png" alt="Ideal" class="logo-img-h70"></span>
-      <span class="client-logo"><img src="assets/logos/clickie-imelsa-energia.png" alt="Imelsa Energía" class="logo-img-h40 logo-img-imelsa"></span>
+      <span class="client-logo"><img src="assets/logos/clickie-imelsa-energia-orange-transparent.png" alt="Imelsa Energía" class="logo-img-h40 logo-img-imelsa"></span>
       <span class="client-logo"><img src="assets/logos/clickie-farmacias-ahumada.png" alt="Farmacias Ahumada" class="logo-img-max-30-110"></span>
       <span class="client-logo"><img src="assets/logos/clickie-doctor-simi.png" alt="Doctor Simi" class="logo-img-h40-free"></span>
       <span class="client-logo"><img src="assets/logos/clickie-tattersall.png" alt="Tattersall" class="logo-img-max-22-110"></span>
@@ -310,7 +279,7 @@
       <span class="client-logo"><img src="assets/logos/clickie-ecer.png" alt="Ecer" class="logo-img-max-34-110 logo-img-ecer"></span>
       <span class="client-logo"><img src="assets/logos/clickie-enex.png" alt="Enex" class="logo-img-max-34-110 logo-img-enex"></span>
       <span class="client-logo"><img src="assets/logos/clickie-ideal.png" alt="Ideal" class="logo-img-h70"></span>
-      <span class="client-logo"><img src="assets/logos/clickie-imelsa-energia.png" alt="Imelsa Energía" class="logo-img-h40 logo-img-imelsa"></span>
+      <span class="client-logo"><img src="assets/logos/clickie-imelsa-energia-orange-transparent.png" alt="Imelsa Energía" class="logo-img-h40 logo-img-imelsa"></span>
       <span class="client-logo"><img src="assets/logos/clickie-farmacias-ahumada.png" alt="Farmacias Ahumada" class="logo-img-max-30-110"></span>
       <span class="client-logo"><img src="assets/logos/clickie-doctor-simi.png" alt="Doctor Simi" class="logo-img-h40-free"></span>
       <span class="client-logo"><img src="assets/logos/clickie-tattersall.png" alt="Tattersall" class="logo-img-max-22-110"></span>
@@ -322,6 +291,9 @@
     </div>
   </div>
 </section>
+<script>
+  document.getElementById('heroClientsSlot').appendChild(document.getElementById('clientsStrip'));
+</script>
 
 
 <!-- ════════════════════════════════════════
@@ -596,6 +568,13 @@
               app.clickie.io
             </div>
           </div>
+        </div>
+        <div class="hero-stats hero-stats--countries contact-countries" aria-label="Países donde opera Clickie">
+          <div class="hero-stat hero-stat--country"><div class="hero-stat-heading"><span class="metric-flag metric-flag--chile" aria-hidden="true"></span></div><span class="hero-stat-label">Chile</span></div>
+          <div class="hero-stat hero-stat--country"><div class="hero-stat-heading"><span class="metric-flag metric-flag--argentina" aria-hidden="true"></span></div><span class="hero-stat-label">Argentina</span></div>
+          <div class="hero-stat hero-stat--country"><div class="hero-stat-heading"><span class="metric-flag metric-flag--bolivia" aria-hidden="true"></span></div><span class="hero-stat-label">Bolivia</span></div>
+          <div class="hero-stat hero-stat--country"><div class="hero-stat-heading"><span class="metric-flag metric-flag--peru" aria-hidden="true"></span></div><span class="hero-stat-label">Perú</span></div>
+          <div class="hero-stat hero-stat--country"><div class="hero-stat-heading"><span class="metric-flag metric-flag--mexico" aria-hidden="true"></span></div><span class="hero-stat-label">México</span></div>
         </div>
       </div>
 
