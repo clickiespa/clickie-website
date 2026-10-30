@@ -1,6 +1,6 @@
 (function () {
   var currentScript = document.currentScript;
-  var GA_MEASUREMENT_ID = "G-TYPPJZ22DC";
+  var GA_MEASUREMENT_ID = "G-376CDN0NFM";
   var LUSHA_SITE_ID = "7707e229-9fa2-40a0-8df4-2aec42da5a52";
 
   if (!currentScript) {
