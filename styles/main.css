@@ -6714,6 +6714,13 @@ blockquote.interview-quote {
   margin-bottom: var(--space-5);
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
 }
+.article-image-credit {
+  margin: calc(-1 * var(--space-5) + 8px) 0 var(--space-5);
+  font-size: var(--fs-small);
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: right;
+}
 .pavilion-flag {
   font-size: 1.6rem;
   margin-right: 8px;
