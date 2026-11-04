@@ -6714,8 +6714,19 @@ blockquote.interview-quote {
   margin-bottom: var(--space-5);
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
 }
+.article-hero-figure {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.article-hero-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
 .article-image-credit {
-  margin: calc(-1 * var(--space-5) + 8px) 0 var(--space-5);
+  margin-top: 8px;
   font-size: var(--fs-small);
   color: var(--text-secondary);
   font-style: italic;
