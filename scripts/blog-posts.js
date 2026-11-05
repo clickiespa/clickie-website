@@ -28,6 +28,17 @@ module.exports = {
   ],
   posts: [
     {
+      slug: "clickie-gana-premio-nacional-de-innovacion-avonni-2026",
+      sourceFile: "content/blog-posts/clickie-gana-premio-nacional-de-innovacion-avonni-2026.source",
+      title: "Clickie gana el Premio Nacional de Innovación Avonni 2026",
+      subtitle: "El reconocimiento en la categoría Soluciones y Servicios Digitales Entel marca un hito para nuestro equipo y nuestra forma de entender la gestión energética: del dato a la acción.",
+      description: "Clickie ganó el Premio Nacional de Innovación Avonni 2026 en Soluciones y Servicios Digitales Entel, por transformar datos energéticos en decisiones concretas.",
+      categoryKey: "prensa",
+      publishedAt: "2026-11-05",
+      coverImage: "assets/blog/clickie-gana-premio-avonni-2026.png",
+      coverAlt: "Equipo de Clickie recibe el Premio Nacional de Innovación Avonni 2026 en la categoría Soluciones y Servicios Digitales Entel"
+    },
+    {
       slug: "energy-cloud-4-0-el-valor-de-la-energia-se-esta-trasladando-hacia-el-cliente",
       sourceFile: "content/blog-posts/energy-cloud-4-0-el-valor-de-la-energia-se-esta-trasladando-hacia-el-cliente.source",
       title: "Chile ante una nueva etapa energética: ¿qué cambia para las empresas?",
