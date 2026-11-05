@@ -667,6 +667,14 @@ const filterButtons = Array.from(document.querySelectorAll('.blog-filter-btn'));
 let currentFilter = 'all';
 let currentPage = 1;
 let currentQuery = '';
+const requestedFilter = new URLSearchParams(window.location.search).get('categoria');
+
+if (filterButtons.some((button) => button.dataset.filter === requestedFilter)) {
+  currentFilter = requestedFilter;
+  filterButtons.forEach((button) => {
+    button.classList.toggle('active', button.dataset.filter === currentFilter);
+  });
+}
 
 function getFilteredCards() {
   const normalizedQuery = normalizeText(currentQuery);
