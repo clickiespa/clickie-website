@@ -11421,6 +11421,86 @@ blockquote.interview-quote {
   .resources-intro-editorial { max-width: 400px; }
 }
 
+/* Home: preguntas frecuentes */
+.faq {
+  background: var(--gray-50);
+}
+.faq-layout {
+  display: grid;
+  grid-template-columns: minmax(230px, .72fr) minmax(0, 1.28fr);
+  align-items: start;
+  gap: clamp(40px, 8vw, 112px);
+}
+.faq-header {
+  position: sticky;
+  top: 120px;
+}
+.faq-header .section-title {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+}
+.faq-header .section-subtitle {
+  margin: 0;
+}
+.faq-list {
+  border-top: 1px solid var(--gray-300);
+}
+.faq-item {
+  border-bottom: 1px solid var(--gray-300);
+}
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0;
+  color: #1F2A44;
+  cursor: pointer;
+  font-family: 'Raleway', 'Inter', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1.35;
+  list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  flex: 0 0 auto;
+  color: #2B2E6F;
+  font-family: 'Open Sans', 'Inter', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform .2s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item summary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: -4px;
+}
+.faq-answer {
+  max-width: 690px;
+  padding: 0 40px 26px 0;
+}
+.faq-answer p {
+  margin: 0 0 14px;
+  color: var(--text-secondary);
+  font-size: .98rem;
+  line-height: 1.7;
+}
+.faq-answer a {
+  color: #2B2E6F;
+  font-size: .94rem;
+  font-weight: 800;
+  line-height: 1.45;
+}
+.faq-answer a:hover { text-decoration: underline; }
+@media (max-width: 768px) {
+  .faq-layout { grid-template-columns: 1fr; gap: 36px; }
+  .faq-header { position: static; }
+  .faq-item summary { padding: 20px 0; font-size: 1rem; }
+  .faq-answer { padding: 0 28px 22px 0; }
+}
+
 /* ── Cómo funciona ─────────────────────────────────────────── */
 .how-hero {
   padding: 170px 0 96px;
