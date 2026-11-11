@@ -147,7 +147,7 @@ var ATTRIBUTION_HEADERS = [
 
 var CONTACT_HEADERS = [
   'Fecha', 'Nombre', 'Apellido', 'Email', 'Teléfono', 'Empresa', 'Industria', 'Mensaje', 'Origen', 'Página'
-].concat(ATTRIBUTION_HEADERS);
+].concat(ATTRIBUTION_HEADERS).concat(['Cargo', 'Sedes o locales']);
 
 function handleContacto(p) {
   var nombre = String(p.nombre || '').trim();
@@ -156,6 +156,8 @@ function handleContacto(p) {
   var telefono = String(p.telefono || '').trim();
   var empresa = String(p.empresa || '').trim();
   var industria = String(p.industria || '').trim();
+  var cargo = String(p.cargo || '').trim();
+  var sedes = String(p.sedes || '').trim();
   var mensaje = String(p.mensaje || '').trim();
   var origen = String(p.origen || 'contacto').trim();
   var pagina = String(p.pagina || '').trim();
@@ -172,7 +174,7 @@ function handleContacto(p) {
   }
   sheet.appendRow([
     new Date(), nombre, apellido, email, textoSeguro(telefono), empresa, industria, mensaje, origen, pagina
-  ].concat(getAttributionValues(p)));
+  ].concat(getAttributionValues(p)).concat([cargo, sedes]));
 
   // Aviso al equipo comercial
   if (CONFIG.NOTIFY_EMAIL) {
@@ -181,6 +183,7 @@ function handleContacto(p) {
       'Nuevo contacto web: ' + nombre + ' ' + apellido + (empresa ? ' (' + empresa + ')' : ''),
       'Nombre: ' + nombre + ' ' + apellido + '\nEmail: ' + email +
       '\nTeléfono: ' + (telefono || '—') + '\nEmpresa: ' + (empresa || '—') +
+      '\nCargo: ' + (cargo || '—') + '\nSedes o locales: ' + (sedes || '—') +
       '\nIndustria: ' + (industria || '—') + '\nOrigen: ' + origen +
       '\n\nMensaje:\n' + (mensaje || '—') +
       '\n\nContactos: https://docs.google.com/spreadsheets/d/' + CONFIG.SHEET_ID

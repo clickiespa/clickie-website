@@ -281,6 +281,8 @@
     'Cadenas de Comida', 'Cafeterías', 'Tiendas por Departamento',
     'Sucursales de Atención a Público', 'Industria / Manufactura', 'Otro'];
 
+  var SEDES = ['1', '2 a 5', '6 a 20', 'Más de 20', 'No lo sé'];
+
   function contactFormHtml() {
     return '' +
       '<div class="form-grid form-grid--lead">' +
@@ -303,6 +305,17 @@
       '<div class="form-group full-width">' +
         '<label class="form-label">Nombre de la empresa *</label>' +
         '<input class="form-input" type="text" name="empresa" required autocomplete="organization" placeholder="Nombre de tu empresa">' +
+      '</div>' +
+      '<div class="form-group">' +
+        '<label class="form-label">Cargo *</label>' +
+        '<input class="form-input" type="text" name="cargo" required autocomplete="organization-title" placeholder="Tu cargo en la empresa">' +
+      '</div>' +
+      '<div class="form-group">' +
+        '<label class="form-label">¿Cuántas sedes o locales tienen? *</label>' +
+        '<select class="form-select" name="sedes" required>' +
+          '<option value="">Selecciona</option>' +
+          SEDES.map(function (i) { return '<option value="' + i + '">' + i + '</option>'; }).join('') +
+        '</select>' +
       '</div>' +
       '<div class="form-group full-width">' +
         '<label class="form-label">Industria</label>' +
@@ -346,10 +359,12 @@
       var apellido = form.apellido.value.trim();
       var email = form.email.value.trim();
       var empresa = form.empresa.value.trim();
+      var cargo = form.cargo.value.trim();
+      var sedes = form.sedes.value;
       var errorEl = form.querySelector('.lead-form-error');
       errorEl.style.display = 'none';
 
-      if (!nombre || !apellido || !empresa || !EMAIL_RE.test(email)) {
+      if (!nombre || !apellido || !empresa || !cargo || !sedes || !EMAIL_RE.test(email)) {
         errorEl.textContent = 'Por favor completa los campos obligatorios (*) con datos válidos.';
         errorEl.style.display = 'block';
         return;
@@ -366,6 +381,8 @@
       data.append('email', email);
       data.append('telefono', form.telefono.value.trim());
       data.append('empresa', empresa);
+      data.append('cargo', cargo);
+      data.append('sedes', sedes);
       data.append('industria', form.industria.value);
       data.append('mensaje', form.mensaje.value.trim());
       data.append('origen', formType);
