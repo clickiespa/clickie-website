@@ -560,9 +560,22 @@ small { font-size: var(--fs-small); line-height: 1.6; }
   font-weight: 800;
 }
 .metric-pill-label {
+  display: block;
   font-family: 'Open Sans', 'Inter', sans-serif;
   font-size: var(--fs-small);
   color: var(--text-secondary);
+}
+.metric-pill-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: rgba(43,46,111,0.08);
+  color: var(--secondary);
+  font-size: 1rem;
 }
 .case-study-link {
   display: inline-flex;
@@ -4298,6 +4311,16 @@ small { font-size: var(--fs-small); line-height: 1.6; }
 }
 .service-page .subpage-hero h1 {
   text-wrap: balance;
+}
+.service-page .subpage-hero .ubm-hero-subtitle {
+  display: block;
+  margin-top: 12px;
+  color: #2B2E6F;
+  font-family: 'Open Sans', 'Inter', sans-serif;
+  font-size: clamp(1rem, 1.65vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
 }
 .service-page .subpage-hero:not(.subpage-hero--with-image) h1 {
   max-width: 17ch;
