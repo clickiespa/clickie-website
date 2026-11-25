@@ -28,6 +28,28 @@ module.exports = {
   ],
   posts: [
     {
+      slug: "checklist-revisar-factura-electrica",
+      sourceFile: "content/blog-posts/checklist-revisar-factura-electrica.source",
+      title: "Checklist: qué revisar en una factura eléctrica antes de darla por buena",
+      subtitle: "Una lista práctica para revisar cada local, con un anexo para tiendas en malls y clínicas.",
+      description: "Descarga un checklist de dos páginas para revisar la factura eléctrica de cada local, con un anexo para tiendas en malls y clínicas.",
+      categoryKey: "multisucursal",
+      publishedAt: "2026-11-25",
+      coverImage: "assets/blog/checklist-revisar-factura-electrica-cover.jpg",
+      coverAlt: "Laptop con la plataforma UBM de Clickie mostrando gasto, consumo y eficiencia por sucursal"
+    },
+    {
+      slug: "como-una-revision-de-facturas-recupero-36-millones-para-una-cadena-retail",
+      sourceFile: "content/blog-posts/como-una-revision-de-facturas-recupero-36-millones-para-una-cadena-retail.source",
+      title: "Cómo una revisión de facturas recuperó $36 millones para una cadena retail",
+      subtitle: "Lecturas mal ingresadas por un centro comercial inflaron durante meses la cuenta de luz de una tienda. Así lo detectamos y lo corregimos.",
+      description: "Una revisión de facturas detectó lecturas mal ingresadas por un mall y recuperó $36 millones en cobros incorrectos para una cadena retail.",
+      categoryKey: "casos",
+      publishedAt: "2026-11-25",
+      coverImage: "assets/blog/como-una-revision-de-facturas-recupero-36-millones-para-una-cadena-retail-cover.jpg",
+      coverAlt: "Una lupa ilumina el bloque que sobresale entre otros similares, como una tienda cuyo consumo facturado no calza con el de sus pares"
+    },
+    {
       slug: "clickie-gana-premio-nacional-de-innovacion-avonni-2026",
       sourceFile: "content/blog-posts/clickie-gana-premio-nacional-de-innovacion-avonni-2026.source",
       title: "Clickie gana el Premio Nacional de Innovación Avonni 2026",

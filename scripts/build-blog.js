@@ -159,7 +159,7 @@ function shouldKeepStrong(text) {
     return true;
   }
 
-  if (plain.endsWith(":") && wordCount <= 3) {
+  if (plain.endsWith(":") && wordCount <= 4) {
     return true;
   }
 
@@ -451,6 +451,14 @@ function renderArticlePage(post, allPosts, previousPost, nextPost) {
   return `<!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-376CDN0NFM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-376CDN0NFM");
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${escapeHtml(post.title)} | Blog Clickie</title>
@@ -554,6 +562,7 @@ ${relatedPosts.map(renderRelatedCard).join("\n")}
 <div data-site-shell="footer"></div>
 <script src="../../scripts/shared-layout.js"></script>
 <script src="../../scripts/main.js"></script>
+<script src="../../scripts/lead-form.js"></script>
 </body>
 </html>
 `;
@@ -589,6 +598,14 @@ function renderBlogIndex(allPosts) {
   return `<!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-376CDN0NFM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-376CDN0NFM");
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog Clickie | Energía, eficiencia y sostenibilidad</title>

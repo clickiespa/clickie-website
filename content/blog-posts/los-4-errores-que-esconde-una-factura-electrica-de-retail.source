@@ -71,6 +71,13 @@
       <p>Si la respuesta no es reciente, es probable que haya dinero disponible sin necesidad de cambiar la operación.</p>
       <p>Un primer diagnóstico suele ser suficiente para entender la magnitud del problema. Y, en muchos casos, para recuperar valor antes de pensar en cualquier otra inversión.</p>
       <p>Escríbenos a <a href="mailto:hola@clickie.io">hola@clickie.io</a> y armamos el diagnóstico.</p>
+<div class="article-download">
+  <div class="article-download-text">
+    <span class="article-download-title">¿Quieres revisar tus facturas local por local?</span>
+    <span class="article-download-meta">Descarga nuestro checklist de dos páginas, con un anexo para locales en malls y clínicas.</span>
+  </div>
+  <button type="button" class="btn btn-primary article-download-btn" data-caso-modal data-doc-id="checklist-ubm" data-doc-name="Checklist: revisión de facturas de energía">Descargar checklist →</button>
+</div>
 </div>
 <!-- ARTICLE_CONTENT_END -->
 
