@@ -11809,21 +11809,23 @@ blockquote.interview-quote {
 }
 .article-download-meta { color: var(--text-secondary); font-size: .95rem; line-height: 1.5; }
 .article-content .article-download-btn { flex: 0 0 auto; white-space: nowrap; color: var(--text-primary); text-decoration: none; }
-.article-preview-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+.article-teaser {
+  position: relative;
   margin: 32px 0 40px;
-}
-.article-preview-grid img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid var(--gray-200);
+  overflow: hidden;
   box-shadow: var(--shadow-sm);
+}
+.article-teaser img { display: block; width: 100%; height: auto; }
+.article-teaser::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 45%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff 92%);
 }
 @media (max-width: 640px) {
   .article-download { flex-direction: column; align-items: stretch; padding: 22px 20px; }
   .article-content .article-download-btn { white-space: normal; text-align: center; }
-  .article-preview-grid { grid-template-columns: 1fr; }
 }
