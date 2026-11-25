@@ -1,0 +1,52 @@
+<!-- ARTICLE_HIGHLIGHT: una factura puede ser estable y, aun así, estar mal -->
+<!-- ARTICLE_CONTENT_START -->
+<div class="article-content">
+<p>En una cadena con muchos locales, la factura eléctrica suele revisarse por el total: si el monto se parece al del mes anterior, se paga. El problema es que una factura puede ser estable y, aun así, estar mal. Y ese error no se queda en un local: se repite en cada sucursal, todos los meses.</p>
+<p>Por eso armamos un checklist de dos páginas para revisar cada factura antes de darla por buena. Sale de lo que vemos al auditar facturas de retail y de las preguntas que más se repiten en nuestras conversaciones con equipos de mantenimiento y finanzas.</p>
+
+<h3>Qué revisa el checklist</h3>
+<p>La primera página ordena la revisión en cuatro partes:</p>
+<ul>
+  <li><i class="fa-solid fa-location-dot article-inline-icon" aria-hidden="true"></i> <strong>Datos del suministro.</strong> Que la factura corresponda al local, que el local siga operando y que el período esté bien.</li>
+  <li><i class="fa-solid fa-gauge article-inline-icon" aria-hidden="true"></i> <strong>Lecturas y consumo.</strong> Que la lectura sea real y no estimada, y que el consumo tenga sentido frente al año anterior.</li>
+  <li><i class="fa-solid fa-sliders article-inline-icon" aria-hidden="true"></i> <strong>Tarifa y potencia.</strong> Que la tarifa siga calzando con la operación y que no estés pagando potencia que no usas.</li>
+  <li><i class="fa-solid fa-receipt article-inline-icon" aria-hidden="true"></i> <strong>Cargos adicionales.</strong> Recargos por energía reactiva, reliquidaciones sin explicar y cobros duplicados.</li>
+</ul>
+<p>Si quieres profundizar en estos errores, los explicamos en <a href="los-4-errores-que-esconde-una-factura-electrica-de-retail.html" class="accent-link">Los 4 errores que esconde una factura eléctrica de retail</a>.</p>
+
+<h3>Locales en malls y clínicas</h3>
+<p>Cuando un local está dentro de un centro comercial o una clínica, quien cobra la energía suele ser la administración. El cobro llega muchas veces como una sola línea en los gastos comunes, sin lecturas ni desglose.</p>
+<p>La segunda página del checklist reúne las preguntas que conviene hacer a la administración: si el local tiene medidor propio, qué precio por kWh se aplica, cómo se calculan las áreas comunes y qué incluye el cobro. También trae una tabla para registrar las diferencias que encuentres. Más contexto en <a href="prorrateos-a-ciegas-la-ineficiencia-energetica-que-los-centros-comerciales-mall.html" class="accent-link">Prorrateos con baja visibilidad</a>.</p>
+
+<div class="article-preview-grid">
+  <img src="../../assets/blog/checklist-revisar-factura-electrica-01.jpg" alt="Página 1 del checklist: datos del suministro, lecturas y consumo, tarifa y potencia, y cargos adicionales" loading="lazy" decoding="async">
+  <img src="../../assets/blog/checklist-revisar-factura-electrica-02.jpg" alt="Página 2 del checklist: anexo para locales en malls y clínicas, con preguntas para la administración y una tabla para registrar diferencias" loading="lazy" decoding="async">
+</div>
+
+<h3>Por qué vale la pena revisar</h3>
+<p>En una tienda de una cadena de retail, el centro comercial ingresó mal las lecturas desde enero de 2024. Se cobraron casi 200.000 kWh de más y, tras la auditoría, el mall devolvió $36 millones.</p>
+<p>No todas las diferencias terminan en una devolución. Pero una diferencia que no tiene explicación siempre justifica pedir el respaldo.</p>
+
+<div class="article-download">
+  <div class="article-download-text">
+    <span class="article-download-title">Checklist de facturación energética</span>
+    <span class="article-download-meta">PDF · 2 páginas · incluye anexo para malls y clínicas</span>
+  </div>
+  <a href="../../assets/descargas/checklist-facturacion-energetica-clickie.pdf" class="btn btn-primary article-download-btn" download>Descarga el checklist →</a>
+</div>
+
+<p>¿Encontraste algo que no puedes explicar? <a href="../../servicios/ubm.html" class="accent-link">Solicita una revisión de tu facturación</a> o escríbenos a <a href="mailto:hola@clickie.io" class="accent-link">hola@clickie.io</a>.</p>
+</div>
+<!-- ARTICLE_CONTENT_END -->
+
+<!-- ARTICLE_TAGS_START -->
+<div class="article-footer">
+  <div class="article-tags">
+    <span>#UBM</span>
+    <span>#GestiónDeFacturas</span>
+    <span>#Retail</span>
+    <span>#Multisucursal</span>
+    <span>#Checklist</span>
+  </div>
+</div>
+<!-- ARTICLE_TAGS_END -->

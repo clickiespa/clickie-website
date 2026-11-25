@@ -28,6 +28,17 @@ module.exports = {
   ],
   posts: [
     {
+      slug: "checklist-revisar-factura-electrica",
+      sourceFile: "content/blog-posts/checklist-revisar-factura-electrica.source",
+      title: "Checklist: qué revisar en una factura eléctrica antes de darla por buena",
+      subtitle: "Una lista práctica para revisar cada local, con un anexo para tiendas en malls y clínicas.",
+      description: "Descarga un checklist de dos páginas para revisar la factura eléctrica de cada local, con un anexo para tiendas en malls y clínicas.",
+      categoryKey: "multisucursal",
+      publishedAt: "2026-11-25",
+      coverImage: "assets/blog/checklist-revisar-factura-electrica-cover.jpg",
+      coverAlt: "Primera página del checklist de facturación energética de Clickie: ¿Estás pagando lo que corresponde?"
+    },
+    {
       slug: "como-una-revision-de-facturas-recupero-36-millones-para-una-cadena-retail",
       sourceFile: "content/blog-posts/como-una-revision-de-facturas-recupero-36-millones-para-una-cadena-retail.source",
       title: "Cómo una revisión de facturas recuperó $36 millones para una cadena retail",
