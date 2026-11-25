@@ -562,6 +562,7 @@ ${relatedPosts.map(renderRelatedCard).join("\n")}
 <div data-site-shell="footer"></div>
 <script src="../../scripts/shared-layout.js"></script>
 <script src="../../scripts/main.js"></script>
+<script src="../../scripts/lead-form.js"></script>
 </body>
 </html>
 `;

@@ -36,7 +36,7 @@ module.exports = {
       categoryKey: "multisucursal",
       publishedAt: "2026-11-25",
       coverImage: "assets/blog/checklist-revisar-factura-electrica-cover.jpg",
-      coverAlt: "Primera página del checklist de facturación energética de Clickie: ¿Estás pagando lo que corresponde?"
+      coverAlt: "Laptop con la plataforma UBM de Clickie mostrando gasto, consumo y eficiencia por sucursal"
     },
     {
       slug: "como-una-revision-de-facturas-recupero-36-millones-para-una-cadena-retail",

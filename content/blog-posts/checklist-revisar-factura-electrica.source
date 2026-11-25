@@ -30,9 +30,9 @@
 <div class="article-download">
   <div class="article-download-text">
     <span class="article-download-title">Checklist de facturación energética</span>
-    <span class="article-download-meta">PDF · 2 páginas · incluye anexo para malls y clínicas</span>
+    <span class="article-download-meta">PDF de 2 páginas, con anexo para malls y clínicas. Te lo enviamos a tu correo.</span>
   </div>
-  <a href="../../assets/descargas/checklist-facturacion-energetica-clickie.pdf" class="btn btn-primary article-download-btn" download>Descarga el checklist →</a>
+  <button type="button" class="btn btn-primary article-download-btn" data-caso-modal data-doc-id="checklist-ubm" data-doc-name="Checklist: revisión de facturas de energía">Descarga el checklist →</button>
 </div>
 
 <p>¿Encontraste algo que no puedes explicar? <a href="../../servicios/ubm.html" class="accent-link">Solicita una revisión de tu facturación</a> o escríbenos a <a href="mailto:hola@clickie.io" class="accent-link">hola@clickie.io</a>.</p>

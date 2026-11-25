@@ -76,7 +76,7 @@
     <span class="article-download-title">¿Quieres revisar tus facturas local por local?</span>
     <span class="article-download-meta">Descarga nuestro checklist de dos páginas, con un anexo para locales en malls y clínicas.</span>
   </div>
-  <a href="../../assets/descargas/checklist-facturacion-energetica-clickie.pdf" class="btn btn-primary article-download-btn" download>Descargar checklist →</a>
+  <button type="button" class="btn btn-primary article-download-btn" data-caso-modal data-doc-id="checklist-ubm" data-doc-name="Checklist: revisión de facturas de energía">Descargar checklist →</button>
 </div>
 </div>
 <!-- ARTICLE_CONTENT_END -->
