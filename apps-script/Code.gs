@@ -89,6 +89,10 @@ var CONFIG = {
     'caso-tiendas-departamento': {
       name: 'Caso de Negocio — Tiendas por Departamento',
       file: 'Clickie_Caso_Negocio_Tiendas_por_Departamento.pdf'
+    },
+    'checklist-ubm': {
+      name: 'Checklist: revisión de facturas de energía',
+      file: 'Clickie_Checklist_Revision_Facturas.pdf'
     }
   }
 };
