@@ -24,7 +24,16 @@ var CONFIG = {
   FROM_NAME: 'Clickie',
   FROM_ADDRESS: 'hola@clickie.io',
   REPLY_TO: 'hola@clickie.io',
-  NOTIFY_EMAIL: 'nicolas.llevenes@clickie.io', // '' para desactivar aviso interno
+  // Aviso interno de cada formulario: va a NOTIFY_TO y, en copia oculta, a
+  // NOTIFY_BCC ('' y [] para desactivarlo). Trae como "responder a" el correo
+  // del cliente: "Responder" le escribe a él y "Responder a todos" le escribe
+  // con copia a hola@. La copia oculta evita que el cliente vea al equipo.
+  NOTIFY_TO: 'hola@clickie.io',
+  NOTIFY_BCC: [
+    'nicolas.llevenes@clickie.io',
+    'florencia.chirino@clickie.io',
+    'michelle.carrere@clickie.io'
+  ],
 
   // Carpetas de Drive donde viven los PDFs descargables.
   // Los PDFs se buscan por nombre en ambas, así que mover archivos entre
@@ -133,7 +142,7 @@ function doPost(e) {
       new Date(), nombre, apellido, email, textoSeguro(telefono), empresa, cargo, doc.name, pagina
     ].concat(getAttributionValues(p)));
     sendDocumentEmail(nombre, email, doc);
-    if (CONFIG.NOTIFY_EMAIL) notifyTeam(nombre + ' ' + apellido, email, telefono, empresa, cargo, doc);
+    notifyTeam(nombre + ' ' + apellido, email, telefono, empresa, cargo, doc, pagina);
 
     return jsonResponse({ ok: true });
   } catch (err) {
@@ -181,18 +190,18 @@ function handleContacto(p) {
   ].concat(getAttributionValues(p)).concat([cargo, sedes]));
 
   // Aviso al equipo comercial
-  if (CONFIG.NOTIFY_EMAIL) {
-    GmailApp.sendEmail(
-      CONFIG.NOTIFY_EMAIL,
-      'Nuevo contacto web: ' + nombre + ' ' + apellido + (empresa ? ' (' + empresa + ')' : ''),
-      'Nombre: ' + nombre + ' ' + apellido + '\nEmail: ' + email +
-      '\nTeléfono: ' + (telefono || '—') + '\nEmpresa: ' + (empresa || '—') +
-      '\nCargo: ' + (cargo || '—') + '\nSedes o locales: ' + (sedes || '—') +
-      '\nIndustria: ' + (industria || '—') + '\nOrigen: ' + origen +
-      '\n\nMensaje:\n' + (mensaje || '—') +
-      '\n\nContactos: https://docs.google.com/spreadsheets/d/' + CONFIG.SHEET_ID
-    );
-  }
+  avisarEquipo(
+    '[Web] Contacto: ' + (empresa || nombre + ' ' + apellido) + (sedes ? ' · ' + sedes + ' sedes' : ''),
+    'Nombre: ' + nombre + ' ' + apellido + '\nEmail: ' + email +
+    '\nTeléfono: ' + (telefono || '—') + '\nEmpresa: ' + (empresa || '—') +
+    '\nCargo: ' + (cargo || '—') + '\nSedes o locales: ' + (sedes || '—') +
+    '\nIndustria: ' + (industria || '—') + '\nFormulario: ' + origen +
+    '\nPágina: ' + (pagina || '—') +
+    '\n\nMensaje:\n' + (mensaje || '—') +
+    '\n\nPara responderle, usa "Responder": el correo va directo a ' + email + '.' +
+    '\nContactos: https://docs.google.com/spreadsheets/d/' + CONFIG.SHEET_ID,
+    email
+  );
 
   // Confirmación breve al remitente
   GmailApp.sendEmail(email, 'Recibimos tu mensaje — Clickie', '', {
@@ -270,14 +279,28 @@ function sendDocumentEmail(nombre, email, doc) {
   });
 }
 
-function notifyTeam(nombre, email, telefono, empresa, cargo, doc) {
-  GmailApp.sendEmail(
-    CONFIG.NOTIFY_EMAIL,
-    'Nuevo lead: ' + nombre + (empresa ? ' (' + empresa + ')' : ''),
+function notifyTeam(nombre, email, telefono, empresa, cargo, doc, pagina) {
+  avisarEquipo(
+    '[Web] Descarga: ' + (empresa || nombre) + ' · ' + doc.name,
     'Nombre: ' + nombre + '\nEmail: ' + email + '\nTeléfono: ' + (telefono || '—') +
     '\nEmpresa: ' + (empresa || '—') + '\nCargo: ' + (cargo || '—') +
-    '\nDocumento: ' + doc.name + '\n\nLeads: https://docs.google.com/spreadsheets/d/' + CONFIG.SHEET_ID
+    '\nDocumento: ' + doc.name + '\nPágina: ' + (pagina || '—') +
+    '\n\nPara responderle, usa "Responder": el correo va directo a ' + email + '.' +
+    '\nLeads: https://docs.google.com/spreadsheets/d/' + CONFIG.SHEET_ID,
+    email
   );
+}
+
+// Aviso interno enviado desde hola@ con "responder a" el cliente, para
+// contestarle directamente (ver NOTIFY_TO / NOTIFY_BCC).
+function avisarEquipo(asunto, cuerpo, emailCliente) {
+  if (!CONFIG.NOTIFY_TO) return;
+  GmailApp.sendEmail(CONFIG.NOTIFY_TO, asunto, cuerpo, {
+    name: 'Web Clickie',
+    from: CONFIG.FROM_ADDRESS,
+    replyTo: emailCliente,
+    bcc: (CONFIG.NOTIFY_BCC || []).join(',')
+  });
 }
 
 // ========================= PLANTILLA DE CORREO =========================
